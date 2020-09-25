@@ -29,6 +29,8 @@ https://colorlib.com/preview/#personalportfolio
   * Sponsors
 * about us
   * Instructors
+* Courses
+* Pricing
 * contact us
   * google map
   * form
