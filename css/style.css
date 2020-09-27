@@ -1,57 +1,162 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
 * {
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 38px;
-  }
-  .topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
-  }
-  
-  .topnav a {
-    float: right;
-  }
-  
-  #menuBar {
-    display: block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  #menuBar:hover:not(.active) {
-    background-color: #ddd;
-  }
-  
-  #menuBar.active {
-    color: white;
-    background-color: #4CAF50;
-  }
+}
 
-  
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+}
+
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+.head {
+  background-color: #ddd;
+  width: auto;
+  min-height: 70%;
+  border: 3px solid #0f0404;
+}
+
+.head h1{
+  border: 3px solid #740a54;
+  text-align: center;
+  margin-top: 2em;
+}
+#sloganContainer{
+  display:flex;
+  flex-direction: column;
+  border: 3px solid #740a54;
+  width: 40%;
+  text-align: center;
+  margin-top: 10em;
+}
+#sloganContainer h2{
+  margin-top: 1em;
+  margin-bottom: 0em;    
+}
+#sloganContainer h3{
+  margin-top: 0.2em;  
+  margin-bottom: 0.5em;    
+}
+.container2 button{
+  width: auto;
+  overflow: hidden;
+  margin:1em;
+  padding: 0.8em;
+}
+.container2{
+  border: 3px solid #af6f9c;
+  width: 55%;
+  margin:auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#home{
+  background-color: darkkhaki;
+}
+
   /* Style the content */
-  .content {
-    background-color: #ddd;
-    padding: 10px;
-    height: 200px; /* Should be removed. Only for demonstration */
-  }
-  
+.section {
+  background-color: #ddd;
+  padding: 10px;
+  width: 80%;
+  margin:auto;
+  border: 3px solid #d35050;
+}
+.section h2{
+  border: 3px solid #d35050;
+}
+.imgContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+    flex-wrap: wrap;
+
+  border: 3px solid #b7d31b;
+
+}
+.imgContainer  #sponsor {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.service{
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  border: 3px solid #b7d31b;
+}
+.service img{
+
+}
+
+
   /* Style the footer */
-  .footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-  }
+.footer {
+  background-color: #030202;
+  padding-top: 10px;
+  color:rgb(255, 255, 255);
+}
+.socialMedia{
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(183, 0, 255);
+
+}
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.footer p{
+  text-align: center;
+  font-size: 0.9em;
+  border: 2px solid red;
+
+}
+
+.line1{
+  border: 2px solid red;
+  width: 20%;
+}
 
