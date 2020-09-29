@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>ExplicaFeup</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
@@ -15,26 +16,27 @@
 
 <body>
   <header>
+    <!-- NAVBAR -->
     <div class="topnav">
-      <a class="logo" href="index.html">
-        <img src="img/icon.png" >
-        <h5 id="explic"  >ExplicaFeup</h5>
+      <a id="logo" href="index.html">
+        <img id="explicImg" src="img/icon.png">
+        <h5 id="explic">ExplicaFeup</h5>
       </a>
+      <!-- NAVBAR FOR MOBILE -->
       <div class="dropdown">
         <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
           <a href="about.html">Quem Somos</a>
           <a href="pricing.html">Preços</a>
           <a href="contacts.html">Contactos</a>
-
         </div>
       </div>
       <a id="elemnt" href="contacts.html">Contactos</a>
       <a id="elemnt" href="pricing.html">Preços</a>
       <a id="elemnt" href="about.html">Quem Somos</a>
     </div>
-  
   </header>
+  <!-- HEAD -->
   <div class="head" id="home">
     <div id="sloganContainer">
       <h2>Melhor explicaçao</h2>
@@ -45,39 +47,49 @@
         <button class="button2"><span>asdaçoes</span></button>
       </div>
     </div>
-    
+
   </div>
+  <!-- SPONSORS -->
   <div class="section">
-    <h2>Sponsors<hr class="line2"></h2>
-    
-    <div class="imgContainer">
+    <h2>Sponsors
+      <hr class="line2">
+    </h2>
+    <div class="flex-wrap flex-around" id="sponsors">
       <div id="sponsor">1</div>
-      <div id="sponsor">3</div>  
+      <div id="sponsor">3</div>
       <div id="sponsor">2</div>
       <div id="sponsor">4</div>
     </div>
   </div>
+
+  <!-- SERVICES -->
   <div class="section">
-    <h2>Serviços<hr class="line2"></h2>
-    <div class="imgContainer">
-      <div class="service">
+    <h2>Serviços
+      <hr class="line2">
+    </h2>
+    <div class="flex-wrap flex-around">
+      <div class="flex-column" id="service">
         <div><img src="img/icon.png"></div>
         <div>fasdasdsad</div>
       </div>
-      <div class="service">
+      <div id="service">
         <div><img src="img/icon.png"></div>
         <div>fasdasdsad</div>
       </div>
-      <div class="service">
+      <div id="service">
         <div><img src="img/icon.png"></div>
         <div>fasdasdsad</div>
-      </div> 
+      </div>
     </div>
   </div>
+
+  <!-- NUMBERS -->
   <div class="section">
-    <h2>Numeros<hr class="line2"></h2>
-    <div class="imgContainer">
-      <div class="numbers">
+    <h2>Numeros
+      <hr class="line2">
+    </h2>
+    <div class="flex-wrap flex-around">
+      <div class="flex-column">
         <div id="numberIcon">
           <i class="fas fa-laptop"></i>
           10
@@ -86,7 +98,7 @@
           Cursos
         </div>
       </div>
-      <div class="numbers">
+      <div class="flex-column">
         <div id="numberIcon">
           <i class="far fa-heart"></i>
           200
@@ -95,7 +107,7 @@
           clientes Felizes
         </div>
       </div>
-      <div class="numbers">
+      <div class="flex-column">
         <div id="numberIcon">
           <i class="far fa-clock"></i>
           10
@@ -106,17 +118,21 @@
       </div>
     </div>
   </div>
+
+    <!-- TESTIMONIALS -->
   <div class="section">
-    <h2>Testemunhos<hr class="line2"></h2>
-    <div class="testimonials">
-      <div class="testContainer">
-        <div id="imgTestimon">
+    <h2>Testemunhos
+      <hr class="line2">
+    </h2>
+    <div class="flex-column" id="testimonials">
+      <div class="flex-nowrap flex-center">
+        <div class="flex-column" id="imgTestimon">
           <img src="img/marco.jpg">
           <h5>Marco Rocha</h5>
         </div>
         <div id="textTestimon">
           <p><b>"</b> Este curso foi o melhor que já fiz, super completo, com um preço incrivel<b>"</b></p>
-          <div id="ratingTestimon">
+          <div class="flex-center" id="ratingTestimon">
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
@@ -129,27 +145,32 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <div class="footer">
     <h2>Contactos</h2>
-    <div class="footerContainer">
-      <div class="informatContainer">
+    <div class="flex-wrap footerContainer">
+      <div class="flex-column" id="informatContainer">
         <h3 id="footerTitle">ExplicaFeup</h3>
-        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="mailto:explicaFeup@example.com" id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
+        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="mailto:explicaFeup@example.com"
+            id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
         <p id="inf"><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
-        <p id="inf"><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com" id="email">explicaFeup@example.com </a></p>
+        <p id="inf"><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
+            id="email">explicaFeup@example.com </a></p>
       </div>
 
-      <div class="socMedContainer">
+      <div class="flex-column socMedContainer">
         <h3 id="footerTitle">Redes Sociais</h3>
         <div class="socialMedia">
           <a href="#" id="social" class="fa fa-facebook"></a>
           <a href="#" id="social" class="fa fa-instagram"></a>
-          <a href="#" id="social" class="fa fa-linkedin"></a>    
+          <a href="#" id="social" class="fa fa-linkedin"></a>
         </div>
       </div>
     </div>
-    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank">Fábio Morais</a> SIEM 2020</p>
+    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank"><b>Fábio Morais</b></a> SIEM 2020
+    </p>
   </div>
 
 </body>
+
 </html>

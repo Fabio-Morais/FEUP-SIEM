@@ -10,99 +10,83 @@
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
-
-  
+  <!--IMPORT MAP STUFF-->
   <link
   rel="stylesheet"
   href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""
-/>
-
+  crossorigin=""/>
 <script
   src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""
-></script>
-<style>
-  #map {
-width: auto;
-height: 500px;
-}
-	
-</style>
+  crossorigin=""></script>
+  
 </head>
 
 <body>
   <header>
+    <!-- NAVBAR -->
     <div class="topnav">
-      <a class="logo" href="index.html">
-        <img src="img/icon.png" >
-        <h5 id="explic"  >ExplicaFeup</h5>
+      <a id="logo" href="index.html">
+        <img id="explicImg" src="img/icon.png">
+        <h5 id="explic">ExplicaFeup</h5>
       </a>
+      <!-- NAVBAR FOR MOBILE -->
       <div class="dropdown">
         <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
           <a href="about.html">Quem Somos</a>
           <a href="pricing.html">Preços</a>
           <a href="contacts.html">Contactos</a>
-
         </div>
       </div>
       <a id="elemnt" href="contacts.html">Contactos</a>
       <a id="elemnt" href="pricing.html">Preços</a>
       <a id="elemnt" href="about.html">Quem Somos</a>
     </div>
-  
   </header>
   <div class="headSecu" id="contacts">
     <h1>Contactos</h1>
   </div>
   <div class="section">
-    <div id="map"></div>
-
+    <h2>Onde Estamos<hr class="line2"></h2>
+    <div class="mapContainer">
+      <div id="map"></div>
+  </div>
   </div>
 
+
+  <div class="section">
+    <h2>Fala Connosco<hr class="line2"></h2>
+    
+  </div>
+
+  <!--FOOTER-->
   <div class="footer">
     <h2>Contactos</h2>
-    <div class="footerContainer">
-      <div class="informatContainer">
+    <div class="flex-wrap footerContainer">
+      <div class="flex-column" id="informatContainer">
         <h3 id="footerTitle">ExplicaFeup</h3>
-        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="mailto:explicaFeup@example.com" id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
+        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="mailto:explicaFeup@example.com"
+            id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
         <p id="inf"><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
-        <p id="inf"><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com" id="email">explicaFeup@example.com </a></p>
+        <p id="inf"><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
+            id="email">explicaFeup@example.com </a></p>
       </div>
 
-      <div class="socMedContainer">
+      <div class="flex-column socMedContainer">
         <h3 id="footerTitle">Redes Sociais</h3>
         <div class="socialMedia">
           <a href="#" id="social" class="fa fa-facebook"></a>
           <a href="#" id="social" class="fa fa-instagram"></a>
-          <a href="#" id="social" class="fa fa-linkedin"></a>    
+          <a href="#" id="social" class="fa fa-linkedin"></a>
         </div>
       </div>
     </div>
-    <script>
-      var map = L.map('map',{
-      center: [41.178346, -8.595829],
-      zoom: 15
-      });
-  
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: ''
-      }).addTo(map);
-
-      var firefoxIcon = L.icon({
-        iconUrl: 'img/icon.png',
-        iconSize: [48, 55], // size of the icon
-        });
-
-    var marker = L.marker([41.178346, -8.595829], {icon: firefoxIcon}).addTo(map).bindPopup('<h3><b>ExplicaFeup</b></h3><br><b>phone: </b>(+351) 926789452<br><b>Email: </b>explicaFeup@example.com<br> <b>Adress: </b> R. Dr. Roberto Frias, 4200-465 Porto').addTo(map);;
-
-  </script>
-
     <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank">Fábio Morais</a> SIEM 2020</p>
   </div>
- 
+
+  <script defer  src="js/main.js"></script>
+
 </body>
 </html>
