@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>ExplicaFeup</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
@@ -10,17 +11,6 @@
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
-  <!--IMPORT MAP STUFF-->
-  <link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
-<script
-  src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""></script>
-  
 </head>
 
 <body>
@@ -46,53 +36,58 @@
       <a id="elemnt" href="about.html">Quem Somos</a>
     </div>
   </header>
-  <div class="headSecu" id="contacts">
-    <h1>Contactos</h1>
+  <div class="headSecu" id="pricing">
+    <h1>Horário</h1>
   </div>
   <div class="section">
-    <h2>Onde Estamos<hr class="line2"></h2>
-    <div class="mapContainer">
-      <div id="map"></div>
-  </div>
-  </div>
+    <div class="flex-wrap flex-around">
+      <div class="schedule-warp">
+        <div class="day-one">DAY 1: September 21 (Friday)</div>
+        <div class="schedule-card">
+          <div class="insidebox">
+            <span class="schedule-tag">8:00 AM</span>
+            <span class="schedule-start">Check-In</span>
+          </div>
+        </div>
 
+        <div class="schedule-card">
+          <div class="insidebox">
+            <span class="schedule-tag">8:30 AM</span>
+            <span class="schedule-start">Opening Ceremony, Running Brunch</span>
+          </div>
+        </div>
 
-  <div class="section">
-    <h2>Fala Connosco<hr class="line2"></h2>
-    <div class="flex-wrap flex-around" id="contactUs">
-      <!--FORM-->
-      <div class="flex-column" id="forms">
-        <div class="flex-wrap">
-          <div class="col25" id="labelN">
-            <label for="fname">Nome</label>
-          </div>
-          <div class="col75" id="form">
-            <input type="text" id="fname" name="name" placeholder="Your name..">
+        <div class="schedule-card">
+          <div class="insidebox">
+            <span class="schedule-tag">9:00 AM</span>
+            <span class="schedule-start">On-Site Hacking Starts</span>
           </div>
         </div>
-        <div class="flex-wrap">
-          <div class="col25" id="labelN">
-            <label for="fname">Email</label>
-          </div>
-          <div class="col75" id="form">
-            <input type="email" id="fname" name="email" placeholder="Email..">
-          </div>
-        </div>
-        <div class="flex-wrap">
-          <div class="col25" id="labelN">
-            <label for="fname">Texto</label>
-          </div>
-          <div class="col75" id="form">
-            <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
-          </div>
-        </div>
-        <input type="submit" value="Submit">
+
       </div>
-      <!--ICONS-->
-      <div class="flex-column" id="icons">
-        <h5>asdasd</h5>
+
+      <div class="schedule-warp">
+        <div class="day-one">DAY 1: September 21 (Friday)</div>
+        <div class="schedule-card">
+          <div class="insidebox">
+            <span class="schedule-tag">8:00 AM</span>
+            <span class="schedule-start">Check-In</span>
+          </div>
+        </div>
+
+        <div class="schedule-card">
+          <div class="insidebox">
+            <span class="schedule-tag">8:30 AM</span>
+            <span class="schedule-start">Opening Ceremony, Running Brunch</span>
+          </div>
+        </div>
+
       </div>
     </div>
+
+
+
+
   </div>
 
   <!--FOOTER-->
@@ -117,10 +112,10 @@
         </div>
       </div>
     </div>
-    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank">Fábio Morais</a> SIEM 2020</p>
+    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank">Fábio Morais</a> SIEM 2020
+    </p>
   </div>
 
-  <script defer  src="js/main.js"></script>
-
 </body>
+
 </html>

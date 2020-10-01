@@ -19,3 +19,7 @@ var map = L.map('map',{
       map.on('focus', () => { map.scrollWheelZoom.enable(); });
       map.on('blur', () => { map.scrollWheelZoom.disable(); });
   var marker = L.marker([41.178346, -8.595829], {icon: firefoxIcon}).addTo(map).bindPopup('<h3><b>ExplicaFeup</b></h3><br><b>phone: </b>(+351) 926789452<br><b>Email: </b>explicaFeup@example.com<br> <b>Adress: </b> R. Dr. Roberto Frias, 4200-465 Porto').addTo(map);;
+
+
+
+  
