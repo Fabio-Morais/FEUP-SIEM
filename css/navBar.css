@@ -26,7 +26,7 @@
     text-decoration:none;
     color:#4CAF50
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 848px) {
     #elemnt {
         float: right;
         color: #666;
@@ -44,7 +44,7 @@
         display: none;
     }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 848px) {
     #elemnt {
         display: none;
     }
@@ -57,6 +57,7 @@
     border: none;
     cursor: pointer;
     margin-right: 2em;
+
     }
   
   /* The container <div> - needed to position the dropdown content */
@@ -64,10 +65,8 @@
     position: static;
     float:right;
     display: block;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 3px solid #d35050;
-    margin-right: 2em;
+    margin-right: 3em;
+    margin: auto;
 
   }
   
@@ -76,9 +75,12 @@
     display: none;
     position: fixed;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 9em;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    margin-left: -6em;
+    border: 2px solid #000000;
+
   }
   
   /* Links inside the dropdown */
@@ -95,6 +97,8 @@
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
+    margin-right: 2em;
+
   }
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
@@ -105,8 +109,7 @@
 #elemnt:hover:not(.active) {
     background-color: #ddd;
 }
-  
-#elemnt.active {
-    color: white;
+ .active {
+    color: red;
     background-color: #4CAF50;
 }

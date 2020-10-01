@@ -1,3 +1,8 @@
+@keyframes example {
+  from {background-color: rgba(0, 0, 0, 0.126);}
+  to {background-color: rgba(255, 255, 254, 0.11);}
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -152,7 +157,7 @@ h2{
 
 }
 
-.section h2{
+.section > h2{
   border: 3px solid #d35050;
   margin: 0;
 }
@@ -169,8 +174,6 @@ h2{
 .flex-column{
   display: flex;
   flex-direction: column;
-  border: 1px solid #d35050;
-
 }
 
 .flex-nowrap{
@@ -273,11 +276,14 @@ h2{
 }
 
 .full-bar{
-  background-color: red;
-  height: 10em;
+  background-color: rgba(0, 0, 0, 0.126);
+  height: auto;
   margin-top: 0;
   padding-top: 0;
   width: 100%;
+}
+.full-bar > div{
+  float: right;
 }
 
 .select-css {
@@ -291,16 +297,15 @@ h2{
   width: 12rem;
   max-width: 100%; 
   box-sizing: border-box;
-  margin-bottom: 30px;
+  margin: 10px 20px;
   border: 1px solid #aaa;
   box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
   border-radius: .5em;
   -moz-appearance: none;
   -webkit-appearance: none;
-  appearance: none;
   background-color: #fff;
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-    linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+  linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
   background-repeat: no-repeat, repeat;
   background-position: right .7em top 50%, 0 0;
   background-size: .65em auto, 100%;
@@ -350,39 +355,43 @@ h2{
 }
 
 #testimonials{
-  justify-content: center;
-  border: 5px solid #200f0f;
-  background-color: red;
-  width: 30em;
+  border: 5px solid #4a2bbb;
+  background-color: white;
+  max-width: 35em;
   margin: auto;
+
 }
 
 #imgTestimon{
-  width: auto;
-  margin: 0;
+  width: 10em;
+  margin: auto;
+  border: 5px solid #4a2bbb;
+  margin-left: 1em;
 }
 
-#imgTestimon h5{
+#imgTestimon > h5{
   text-align: center;
   font-size: 18px;
   margin: 1em;
 }
 
-#imgTestimon img{
+#imgTestimon > img{
   width: 10em;
   height: 10em;
   border-radius: 50%;
 }
 
 #textTestimon{
-  border: 3px solid #0e1c9e;
-  margin-left: 4em;
-  width: 15em;
+  margin-right: 1em;
+  width: 20em;
+  border: 5px solid #4a2bbb;
 }
 
 #textTestimon p{
   font-size: 22px;
   text-align: center;
+  border: 3px solid #dddddd;
+  padding-bottom: 1em;
 }
 
 #ratingTestimon{
@@ -391,6 +400,23 @@ h2{
   display: flex;
   border: 3px solid #dddddd;
   margin-bottom: 0;
+}
+
+@media only screen and (max-width: 799px) {
+  #imgTestimon{
+    margin: auto;
+  }
+  #testimonials{
+    flex-direction: column-reverse;
+  }
+  #textTestimon{
+    margin: auto;
+  }
+  #imgTestimon > img{
+    width: 8em;
+    height: 8em;
+    margin:auto;
+  }
 }
 
 #service{
@@ -452,20 +478,14 @@ h2{
 
 
 
-.footer .footerContainer{
-  justify-content: space-between;
+#footerContainer{
   list-style-type: none;
-  min-height: 4em;
   padding: 0 8%;
-  overflow: hidden;
   border: 3px solid #509fd3;
-  margin: 0em 10em;
 }
 #informatContainer{
   border: 5px solid rgb(255, 255, 255);
-  margin-left: 2em;
-  margin-bottom: 0;
-  
+  width: 22em;  
 }
 #footerTitle{
   border: 4px solid rgb(74, 38, 204);
@@ -497,34 +517,47 @@ h2{
   color:red;
   font-size: 0.94em;
 }
-.socMedContainer{
-  border: 1px solid rgb(255, 255, 255);
-  margin-right: 2em;
-
+#socMedContainer{
+  border: 5px solid rgb(255, 255, 255);
+  width: 22em;
 }
 
-.socMedContainer .socialMedia{
-  justify-content: center;
+#socMedContainer > .socialMedia{
+  text-align: center;
   border: 2px solid rgb(183, 0, 255);
 }
+@-webkit-keyframes in {
+  from   { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg);}
+}
 
+@-webkit-keyframes out {
+  0%   { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
 #social {
   padding: 10px;
   font-size: 20px;
   text-align: center;
   text-decoration: none;
   margin: 5px 5px;
-  border-radius: 50%;
-  box-shadow: 2px 1px #ffffff63;
+  box-shadow: 1px 0px #ffffff;
+  border-radius: 20%;
+  -webkit-animation: in 1s;
+
 }
 
-.socialMedia .fa:hover {
+#social:hover {
     opacity: 0.7;
-    -ms-transform: scale(1.2); /* IE 9 */
-    -webkit-transform: scale(1.2); /* Safari 3-8 */
-    transform: scale(1.2);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
     box-shadow: 0px 0px #ffffff63;
+    -webkit-animation: out 1s;
+    border-radius: 50%;
+    transition: all 0.5s;
 }
+
 
 .socialMedia .fa-facebook {
   background: #3B5998;
@@ -566,14 +599,15 @@ h2{
   border: 2px solid red;
   width: 2em;
   margin-top: 0.1em;
+  margin-bottom: 1.5em;
 }
 .checked {
   color: orange;
 }
 
 /*when #logo:hover -> change #explic and #explicImg*/
-#logo:hover #explic, #logo:hover #explicImg{
-    opacity: 0.7;
+#explic:hover {
+    opacity: 0.6;
 }
 .mapContainer{
   background-color: red;
@@ -595,29 +629,70 @@ h2{
 #forms{
   width: 25em;
   background-color: #f1f1f1;
+  padding-left: 1em;
+  padding-top: 1em;
   
 }
 #labelN{
-  border: 1px  black;
   width: auto;
+  padding-top: 1em;
+
 }
 
 #form{
-  width: 15em;
+  width: 19em;
+  padding-top: 1em;
 }
 input{
   width: 95%;
 }
 #subject{
-  max-height: 10em; 
-  max-width: 25em; 
-  min-height: 5em; 
-  min-width: 17em; 
+  height: 5em; 
+  width: 22em;
+  resize: none; 
 }
 #icons{
   width: 35em;
   background-color: #f1f1f1;
+  justify-content: center;
+
 }
+
+#icon{
+  width: 90%;
+  border: 1px solid rgb(214, 21, 188);
+  justify-content: left;
+  margin: auto;
+  margin-top: 1em;
+}
+#icon>span:hover{
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.15); /* Safari 3-8 */
+  transform: scale(1.15);
+}
+
+#icon:hover{
+  animation-name: example;
+  animation-duration: 1.5s;
+}
+#icon > h5{
+  border: 1px solid black;
+  margin:0;
+  padding:0;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.fa-stack {
+  width: 80px;
+  margin:0;
+  border: 1px solid black;
+  margin-right: 1em;
+  font-size:20px;
+  text-align: center;
+  
+}
+
 input[type=text], input[type=email], select, textarea {
   border: 1px solid #ccc;
   padding: 12px;
@@ -637,13 +712,25 @@ input[type=submit] {
   float: right;
   width: 10em;
   margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 input[type=submit]:hover {
   background-color: #45a049;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 848px) {
+
+  #icon > h5{
+    line-height: 30px;
+    margin:0;
+    padding:0;
+    font-size: 14px;
+  }
+  #icons{
+    margin-top:2em ;
+  }
   #instruct {
     width: 10em;
   }
@@ -668,16 +755,17 @@ input[type=submit]:hover {
       margin:0em;
       padding:0em;
     }
-    .footer .footerContainer{
-      justify-content: center;
-    }
+
     .informatContainer{
       margin:0em;
       padding: 0em;
     }
-    .socMedContainer{
+    #socMedContainer{
       margin:0;
       padding: 0;
+    }
+    .schedule-warp{
+      margin-top: 1em;
     }
 }
 
@@ -723,15 +811,18 @@ input[type=submit]:hover {
 .schedule-card{
   position: relative;
   margin-bottom: 0.7em;
+  margin-right: 2em;
+  z-index: 0;
 }
 .schedule-card:hover .insidebox {
   transform: scale(1.033);
-  /* box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1); */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
 }
 .schedule-card:hover:after {
   background: #8a56d1;
   width: 25px;
+  height: 3PX;
+  z-index: -1;
 }
 .schedule-card:after {
   height: 2px;
@@ -742,6 +833,8 @@ input[type=submit]:hover {
   top: 50%;
   left: -22px;
   transition: all 0.3s ease-in;
+  z-index: -1;
+
 }
 .insidebox { 
   box-shadow: 0 0px 5px rgba(0,0,0,.07);
@@ -764,7 +857,8 @@ input[type=submit]:hover {
 .day-one{
   margin-bottom:50px;
   font-weight: bold;
-  font-size: 20px;
-  color: #6164B2;    
+  font-size: 28px;
+  color: #6164B2;  
+  text-align: center;  
   }
 

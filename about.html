@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>ExplicaFeup</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
@@ -21,7 +22,7 @@
         <h5 id="explic">ExplicaFeup</h5>
       </a>
       <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
+        <button class="dropbtn"><i class="fas fa-bars"></i></button>
         <div class="dropdown-content">
           <a href="about.html">Quem Somos</a>
           <a href="schedule.html">Horário</a>
@@ -33,7 +34,7 @@
       <a id="elemnt" href="contacts.html">Contactos</a>
       <a id="elemnt" href="courses.html">Cursos</a>
       <a id="elemnt" href="schedule.html">Horário</a>
-      <a id="elemnt" href="about.html">Quem Somos</a>
+      <a id="elemnt" class="active" href="about.html">Quem Somos</a>
     </div>
   </header>
 
@@ -50,14 +51,17 @@
       </div>
       <div id="textAbout">
         <h4>Sobre Nós</h4>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero sed repellat perferendis ipsam id esse laborum nisi voluptatum, molestias alias numquam aut blanditiis dolorem quisquam debitis veniam delectus at ex.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero sed repellat perferendis ipsam id esse laborum
+          nisi voluptatum, molestias alias numquam aut blanditiis dolorem quisquam debitis veniam delectus at ex.</p>
       </div>
     </div>
   </div>
 
   <!-- ABOUT -->
   <div class="section">
-    <h2>Instrutores<hr class="line2"></h2>
+    <h2>Instrutores
+      <hr class="line2">
+    </h2>
     <div class="flex-wrap flex-around">
       <div id="instruct">
         <div id="imgBorder"><img src="img/fabio2.jpeg" id="imgInstruct"></div>
@@ -68,24 +72,24 @@
         <div id="imgBorder"><img src="img/marco.jpg" id="imgInstruct"></div>
         <h4>Marco Berg</h4>
         <p>Instrutor de Web Development</p>
-      </div>    
+      </div>
     </div>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
     <h2>Contactos</h2>
-    <div class="flex-wrap footerContainer">
+    <div class="flex-wrap flex-around" id="footerContainer">
       <div class="flex-column" id="informatContainer">
         <h3 id="footerTitle">ExplicaFeup</h3>
-        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="mailto:explicaFeup@example.com"
+        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA" target="_blank"
             id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
         <p id="inf"><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
         <p id="inf"><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
             id="email">explicaFeup@example.com </a></p>
       </div>
 
-      <div class="flex-column socMedContainer">
+      <div class="flex-column" id="socMedContainer">
         <h3 id="footerTitle">Redes Sociais</h3>
         <div class="socialMedia">
           <a href="#" id="social" class="fa fa-facebook"></a>
@@ -94,9 +98,11 @@
         </div>
       </div>
     </div>
-    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank"><b>Fábio Morais</b></a> SIEM 2020
+    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank"><b>Fábio Morais</b></a>
+      SIEM 2020
     </p>
   </div>
 
 </body>
+
 </html>

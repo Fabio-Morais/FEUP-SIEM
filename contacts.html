@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>ExplicaFeup</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
@@ -11,16 +12,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
   <!--IMPORT MAP STUFF-->
-  <link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
-<script
-  src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""></script>
-  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
 </head>
 
 <body>
@@ -31,7 +29,7 @@
         <h5 id="explic">ExplicaFeup</h5>
       </a>
       <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
+        <button class="dropbtn"><i class="fas fa-bars"></i></button>
         <div class="dropdown-content">
           <a href="about.html">Quem Somos</a>
           <a href="schedule.html">Horário</a>
@@ -40,7 +38,7 @@
 
         </div>
       </div>
-      <a id="elemnt" href="contacts.html">Contactos</a>
+      <a id="elemnt" class="active" href="contacts.html">Contactos</a>
       <a id="elemnt" href="courses.html">Cursos</a>
       <a id="elemnt" href="schedule.html">Horário</a>
       <a id="elemnt" href="about.html">Quem Somos</a>
@@ -50,15 +48,19 @@
     <h1>Contactos</h1>
   </div>
   <div class="section">
-    <h2>Onde Estamos<hr class="line2"></h2>
+    <h2>Onde Estamos
+      <hr class="line2">
+    </h2>
     <div class="mapContainer">
       <div id="map"></div>
-  </div>
+    </div>
   </div>
 
 
   <div class="section">
-    <h2>Fala Connosco<hr class="line2"></h2>
+    <h2>Fala Connosco
+      <hr class="line2">
+    </h2>
     <div class="flex-wrap flex-around" id="contactUs">
       <!--FORM-->
       <div class="flex-column" id="forms">
@@ -83,14 +85,38 @@
             <label for="fname">Texto</label>
           </div>
           <div class="col75" id="form">
-            <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
+            <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
           </div>
         </div>
         <input type="submit" value="Submit">
       </div>
       <!--ICONS-->
-      <div class="flex-column" id="icons">
-        <h5>asdasd</h5>
+      <div class="flex-column " id="icons">
+        <div id="asd">
+          <div class="flex-nowrap flex-center" id="icon">
+            <span class="fa-stack" style="vertical-align: top;">
+              <i class="far fa-circle fa-stack-2x"></i>
+              <i class="fas fa-map-marker-alt fa-stack-1x "></i>
+            </span>
+            <h5>R. Dr. Roberto Frias,
+              4200-465 Porto</h5>
+          </div>
+          <div class="flex-nowrap flex-center" id="icon">
+            <span class="fa-stack" style="vertical-align: top;">
+              <i class="far fa-circle fa-stack-2x"></i>
+              <i class="fas fa-at fa-stack-1x"></i>
+            </span>
+            <h5>explicaFeup@example.com</h5>
+          </div>
+          <div class="flex-nowrap flex-center" id="icon">
+            <span class="fa-stack" style="vertical-align: top;">
+              <i class="far fa-circle fa-stack-2x"></i>
+              <i class="fas fa-phone-alt fa-stack-1x"></i>
+            </span>
+            <h5>(+351) 926789452</h5>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -98,17 +124,17 @@
   <!--FOOTER-->
   <div class="footer">
     <h2>Contactos</h2>
-    <div class="flex-wrap footerContainer">
+    <div class="flex-wrap flex-around" id="footerContainer">
       <div class="flex-column" id="informatContainer">
         <h3 id="footerTitle">ExplicaFeup</h3>
-        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="mailto:explicaFeup@example.com"
+        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA" target="_blank"
             id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
         <p id="inf"><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
         <p id="inf"><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
             id="email">explicaFeup@example.com </a></p>
       </div>
 
-      <div class="flex-column socMedContainer">
+      <div class="flex-column" id="socMedContainer">
         <h3 id="footerTitle">Redes Sociais</h3>
         <div class="socialMedia">
           <a href="#" id="social" class="fa fa-facebook"></a>
@@ -117,10 +143,12 @@
         </div>
       </div>
     </div>
-    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank">Fábio Morais</a> SIEM 2020</p>
+    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank"><b>Fábio Morais</b></a>
+      SIEM 2020
+    </p>
   </div>
-
-  <script defer  src="js/main.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
+
 </html>
