@@ -11,6 +11,9 @@
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700|Press+Start+2P">
+  <!--Google font-->
 
 </head>
 
@@ -40,96 +43,109 @@
   <!-- HEAD -->
   <div class="head" id="home">
     <div id="sloganContainer">
-      <h2>Melhor explicaçao</h2>
+      <h2>Nº1 em cursos de tech</h2>
       <hr class="line1">
-      <h3>So aqui</h3>
+      <h3>Aprende ao teu ritmo</h3>
       <div class="container2">
-        <button class="button1">Mais informaçoes</button>
-        <button class="button2"><span>asdaçoes</span></button>
+        <div id="btnAbout"><button class="button butText but" id="button1">Sobre nós</button></div>
+        <div id="btnCourses"><button class="button but butText" id="button2"><span
+              class="butText">Cursos</span></button></div>
       </div>
     </div>
-
   </div>
+
   <!-- SPONSORS -->
-  <div class="section">
-    <h2>Sponsors
-      <hr class="line2">
-    </h2>
-    <div class="flex-wrap flex-around" id="sponsors">
-      <div id="sponsor">1</div>
-      <div id="sponsor">3</div>
-      <div id="sponsor">2</div>
-      <div id="sponsor">4</div>
+  <div class="section" id="secSponsor">
+    <div class="container">
+      <h2>Sponsors
+        <hr class="line2">
+      </h2>
+      <div class="flex-wrap flex-around" id="sponsors">
+        <div id="sponsor"><img src="img/sponsors/feup.png"></div>
+        <div id="sponsor"><img src="img/sponsors/inesc.png"></div>
+        <div id="sponsor"><img src="img/sponsors/face.png"></div>
+        <div id="sponsor"><img src="img/sponsors/mit.png"></div>
+      </div>
     </div>
   </div>
 
   <!-- SERVICES -->
-  <div class="section">
-    <h2>Serviços
-      <hr class="line2">
-    </h2>
-    <div class="flex-wrap flex-around">
-      <div class="flex-column" id="service">
-        <div><img src="img/icon.png"></div>
-        <div>fasdasdsad</div>
-      </div>
-      <div id="service">
-        <div><img src="img/icon.png"></div>
-        <div>fasdasdsad</div>
-      </div>
-      <div id="service">
-        <div><img src="img/icon.png"></div>
-        <div>fasdasdsad</div>
+  <div class="section" id="secServices">
+    <div class="container">
+      <h2>Serviços
+        <hr class="line2">
+      </h2>
+      <div class="flex-wrap flex-around">
+        <div class="flex-column" id="service">
+          <div id="qwe"><img src="img/icon.png"></div>
+          <p>Programaçao orientada a objetos</p>
+        </div>
+        <div id="service">
+          <div><img src="img/icon.png"></div>
+          <p>Web Development</p>
+        </div>
+        <div id="service">
+          <div><img src="img/icon.png"></div>
+          <p>Machine Learning</p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- NUMBERS -->
-  <div class="section">
-    <h2>Numeros
-      <hr class="line2">
-    </h2>
-    <div class="flex-wrap flex-around">
-      <div class="flex-column">
-        <div id="numberIcon">
-          <i class="fas fa-laptop"></i>
-          10
+  <div class="section" id="secNumbers">
+    <div class="container">
+      <h2>Numeros
+        <hr class="line2">
+      </h2>
+      <div class="flex-wrap flex-around">
+        <div class="flex-column">
+          <div id="numberIcon">
+            <i class="fas fa-laptop"></i>
+            10
+          </div>
+          <div id="numberDescrip">
+            Cursos
+          </div>
         </div>
-        <div id="numberDescrip">
-          Cursos
+        <div class="flex-column">
+          <div id="numberIcon">
+            <i class="far fa-heart"></i>
+            200
+          </div>
+          <div id="numberDescrip">
+            clientes Felizes
+          </div>
         </div>
-      </div>
-      <div class="flex-column">
-        <div id="numberIcon">
-          <i class="far fa-heart"></i>
-          200
-        </div>
-        <div id="numberDescrip">
-          clientes Felizes
-        </div>
-      </div>
-      <div class="flex-column">
-        <div id="numberIcon">
-          <i class="far fa-clock"></i>
-          10
-        </div>
-        <div id="numberDescrip">
-          Anos de Experiência
+        <div class="flex-column">
+          <div id="numberIcon">
+            <i class="far fa-clock"></i>
+            10
+          </div>
+          <div id="numberDescrip">
+            Anos de Experiência
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- TESTIMONIALS -->
-  <div class="section">
-    <h2>Testemunhos<hr class="line2"></h2>
-    <div class="flex-wrap flex-center" id="testimonials">
+  <div class="section" id="secTestimonials">
+    <div class="container">
+      <h2>Testemunhos
+        <hr class="line2">
+      </h2>
+      <div class="flex-wrap flex-center" id="testimonials">
         <div class="flex-column" id="imgTestimon">
-          <img src="img/marco.jpg">
-          <h5>Marco Rocha</h5>
+          <img src="img/alberto.jpg">
+          <h5>Alberto Santos</h5>
         </div>
         <div id="textTestimon">
-          <p><b>"</b> Este curso foi o melhor que já fiz, super completo, com um preço incrivel<b>"</b></p>
+          <div id="quot"><img src="img/quot.png" width="38" height="38"></div>
+          <p> A total disrupção do paradigma da programação. Um curso em que todos deveriam apostar.</p>
+          <div id="quot2"><img src="img/quot2.png" width="38" height="38">
+          </div>
           <div class="flex-center" id="ratingTestimon">
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
@@ -138,6 +154,7 @@
             <span class="fa fa-star checked"></span>
           </div>
         </div>
+      </div>
     </div>
   </div>
 
@@ -147,8 +164,8 @@
     <div class="flex-wrap flex-around" id="footerContainer">
       <div class="flex-column" id="informatContainer">
         <h3 id="footerTitle">ExplicaFeup</h3>
-        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA" target="_blank"
-            id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
+        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA"
+            target="_blank" id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
         <p id="inf"><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
         <p id="inf"><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
             id="email">explicaFeup@example.com </a></p>

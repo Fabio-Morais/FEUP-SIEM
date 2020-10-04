@@ -14,6 +14,9 @@
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!--JQUERY for some web logic-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700">
+  <!--Google font-->
 
 </head>
 
@@ -46,42 +49,43 @@
     <h1>Cursos</h1>
   </div>
 
-  <!-- ABOUT -->
-  <div class="section no-margin">
-    <div class="flex-wrap flex-around">
-      <div class="full-bar">
-        <div class="flex-nowrap">
-          <select class="select-css">
-            <option value="all">All</option>
-            <option value="red">C/C++</option>
-            <option value="green">Java</option>
-            <option value="blue">Blue</option>
-          </select>
+  <!-- COURSES -->
+  <div class="section" id="secCourses">
+    <div class="container no-margin">
+      <div class="flex-wrap flex-around">
+        <div class="full-bar">
+          <div class="flex-nowrap">
+            <select class="select-css">
+              <option value="all">All</option>
+              <option value="red">C/C++</option>
+              <option value="green">Java</option>
+              <option value="blue">Blue</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="course" class="all red box">
+          <div id="imgBorder"><img src="img/fabio2.jpeg" id="imgCourse"></div>
+          <h4>Fábio Morais</h4>
+          <p>Instrutor C/C++ e Java</p>
+        </div>
+        <div id="course" class="all green box">
+          <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
+          <h4>Marco Berg</h4>
+          <p>Instrutor de Web Development</p>
+        </div>
+        <div id="course" class="all green box">
+          <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
+          <h4>Marco Berg</h4>
+          <p>Instrutor de Web Development</p>
+        </div>
+        <div id="course" class="all green box">
+          <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
+          <h4>Marco Berg</h4>
+          <p>Instrutor de Web Development</p>
         </div>
       </div>
-
-      <div id="course" class="all red box">
-        <div id="imgBorder"><img src="img/fabio2.jpeg" id="imgCourse"></div>
-        <h4>Fábio Morais</h4>
-        <p>Instrutor C/C++ e Java</p>
-      </div>
-      <div id="course" class="all green box">
-        <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
-        <h4>Marco Berg</h4>
-        <p>Instrutor de Web Development</p>
-      </div>
-      <div id="course" class="all green box">
-        <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
-        <h4>Marco Berg</h4>
-        <p>Instrutor de Web Development</p>
-      </div>
-      <div id="course" class="all green box">
-        <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
-        <h4>Marco Berg</h4>
-        <p>Instrutor de Web Development</p>
-      </div>
     </div>
-  </div>
   </div>
 
 
@@ -91,8 +95,8 @@
     <div class="flex-wrap flex-around" id="footerContainer">
       <div class="flex-column" id="informatContainer">
         <h3 id="footerTitle">ExplicaFeup</h3>
-        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA" target="_blank"
-            id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
+        <p id="inf"><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA"
+            target="_blank" id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
         <p id="inf"><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
         <p id="inf"><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
             id="email">explicaFeup@example.com </a></p>

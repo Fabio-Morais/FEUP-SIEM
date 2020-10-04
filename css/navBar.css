@@ -26,7 +26,7 @@
     text-decoration:none;
     color:#4CAF50
 }
-@media only screen and (min-width: 848px) {
+@media only screen and (min-width: 908px) {
     #elemnt {
         float: right;
         color: #666;
@@ -44,7 +44,7 @@
         display: none;
     }
 }
-@media only screen and (max-width: 848px) {
+@media only screen and (max-width: 908px) {
     #elemnt {
         display: none;
     }
