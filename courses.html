@@ -17,7 +17,6 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700">
   <!--Google font-->
-
 </head>
 
 <body>
@@ -52,42 +51,236 @@
   <!-- COURSES -->
   <div class="section" id="secCourses">
     <div class="container no-margin">
-      <div class="flex-wrap flex-around">
+      <div class="flex-wrap flex-between flex-center" id="courseBox">
         <div class="full-bar">
           <div class="flex-nowrap">
             <select class="select-css">
               <option value="all">All</option>
-              <option value="red">C/C++</option>
-              <option value="green">Java</option>
-              <option value="blue">Blue</option>
+              <option value="soft">Software</option>
+              <option value="web">Web</option>
+              <option value="ml">Machine Learning</option>
             </select>
           </div>
         </div>
 
-        <div id="course" class="all red box">
-          <div id="imgBorder"><img src="img/fabio2.jpeg" id="imgCourse"></div>
-          <h4>Fábio Morais</h4>
-          <p>Instrutor C/C++ e Java</p>
+        <div id="course" class="all soft box">
+          <div id="imgBorder"><img src="img/courses/c++.png" id="imgCourse"></div>
+          <h4>C/C++</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id01').style.display='block'" class="buttonCourses buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
         </div>
-        <div id="course" class="all green box">
-          <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
-          <h4>Marco Berg</h4>
-          <p>Instrutor de Web Development</p>
+        <div id="course" class="all soft box">
+          <div id="imgBorder"><img src="img/courses/java2.png" id="imgCourse"></div>
+          <h4>Java</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id02').style.display='block'" class="buttonCourses buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
         </div>
-        <div id="course" class="all green box">
-          <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
-          <h4>Marco Berg</h4>
-          <p>Instrutor de Web Development</p>
+
+        <div id="course" class="all soft box">
+          <div id="imgBorder"><img src="img/courses/python.jpg" id="imgCourse"></div>
+          <h4>Python</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id03').style.display='block'" class="buttonCourses buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
         </div>
-        <div id="course" class="all green box">
-          <div id="imgBorder"><img src="img/marco.jpg" id="imgCourse"></div>
-          <h4>Marco Berg</h4>
-          <p>Instrutor de Web Development</p>
+        <div id="course" class="all web box">
+          <div id="imgBorder"><img src="img/courses/web.png" id="imgCourse"></div>
+          <h4>Web Development</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id04').style.display='block'" class="buttonCourses buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <div id="course" class="all web box">
+          <div id="imgBorder"><img src="img/courses/apis.png" id="imgCourse"></div>
+          <h4>Web APIs</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id05').style.display='block'" class="buttonCourses buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <div id="course" class="all ml box">
+          <div id="imgBorder"><img src="img/courses/math.jpg" id="imgCourse"></div>
+          <h4>Matemática</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id06').style.display='block'" class="buttonCourses buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <div id="course" class="all ml box">
+          <div id="imgBorder"><img src="img/courses/ml.png" id="imgCourse"></div>
+          <h4>Machine Learning</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id07').style.display='block'" class="buttonCourses buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+
+  <div id="id01" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="c">
+        <h2>C/C++</h2>
+        <hr class="line3">
+        <ol>
+          <li> Programação em C e Metodologias de Desenvolvimento</li><br>
+          <li>Programação de baixo-nível</li><br>
+          <li>Conceitos Fundamentais de Algoritmia</li><br>
+          <li>Estruturas de dados</li><br>
+          <li>Programação orientada por objetos em C++</li>
+        </ol> 
+      
+      </div>
+    </div>
+  </div>
+  <div id="id02" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="c">
+        <h2>Java</h2>
+        <hr class="line3">
+        <ol>
+          <li><b>Linguagem JAVA + Programação Orientada por Objectos:</b> sintaxe, conceitos, classes, coleções, genéricos, SWING, I/O, Concorrência.  
+          </li>
+          <br>
+          <li><b>Linguagem de modelação UML:</b> conceitos gerais de modelação, diagramas de classes, estados e sequencia. Outros diagramas.
+          </li><br>
+          <li><b>Processos de Desenvolvimento de Software:</b> conceitos, metodologias, fases, práticas, ferramentas, artefactos, tecnologias emergentes.
+          </li>
+        </ol> 
+      
+      </div>
+    </div>
+  </div>
+  <div id="id03" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="c">
+        <h2>Python</h2>
+        <hr class="line3">
+        <ol>
+          <li>Coffee</li>
+          <ol type="a">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+          </ol> 
+          <li>Tea</li>
+          <li>Milk</li>
+        </ol> 
+      
+      </div>
+    </div>
+  </div>
+  <div id="id04" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="c">
+        <h2>Web Development</h2>
+        <hr class="line3">
+        <ol>
+          <li><b>Bases de Dados:</b> modelação de dados em UML, modelo relacional, linguagem SQL.</li><br>
+          <li><b>Linguagens e Tecnologias Web: </b>protocolo HTTP, linguagens HTML, CSS e JavaScript</li><br>
+          <li><b>APIs: </b>Utilização de frameworks e API de acesso a dados</li><br>
+          <li><b>PHP: </b>Principios básicos</li><br>
+          <li><b>Wordpress: </b>Introdução ao desenvolvimento de websites através do wordpress</li>
+        </ol> 
+      
+      </div>
+    </div>
+  </div>
+  <div id="id05" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="c">
+        <h2>Web APIs</h2>
+        <hr class="line3">
+        <ol>
+          <li>Introdução ao .NET CORE
+          </li><br>
+          <li>Construção de uma Web API (CRUD Completo)
+          </li><br>
+          <li>Publicação no Windows Azure
+          </li><br>
+          <li>Arquitetura MVC
+          </li><br>
+          <li>Criação de página de Help para Web API utilizando Swagger.
+          </li>
+        </ol> 
+      
+      </div>
+    </div>
+  </div>
+  <div id="id06" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="c">
+        <h2>Matematica</h2>
+        <hr class="line3">
+        <ol>
+          <li><b>ESTATÍSTICA DESCRITIVA:</b> Tipos de Dados e Escalas. Caracterização e Representação de Dados Categóricos, Quantitativos e Bivariados.</li><br>
+          <li><b>PROBABILIDADES:</b> Experiências aleatórias, Espaços Amostrais e Acontecimentos. Probabilidade, Probabilidade Condicional e Acontecimentos Independentes. Teoremas da Probabilidade Total e de Bayes.
+          </li><br>
+          <li><b>VARIÁVEIS ALEATÓRIAS E DISTRIBUIÇÕES DE PROBABILIDADE:</b> Variáveis Aleatórias. Variáveis Aleatórias Discretas e Contínuas. Função de Probabilidade, de Densidade de Probabilidade e de Distribuição.
+          </li><br>
+          <li><b>PRINCIPAIS DISTRIBUIÇÕES DISCRETAS e CONTÍNUAS:</b> Distribuições Binomial, Binomial Negativa, Hipergeométrica e Poisson.
+          </li>
+
+        </ol> 
+      
+      </div>
+    </div>
+  </div>
+  <div id="id07" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id07').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="c">
+        <h2>Machine Learning</h2>
+        <hr class="line3">
+        <ol>
+          <li>Introdução à área: o que é machine learning atualmente
+          </li><br>
+          <li>Modelos simples de classificação e regressão (modelos lineares e de vizinho mais próximo) e a sua validação: paradigmas de aprendizagem, funções de perda, erro de viés e de variância.
+          </li><br>
+          <li>Métodos de inferência de modelos: Procura, Expectation-maximization, agregação.
+          </li><br>
+          <li>Redes neuronais, modelos deep e aprendizagem de representação
+          </li>
+        </ol> 
+      
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <div class="footer">
@@ -119,17 +312,17 @@
     $(document).ready(function () {
       $("select").change(function () {
         $("select option:selected").each(function () {
-          if ($(this).attr("value") == "red") {
+          if ($(this).attr("value") == "soft") {
             $(".box").hide();
-            $(".red").show();
+            $(".soft").show();
           }
-          if ($(this).attr("value") == "green") {
+          if ($(this).attr("value") == "web") {
             $(".box").hide();
-            $(".green").show();
+            $(".web").show();
           }
-          if ($(this).attr("value") == "blue") {
+          if ($(this).attr("value") == "ml") {
             $(".box").hide();
-            $(".blue").show();
+            $(".ml").show();
           }
           if ($(this).attr("value") == "all") {
             $(".box").hide();
@@ -138,6 +331,8 @@
         });
       }).change();
     });
+
+    
   </script>
 </body>
 

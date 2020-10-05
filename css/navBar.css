@@ -18,13 +18,14 @@
 
 }
 #explic{
-    font-size: 30px;
+    font-size: 32px;
     margin:0px;
-    margin-top: 0.5em;
-    margin-left: 0.5em;
+    margin-top: 0.3em;
+    margin-left: 0.3em;
     float: left;
     text-decoration:none;
-    color:#4CAF50
+    color:#457B9D;
+    font-family: "Open Sans";
 }
 @media only screen and (min-width: 908px) {
     #elemnt {
@@ -111,5 +112,5 @@
 }
  .active {
     color: red;
-    background-color: #4CAF50;
+    background-color: #457b9d38;
 }
