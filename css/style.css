@@ -10,8 +10,8 @@ html, body {
 
 .section {
   background-color: olivedrab;
-  padding-top: 3.5em;
-  padding-bottom: 9em;
+  padding-top: 5.5em;
+  padding-bottom: 8em;
 }
 /*      Backgrounds     */
 #secSponsor{
@@ -23,7 +23,6 @@ html, body {
 }
 #secServices{
   background-color: rgba(24, 23, 23, 0.842);
-  background-image: url("../img/background/2543.jpg");
   background-image: linear-gradient(to bottom, rgba(14, 13, 13, 0.884) 0%,rgba(19, 18, 18, 0.897) 100%), url("../img/background/25422.jpg");
   background-position: center;
   background-size: cover;
@@ -32,16 +31,18 @@ html, body {
   background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgb(223, 223, 223) 100%);
 }
 #secTestimonials{
-  background-image: url("../img/background/2543.jpg");
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.842) 0%,rgba(19, 18, 18, 0.445) 100%), url("../img/background/18106017.jpg");
   background-position: center;
   background-size: cover;
 }
 #secAbout{
-  background-color: rgb(119, 68, 111);
+  background-color: white;
 }
 #secInstruct{
-  background-color: rgb(12, 182, 21);
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255) 5%,rgba(7, 7, 7, 0.589) 100%), url("../img/background/25372.jpg");
+  background-position: bottom;
+  background-size: cover;
+
 }
 #secSchedule{
   background-color: rgb(15, 29, 155);
@@ -54,6 +55,13 @@ html, body {
 }
 #secForms{
   background-color: rgb(95, 97, 80);
+}
+
+/*    BACKGROUNDS HEADERS     */
+#about{
+  background-image: linear-gradient(to bottom, #a8dadc3d 0%,#f1faeede 100%), url("../img/background/19007.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 
@@ -86,12 +94,14 @@ p{
 }
 
 .headSecu > h1{
-  border: 3px solid #740a54;
   text-align: center;
-  margin-top: 2em;
+  padding-top: 1em;
   font-family:"Noto Sans JP","Roboto";
   font-weight: 700;
-  font-size: 3em;
+  font-size: 72px;
+  color: #1D3557;
+  text-shadow: 1px 2px #457B9D;
+
 }
 
 #sloganContainer > h2{
@@ -153,7 +163,7 @@ p{
 }
 
 #instruct h4{
-  font-size: 22px;
+  font-size: 24px;
   margin: 0.8em;
   padding: 0px;
   margin-top: 0.4em;
@@ -162,8 +172,8 @@ p{
 
 #instruct p{
   margin: 0px;
-  padding: 0px;
-  font-size: 14px;
+  padding: 0px 5px;
+  font-size: 16px;
   margin-bottom: 1.3em;
 
 }
@@ -181,11 +191,12 @@ p{
   padding-bottom: 0.3em;
 }
 
-#informatContainer p{
+#informatContainer > p{
   text-align: left;
   font-size: 16px;
   font-weight: normal;
   margin-top: 0em;
+  margin-bottom: 0.4em;
 }
 
 #course h4{
@@ -222,15 +233,18 @@ p{
 
 #textAbout p {
   line-height: 1.4em;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Roboto";
   padding: 0em 1.5em;
   text-align: justify;
+
 }
 #textAbout h4{
   line-height: normal;
-  font-size: 28px;
+  font-size: 42px;
   font-family: "Open Sans";
+  margin-bottom: 1em;
+  margin-top: 0.5em;
 }
 
 .head{
@@ -243,8 +257,7 @@ p{
 .headSecu{
   background-color: #ddd;
   width: auto;
-  min-height: 50%;
-  border: 3px solid #0f0404;
+  min-height: 35%;
 }
 
 
@@ -430,21 +443,23 @@ p{
 }
 #instruct {
   background-color: #f1f1f1;
-  width: 19em;
-  height: 23em;
+  width: 21em;
+  height: 25.5em;
   margin: 10px;
   text-align: center;
-  border: 0.01em solid #000000;
+  box-shadow: 2px 2px 8px 4px #f1faee4f;
+  border: 1px solid black;
 }
 
 #instruct:hover{
-  background-color: red;
+  transform: scale(1.02);
+  box-shadow: 2px 2px 8px 4px #00000098;
+  border: 0px solid black;
 }
 
 #imgBorder > #imgInstruct{
   width: 100%;
-  height: 15em;
-  border: 1px solid #d41212;
+  height: 17em;
 
 }
 
@@ -622,11 +637,12 @@ p{
 #service{
   background-color: none;
   margin: 0;
-  width: 14em;
+  width: 17em;
 }
 #service > div{
   margin: 0;
   width: 7.5em;
+  height: 7em;
   margin: auto;
   margin-top: 0;
   margin-bottom: 0;
@@ -639,7 +655,7 @@ p{
 }
 #service > p{
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
   width: auto;
   font-family: "Roboto";
@@ -649,38 +665,41 @@ p{
 
 #service > h5{
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: 700;
   margin: 0;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 0.8em;
   width: auto;
   font-family: "Roboto";
   color: #A8DADC;
 }
 
 #imgAbout{
-  border: 3px solid #b7d31b;
   background-color: #f1f1f1;
-  width: 11em;
-  height: 10.5em;
+  width: 13em;
+  height: 12.5em;
   margin: 10px;
   text-align: center;
   line-height: 75px;
   font-size: 30px;
+  box-shadow: 2px 2px 8px 4px #00000059;
+
 }
 #imgAbout img{
   width: 100%;
   height: 100%;
-  border: 1px solid #000000;
 }
 #textAbout{
   background-color: #f1f1f1;
-  width: 15em;
+  width: 18em;
   margin: 10px;
   text-align: center;
   line-height: 75px;
   font-size: 30px;
-  margin-left: 3em;
+  margin-left: 8em;
+  box-shadow: 2px 2px 8px 4px #00000059;
+
 }
 
   /* Style the footer */
@@ -710,12 +729,15 @@ p{
 #informatContainer{
   width: 28em;  
 }
-#footerTitle{
+.footerTitle{
   margin-top:1em;
   margin-bottom: 0.5em;
   text-align: center;
   font-family: "Open Sans";
   font-size: 30px;
+}
+#titleSpec{
+  text-align: left;
 }
 
 #email{
@@ -994,9 +1016,6 @@ input[type=submit]:hover {
   #icons{
     margin-top:2em ;
   }
-  #instruct {
-    width: 10em;
-  }
   #imgInstruct {
     max-width: 100%;
     max-height: 100%;
@@ -1007,7 +1026,7 @@ input[type=submit]:hover {
   }
   #instruct {
       width: 14em;
-      height: 19em;
+      height: 21.5em;
       margin: 10px;
     }
     #textAbout{
@@ -1145,9 +1164,10 @@ input[type=submit]:hover {
 
 
 
-.mySlides {display: none;
-  width: 11em;
-  height: 8em;
+.mySlides {
+  display: none;
+  width: 13em;
+  height: 9em;
 
 }
 
@@ -1168,7 +1188,7 @@ input[type=submit]:hover {
 .text {
   color: #000000;
   font-family: "Roboto";
-  font-size: 18px;
+  font-size: 24px;
   padding: 0px;
   position: absolute;
   bottom: -15px;
@@ -1195,15 +1215,17 @@ input[type=submit]:hover {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: #A8DADC;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
-.active {
-  background-color: #717171;
+
+.activeDot{
+  background-color: #457B9D;
 }
+
 
 /* Fading animation */
 .fade {
