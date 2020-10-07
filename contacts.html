@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700">
+    href="https://fonts.googleapis.com/css?family=Roboto|Roboto:700|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700">
   <!--Google font-->
 
   <!--IMPORT MAP STUFF-->
@@ -49,7 +49,7 @@
     </div>
   </header>
 
-  <div class="headSecu" id="contacts2">
+  <div class="headSecu" id="contactsHead">
     <h1>Contactos</h1>
     <div class="flex-column " id="socMedContainer2">
       <div class="socialMedia flex-center">
@@ -67,6 +67,30 @@
       <div class="mapContainer">
         <div id="map"></div>
       </div>
+      <div class="flex-wrap flex-around" id="contacts">
+        <div id="contact">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Morada</h4>
+          <p>R. Dr. Roberto Frias, <br>4200-465 Porto</p>
+        </div>
+        <div id="contact">
+          <i class="fas fa-phone-alt"></i>
+          <h4>Telemóvel</h4>
+          <p>(+351) 926789452</p>
+        </div>
+        <div id="contact">
+          <i class="fas fa-envelope"></i>
+          <h4>Email</h4>
+          <p>explicaFeup@example.com</p>
+        </div>
+        <div id="contact">
+          <i class="fas fa-clock"></i>
+          <h4>Horário</h4>
+          <p><b>2ª a 6ª feira:</b> 10h - 18h</p>
+          <p><b>Sábados:</b> 10h - 13h</p>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -75,18 +99,18 @@
       <h2>Fala Connosco
         <hr class="line2">
       </h2>
-      <div class="flex-wrap flex-around" id="contactUs">
+      <div class="flex-wrap flex-around">
         <!--FORM-->
         <div class="flex-column" id="forms">
-          <div class="flex-wrap">
+          <div class="flex-column">
             <div class="col25" id="labelN">
               <label for="fname">Nome</label>
             </div>
             <div class="col75" id="form">
-              <input type="text" id="fname" name="name" placeholder="Your name..">
+              <input type="text" id="fname" name="name" placeholder="Nome..">
             </div>
           </div>
-          <div class="flex-wrap">
+          <div class="flex-column">
             <div class="col25" id="labelN">
               <label for="fname">Email</label>
             </div>
@@ -94,43 +118,15 @@
               <input type="email" id="fname" name="email" placeholder="Email..">
             </div>
           </div>
-          <div class="flex-wrap">
+          <div class="flex-column">
             <div class="col25" id="labelN">
               <label for="fname">Texto</label>
             </div>
             <div class="col75" id="form">
-              <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+              <textarea id="subject" name="subject" placeholder="Escreva alguma coisa.."></textarea>
             </div>
           </div>
-          <input type="submit" value="Submit">
-        </div>
-        <!--ICONS-->
-        <div class="flex-column " id="icons">
-          <div id="asd">
-            <div class="flex-nowrap flex-center" id="icon">
-              <span class="fa-stack" style="vertical-align: top;">
-                <i class="far fa-circle fa-stack-2x"></i>
-                <i class="fas fa-map-marker-alt fa-stack-1x "></i>
-              </span>
-              <h5>R. Dr. Roberto Frias,
-                4200-465 Porto</h5>
-            </div>
-            <div class="flex-nowrap flex-center" id="icon">
-              <span class="fa-stack" style="vertical-align: top;">
-                <i class="far fa-circle fa-stack-2x"></i>
-                <i class="fas fa-at fa-stack-1x"></i>
-              </span>
-              <h5>explicaFeup@example.com</h5>
-            </div>
-            <div class="flex-nowrap flex-center" id="icon">
-              <span class="fa-stack" style="vertical-align: top;">
-                <i class="far fa-circle fa-stack-2x"></i>
-                <i class="fas fa-phone-alt fa-stack-1x"></i>
-              </span>
-              <h5>(+351) 926789452</h5>
-            </div>
-          </div>
-
+          <input type="submit" class="button" value="Enviar">
         </div>
       </div>
     </div>
@@ -147,6 +143,13 @@
         <p><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
         <p><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
             id="email">explicaFeup@example.com </a></p>
+      </div>
+      <div class="flex-column" id="informatContainer">
+        <h3 class="footerTitle" id="titleSpec">Horário</h3>
+        <p>Segundas a sextas:</p>
+        <p id="hours"><b><i class="fas fa-caret-right"></i> 10:00 - 18:00</b></p>
+        <p>Sábados:</p>
+        <p id="hours"><b><i class="fas fa-caret-right"></i> 10:00 - 13:00</b></p>
       </div>
 
       <div class="flex-column" id="socMedContainer">

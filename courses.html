@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!--JQUERY for some web logic-->
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700">
+    href="https://fonts.googleapis.com/css?family=Roboto|Roboto:700|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700">
   <!--Google font-->
 </head>
 
@@ -44,7 +44,7 @@
   </header>
 
   <!-- HEAD -->
-  <div class="headSecu" id="about">
+  <div class="headSecu" id="courses">
     <h1>Cursos</h1>
   </div>
 
@@ -137,7 +137,7 @@
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
-      <div class="container" id="c">
+      <div class="container" id="modalContainer">
         <h2>C/C++</h2>
         <hr class="line3">
         <ol>
@@ -147,7 +147,9 @@
           <li>Estruturas de dados</li><br>
           <li>Programação orientada por objetos em C++</li>
         </ol> 
-      
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn button">Cancel</button>
       </div>
     </div>
   </div>
@@ -156,7 +158,7 @@
       <div class="imgcontainer">
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
-      <div class="container" id="c">
+      <div class="container" id="modalContainer">
         <h2>Java</h2>
         <hr class="line3">
         <ol>
@@ -167,8 +169,10 @@
           </li><br>
           <li><b>Processos de Desenvolvimento de Software:</b> conceitos, metodologias, fases, práticas, ferramentas, artefactos, tecnologias emergentes.
           </li>
-        </ol> 
-      
+        </ol>  
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn button">Cancel</button>
       </div>
     </div>
   </div>
@@ -177,20 +181,19 @@
       <div class="imgcontainer">
         <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
-      <div class="container" id="c">
+      <div class="container" id="modalContainer">
         <h2>Python</h2>
         <hr class="line3">
         <ol>
-          <li>Coffee</li>
-          <ol type="a">
-            <li>Coffee</li>
-            <li>Tea</li>
-            <li>Milk</li>
-          </ol> 
-          <li>Tea</li>
-          <li>Milk</li>
+          <li>Fundamentos da web com Python</li><br>
+          <li>Criar scripts em Python e a usar APIs para recolher e processar dados de milhares de páginas Web ao mesmo tempo.</li><br>
+          <li>Bibliotecas que vão lhe auxiliar nas tarefas de scraping como BeautifulSoup, LXML e Scrapy</li><br>
+          <li>Utilizar o Selenium WebDriver</li><br>
+          <li> criar programas para ler diversos tipos de documentos como CSV, PDF, DOCX, XLSX, JSON e ODT</li>
         </ol> 
-      
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn button">Cancel</button>
       </div>
     </div>
   </div>
@@ -199,7 +202,7 @@
       <div class="imgcontainer">
         <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
-      <div class="container" id="c">
+      <div class="container" id="modalContainer">
         <h2>Web Development</h2>
         <hr class="line3">
         <ol>
@@ -209,7 +212,9 @@
           <li><b>PHP: </b>Principios básicos</li><br>
           <li><b>Wordpress: </b>Introdução ao desenvolvimento de websites através do wordpress</li>
         </ol> 
-      
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn button">Cancel</button>
       </div>
     </div>
   </div>
@@ -218,7 +223,7 @@
       <div class="imgcontainer">
         <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
-      <div class="container" id="c">
+      <div class="container" id="modalContainer">
         <h2>Web APIs</h2>
         <hr class="line3">
         <ol>
@@ -233,7 +238,9 @@
           <li>Criação de página de Help para Web API utilizando Swagger.
           </li>
         </ol> 
-      
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn button">Cancel</button>
       </div>
     </div>
   </div>
@@ -242,7 +249,7 @@
       <div class="imgcontainer">
         <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
-      <div class="container" id="c">
+      <div class="container" id="modalContainer">
         <h2>Matematica</h2>
         <hr class="line3">
         <ol>
@@ -257,6 +264,9 @@
         </ol> 
       
       </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id06').style.display='none'" class="cancelbtn button">Cancel</button>
+      </div>
     </div>
   </div>
   <div id="id07" class="modal">
@@ -264,7 +274,7 @@
       <div class="imgcontainer">
         <span onclick="document.getElementById('id07').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
-      <div class="container" id="c">
+      <div class="container" id="modalContainer">
         <h2>Machine Learning</h2>
         <hr class="line3">
         <ol>
@@ -277,8 +287,12 @@
           <li>Redes neuronais, modelos deep e aprendizagem de representação
           </li>
         </ol> 
-      
+
       </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id07').style.display='none'" class="cancelbtn button">Fechar</button>
+      </div>
+
     </div>
   </div>
 
@@ -293,6 +307,13 @@
         <p><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
         <p><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
             id="email">explicaFeup@example.com </a></p>
+      </div>
+      <div class="flex-column" id="informatContainer">
+        <h3 class="footerTitle" id="titleSpec">Horário</h3>
+        <p>Segundas a sextas:</p>
+        <p id="hours"><b><i class="fas fa-caret-right"></i> 10:00 - 18:00</b></p>
+        <p>Sábados:</p>
+        <p id="hours"><b><i class="fas fa-caret-right"></i> 10:00 - 13:00</b></p>
       </div>
 
       <div class="flex-column" id="socMedContainer">

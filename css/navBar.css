@@ -18,9 +18,9 @@
 
 }
 #explic{
-    font-size: 32px;
+    font-size: 36px;
     margin:0px;
-    margin-top: 0.3em;
+    margin-top: 0.2em;
     margin-left: 0.3em;
     float: left;
     text-decoration:none;
@@ -31,11 +31,13 @@
     #elemnt {
         float: right;
         color: #666;
+        font-family: "Roboto";
+        font-weight: 500;
+        font-size: 20px;
         text-align: center;
         padding: 1em;
         margin-right: 36px;
         text-decoration: none;
-        border: 1px solid #d35050;
 
     }
     .dropbtn{
@@ -51,7 +53,7 @@
     }
     /* Style The Dropdown Button */
     .dropbtn {
-    background-color: #4CAF50;
+    background-color: #457B9D;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -66,7 +68,7 @@
     position: static;
     float:right;
     display: block;
-    margin-right: 3em;
+    margin-right: 5em;
     margin: auto;
 
   }
@@ -104,7 +106,7 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #457b9dd2;
   }
 }
 #elemnt:hover:not(.active) {
