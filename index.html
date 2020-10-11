@@ -8,12 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/navBar.css">
+  <link rel="stylesheet" href="css/responsiveStyle.css">
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--JQUERY for some web logic-->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto|Roboto:700|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700|Bree+Serif">
   <!--Google font-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </head>
 
@@ -40,6 +45,7 @@
       <a id="elemnt" href="about.html">Quem Somos</a>
     </div>
   </header>
+
   <!-- HEAD -->
   <div class="head" id="home">
     <div id="sloganContainer">
@@ -50,6 +56,38 @@
         <div id="btnAbout"><button class="button butText but" id="button1" onclick="window.location.href='about.html';">Sobre nós</button></div>
         <div id="btnCourses"><button class="button but butText" id="button2" onclick="window.location.href='courses.html';"><span
               class="butText">Cursos</span></button></div>
+      </div>
+    </div>
+  </div>
+  <!--MODAL INICIAL-->
+  <div id="id1" class="modal">
+    <div class="modal-content animate" id="initialContent">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id1').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="initModalCont">
+        <h2>Bem vindo ao ExplicaFeup</h2>
+        <hr class="line3">
+        <div class="flex-wrap flex-around">
+          <div class="flex-column" id="photoName">
+            <div id="photoBorder"><img src="img/fabio2.jpeg" id="photoInit"></div>
+            <h4>Fábio Morais</h4>
+          </div>
+          <div class="flex-column"  id="downloadButtons">
+            <p id="initialText">Trabalho realizado no âmbito da unidade curricular Sistemas de Informação Empresariais, pertencente ao plano de estudos do MIEEC da  FEUP.</p>
+            <p id="initialText"><b>Email: </b>up201504257@fe.up.pt</p>
+            <p id="initialText"><b>Browser preferencial: </b> Chrome</p>
+            <p id="initialText">Website otimizado e testado para resoluções até 1920 x 1080. <b>Testado para mobile</b></p>
+            <div class= "flex-wrap flex-around">
+              <div><a href="css/style.css" download><button class="button buttonRed" id="downloadButton" href="add-website-here" target="_blank" ><div class="flex-column"><i class="far fa-file-powerpoint"></i> Download ppt</div></button></a></div>
+              <div><button class="button buttonRed" id="downloadButton" href="add-website-here" target="_blank" ><div class="flex-column"><i class="far fa-file-code"></i> Download Website</div></button></div>
+              <div><button class="button buttonRed" id="downloadButton" href="add-website-here" target="_blank" ><div class="flex-column"><i class="fab fa-css3-alt"></i> Download CSS</div></button></div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id1').style.display='none'" class="cancelbtn button">Avançar</button>
       </div>
     </div>
   </div>
@@ -188,11 +226,27 @@
         </div>
       </div>
     </div>
+    <p id="btnPopUp"><a  onclick="document.getElementById('id1').style.display='block'" class="button">
+      Abrir pop-up</a></p>
     <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank"><b>Fábio Morais</b></a>
       SIEM 2020
     </p>
   </div>
+  <script>
+    /*mostra o modal apenas 1 vez*/
+    $(document).ready(function(){
+      var Modal = document.getElementById('id1'); 
+      var key = 'check',
+      hadModal = localStorage.getItem(key);
+      if (!hadModal) {
+          Modal.style.display = "block";
+          localStorage.setItem(key, true);
+      }
+    });
 
+    /*AOS.init();*/
+
+  </script>
 </body>
 
 </html>

@@ -1,8 +1,5 @@
-@keyframes example {
-  from {background-color: rgba(0, 0, 0, 0.126);}
-  to {background-color: rgba(255, 255, 254, 0.11);}
-}
 
+/*******************GERAIS***********************/
 html, body {
   height: 100%;
   margin: 0;
@@ -13,16 +10,125 @@ html, body {
   padding-top: 3em;
   padding-bottom: 9em;
 }
+
+/*******************PAGINA INICIAL***********************/
+
+
+
+
+/*******************QUEM SOMOS***********************/
+
+
+
+/*******************HORARIO***********************/
+
+
+
+/*******************CURSOS***********************/
+
+
+
+/*******************CONTACTOS***********************/
+
+
+
+
+/*******************NAV BAR***********************/
+
+
+
+/*******************MODAL***********************/
+
+
+
+/*******************ANIMAÇÕES***********************/
+@keyframes example {
+  from {background-color: rgba(0, 0, 0, 0.126);}
+  to {background-color: rgba(255, 255, 254, 0.11);}
+}
+
+
+#initialContent{
+  height: 38em;
+  margin:auto;
+}
+#initModalCont{
+  font-size: 18px;
+  color: #457B9D;
+  font-family: "Roboto";
+  height: 78%;
+}
+  #initModalCont > h2{
+    font-size: 48px;
+    margin-top: 0em;
+    margin-bottom: 0.11em;
+    color:#457B9D;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.445);
+    
+  }
+  #photoBorder{
+    width: 100%;
+    height: 12em;
+    margin:0;
+  }
+  #photoName{
+    width: 13em;
+    height: 16em;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 0.5em;
+    box-shadow: 0px 0px 4px 2px black;
+    margin: 0;
+  }
+    #photoName > h4{
+      font-size: 30px;
+      margin-top:0.8em;
+    }
+    #photoInit{
+      width: 100%;
+      height: 100%;
+    }
+    #initialText{
+      font-size: 18px;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    #downloadButtons{
+      width: 65%;
+      align-self: flex-end;
+
+    }
+      #downloadButtons > div > div{
+        height: 4em;
+        width: 8em;
+        margin-top: 1em;
+
+
+      }
+      #downloadButton{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        text-align: center;
+      }
+      #downloadButton:hover{
+        width: 108%;
+      }
+      #downloadButton > div{
+        font-size: 12px;
+      }
+      #downloadButton > div > i{
+        font-size: 24px;
+      }
+
 /*      Backgrounds     */
 #secSponsor{
   padding:0;
   margin: 0;
-}
-#secSponsor{
   background-color: rgb(255, 255, 255);
 }
 #secServices{
-  background-color: rgba(24, 23, 23, 0.842);
+  background-color: rgba(24, 23, 23, 0.842);/* fallback for older browsers that don't support gradients */
   background-image: linear-gradient(to bottom, rgba(14, 13, 13, 0.884) 0%,rgba(19, 18, 18, 0.897) 100%), url("../img/background/25422.jpg");
   background-position: center;
   background-size: cover;
@@ -137,7 +243,7 @@ p{
 .headSecu > h1{
   text-align: center;
   padding-top: 0.5em;
-  font-family:"Noto Sans JP","Roboto";
+  font-family:"Open Sans","Roboto";
   font-weight: 700;
   font-size: 72px;
   color: #1D3557;
@@ -189,7 +295,7 @@ p{
 #numberIcon{
   font-size: 42px;
   text-align: center;
-  font-family: "Noto Sans JP";
+  font-family: "Open Sans";
   color: #457B9D;
   font-weight: 600;
   margin-bottom: 0.5em;
@@ -227,11 +333,27 @@ p{
   margin-bottom: 0.5em;
 }
 
-.footer p{
+.footer > p{
   text-align: center;
   font-size: 0.9em;
-  margin-top: 5em;
+  margin-top: 1em;
   margin-bottom: 0.1em;
+}
+#btnPopUp{
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  width: 10em;
+  margin: auto;
+  margin-top: 4em;
+  padding: 5px;
+  border: 1px ridge #f1faee;
+}
+#btnPopUp:hover{
+  border: 1px ridge #e63946;
+  color: #e63946;
+  transform: scale(1.02);
+  transition: 0.5s;
 }
 
 #informatContainer > p{
@@ -1018,7 +1140,7 @@ label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
-input[type=submit] {
+.buttonRed {
   color: #F1FAEE;
   font-family: "Roboto";
   font-weight: 600;
@@ -1028,95 +1150,24 @@ input[type=submit] {
   border-radius: 5px;
   border: none;
   transition: all 0.4s ease 0s;
-  width: 10em;
-  margin: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 
-input[type=submit]:hover {
+.buttonRed:hover {
   background: #434343;
   letter-spacing: 2px;
   -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
   -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
   box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-  width: 11em;
   transition: all 0.4s ease 0s;
 }
-@media only screen and (max-width:1030px){
-  #sloganContainer{
-    width: 80%;
-  }
-  #sloganContainer > h2{
-      font-size: 48px;
-  }
-  
-  #sloganContainer > h3{
-    font-size: 36px;
-  }
+#submitButton{
+  width: 10em;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
-@media only screen and (max-width: 799px) {
-  #sloganContainer > h2{
-    font-size: 36px;
-  }
-
-  #sloganContainer > h3{
-    font-size: 24px;
-  }
-  #testimonials{
-    flex-direction: column-reverse;
-  }
-  #textTestimon{
-    margin: auto;
-  }
-  #imgTestimon > img{
-    width: 8em;
-    height: 8em;
-    margin:auto;
-  }
-}
-
-@media only screen and (max-width: 848px) {
-  #course {
-    margin: 1em;
-  }
-  #imgTestimon{
-    margin: auto;
-  }
-  
-  #imgInstruct {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  #imgBorder{
-      width: 100%;
-      height: 12.3em;
-  }
-  #instruct {
-      width: 14em;
-      height: 21.5em;
-      margin: 10px;
-    }
-    #textAbout{
-      margin-left:0em;
-      padding-left:0em;
-    }
-    #imgAbout{
-      margin:0em;
-      padding:0em;
-    }
-
-    .informatContainer{
-      margin:0em;
-      padding: 0em;
-    }
-    #socMedContainer{
-      margin:0;
-      padding: 0;
-    }
-    .schedule-warp{
-      margin-top: 1em;
-    }
+#submitButton:hover{
+  width: 11em;
 }
 
 
@@ -1307,10 +1358,7 @@ input[type=submit]:hover {
   to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
+
 
 
 
@@ -1436,14 +1484,3 @@ span.psw {
   }
 }
 
-/* Change styles for span and cancel button on extra small screens */
-
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-}
