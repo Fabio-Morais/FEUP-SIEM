@@ -1,16 +1,18 @@
-/** linha *************************************************/
-/* 12-169     Elementos Gerais                     */
-/* 171-2      Pagina Inicial                       */
-/*            Quem Somos                           */
-/*            Horário                              */
-/*            Cursos                               */
-/*            Horario                              */
-/*            Contactos                            */
-/*            Nav Bar                              */
-/*            Modal                                */
-/*            Aniamçoes                            */
-/*            Footer                               */
-/***************************************************/
+/****************************************************
+*                       INDICE                           
+** linha ********************************************
+* 12-169    * Elementos Gerais *                    *
+* 171-2     * Pagina Inicial *                      *
+*           * Quem Somos *                          *
+*           * Horário *                             *
+*           * Cursos *                              *
+*           * Horario *                             *
+*           * Contactos *                           *
+*           * Nav Bar *                             *
+*           * Modal *                               *
+*           * Aniamçoes *                           *
+*           * Footer *                              *
+***************************************************/
 
 
 /*************************************************ELEMENTOS GERAIS*****************************************************/
@@ -56,7 +58,6 @@ html, body {
     color: #1D3557;
     text-shadow: 1px 2px #457B9D;
     margin-bottom: 0em;
-
   }
 
 h1,h2,h3,h4,h5,h6{
@@ -186,15 +187,15 @@ p{
   background-attachment: fixed;
 }
 
-
 #sloganContainer{
   display:flex;
   flex-direction: column;
   width: 50%;
   text-align: center;
-  margin-top: 13em;
+  margin-top: 11em;
   margin-left: 4em;
   margin-bottom: 2em;
+
 }
   #sloganContainer > h3{
     margin-top: 0.2em;  
@@ -332,7 +333,7 @@ p{
   /*Box da imagem, titulo e paragrafo*/
   #service{
     background-color: none;
-    margin: 40px;
+    margin: 40px 20px;
     width: 20em;
   }
     /*box imagem*/
@@ -398,17 +399,16 @@ p{
   #testimonials{
     background-color: rgba(255, 251, 251, 0.911);
     max-width: 38em;
-    max-height: 30em;
     margin: auto;
     border: 3px solid #030303;
     box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.226);
+    
   }
 
     #imgTestimon{
       width: 11em;
       margin: auto;
-      margin-left: 0.4em;
-      margin-top: 0.5em;
+      margin-top: 10px
     }
       #imgTestimon > h5{
         text-align: center;
@@ -424,8 +424,10 @@ p{
       }
 
     #textTestimon{
-      margin-right: 1em;
       width: 23em;
+      margin: auto;
+      margin-top: 10px
+
     }
       #textTestimon p{
         font-size: 22px;
@@ -458,6 +460,7 @@ p{
         height: inherit;
         display: flex;
         font-size: 24px;
+        margin-bottom: 10px;
     }
       .checked {
         color: orange;
@@ -560,7 +563,7 @@ p{
     text-align: center;
     font-size: 30px;
     box-shadow: 2px 2px 8px 4px #00000059;
-    border: 1px solid #E63946;
+    border: 1px solid #e639478e;
 
   }
     #textAbout p {
@@ -661,7 +664,7 @@ p{
     .day-one{
       margin-bottom:50px;
       font-weight: bold;
-      font-size: 28px;
+      font-size: 32px;
       color: #fdfdfd;  
       text-align: center;  
       }
@@ -729,7 +732,7 @@ p{
     box-shadow: 0 6px 20px rgba(0,0,0,.07);
     border: solid 2px #1D3557;
     background-color: #ffffff88;
-
+    transition: all 1s;
   }
   .schedule-warp:hover .day-one{
     color:#1D3557
@@ -1105,7 +1108,6 @@ p{
 
 
 #initialContent{
-  height: 38em;
   margin:auto;
 }
 #initModalCont{
@@ -1113,6 +1115,7 @@ p{
   color: #457B9D;
   font-family: "Roboto";
   height: 78%;
+
 }
   #initModalCont > h2{
     font-size: 48px;
@@ -1122,11 +1125,7 @@ p{
     text-shadow: 1px 1px rgba(0, 0, 0, 0.445);
     
   }
-  #photoBorder{
-    width: 100%;
-    height: 12em;
-    margin:0;
-  }
+
   #photoName{
     width: 13em;
     height: 16em;
@@ -1134,7 +1133,14 @@ p{
     padding: 0.5em;
     box-shadow: 0px 0px 4px 2px black;
     margin: 0;
+    margin:5px
+
   }
+    #photoBorder{
+      width: 100%;
+      height: 12em;
+      margin:0;
+    }
     #photoName > h4{
       font-size: 30px;
       margin-top:0.8em;
@@ -1152,7 +1158,7 @@ p{
     #downloadButtons{
       width: 65%;
       align-self: flex-end;
-
+      margin:5px
     }
       .buttonRed {
         color: #F1FAEE;
@@ -1218,6 +1224,7 @@ p{
     /* Could be more or less, depending on screen size */
     border: 3px solid #1D3557;
     box-shadow: 0px 0px 10px 5px #00000038;
+
   }
     .imgcontainer {
       text-align: center;

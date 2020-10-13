@@ -15,9 +15,31 @@
   }
   .container > h2{
     font-size: 42px;
+    margin-bottom: 1em;
   }
   #explic {
     display: none;
+  }
+  /***********************PAGINA INICIAL**********************/
+  .head{
+    min-height: 600px;
+  }
+  #sloganContainer{
+    margin-top: 8em;
+  }
+  #testimonials {
+    flex-direction: column-reverse;
+  }
+  #textTestimon{
+    width: 90%;
+    margin: auto;
+    margin: 20px;
+  }
+  #imgTestimon> img{
+    display: none;
+  }
+  #imgTestimon {
+    width: 100%;
   }
   /***********************QUEM SOMOS**********************/
   .text {
@@ -81,6 +103,15 @@
   #contact > p {
     font-size: 16px;
   }
+  /***********************MODAL INCIAL**********************/
+
+  #id1{
+    padding:0;
+  }
+   #downloadButtons{
+    margin:auto;
+  }
+
   /***********************CURSOS MODAL**********************/
   #modalContainer {
     font-size: 10px!important;
@@ -112,7 +143,9 @@
 }
 
 @media only screen and (min-width: 500px) {
-  @media only screen and (max-width: 799px) {
+  @media only screen and (max-width: 848px) {
+
+
     #sloganContainer>h2 {
       font-size: 36px;
     }
@@ -125,22 +158,26 @@
     #textTestimon {
       margin: auto;
     }
-    #imgTestimon>img {
-      width: 8em;
-      height: 8em;
-      margin: auto;
+     /***********************MODAL INICIAL**********************/
+
+    #id1{
+      padding:0;
     }
+     #downloadButtons{
+      margin:auto;
+    }
+
     /***********************CURSOS MODAL**********************/
     #modalContainer>h2 {
       font-size: 32px!important;
     }
-  }
-}
-
-@media only screen and (max-width: 848px) {
+  
   /***********************PAGINA INICIAL**********************/
-  #imgTestimon {
-    margin: auto;
+  .head{
+    min-height: 650px;
+  }
+  #sloganContainer{
+      margin-top: 8em;
   }
   #imgBorder {
     width: 100%;
@@ -186,6 +223,7 @@
     #informatContainer > p{
       text-align: center;
     }
+}
 }
 
 @media only screen and (max-width: 998px) {
@@ -253,4 +291,32 @@
   #sloganContainer>h3 {
     font-size: 36px;
   }
+
+}
+/*Para os serviços, ficarem com melhor aspeto em outras resoluçoes
+*/
+@media only screen and (max-width:1400px) {
+  #initialContent{
+    width: 95%;
+  }
+  #initModalCont{
+    width: 98%;
+  }
+  #downloadButtons{
+    margin:auto;
+  }
+  #initialContent{
+    margin:auto;
+  }
+  #service{
+    width: 15em;
+    }
+}
+@media only screen and (min-width:1400px) {
+@media only screen and (max-width:1444px) {
+  #initialContent{
+    width: 80%;
+  }
+
+}
 }

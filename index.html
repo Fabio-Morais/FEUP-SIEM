@@ -237,7 +237,7 @@
       var Modal = document.getElementById('id1'); 
       var key = 'check',
       hadModal = localStorage.getItem(key);
-      if (!hadModal) {
+      if (hadModal) {
           Modal.style.display = "block";
           localStorage.setItem(key, true);
       }
