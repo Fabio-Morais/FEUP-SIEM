@@ -7,7 +7,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/navBar.css">
   <link rel="stylesheet" href="css/responsiveStyle.css">
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -53,8 +52,8 @@
       <hr class="line1">
       <h3>Aprende ao teu ritmo</h3>
       <div class="container2">
-        <div id="btnAbout"><button class="button butText but" id="button1" onclick="window.location.href='about.html';">Sobre nós</button></div>
-        <div id="btnCourses"><button class="button but butText" id="button2" onclick="window.location.href='courses.html';"><span
+        <div id="btnAbout"><button class="button butText" id="button1" onclick="window.location.href='about.html';">Sobre nós</button></div>
+        <div id="btnCourses"><button class="button butText" id="button2" onclick="window.location.href='courses.html';"><span
               class="butText">Cursos</span></button></div>
       </div>
     </div>
@@ -70,7 +69,7 @@
         <hr class="line3">
         <div class="flex-wrap flex-around">
           <div class="flex-column" id="photoName">
-            <div id="photoBorder"><img src="img/fabio2.jpeg" id="photoInit"></div>
+            <div id="photoBorder"><img src="img/fabio.jpeg" id="photoInit"></div>
             <h4>Fábio Morais</h4>
           </div>
           <div class="flex-column"  id="downloadButtons">
@@ -116,13 +115,13 @@
           <h5>Certificado</h5>
           <p>Todos os cursos inclui um certificado</p>
         </div>
-        <div id="service">
+        <div class="flex-column" id="service">
           <div><img src="img/services/classes2.png"></div>
           <h5>Online ou presencial</h5>
           <p>Podes escolher entre ter aulas online ou presenciais</p>
 
         </div>
-        <div id="service">
+        <div class="flex-column" id="service">
           <div><img src="img/services/job2.png"></div>
           <h5>Emprego garantido</h5>
           <p>No final dos cursos tens oportunidades de integrar numa empresa parceira</p>
@@ -130,7 +129,7 @@
       </div>
     </div>
   </div>
-
+  
   <!-- NUMBERS -->
   <div class="section" id="secNumbers">
     <div class="container">
@@ -138,7 +137,7 @@
         <hr class="line2">
       </h2>
       <div class="flex-wrap flex-around">
-        <div class="flex-column">
+        <div class="flex-column" id="numberContainer">
           <div id="numberIcon">
             <i class="fas fa-laptop"></i>
             10
@@ -147,7 +146,7 @@
             Cursos
           </div>
         </div>
-        <div class="flex-column">
+        <div class="flex-column" id="numberContainer">
           <div id="numberIcon">
             <i class="far fa-heart"></i>
             200
@@ -156,7 +155,7 @@
             Clientes Felizes
           </div>
         </div>
-        <div class="flex-column">
+        <div class="flex-column" id="numberContainer">
           <div id="numberIcon">
             <i class="far fa-clock"></i>
             10
@@ -217,7 +216,7 @@
         <p id="hours"><b><i class="fas fa-caret-right"></i> 10:00 - 13:00</b></p>
       </div>
 
-      <div class="flex-column" id="socMedContainer">
+      <div class="flex-column" id="informatContainer">
         <h3 class="footerTitle">Redes Sociais</h3>
         <div class="socialMedia">
           <a href="#" id="social" class="fa fa-facebook"></a>
