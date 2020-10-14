@@ -108,7 +108,7 @@
   #id1{
     padding:0;
   }
-   #downloadButtons{
+   .buttonRed{
     margin:auto;
   }
 
@@ -145,7 +145,6 @@
 @media only screen and (min-width: 500px) {
   @media only screen and (max-width: 848px) {
 
-
     #sloganContainer>h2 {
       font-size: 36px;
     }
@@ -163,7 +162,7 @@
     #id1{
       padding:0;
     }
-     #downloadButtons{
+     .buttonRed{
       margin:auto;
     }
 
@@ -182,6 +181,9 @@
   #imgBorder {
     width: 100%;
     height: 12.3em;
+  }
+  #numbers{
+    flex-wrap: wrap;
   }
   /***********************QUEM SOMOS**********************/
   /*Instrutores*/
@@ -223,10 +225,17 @@
     #informatContainer > p{
       text-align: center;
     }
+    
 }
 }
 
 @media only screen and (max-width: 998px) {
+  /*************Pagina inicial******************/
+  #services{
+    flex-wrap: wrap;
+  }
+
+  /******************Nav Bar********************/
   #elemnt {
     display: none;
   }
@@ -279,6 +288,7 @@
   .dropdown:hover .dropbtn {
     background-color: #457b9dd2;
   }
+
 }
 
 @media only screen and (max-width:1030px) {
@@ -291,31 +301,45 @@
   #sloganContainer>h3 {
     font-size: 36px;
   }
-
+  #footerContainer{
+    flex-wrap: wrap;
+  }
+  #informatContainer{
+    margin: 10px 30px;
+  }
+}
+@media only screen and (max-width:1230px) {
+  #contacts{
+    flex-wrap: wrap;
+  }
+  #contact{
+    margin: 28px;
+  }
+  
 }
 /*Para os serviços, ficarem com melhor aspeto em outras resoluçoes
 */
 @media only screen and (max-width:1400px) {
   #initialContent{
     width: 95%;
+
   }
   #initModalCont{
     width: 98%;
   }
-  #downloadButtons{
+  .buttonRed{
     margin:auto;
   }
-  #initialContent{
-    margin:auto;
-  }
+
   #service{
-    width: 15em;
+    /*width: 15em;*/
     }
 }
 @media only screen and (min-width:1400px) {
-@media only screen and (max-width:1444px) {
+@media only screen and (max-width:1450px) {
   #initialContent{
     width: 80%;
+
   }
 
 }

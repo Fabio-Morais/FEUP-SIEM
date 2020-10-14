@@ -74,21 +74,23 @@ p{
 }
 /*  Linhas a sublinhar <hx>  */
 .line1{
-  border: 2px solid #E63946;
+  background: #E63946;
   width: 20%;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  height: 5px;
+  margin: 15px auto;
 }
 .line2{
-  border: 3px solid #E63946;
+  background: #E63946;
+  height: 4px;
   width: 1.5em;
-  margin-top: 0.1em;
+  margin: 15px auto;
 }
 .line3{
-  border: 2px solid #E63946;
-  width: 7em;
-  margin-top: 0em;
-  margin-bottom: 3em;
+  background: #E63946;
+  height: 4px;
+  width: 5em;
+  margin: 15px auto;
+  margin-bottom: 45px;
 }
 /*  Social media  */
 .fa-facebook {background: #3B5998;color: white;}
@@ -213,16 +215,14 @@ p{
     color: #F1FAEE;
   }
   .container2{
-    width: 65%;
+    width: 70%;
     margin:auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1em;
+    margin: 10px auto;
   }
-    #btnAbout{
-      width: 12em;
-    }
+
 
       .butText{
         text-align: center;
@@ -236,6 +236,8 @@ p{
         background-color: #4CAF50;
         border: 2px solid #000000;
         font-size: 24px;
+        margin: 10px;
+
       }
 
       #button1:hover {
@@ -251,18 +253,17 @@ p{
         transform: translateY(2px);
       }
 
-    #btnCourses{
-      width: 12em;
-      margin-top: 4px;
-    }
+
 
       #button2{
-        background-color: #f4511e;
+        background-color: #e639477c;
         color: #FFFFFF;
         transition: all 0.5s;
         border: 0;
-        opacity: 0.4;
-
+        opacity: 0.7;
+        border: 2px solid #e639475b;
+        font-size: 24px;
+        margin: 10px 0px;
       }
 
       #button2 > span {
@@ -314,6 +315,7 @@ p{
     #sponsors > #sponsor:hover {
       opacity: 1;
       transform: scale(1.05);
+      transition: all 0.2s;
     }
       /*imagens*/    
       #sponsor > img{
@@ -333,12 +335,13 @@ p{
   /*Box da imagem, titulo e paragrafo*/
   #service{
     background-color: none;
-    margin: 40px 20px;
+    margin: 40px 35px;
     width: 20em;
   }
     /*box imagem*/
     #service > div{
       width: 7.5em;
+      min-width: 5em;
       height: 7em;
       margin: 0 auto;
     }/*Imagem*/
@@ -369,19 +372,28 @@ p{
       background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgb(223, 223, 223) 100%);
 }
   #numberContainer{
-    margin: 20px;
+    margin: 22px;
     width: 18em;
   }
     #numberIcon{
-      font-size: 42px;
-      text-align: center;
-      font-family: "Open Sans";
+      
       color: #457B9D;
       font-weight: 600;
       margin-bottom: 0.5em;
     }
       #numberIcon > i{
         font-size: 42px;
+        margin:auto ;
+        margin-right:5px;
+
+      }
+      #numberIcon > h5{
+        font-size: 42px;
+        text-align: center;
+        font-family: "Open Sans";
+        margin:auto; 
+        margin-left:5px;
+
       }
     #numberDescrip{
       font-size: 30px;
@@ -601,6 +613,7 @@ p{
   transform: scale(1.02);
   box-shadow: 2px 2px 8px 4px #00000098;
   border: 0px solid black;
+  transition: all 0.3s;
 }
   #instruct h4{
     font-size: 24px;
@@ -827,7 +840,7 @@ p{
           box-shadow: 2px 2px 8px 4px #0000004f;
           transform: scale(1.02);
           border: 0px solid #000000;
-          transition: 0.2s;
+          transition: all 0.2s;
   }
     #course > #imgBorder{
       width: 100%;
@@ -877,7 +890,7 @@ p{
         transition: background-position 0.6s;
         background-position: -99% 0;
         color: #F1FAEE;
-        transition: 0.5s;
+        transition: all 0.5s;
       }
 /****************************************************************CONTACTOS********************************************************************/
 #contactsHead{
@@ -925,12 +938,11 @@ p{
   #contact{
     background-color: rgb(223, 223, 223);
     width: 15em;
-    height: 12em;
-    margin: 10px;
+    height: auto;
+    margin: 15px;
     padding: 10px;
     text-align: center;
     box-shadow: 0px 0px 10px 5px #00000038;
-
   }
     #contact > i {
       font-size: 42px;
@@ -1107,9 +1119,7 @@ p{
 /*********************  MODAL INICIAL ******************************/
 
 
-#initialContent{
-  margin:auto;
-}
+
 #initModalCont{
   font-size: 18px;
   color: #457B9D;
@@ -1160,6 +1170,9 @@ p{
       align-self: flex-end;
       margin:5px
     }
+      #downloadButton{
+        margin:13px;
+      }
       .buttonRed {
         color: #F1FAEE;
         font-family: "Roboto";
@@ -1170,6 +1183,10 @@ p{
         border-radius: 5px;
         border: none;
         transition: all 0.4s ease 0s;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        margin: 15px 15px;
       }
       .buttonRed:hover {
         background: #434343;
@@ -1177,6 +1194,7 @@ p{
         -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
         -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
         box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+        width: 108%;
         transition: all 0.4s ease 0s;
       }
       #downloadButtons > div > div{
@@ -1185,19 +1203,11 @@ p{
         margin-top: 1em;
 
       }
-      #downloadButton{
-        width: 100%;
-        height: 100%;
-        padding: 10px;
-        text-align: center;
-      }
-      #downloadButton:hover{
-        width: 108%;
-      }
-      #downloadButton > div{
+      
+      .buttonRed > div{
         font-size: 12px;
       }
-      #downloadButton > div > i{
+      .buttonRed > div > i{
         font-size: 24px;
       }
 
@@ -1214,7 +1224,7 @@ p{
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
   padding-top: 60px;
-
+  margin-bottom: 20px;
 }
   .modal-content {
     background-color: #fefefe;
@@ -1224,6 +1234,8 @@ p{
     /* Could be more or less, depending on screen size */
     border: 3px solid #1D3557;
     box-shadow: 0px 0px 10px 5px #00000038;
+    border: 2px solid red;
+    padding-bottom: 20px;
 
   }
     .imgcontainer {
@@ -1258,6 +1270,7 @@ p{
         border-radius: 6px;
         display: inline-block;
         transition: all 0.5s ;
+        margin-top: 15px;
       }
       .cancelbtn:hover{
         color: #494949 ;
@@ -1340,6 +1353,8 @@ p{
     /*Informaçoes e horarios*/
     #informatContainer{
       width: 22em;
+      margin: 0px 15px
+
     }
       .footerTitle{
         margin-top:1em;
@@ -1386,7 +1401,7 @@ p{
   .footer > p{
     text-align: center;
     font-size: 0.9em;
-    margin-top: 1em;
+    margin-top: 25px;
     margin-bottom: 0.1em;
   }
     #author{

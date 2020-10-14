@@ -11,8 +11,7 @@
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!--JQUERY for some web logic-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!--JQUERY for some web logic-->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto|Roboto:700|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700|Bree+Serif">
   <!--Google font-->
@@ -48,13 +47,14 @@
   <!-- HEAD -->
   <div class="head" id="home">
     <div id="sloganContainer">
-      <h2>Nº1 em cursos de tech</h2>
-      <hr class="line1">
-      <h3>Aprende ao teu ritmo</h3>
+      <h2 data-aos="fade-up">Nº1 em cursos de tech</h2>
+      <div class="line1" data-aos="fade-up"></div>
+      <h3 data-aos="fade-up">Aprende ao teu ritmo</h3>
       <div class="container2">
-        <div id="btnAbout"><button class="button butText" id="button1" onclick="window.location.href='about.html';">Sobre nós</button></div>
-        <div id="btnCourses"><button class="button butText" id="button2" onclick="window.location.href='courses.html';"><span
-              class="butText">Cursos</span></button></div>
+        <div data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><button class="button butText" id="button1"
+            onclick="window.location.href='about.html';">Sobre nós</button></div>
+        <div  data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><button class="button butText" id="button2"
+            onclick="window.location.href='courses.html';"><span class="butText">Cursos</span></button></div>
       </div>
     </div>
   </div>
@@ -62,31 +62,44 @@
   <div id="id1" class="modal">
     <div class="modal-content animate" id="initialContent">
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id1').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id1').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
       </div>
       <div class="container" id="initModalCont">
         <h2>Bem vindo ao ExplicaFeup</h2>
-        <hr class="line3">
+        <div class="line3"></div>
         <div class="flex-wrap flex-around">
           <div class="flex-column" id="photoName">
             <div id="photoBorder"><img src="img/fabio.jpeg" id="photoInit"></div>
             <h4>Fábio Morais</h4>
           </div>
-          <div class="flex-column"  id="downloadButtons">
-            <p id="initialText">Trabalho realizado no âmbito da unidade curricular Sistemas de Informação Empresariais, pertencente ao plano de estudos do MIEEC da  FEUP.</p>
+          <div class="flex-column" id="downloadButtons">
+            <p id="initialText">Trabalho realizado no âmbito da unidade curricular Sistemas de Informação Empresariais,
+              pertencente ao plano de estudos do MIEEC da FEUP.</p>
             <p id="initialText"><b>Email: </b>up201504257@fe.up.pt</p>
             <p id="initialText"><b>Browser preferencial: </b> Chrome</p>
-            <p id="initialText">Website otimizado e testado para resoluções até 1920 x 1080. <b>Testado para mobile</b></p>
-            <div class= "flex-wrap flex-around">
-              <div><a href="css/style.css" download><button class="button buttonRed" id="downloadButton" href="add-website-here" target="_blank" ><div class="flex-column"><i class="far fa-file-powerpoint"></i> Download ppt</div></button></a></div>
-              <div><button class="button buttonRed" id="downloadButton" href="add-website-here" target="_blank" ><div class="flex-column"><i class="far fa-file-code"></i> Download Website</div></button></div>
-              <div><button class="button buttonRed" id="downloadButton" href="add-website-here" target="_blank" ><div class="flex-column"><i class="fab fa-css3-alt"></i> Download CSS</div></button></div>
+            <p id="initialText">Website otimizado e testado para resoluções até 1920 x 1080. <b>Testado para mobile</b>
+            </p>
+            <div class="flex-wrap flex-center">
+              <div id="downloadButton"><a href="css/style.css" download><button class="button buttonRed"
+                    href="add-website-here" target="_blank">
+                    <div class="flex-column"><i class="far fa-file-powerpoint"></i> Download ppt</div>
+                  </button></a></div>
+              <div id="downloadButton"><a href="css" download><button class="button buttonRed" href="add-website-here"
+                    target="_blank">
+                    <div class="flex-column"><i class="far fa-file-code"></i> Download Website</div>
+                  </button></a></div>
+              <div id="downloadButton"><a href="css/style.css" download><button class="button buttonRed"
+                    href="add-website-here" target="_blank">
+                    <div class="flex-column"><i class="fab fa-css3-alt"></i> Download CSS</div>
+                  </button></a></div>
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('id1').style.display='none'" class="cancelbtn button">Avançar</button>
+        <button type="button" onclick="document.getElementById('id1').style.display='none'"
+          class="cancelbtn button">Avançar</button>
       </div>
     </div>
   </div>
@@ -95,10 +108,10 @@
   <div class="section" id="secSponsor">
     <div class="container">
       <div class="flex-wrap flex-around" id="sponsors">
-        <div id="sponsor"><img src="img/sponsors/feup.png"></div>
-        <div id="sponsor"><img src="img/sponsors/inesc.png"></div>
-        <div id="sponsor"><img src="img/sponsors/face.png"></div>
-        <div id="sponsor"><img src="img/sponsors/mit.png"></div>
+        <div id="sponsor" data-aos="fade-right" data-aos-delay="100" data-aos-once="true"><img src="img/sponsors/feup.png"></div>
+        <div id="sponsor" data-aos="fade-right" data-aos-delay="200" data-aos-once="true"><img src="img/sponsors/inesc.png"></div>
+        <div id="sponsor" data-aos="fade-right" data-aos-delay="300" data-aos-once="true"><img src="img/sponsors/face.png"></div>
+        <div id="sponsor" data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><img src="img/sponsors/mit.png"></div>
       </div>
     </div>
   </div>
@@ -107,21 +120,21 @@
   <div class="section" id="secServices">
     <div class="container">
       <h2>Serviços
-        <hr class="line2">
+        <div class="line2"></div>
       </h2>
-      <div class="flex-wrap flex-around">
-        <div class="flex-column" id="service">
+      <div class="flex-nowrap flex-around" id="services">
+        <div class="flex-column" id="service" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
           <div><img src="img/services/certificate2.png"></div>
           <h5>Certificado</h5>
           <p>Todos os cursos inclui um certificado</p>
         </div>
-        <div class="flex-column" id="service">
+        <div class="flex-column" id="service" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
           <div><img src="img/services/classes2.png"></div>
           <h5>Online ou presencial</h5>
           <p>Podes escolher entre ter aulas online ou presenciais</p>
 
         </div>
-        <div class="flex-column" id="service">
+        <div class="flex-column" id="service" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
           <div><img src="img/services/job2.png"></div>
           <h5>Emprego garantido</h5>
           <p>No final dos cursos tens oportunidades de integrar numa empresa parceira</p>
@@ -129,36 +142,36 @@
       </div>
     </div>
   </div>
-  
+
   <!-- NUMBERS -->
   <div class="section" id="secNumbers">
     <div class="container">
       <h2>Números
-        <hr class="line2">
+        <div class="line2"></div>
       </h2>
-      <div class="flex-wrap flex-around">
+      <div class="flex-nowrap flex-around" id="numbers">
         <div class="flex-column" id="numberContainer">
-          <div id="numberIcon">
+          <div id="numberIcon" class="flex-nowrap">
             <i class="fas fa-laptop"></i>
-            10
+            <h5 id="countCourse">10</h5>
           </div>
           <div id="numberDescrip">
             Cursos
           </div>
         </div>
         <div class="flex-column" id="numberContainer">
-          <div id="numberIcon">
+          <div id="numberIcon" class="flex-nowrap">
             <i class="far fa-heart"></i>
-            200
+            <h5 id="countClients">200</h5>
           </div>
           <div id="numberDescrip">
             Clientes Felizes
           </div>
         </div>
         <div class="flex-column" id="numberContainer">
-          <div id="numberIcon">
+          <div id="numberIcon" class="flex-nowrap">
             <i class="far fa-clock"></i>
-            10
+            <h5 id="countYears">10</h5>
           </div>
           <div id="numberDescrip">
             Anos de Experiência
@@ -172,9 +185,9 @@
   <div class="section" id="secTestimonials">
     <div class="container">
       <h2>Testemunhos
-        <hr class="line2">
+        <div class="line2"></div>
       </h2>
-      <div class="flex-wrap flex-center" id="testimonials">
+      <div class="flex-wrap flex-center" id="testimonials" data-aos="flip-up" data-aos-delay="100" data-aos-once="true" data-aos-duration="1000">
         <div class="flex-column" id="imgTestimon">
           <img src="img/alberto.jpg">
           <h5>Alberto Santos</h5>
@@ -199,7 +212,7 @@
   <!-- FOOTER -->
   <div class="footer">
     <h2>Contactos</h2>
-    <div class="flex-wrap flex-around" id="footerContainer">
+    <div class="flex-nowrap flex-around" id="footerContainer">
       <div class="flex-column" id="informatContainer">
         <h3 class="footerTitle" id="titleSpec">ExplicaFeup</h3>
         <p><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA"
@@ -225,27 +238,13 @@
         </div>
       </div>
     </div>
-    <p id="btnPopUp"><a  onclick="document.getElementById('id1').style.display='block'" class="button">
-      Abrir pop-up</a></p>
+    <p id="btnPopUp"><a onclick="document.getElementById('id1').style.display='block'" class="button">
+        Abrir pop-up</a></p>
     <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank"><b>Fábio Morais</b></a>
       SIEM 2020
     </p>
   </div>
-  <script>
-    /*mostra o modal apenas 1 vez*/
-    $(document).ready(function(){
-      var Modal = document.getElementById('id1'); 
-      var key = 'check',
-      hadModal = localStorage.getItem(key);
-      if (hadModal) {
-          Modal.style.display = "block";
-          localStorage.setItem(key, true);
-      }
-    });
-
-    /*AOS.init();*/
-
-  </script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

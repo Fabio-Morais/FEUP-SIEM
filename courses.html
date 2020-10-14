@@ -12,11 +12,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Add icon library -->
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!--JQUERY for some web logic-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!--JQUERY for some web logic-->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto|Roboto:700|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700">
   <!--Google font-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -63,7 +64,7 @@
           </div>
         </div>
 
-        <div id="course" class="all soft box">
+        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
           <div id="imgBorder"><img src="img/courses/c++.png" id="imgCourse"></div>
           <h4>C/C++</h4>
           <div class="flex-nowrap flex-around" id="butnCourseBox">
@@ -72,7 +73,7 @@
             </button>
           </div>
         </div>
-        <div id="course" class="all soft box">
+        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
           <div id="imgBorder"><img src="img/courses/java2.png" id="imgCourse"></div>
           <h4>Java</h4>
           <div class="flex-nowrap flex-around" id="butnCourseBox">
@@ -81,17 +82,16 @@
             </button>
           </div>
         </div>
-
-        <div id="course" class="all soft box">
+        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
           <div id="imgBorder"><img src="img/courses/python.jpg" id="imgCourse"></div>
-          <h4>Python</h4>
-          <div class="flex-nowrap flex-around" id="butnCourseBox">
+          <h4 >Python</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox" >
             <button  onclick="document.getElementById('id03').style.display='block'" class="buttonCourses buttonInfo">
               <i class="far fa-question-circle"></i> Info
             </button>
           </div>
         </div>
-        <div id="course" class="all web box">
+        <div id="course" class="all web box" data-aos="fade-up" data-aos-delay="700" data-aos-once="true">
           <div id="imgBorder"><img src="img/courses/web.png" id="imgCourse"></div>
           <h4>Web Development</h4>
           <div class="flex-nowrap flex-around" id="butnCourseBox">
@@ -100,7 +100,7 @@
             </button>
           </div>
         </div>
-        <div id="course" class="all web box">
+        <div id="course" class="all web box" data-aos="fade-up" data-aos-delay="800" data-aos-once="true">
           <div id="imgBorder"><img src="img/courses/apis.png" id="imgCourse"></div>
           <h4>Web APIs</h4>
           <div class="flex-nowrap flex-around" id="butnCourseBox">
@@ -109,7 +109,7 @@
             </button>
           </div>
         </div>
-        <div id="course" class="all ml box">
+        <div id="course" class="all ml box" data-aos="fade-up" data-aos-delay="900" data-aos-once="true">
           <div id="imgBorder"><img src="img/courses/math.jpg" id="imgCourse"></div>
           <h4>Matemática</h4>
           <div class="flex-nowrap flex-around" id="butnCourseBox">
@@ -118,7 +118,7 @@
             </button>
           </div>
         </div>
-        <div id="course" class="all ml box">
+        <div id="course" class="all ml box" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
           <div id="imgBorder"><img src="img/courses/ml.png" id="imgCourse"></div>
           <h4>Machine Learning</h4>
           <div class="flex-nowrap flex-around" id="butnCourseBox">
@@ -132,14 +132,14 @@
   </div>
 
 
-  <div id="id01" class="modal">
+  <div id="id01" class="modal" >
     <div class="modal-content animate" >
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
         <h2>C/C++</h2>
-        <hr class="line3">
+        <div class="line3"></div>
         <ol>
           <li> Programação em C e Metodologias de Desenvolvimento</li><br>
           <li>Programação de baixo-nível</li><br>
@@ -160,7 +160,7 @@
       </div>
       <div class="container" id="modalContainer">
         <h2>Java</h2>
-        <hr class="line3">
+        <div class="line3"></div>
         <ol>
           <li><b>Linguagem JAVA + Programação Orientada por Objectos:</b> sintaxe, conceitos, classes, coleções, genéricos, SWING, I/O, Concorrência.  
           </li>
@@ -183,7 +183,7 @@
       </div>
       <div class="container" id="modalContainer">
         <h2>Python</h2>
-        <hr class="line3">
+        <div class="line3"></div>
         <ol>
           <li>Fundamentos da web com Python</li><br>
           <li>Criar scripts em Python e a usar APIs para recolher e processar dados de milhares de páginas Web ao mesmo tempo.</li><br>
@@ -204,7 +204,7 @@
       </div>
       <div class="container" id="modalContainer">
         <h2>Web Development</h2>
-        <hr class="line3">
+        <div class="line3"></div>
         <ol>
           <li><b>Bases de Dados:</b> modelação de dados em UML, modelo relacional, linguagem SQL.</li><br>
           <li><b>Linguagens e Tecnologias Web: </b>protocolo HTTP, linguagens HTML, CSS e JavaScript</li><br>
@@ -225,7 +225,7 @@
       </div>
       <div class="container" id="modalContainer">
         <h2>Web APIs</h2>
-        <hr class="line3">
+        <div class="line3"></div>
         <ol>
           <li>Introdução ao .NET CORE
           </li><br>
@@ -251,7 +251,7 @@
       </div>
       <div class="container" id="modalContainer">
         <h2>Matematica</h2>
-        <hr class="line3">
+        <div class="line3"></div>
         <ol>
           <li><b>ESTATÍSTICA DESCRITIVA:</b> Tipos de Dados e Escalas. Caracterização e Representação de Dados Categóricos, Quantitativos e Bivariados.</li><br>
           <li><b>PROBABILIDADES:</b> Experiências aleatórias, Espaços Amostrais e Acontecimentos. Probabilidade, Probabilidade Condicional e Acontecimentos Independentes. Teoremas da Probabilidade Total e de Bayes.
@@ -276,7 +276,7 @@
       </div>
       <div class="container" id="modalContainer">
         <h2>Machine Learning</h2>
-        <hr class="line3">
+        <div class="line3"></div>
         <ol>
           <li>Introdução à área: o que é machine learning atualmente
           </li><br>
@@ -297,9 +297,9 @@
   </div>
 
   <!-- FOOTER -->
-  <div class="footer">
+  <div class="footer" >
     <h2>Contactos</h2>
-    <div class="flex-wrap flex-around" id="footerContainer">
+    <div class="flex-nowrap flex-around" id="footerContainer">
       <div class="flex-column" id="informatContainer">
         <h3 class="footerTitle" id="titleSpec">ExplicaFeup</h3>
         <p><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA"
@@ -316,7 +316,7 @@
         <p id="hours"><b><i class="fas fa-caret-right"></i> 10:00 - 13:00</b></p>
       </div>
 
-      <div class="flex-column" id="socMedContainer">
+      <div class="flex-column" id="informatContainer">
         <h3 class="footerTitle">Redes Sociais</h3>
         <div class="socialMedia">
           <a href="#" id="social" class="fa fa-facebook"></a>
@@ -330,32 +330,7 @@
       SIEM 2020
     </p>
   </div>
-  <script>
-    $(document).ready(function () {
-      $("select").change(function () {
-        $("select option:selected").each(function () {
-          if ($(this).attr("value") == "soft") {
-            $(".box").hide();
-            $(".soft").show();
-          }
-          if ($(this).attr("value") == "web") {
-            $(".box").hide();
-            $(".web").show();
-          }
-          if ($(this).attr("value") == "ml") {
-            $(".box").hide();
-            $(".ml").show();
-          }
-          if ($(this).attr("value") == "all") {
-            $(".box").hide();
-            $(".all").show();
-          }
-        });
-      }).change();
-    });
-
-    
-  </script>
+  <script src="js/courses.js"></script>
 </body>
 
 </html>
