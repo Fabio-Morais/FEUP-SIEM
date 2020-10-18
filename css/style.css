@@ -22,6 +22,9 @@
 html, body {
   height: 100%;
   margin: 0;
+  scroll-behavior: smooth;
+  padding: 0;
+
 }
 
 .section {
@@ -173,6 +176,31 @@ p{
   background-attachment: fixed;
 }
 
+
+a { color: white; text-decoration: none; }
+
+.arrow {
+  font-size: 20px;
+  opacity: 0.7;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-25px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
 /****************************************************PAGINA INICIAL********************************************************/
 .head{/*header da pagina inicial*/
   background-color: #ddd;
@@ -188,7 +216,13 @@ p{
   background-size: cover; /* Resize the background image to cover the entire container */
   background-attachment: fixed;
 }
-
+#arrowContainer{
+  margin:auto;
+  text-align: center;
+  justify-content: flex-end;
+  height: 100px;
+  margin-bottom: 20px;
+}
 #sloganContainer{
   display:flex;
   flex-direction: column;
@@ -197,7 +231,7 @@ p{
   margin-top: 11em;
   margin-left: 4em;
   margin-bottom: 2em;
-
+  
 }
   #sloganContainer > h3{
     margin-top: 0.2em;  

@@ -11,10 +11,11 @@
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script><!-- font awesome -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!--JQUERY for some web logic-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!--JQUERY-->
+  <!--Google font-->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto|Roboto:700|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700|Bree+Serif">
-  <!--Google font-->
+  <!--Animations-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -46,6 +47,7 @@
 
   <!-- HEAD -->
   <div class="head" id="home">
+    <!--Titulos e botoes-->
     <div id="sloganContainer">
       <h2 data-aos="fade-up">Nº1 em cursos de tech</h2>
       <div class="line1" data-aos="fade-up"></div>
@@ -53,8 +55,14 @@
       <div class="container2">
         <div data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><button class="button butText" id="button1"
             onclick="window.location.href='about.html';">Sobre nós</button></div>
-        <div  data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><button class="button butText" id="button2"
+        <div data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><button class="button butText" id="button2"
             onclick="window.location.href='courses.html';"><span class="butText">Cursos</span></button></div>
+      </div>
+    </div>
+    <!--Animaçao da seta para baixo-->
+    <div class="flex-column" id="arrowContainer">
+      <div class="arrow bounce">
+        <a class="fa fa-arrow-down fa-2x" href="#secSponsor"></a>
       </div>
     </div>
   </div>
@@ -108,14 +116,17 @@
   <div class="section" id="secSponsor">
     <div class="container">
       <div class="flex-wrap flex-around" id="sponsors">
-        <div id="sponsor" data-aos="fade-right" data-aos-delay="100" data-aos-once="true"><img src="img/sponsors/feup.png"></div>
-        <div id="sponsor" data-aos="fade-right" data-aos-delay="200" data-aos-once="true"><img src="img/sponsors/inesc.png"></div>
-        <div id="sponsor" data-aos="fade-right" data-aos-delay="300" data-aos-once="true"><img src="img/sponsors/face.png"></div>
-        <div id="sponsor" data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><img src="img/sponsors/mit.png"></div>
+        <div id="sponsor" data-aos="fade-right" data-aos-delay="100" data-aos-once="true"><img
+            src="img/sponsors/feup.png"></div>
+        <div id="sponsor" data-aos="fade-right" data-aos-delay="200" data-aos-once="true"><img
+            src="img/sponsors/inesc.png"></div>
+        <div id="sponsor" data-aos="fade-right" data-aos-delay="300" data-aos-once="true"><img
+            src="img/sponsors/face.png"></div>
+        <div id="sponsor" data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><img
+            src="img/sponsors/mit.png"></div>
       </div>
     </div>
   </div>
-
   <!-- SERVICES -->
   <div class="section" id="secServices">
     <div class="container">
@@ -187,7 +198,8 @@
       <h2>Testemunhos
         <div class="line2"></div>
       </h2>
-      <div class="flex-wrap flex-center" id="testimonials" data-aos="flip-up" data-aos-delay="100" data-aos-once="true" data-aos-duration="1000">
+      <div class="flex-wrap flex-center" id="testimonials" data-aos="flip-up" data-aos-delay="100" data-aos-once="true"
+        data-aos-duration="1000">
         <div class="flex-column" id="imgTestimon">
           <img src="img/alberto.jpg">
           <h5>Alberto Santos</h5>
