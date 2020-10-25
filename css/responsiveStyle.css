@@ -25,7 +25,9 @@
     min-height: 600px;
   }
   #sloganContainer{
-    margin-top: 8em;
+    margin:auto;
+    margin-top: 5em;
+
   }
   #testimonials {
     flex-direction: column-reverse;
@@ -41,6 +43,10 @@
   #imgTestimon {
     width: 100%;
   }
+  #numbers{
+    flex-wrap: wrap;
+  }
+
   /***********************QUEM SOMOS**********************/
   .text {
     font-size: 18px

@@ -33,12 +33,12 @@ var breakpoint = false;
 window.addEventListener('scroll', function () {
   if (!breakpoint) {
     var element = document.querySelector('#numberIcon');
-    if(element != null){
+    if (element != null) {
       var position = element.getBoundingClientRect();
 
+     
       /*Se mostrar o <div> dos numeros começa o calculo */
       if (position.top < window.innerHeight && position.bottom >= 0) {
-        console.log('Element is partially visible in screen');
         breakpoint = true;
         const obj = document.getElementById('countCourse');
         animateValue(obj, 0, 100, 2000);
