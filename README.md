@@ -1,40 +1,13 @@
 # FEUP-SIEM
 
 ## color palette:
-https://coolors.co/palettes/popular
-
-https://colorhunt.co/palettes/popular
 
 https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
 
 ## Fonts:
 
-Verdana, Geneva, sans-serif
-
-------------------
-## Template examples:
-
-https://colorlib.com/preview/#onlineedu
-
-https://bootstrapmade.com/demo/Mentor/
-
-https://bootstrapmade.com/demo/Vesperr/
-
-https://colorlib.com/preview/#personalportfolio
+Open Sans -> titulo
+Roboto -> paragrafo
+Bree Serif -> Titulo grande
 
 
-
-------------------
-* Home
-  * Services
-  * reviews
-  * happy clients
-  * social media
-  * Sponsors
-* about us
-  * Instructors
-* Courses
-* Pricing
-* contact us
-  * google map
-  * form
