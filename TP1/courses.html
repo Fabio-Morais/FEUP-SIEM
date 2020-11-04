@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <title>ExplicaFeup</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pageLayout.css">
+  <link rel="stylesheet" href="css/responsiveStyle.css">
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/70d6b09e06.js" crossorigin="anonymous"></script>
+    <!--JQUERY-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--Google font-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto|Roboto:700|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700|Bree+Serif">
+  <!--Animations-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="topnav">
+      <a class="logo" href="index.html">
+        <img src="img/icon.png">
+        <h5 id="explic">ExplicaFeup</h5>
+      </a>
+      <!--Versão mobile-->
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fas fa-bars"></i></button>
+        <div class="dropdown-content">
+          <a href="about.html">Quem Somos</a>
+          <a href="schedule.html">Horário</a>
+          <a href="courses.html">Cursos</a>
+          <a href="contacts.html">Contactos</a>
+        </div>
+      </div>
+      <!--Versão desktop-->
+      <a id="elemnt" href="contacts.html">Contactos</a>
+      <a id="elemnt" class="active" href="courses.html">Cursos</a>
+      <a id="elemnt" href="schedule.html">Horário</a>
+      <a id="elemnt" href="about.html">Quem Somos</a>
+    </div>
+  </header>
+
+  <!-- HEAD -->
+  <div class="headSecu" id="courses">
+    <h1>Cursos</h1>
+  </div>
+
+  <!-- COURSES -->
+  <div class="section" id="secCourses">
+    <div class="container no-margin">
+      <div class="flex-wrap flex-between flex-center">
+        <!--Barra cinza-->
+        <div class="full-bar">
+          <!--Botao para selecionar-->
+          <div class="flex-nowrap">
+            <select class="select-css">
+              <option value="all">All</option>
+              <option value="soft">Software</option>
+              <option value="web">Web</option>
+              <option value="ml">Machine Learning</option>
+            </select>
+          </div>
+        </div>
+        <!--Curso C/C++-->
+        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+          <div id="imgBorder"><img src="img/courses/c++.png" id="imgCourse"></div>
+          <h4>C/C++</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id01').style.display='block'" class=" buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <!--Curso Java-->
+        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+          <div id="imgBorder"><img src="img/courses/java2.png" id="imgCourse"></div>
+          <h4>Java</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id02').style.display='block'" class=" buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <!--Curso Python-->
+        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
+          <div id="imgBorder"><img src="img/courses/python.jpg" id="imgCourse"></div>
+          <h4 >Python</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox" >
+            <button  onclick="document.getElementById('id03').style.display='block'" class=" buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <!--Curso web dev-->
+        <div id="course" class="all web box" data-aos="fade-up" data-aos-delay="700" data-aos-once="true">
+          <div id="imgBorder"><img src="img/courses/web.png" id="imgCourse"></div>
+          <h4>Web Development</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id04').style.display='block'" class=" buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <!--Curso web apis-->
+        <div id="course" class="all web box" data-aos="fade-up" data-aos-delay="800" data-aos-once="true">
+          <div id="imgBorder"><img src="img/courses/apis.png" id="imgCourse"></div>
+          <h4>Web APIs</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id05').style.display='block'" class=" buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <!--Curso matematica-->
+        <div id="course" class="all ml box" data-aos="fade-up" data-aos-delay="900" data-aos-once="true">
+          <div id="imgBorder"><img src="img/courses/math.jpg" id="imgCourse"></div>
+          <h4>Matemática</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id06').style.display='block'" class=" buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+        <!--Curso machine learning-->
+        <div id="course" class="all ml box" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
+          <div id="imgBorder"><img src="img/courses/ml.png" id="imgCourse"></div>
+          <h4>Machine Learning</h4>
+          <div class="flex-nowrap flex-around" id="butnCourseBox">
+            <button  onclick="document.getElementById('id07').style.display='block'" class=" buttonInfo">
+              <i class="far fa-question-circle"></i> Info
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--******Modals dos diferentes cursos******-->
+  <!--Curso C/C++-->
+  <div id="id01" class="modal" >
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="modalContainer">
+        <h2>C/C++</h2>
+        <div class="line3"></div>
+        <ol>
+          <li> Programação em C e Metodologias de Desenvolvimento</li><br>
+          <li>Programação de baixo-nível</li><br>
+          <li>Conceitos Fundamentais de Algoritmia</li><br>
+          <li>Estruturas de dados</li><br>
+          <li>Programação orientada por objetos em C++</li>
+        </ol> 
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn button">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <!--Curso Java-->
+  <div id="id02" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="modalContainer">
+        <h2>Java</h2>
+        <div class="line3"></div>
+        <ol>
+          <li><b>Linguagem JAVA + Programação Orientada por Objectos:</b> sintaxe, conceitos, classes, coleções, genéricos, SWING, I/O, Concorrência.  
+          </li>
+          <br>
+          <li><b>Linguagem de modelação UML:</b> conceitos gerais de modelação, diagramas de classes, estados e sequencia. Outros diagramas.
+          </li><br>
+          <li><b>Processos de Desenvolvimento de Software:</b> conceitos, metodologias, fases, práticas, ferramentas, artefactos, tecnologias emergentes.
+          </li>
+        </ol>  
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn button">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <!--Curso Python-->
+  <div id="id03" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="modalContainer">
+        <h2>Python</h2>
+        <div class="line3"></div>
+        <ol>
+          <li>Fundamentos da web com Python</li><br>
+          <li>Criar scripts em Python e a usar APIs para recolher e processar dados de milhares de páginas Web ao mesmo tempo.</li><br>
+          <li>Bibliotecas que vão lhe auxiliar nas tarefas de scraping como BeautifulSoup, LXML e Scrapy</li><br>
+          <li>Utilizar o Selenium WebDriver</li><br>
+          <li> criar programas para ler diversos tipos de documentos como CSV, PDF, DOCX, XLSX, JSON e ODT</li>
+        </ol> 
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn button">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <!--Curso web dev-->
+  <div id="id04" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="modalContainer">
+        <h2>Web Development</h2>
+        <div class="line3"></div>
+        <ol>
+          <li><b>Bases de Dados:</b> modelação de dados em UML, modelo relacional, linguagem SQL.</li><br>
+          <li><b>Linguagens e Tecnologias Web: </b>protocolo HTTP, linguagens HTML, CSS e JavaScript</li><br>
+          <li><b>APIs: </b>Utilização de frameworks e API de acesso a dados</li><br>
+          <li><b>PHP: </b>Principios básicos</li><br>
+          <li><b>Wordpress: </b>Introdução ao desenvolvimento de websites através do wordpress</li>
+        </ol> 
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn button">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <!--Curso web apis-->
+  <div id="id05" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="modalContainer">
+        <h2>Web APIs</h2>
+        <div class="line3"></div>
+        <ol>
+          <li>Introdução ao .NET CORE
+          </li><br>
+          <li>Construção de uma Web API (CRUD Completo)
+          </li><br>
+          <li>Publicação no Windows Azure
+          </li><br>
+          <li>Arquitetura MVC
+          </li><br>
+          <li>Criação de página de Help para Web API utilizando Swagger.
+          </li>
+        </ol> 
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn button">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <!--Curso matematica-->
+  <div id="id06" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="modalContainer">
+        <h2>Matematica</h2>
+        <div class="line3"></div>
+        <ol>
+          <li><b>ESTATÍSTICA DESCRITIVA:</b> Tipos de Dados e Escalas. Caracterização e Representação de Dados Categóricos, Quantitativos e Bivariados.</li><br>
+          <li><b>PROBABILIDADES:</b> Experiências aleatórias, Espaços Amostrais e Acontecimentos. Probabilidade, Probabilidade Condicional e Acontecimentos Independentes. Teoremas da Probabilidade Total e de Bayes.
+          </li><br>
+          <li><b>VARIÁVEIS ALEATÓRIAS E DISTRIBUIÇÕES DE PROBABILIDADE:</b> Variáveis Aleatórias. Variáveis Aleatórias Discretas e Contínuas. Função de Probabilidade, de Densidade de Probabilidade e de Distribuição.
+          </li><br>
+          <li><b>PRINCIPAIS DISTRIBUIÇÕES DISCRETAS e CONTÍNUAS:</b> Distribuições Binomial, Binomial Negativa, Hipergeométrica e Poisson.
+          </li>
+
+        </ol> 
+      
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id06').style.display='none'" class="cancelbtn button">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <!--Curso machine learning-->
+  <div id="id07" class="modal">
+    <div class="modal-content animate" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id07').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container" id="modalContainer">
+        <h2>Machine Learning</h2>
+        <div class="line3"></div>
+        <ol>
+          <li>Introdução à área: o que é machine learning atualmente
+          </li><br>
+          <li>Modelos simples de classificação e regressão (modelos lineares e de vizinho mais próximo) e a sua validação: paradigmas de aprendizagem, funções de perda, erro de viés e de variância.
+          </li><br>
+          <li>Métodos de inferência de modelos: Procura, Expectation-maximization, agregação.
+          </li><br>
+          <li>Redes neuronais, modelos deep e aprendizagem de representação
+          </li>
+        </ol> 
+
+      </div>
+      <div class="container" id="modalBtnContainer">
+        <button type="button" onclick="document.getElementById('id07').style.display='none'" class="cancelbtn button">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <h2>Contactos</h2>
+    <div class="flex-nowrap flex-around" id="footerContainer">
+      <!--Footer da ESQUERDA-->
+      <div class="flex-column" id="informatContainer">
+        <h3 class="footerTitle">ExplicaFeup</h3>
+        <p><b><i class="fas fa-map-marker-alt"></i> Morada: </b><a href="https://goo.gl/maps/HA1QhKSYkD59LjxJA"
+            target="_blank" id="email"> R. Dr. Roberto Frias, <br>4200-465 Porto</a></p>
+        <p><b><i class="fas fa-phone"></i> Telemóvel: </b>(+351) 926789452</p>
+        <p><b><i class="fas fa-envelope-open-text"></i> Email: </b><a href="mailto:explicaFeup@example.com"
+            id="email">explicaFeup@example.com </a></p>
+      </div>
+      <!--Footer do MEIO-->
+      <div class="flex-column" id="informatContainer">
+        <h3 class="footerTitle">Horário</h3>
+        <p>Segundas a sextas:</p>
+        <p id="hours"><b><i class="fas fa-caret-right"></i> 10:00 - 18:00</b></p>
+        <p>Sábados:</p>
+        <p id="hours"><b><i class="fas fa-caret-right"></i> 10:00 - 13:00</b></p>
+      </div>
+      <!--Footer da direita-->
+      <div class="flex-column" id="informatContainer">
+        <h3 class="footerTitle">Redes Sociais</h3>
+        <div class="socialMedia">
+          <a href="https://www.facebook.com/" id="social" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://www.instagram.com" id="social" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://www.linkedin.com" id="social" target="_blank" class="fa fa-linkedin"></a>
+        </div>
+      </div>
+    </div>
+    <!--copyright-->
+    <p>Copyright &copy; <a id="author" href="http://fabio-morais.github.io/" target="_blank"><b>Fábio Morais</b></a>
+      SIEM 2020
+    </p>
+  </div>
+  <script src="js/courses.js"></script>
+</body>
+
+</html>

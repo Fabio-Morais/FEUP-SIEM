@@ -1,0 +1,921 @@
+/****************************************************
+*                       INDICE                           
+** linha ********************************************
+*           * Pagina Inicial *                      *
+*           * Quem Somos *                          *
+*           * Horário *                             *
+*           * Cursos *                              *
+*           * Horario *                             *
+*           * Contactos *                           *
+*           * Animaçoes *                           *
+***************************************************/
+
+/****************************************************PAGINA INICIAL********************************************************/
+
+.head {
+  /*header da pagina inicial*/
+  background-color: #ddd;
+  width: auto;
+  min-height: 750px;
+  border: 3px solid #0f0404;
+}
+
+#home {
+  background-color: rgb(12, 12, 12);
+  background: linear-gradient( rgba(0, 0, 0, 0.089), rgb(0, 0, 0)), url("../img/ex/header.jpg");
+  background-position: top;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+
+#arrowContainer {
+  margin: auto;
+  text-align: center;
+  justify-content: flex-end;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+#sloganContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  margin-top: 11em;
+  margin-left: 4em;
+  margin-bottom: 2em;
+}
+
+#sloganContainer>h3 {
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  font-family: "Bree Serif";
+  font-size: 36px;
+  color: #F1FAEE;
+}
+
+#sloganContainer>h2 {
+  margin-top: 1em;
+  margin-bottom: 0em;
+  font-size: 60px;
+  letter-spacing: 3px;
+  font-family: "Bree Serif";
+  color: #F1FAEE;
+}
+
+.container2 {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.butText {
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#button1 {
+  color: #fff;
+  background-color: #4CAF50;
+  border: 2px solid #000000;
+  font-size: 24px;
+  margin: 10px;
+}
+
+#button1:hover {
+  background-color: #3e8e41;
+  -ms-transform: scale(1.05);
+  /* IE 9 */
+  -webkit-transform: scale(1.05);
+  /* Safari 3-8 */
+  transform: scale(1.05);
+}
+
+#button1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}
+
+#button2 {
+  background-color: #e639477c;
+  color: #FFFFFF;
+  transition: all 0.5s;
+  border: 0;
+  opacity: 0.7;
+  border: 2px solid #e639475b;
+  font-size: 24px;
+  margin: 10px 0px;
+}
+
+#button2 span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  font-size: 24px;
+}
+
+#button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#button2:hover span {
+  padding-right: 20px;
+}
+
+#button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#button2:hover {
+  background-color: #f4501ec4;
+  opacity: 1;
+}
+
+/******Patrocinios******/
+
+#secSponsor {
+  /*section background*/
+  padding: 0;
+  background-color: white;
+}
+
+#sponsors {
+  background-color: white;
+}
+
+/*Box de imagens*/
+
+#sponsors #sponsor {
+  height: 70px;
+  width: 4.5em;
+  margin: 10px;
+  line-height: 80px;
+  font-size: 30px;
+  opacity: 0.7;
+}
+
+#sponsors #sponsor:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+
+/*imagens*/
+
+#sponsor>img {
+  width: 4.5em;
+  margin: 10px;
+}
+
+/******Serviços******/
+
+#secServices {
+  /*section background*/
+  background-color: rgba(24, 23, 23, 0.842);
+  /* fallback for older browsers that don't support gradients */
+  background-image: linear-gradient(to bottom, rgba(14, 13, 13, 0.984) 0%, rgba(19, 18, 18, 0.997) 100%), url("../img/background/25422.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#secServices>div>h2 {
+  color: white;
+}
+
+/*Box da imagem, titulo e paragrafo*/
+
+#service {
+  background-color: none;
+  margin: 40px 35px;
+  width: 20em;
+}
+
+/*box imagem*/
+
+#service>div {
+  width: 7.5em;
+  min-width: 5em;
+  height: 7em;
+  margin: 0 auto;
+}
+
+/*Imagem*/
+
+#service>div>img {
+  width: 100%;
+  height: 100%;
+}
+
+#service>p {
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.2em;
+  color: #F1FAEE;
+}
+
+#service>h5 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 0.7em;
+  margin-bottom: 0.6em;
+  color: #A8DADC;
+}
+
+/******Numeros******/
+
+#secNumbers {
+  /*section background*/
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgb(223, 223, 223) 100%);
+}
+
+#numberContainer {
+  margin: 22px;
+  width: 18em;
+}
+
+#numberIcon {
+  color: #457B9D;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+#numberIcon>i {
+  font-size: 42px;
+  margin: auto;
+  margin-right: 5px;
+}
+
+#numberIcon>h5 {
+  font-size: 42px;
+  text-align: center;
+  font-family: "Open Sans";
+  margin: auto;
+  margin-left: 5px;
+}
+
+#numberContainer>p {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/******Testemunhos******/
+
+#secTestimonials {
+  /*section background*/
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.842) 0%, rgba(19, 18, 18, 0.445) 100%), url("../img/background/18106017.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#testimonials {
+  background-color: rgba(255, 251, 251, 0.911);
+  max-width: 38em;
+  margin: auto;
+  border: 3px solid #030303;
+  box-shadow: 6px 6px 6px 5px rgba(0, 0, 0, 0.226);
+}
+
+#imgTestimon {
+  width: 11em;
+  margin: auto;
+  margin-top: 10px
+}
+
+#imgTestimon>h5 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0.5em 0em;
+}
+
+#imgTestimon>img {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  margin: auto;
+}
+
+#textTestimon {
+  width: 23em;
+  margin: auto;
+  margin-top: 10px
+}
+
+#textTestimon>p {
+  font-size: 22px;
+  line-height: 1.1em;
+  text-align: center;
+  margin: 0;
+  width: 80%;
+  margin: auto;
+}
+
+#quot {
+  display: flex;
+  justify-content: flex-start;
+  margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+#quot2 {
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+#ratingTestimon {
+  text-align: center;
+  height: inherit;
+  display: flex;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.checked {
+  color: orange;
+}
+
+/*********************************************************************QUEM SOMOS*************************************************************************/
+
+#about {
+  background-color: rgba(0, 0, 0, 0.863);
+  background-image: linear-gradient(to bottom, #000000a8 0%, #8585858e 100%), url("../img/ex/about4Blur.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#about>h1 {
+  color: white;
+  text-shadow: 1px 2px #457B9D;
+}
+
+/******SOBRE NÓS******/
+#secAbout {
+  /*section background*/
+  background-color: white;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.336) 0%, rgba(70, 70, 70, 0.151) 100%);
+}
+
+/*Slideshow*/
+#imgAbout {
+  background-color: #f1f1f1;
+  width: 13em;
+  height: 12.5em;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  box-shadow: 2px 2px 8px 4px #00000059;
+  border: 1px solid #00000059;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  height: 90%;
+  position: relative;
+  margin: auto;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.mySlides {
+  display: none;
+  max-width: 13em;
+  max-height: 9em;
+}
+
+.mySlides>img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Caption text */
+.text {
+  color: #1D3557;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 24px;
+  padding: 0px;
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  text-align: center;
+}
+
+.dots {
+  margin-top: 10px;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #A8DADC;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.activeDot {
+  background-color: #457B9D;
+}
+
+#imgAbout img {
+  width: 100%;
+  height: 100%;
+}
+
+/*texto sobre ExplicaFeup*/
+
+#textAbout {
+  background-color: #f1faee2a;
+  width: 18em;
+  margin: 10px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 8px 4px #00000059;
+  border: 1px solid #00000059;
+}
+
+#textAbout p {
+  line-height: 1.4em;
+  font-size: 16px;
+  padding: 0em 1.5em;
+  text-align: justify;
+}
+
+#textAbout h4 {
+  line-height: normal;
+  font-size: 42px;
+  font-family: "Open Sans";
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+}
+
+/*******INSTRUTORES*******/
+#secInstruct {
+  /*section background*/
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255) 5%, rgba(70, 70, 70, 0.970) 100%), url("../img/background/25372.jpg");
+  background-position: bottom;
+  background-size: cover;
+}
+
+#instruct {
+  background-color: #f1f1f1;
+  width: 21em;
+  height: 25.5em;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 8px 4px #00000098;
+}
+
+#instruct h4 {
+  font-size: 24px;
+  margin: 0.4em;
+}
+
+#instruct p {
+  margin: 0px;
+  padding: 0px 5px;
+  font-size: 16px;
+  margin-bottom: 1.2em;
+}
+
+#imgInstruct {
+  width: 100%;
+  height: 17em;
+}
+
+#social2 {
+  color: white;
+  padding: 9px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin: 0px 5px;
+}
+
+#social2:hover {
+  transform: scale(1.2);
+}
+
+/*********************************************************************HORARIO****************************************************************************************/
+
+#schedule {
+  background-image: linear-gradient(to bottom, #ffffff85 0%, #ffffff71 100%), url("../img/ex/schedule.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#schedule>h1 {
+  text-shadow: 1px 2px #A8DADC;
+}
+
+#secSchedule {
+  /*section background*/
+  background-color: white;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.847) 5%, rgba(12, 12, 12, 0.802) 100%), url("../img/background/2542.jpg");
+  background-position: center;
+  background-size: cover;
+  padding-top: 100px;
+}
+
+.schedule-warp {
+  padding: 20px 30px;
+  background-color: #f1faee4b;
+  width: 28em;
+  margin: 20px;
+}
+
+.day-one {
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 32px;
+  color: #fdfdfd;
+  text-align: center;
+}
+
+.schedule-card {
+  position: relative;
+  margin-bottom: 0.7em;
+  margin-right: 2em;
+  z-index: 0;
+}
+
+.insidebox {
+  box-shadow: 0 0px 5px rgba(0, 0, 0, .07);
+  background: #ffffff;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #6164B2;
+  transition: all 0.2s ease-in;
+}
+
+.schedule-tag {
+  color: #fff;
+  background-color: #457B9D;
+  padding: 3px 8px;
+  margin-right: 15px;
+  min-width: 90px;
+  font-family: 'Roboto';
+  text-align: center;
+}
+
+.schedule-start {
+  color: #1D3557;
+  font-family: "Roboto";
+  font-size: 20px;
+  margin-left: 0.6em;
+}
+
+.schedule-card:hover .insidebox {
+  transform: scale(1.033);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-card:hover:after {
+  background: #457B9D;
+  width: 25px;
+  height: 3PX;
+  z-index: -1;
+}
+
+.schedule-card:after {
+  height: 2px;
+  width: 22px;
+  background: #ddd;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  transition: all 0.3s ease-in;
+  z-index: -1;
+}
+
+/*********************************************************************CURSOS*************************************************************************/
+
+#courses {
+  background-image: linear-gradient(to bottom, #ffffff00 0%, #ffffff00 100%), url("../img/ex/courses.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#courses>h1 {
+  color: white;
+  text-shadow: 1px 2px #457B9D;
+}
+
+/*********Cursos*********/
+
+#secCourses {
+  /*section background*/
+  background-color: white;
+  background-image: linear-gradient(to bottom, #f1faeee8 5%, #1d3557ee 100%), url("../img/background/25099.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.full-bar {
+  background-color: #1d355715;
+  border-radius: 55px;
+  height: auto;
+  margin-top: -1em;
+  margin-bottom: 1em;
+  padding-top: 0;
+  width: 100%;
+}
+
+.full-bar>div {
+  float: right;
+}
+
+.select-css {
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: 700;
+  color: #1D3557;
+  width: 12rem;
+  margin: 10px 20px;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+  border-radius: .5em;
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+}
+
+.select-css:hover {
+  box-shadow: 0 0 3px 3px #457b9d62;
+}
+
+.select-css:focus {
+  box-shadow: 0 0 3px 3px #457B9D;
+  color: #1D3557;
+  outline: none;
+}
+
+.select-css option {
+  font-weight: normal;
+}
+
+#course {
+  background-color: #f1f1f1;
+  width: 14em;
+  height: 17em;
+  text-align: center;
+  margin: 2em;
+  box-shadow: 2px 2px 8px 4px #0000004f;
+}
+
+#course>#imgBorder {
+  width: 100%;
+  height: 65%;
+}
+
+#imgBorder>#imgCourse {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#course h4 {
+  font-size: 20px;
+  margin: 0.4em 0em;
+  padding: 0px;
+}
+
+#butnCourseBox {
+  width: 100%;
+  height: 3em;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.buttonInfo {
+  font-family: "Roboto";
+  background-color: #F1FAEE;
+  color: #1D3557;
+  border: 2px solid #457B9D;
+  padding: 0em 1em;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0.5em 0em;
+  cursor: pointer;
+}
+
+.buttonInfo:hover {
+  background-size: 201% 100%;
+  background-image: linear-gradient(to right, #F1FAEE 50%, #457B9D 50%);
+  transition: background-position 0.6s;
+  background-position: -99% 0;
+  color: #F1FAEE;
+  transition: all 0.5s;
+}
+
+/****************************************************************CONTACTOS********************************************************************/
+
+#contactsHead {
+  background-image: linear-gradient(to bottom, #00000083 0%, #4949496e 100%), url("../img/ex/contact_censored.jpg");
+  background-position: bottom;
+  background-size: cover;
+}
+
+#contactsHead>h1 {
+  text-shadow: 1px 1px #A8DADC;
+}
+
+#socMedContainer2 {
+  width: 11em;
+  margin: auto;
+  margin-top: 0em;
+}
+
+/*********Contactos*********/
+
+#secContacts {
+  background-color: white;
+  background-image: linear-gradient(to bottom, #ffffffee 0%, #a8dadc33 100%), url("../img/background/18024908.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/*  Mapa  */
+
+.mapContainer {
+  background-color: rgb(247, 247, 247);
+  height: 30em;
+  width: 75%;
+  margin: auto;
+}
+
+#map {
+  height: 100%;
+  z-index: 0;
+  border: 2px solid #457B9D;
+  box-shadow: 0px 0px 20px 2px #00000063;
+}
+
+#contacts {
+  margin-top: 7em;
+  padding: 1em;
+}
+
+#contact {
+  background-color: rgb(223, 223, 223);
+  width: 15em;
+  height: auto;
+  margin: 15px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px 5px #00000038;
+}
+
+#contact>i {
+  font-size: 42px;
+  color: #E63946
+}
+
+#contact>h4 {
+  font-size: 24px;
+  color: #1D3557;
+  font-family: "Roboto";
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#contact>p {
+  font-size: 18px;
+  color: #457B9D;
+  font-family: "Roboto";
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 0.2em;
+}
+
+/*************Forms***************/
+
+#secForms {
+  background-color: white;
+  background-image: linear-gradient(to bottom, #fffffff1 0%, #ffffffe0 100%), url("../img/background/18199660.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#forms {
+  width: 65%;
+  background-color: #f1f1f141;
+  padding-left: 1em;
+  padding-top: 1em;
+}
+
+#form {
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+#subject {
+  height: 5em;
+  width: 95%;
+  max-width: 95%;
+  min-width: 95%;
+  max-height: 10em;
+  min-height: 5em;
+}
+
+#forms>p {
+  margin: 0em;
+  font-family: "Roboto";
+}
+
+#labelN {
+  width: auto;
+  padding-top: 0em;
+}
+
+#labelN>label {
+  color: #1d3557ad;
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: 600;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input {
+  width: 95%;
+}
+
+#submitButton {
+  width: 10em;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#submitButton:hover {
+  width: 11em;
+}
+
+input[type=text], input[type=email], select, textarea {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+/***********************************************************************ANIMAÇÕES**************************************************************/
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
