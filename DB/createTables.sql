@@ -20,12 +20,12 @@ CREATE TABLE IF NOT EXISTS Userr(
 );
 
 CREATE TABLE IF NOT EXISTS Aluno(
-    username VARCHAR(100) REFERENCES Userr(userName) PRIMARY KEY,
+    username VARCHAR(100) REFERENCES Userr(userName) PRIMARY KEY ,
 	notaAluno FLOAT default 0
 );
 
 CREATE TABLE IF NOT EXISTS Professor(
-    username VARCHAR(100) REFERENCES Userr(userName) PRIMARY KEY,
+    username VARCHAR(100) REFERENCES Userr(userName) PRIMARY KEY ,
 	salario FLOAT default 0
 );
 
@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS Curso(
 );
 
 CREATE TABLE IF NOT EXISTS Enrolled(
-    idAluno VARCHAR(100) REFERENCES Aluno(username),
-    nomeCurso VARCHAR(100) REFERENCES Curso(nome),
+    idAluno VARCHAR(100) REFERENCES Aluno(username) ON DELETE CASCADE,
+    nomeCurso VARCHAR(100) REFERENCES Curso(nome) ON DELETE CASCADE,
     notaCurso FLOAT default 0,
     PRIMARY KEY(idAluno, nomeCurso)
 );            
