@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS Encomenda(
     preco VARCHAR(100),
     nomeProduto VARCHAR(100),
     descricao VARCHAR(100),
-    idCliente VARCHAR(100) REFERENCES Cliente(id) ON DELETE CASCADE,
-    idAluno VARCHAR(100) REFERENCES Aluno(id) ON DELETE CASCADE
+    idCliente SERIAL REFERENCES Cliente(id) ON DELETE CASCADE,
+    idAluno VARCHAR(100) REFERENCES Aluno(username) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Salario(
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS Curso(
 );
 
 CREATE TABLE IF NOT EXISTS Enrolled(
-    idAluno VARCHAR(100) REFERENCES Aluno(id),
+    idAluno VARCHAR(100) REFERENCES Aluno(username),
     nomeCurso VARCHAR(100) REFERENCES Curso(nome),
     notaCurso FLOAT default 0,
     PRIMARY KEY(idAluno, nomeCurso)
