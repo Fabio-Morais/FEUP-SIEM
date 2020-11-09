@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS Userr(
     passHash VARCHAR(200),
     nif VARCHAR(100),
     imagem bytea,
-    dataNascimento DATE
+    dataNascimento DATE,
+    nivel INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS Aluno(
@@ -32,23 +33,25 @@ CREATE TABLE IF NOT EXISTS Professor(
 
 CREATE TABLE IF NOT EXISTS Encomenda(
     numero SERIAL PRIMARY KEY,
-    dataEntrega TIMESTAMP,
-    dataDeCompra TIMESTAMP,
+    dataEntrega VARCHAR(30),
+    dataDeCompra VARCHAR(30),
     preco VARCHAR(100),
     nomeProduto VARCHAR(100),
     descricao VARCHAR(100),
-    idCliente SERIAL REFERENCES Cliente(id) ON DELETE CASCADE,
+    idCliente INTEGER REFERENCES Cliente(id) ON DELETE CASCADE,
     idAluno VARCHAR(100) REFERENCES Aluno(username) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Salario(
     id SERIAL PRIMARY KEY,
+    userName VARCHAR(100) REFERENCES Professor(username),
     salario FLOAT default 0,
-    dataDeCompra TIMESTAMP
+    dataSalario VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS Curso(
-    nome VARCHAR(50) PRIMARY KEY
+    nome VARCHAR(50) PRIMARY KEY,
+    preco VARCHAR(30)
 );
 
 CREATE TABLE IF NOT EXISTS Enrolled(
