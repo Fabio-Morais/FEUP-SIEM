@@ -56,8 +56,11 @@
   }
   /***********************CURSOS**********************/
   #course {
-    width: 10em;
-    height: 12em;
+    width: 13em;
+    height: 15em;
+  }
+  #course h3 {
+    font-size: 18px;
   }
   #course h4 {
     font-size: 14px;
