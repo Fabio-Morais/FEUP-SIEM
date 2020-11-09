@@ -1,5 +1,5 @@
 <?php
-$aux = 1;
+$aux = 2;
 $username = "aluno";
 ?>
 
@@ -87,6 +87,14 @@ $username = "aluno";
                                 Salário
                             </a>
                         <?php elseif ($aux == 2) : ?>
+                            <a class="nav-link" href="admin/users.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Users
+                            </a>
+                            <a class="nav-link" href="admin/estatisticas.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
+                                Estatisticas
+                            </a>
                         <?php endif; ?>
                     </div>
                 </div>
