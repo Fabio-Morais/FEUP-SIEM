@@ -1,8 +1,8 @@
 #x1{
     border: 2px solid red;
 }
-.icon{
-    height: 100%;
+a .icon{
+    height: 50px;
 }
 .navbar-brand{
     font-size: 26px;
