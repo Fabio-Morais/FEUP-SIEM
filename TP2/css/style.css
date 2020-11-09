@@ -697,8 +697,8 @@
 
 #course {
   background-color: #f1f1f1;
-  width: 14em;
-  height: 17em;
+  width: 17em;
+  height: 20em;
   text-align: center;
   margin: 2em;
   box-shadow: 2px 2px 8px 4px #0000004f;
@@ -715,16 +715,22 @@
   background-color: white;
 }
 
+#course h3 {
+    font-size: 22px;
+    margin: 0.1em 0em;
+    padding: 0px;
+}
+
 #course h4 {
   font-size: 20px;
-  margin: 0.4em 0em;
+  margin: 0.1em 0em;
   padding: 0px;
 }
 
 #butnCourseBox {
   width: 100%;
   height: 3em;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 5px;
 }
 
