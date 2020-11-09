@@ -12,3 +12,14 @@ siem2013 - fabiofernando
 ### Email
 
 electrusintelligentus@gmail.com - Osmelhores123
+
+
+### Preços de cursos
+
+- C/C++ - 20€
+- Java - 20€
+- Python - 25€
+- Web dev - 30€
+- web apis - 20€
+- matematica - 15€
+- ML - 40€
