@@ -44,29 +44,13 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <div class="sb-sidenav-menu-heading">Aprender</div>
-                            <a class="nav-link" href="avaliacao.php">
-                                <div class="sb-nav-link-icon"><i class="far fa-file-alt"></i></div>
-                                Avaliação
+                            <a class="nav-link" href="users.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Users
                             </a>
-                            
-                            <a class="nav-link" href="aula.php">
-                                <div class="sb-nav-link-icon"><i class="fab fa-youtube"></i></div>
-                                Aula
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Notas de cursos</div>
-                            <a class="nav-link" href="notas.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Notas
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Cursos</div>
-                            <a class="nav-link" href="comprar_curso.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
-                                Comprar curso
-                            </a>
-                            <a class="nav-link" href="historico.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-history"></i></div>
-                                Historico
+                            <a class="nav-link" href="estatisticas.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
+                                Estatisticas
                             </a>
                         </div>
                     </div>
@@ -79,12 +63,12 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="m-4 text-center">AVALIAÇÃO</h1>
+                        <h1 class="m-4 text-center">Estatisticas</h1>
                         <div class="justify-content-center m-4" >
                             <div class="card border-left-primary shadow h-100 py-2" >
                                 <div class="card-body" >
                                     <div class="row no-gutters align-items-center">
-AVALIAÇAO                                        
+                                    Estatisticas                                        
                                     </div>
                                 </div>
                             </div>
