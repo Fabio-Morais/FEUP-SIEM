@@ -23,14 +23,14 @@ $currentTime = $weather->get_time();
                 <h2><?php echo $data->name; ?></h2>
                 <div class="time">
                     <div><?php echo $currentTime; ?></div>
-                    <div><?php echo ucwords($data->weather[0]->description); ?></div>
+                    <div class="font-weight-bold"><?php echo ucwords($data->weather[0]->description); ?></div>
                 </div>
                 <div class="weather-forecast">
                     <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" class="weather-icon" /> <?php echo $data->main->temp; ?>&deg;C
                 </div>
                 <div class="d-flex justify-content-around mb-4 ">
-                    <div><i class="fas fa-tint fa-lg text-info pr-2"></i>Humidade: <?php echo $data->main->humidity; ?> %</div>
-                    <div><i class="fas fa-leaf fa-lg grey-text pr-2"></i>Vento: <?php echo $data->wind->speed; ?> km/h</div>
+                    <div><i class="fas fa-tint fa-lg text-info pr-2" style="font-size:30px"></i>Humidade: <?php echo $data->main->humidity; ?> %</div>
+                    <div><i class="fas fa-wind fa-lg text-muted pr-2" style="font-size:30px"></i>Vento: <?php echo $data->wind->speed; ?> km/h</div>
                 </div>
             </div>
 
