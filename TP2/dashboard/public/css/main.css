@@ -6,10 +6,11 @@ a .icon{
 }
 
 #weatherCard{
-    width: 400px;
+    width: 380px;
     margin: auto;
-    height: 250px; 
+    height: 260px;
     border-radius: 10px;
+    padding: 1px;
 }
 
 .report-container {

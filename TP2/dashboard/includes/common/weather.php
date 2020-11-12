@@ -46,4 +46,5 @@ class Weather
         return strftime('%A, %d de %B de %Y', strtotime('now'));
     }
 }
+
 ?>

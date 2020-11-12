@@ -98,4 +98,5 @@ $currentTime = $weather->get_time();
         </div>
 </div>
 <?php endif; ?>
+
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
