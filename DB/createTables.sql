@@ -1,14 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS explicaFeup;
 SET search_path to explicaFeup;
 
-CREATE TABLE IF NOT EXISTS Cliente(
-	id SERIAL PRIMARY KEY,
-	nome VARCHAR(100),
-    telefone VARCHAR(100),
-    email VARCHAR(100),
-    nif VARCHAR(20)
-);
-
 CREATE TABLE IF NOT EXISTS Userr(
     userName VARCHAR(100) PRIMARY KEY,
     email VARCHAR(100),
@@ -21,44 +13,44 @@ CREATE TABLE IF NOT EXISTS Userr(
     nivel INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS Aluno(
+CREATE TABLE IF NOT EXISTS Student(
     userName VARCHAR(100) REFERENCES Userr(userName) PRIMARY KEY ,
-	notaAluno FLOAT default 0
+	grade FLOAT default 0
 );
 
-CREATE TABLE IF NOT EXISTS Professor(
+CREATE TABLE IF NOT EXISTS Teacher(
     username VARCHAR(100) REFERENCES Userr(userName) PRIMARY KEY ,
-	salario FLOAT default 0
+	salary FLOAT default 0
 );
 
-CREATE TABLE IF NOT EXISTS Encomenda(
-    numero SERIAL PRIMARY KEY,
-    dataEntrega VARCHAR(30),
-    dataDeCompra VARCHAR(30),
-    preco VARCHAR(100),
-    nomeProduto VARCHAR(100),
-    descricao VARCHAR(100),
-    idCliente INTEGER REFERENCES Cliente(id) ON DELETE CASCADE,
-    idAluno VARCHAR(100) REFERENCES Aluno(username) ON DELETE CASCADE
+CREATE TABLE IF NOT EXISTS Orderr(
+    number SERIAL PRIMARY KEY,
+    deliveryDate VARCHAR(30),
+    purchaseDate VARCHAR(30),
+    price VARCHAR(100),
+    productName VARCHAR(100),
+    description VARCHAR(100),
+    idStudent VARCHAR(100) REFERENCES Student(username) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS Salario(
+CREATE TABLE IF NOT EXISTS Salary(
     id SERIAL PRIMARY KEY,
-    userName VARCHAR(100) REFERENCES Professor(username),
-    salario FLOAT default 0,
-    dataSalario VARCHAR(100)
+    userName VARCHAR(100) REFERENCES Teacher(username),
+    salary FLOAT default 0,
+    salaryDate VARCHAR(100)
 );
 
-CREATE TABLE IF NOT EXISTS Curso(
-    nome VARCHAR(50) PRIMARY KEY,
-    preco VARCHAR(30)
+CREATE TABLE IF NOT EXISTS Course(
+    name VARCHAR(50) PRIMARY KEY,
+    price VARCHAR(30),
+    teacher VARCHAR(100) REFERENCES Teacher(username)
 );
 
 CREATE TABLE IF NOT EXISTS Enrolled(
-    idAluno VARCHAR(100) REFERENCES Aluno(username) ON DELETE CASCADE,
-    nomeCurso VARCHAR(100) REFERENCES Curso(nome) ON DELETE CASCADE,
-    notaCurso FLOAT default 0,
-    PRIMARY KEY(idAluno, nomeCurso)
+    userName VARCHAR(100) REFERENCES Student(userName) ON DELETE CASCADE,
+    courseName VARCHAR(100) REFERENCES Course(name) ON DELETE CASCADE,
+    courseGrade FLOAT default 0,
+    PRIMARY KEY(userName, courseName)
 );            
 
 CREATE TABLE IF NOT EXISTS Admin(
