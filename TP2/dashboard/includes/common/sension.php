@@ -5,5 +5,5 @@
 * Se aux = 2 -> admin
 */
 $aux = 2;
-$username = "as";
+$username = "fabiouds";
 ?>
