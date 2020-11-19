@@ -7,7 +7,7 @@ class User{
     /**
      * Return all the user info
      */
-    public function getUserInfo($conn){
+    public function getAllUsers($conn){
         $query = "select * from Userr;";
         $result = pg_exec($conn, $query);
         return $result;
