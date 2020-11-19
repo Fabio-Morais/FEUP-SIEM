@@ -8,7 +8,6 @@ include_once(dirname(__FILE__) . "/tables/User.php");
 final class DataBase
 {
     private $conn = null;
-    private $clients;
     private $order;
     private $teacher;
     private $student;
@@ -45,8 +44,11 @@ final class DataBase
      *
      */
     public function connect()
-    {
+    {   try{
         $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
+        }catch(Exception $e){
+            return false;
+        }  
         if (!$this->conn) {
             return false;
         }
@@ -55,17 +57,13 @@ final class DataBase
         return true;
     }
 
-    public function getAllClients()
-    {
-        return $this->clients->getAllClients($this->conn);
-    }
     public function getAllStudent()
     {
         return $this->student->getAllStudent($this->conn);
     }
-    public function getUserInfo()
+    public function getAllUsers()
     {
-        return $this->user->getUserInfo($this->conn);
+        return $this->user->getAllUsers($this->conn);
     }
     public function getAllStudentsTeacher($teacherUserName)
     {
@@ -79,7 +77,10 @@ final class DataBase
     {
         return $this->student->getPurchaseHistoric($this->conn, $userName);
     }
-
+    public function getTotalCoursesStudent($userName)
+    {
+        return $this->student->getTotalCoursesStudent($this->conn, $userName);
+    }
     public function getSalary($teacherUserName)
     {
         return $this->teacher->getSalary($this->conn, $teacherUserName);
