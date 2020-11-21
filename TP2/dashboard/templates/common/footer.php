@@ -19,6 +19,12 @@
 <script src="assets/demo/datatables-demo.js"></script>
 <script src="public/js/main.js"></script>
 
+<?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
+
+<?php if ($title == "users.php") :?>
+<script src="public/js/users.js"></script>
+<?php endif;?>
+
 </body>
 
 </html>

@@ -32,6 +32,24 @@ class Student{
         $query = "select * from explicafeup.Orderr WHERE idstudent = '".$username."';";
         return pg_exec($conn, $query);
     }
+
+    /**
+     * Menu Users admin
+     * Return the total courses of student $username
+     */
+    public function getTotalCoursesStudent($conn, $username){
+        $query = "SELECT count(*) from enrolled where username='".$username."' group by username;";
+        return pg_exec($conn, $query);
+    }
+    
+    /**
+     * Menu Users admin
+     * Return the total courses of student $username
+     */
+    public function getStudentGrade($conn, $username){
+        $query = "SELECT grade from Student where username='".$username.";";
+        return pg_exec($conn, $query);
+    }
 }
 
 ?>

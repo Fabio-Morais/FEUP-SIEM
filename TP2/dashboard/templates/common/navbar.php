@@ -80,9 +80,9 @@
             <div class="sb-sidenav-footer">
                 <h5 class="card-title text-center">
                     <div class="d-flex flex-wrap justify-content-center mt-2">
-                        <a><span class="badge hours"></span></a> :
-                        <a><span class="badge min"></span></a> :
-                        <a><span class="badge sec"></span></a>
+                        <a><span class="badge hours"><?php date_default_timezone_set('UTC'); echo date("H")?></span></a> :
+                        <a><span class="badge min"><?php echo date("i")?></span></a> :
+                        <a><span class="badge sec"><?php echo date("s")?></span></a>
                     </div>
                 </h5>
                 <div class="small">Logged in as:</div>
