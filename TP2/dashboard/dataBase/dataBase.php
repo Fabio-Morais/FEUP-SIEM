@@ -45,7 +45,7 @@ final class DataBase
      */
     public function connect()
     {   try{
-        $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
+            $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
         }catch(Exception $e){
             return false;
         }  

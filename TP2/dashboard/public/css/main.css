@@ -283,3 +283,8 @@ Paginas
     -ms-transform: scale(1);
     transform: scale(1);
   }
+
+  /*LOADING*/
+
+#loading_spinner { display:none; }
+

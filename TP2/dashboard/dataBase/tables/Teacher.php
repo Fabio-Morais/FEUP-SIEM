@@ -8,7 +8,7 @@ class Teacher{
      * Salario - professor
      * Return salary historic of teacher $teacherUserName
      */
-    public function getSalary($conn){
+    public function getSalary($conn, $teacherUserName){
         $query = "select * from Salary WHERE username = '".$teacherUserName."';";
         $result = pg_exec($conn, $query);
         return $result;
