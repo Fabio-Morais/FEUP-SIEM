@@ -8,6 +8,7 @@
 </footer>
 </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="public/js/scripts.js"></script>
@@ -21,9 +22,10 @@
 
 <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
-<?php if ($title == "users.php") :?>
+<?php if ($title == "users.php" || $title == "alunos.php") :?>
 <script src="public/js/users.js"></script>
 <?php endif;?>
+
 
 </body>
 

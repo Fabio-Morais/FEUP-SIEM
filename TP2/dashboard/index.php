@@ -14,7 +14,6 @@ $currentTime = $weather->get_time();
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 
 
-
 <div class="container-fluid">
     <h1 class="m-4 text-center">BEM VINDO <?php echo strtoupper($username) ?></h1>
     <div class="justify-content-center m-4" >
@@ -22,7 +21,7 @@ $currentTime = $weather->get_time();
             <div class="report-container">
                 <h2><?php echo $data->name; ?></h2>
                 <div class="time">
-                    <div><?php echo $currentTime; ?></div>
+                    <div><?php echo utf8_encode ($currentTime); ?></div>
                     <div class="font-weight-bold"><?php echo ucwords($data->weather[0]->description); ?></div>
                 </div>
                 <div class="weather-forecast">

@@ -1,4 +1,5 @@
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed" >
+
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <a href="index.php"><img src="public/img/icon.png" class="icon ml-3"></a>
     <a class="navbar-brand" href="index.php">ExplicaFeup</a>

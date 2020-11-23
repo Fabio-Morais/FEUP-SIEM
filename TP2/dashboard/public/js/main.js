@@ -11,4 +11,15 @@ $(document).ready(function() {
         var seconds = new Date().getSeconds();
         $(".sec").html(( seconds < 10 ? "0" : "" ) + seconds);
     },1000);
+
+});
+
+$(document).ready(function () {
+    $(".option2").hide();
+    $('.option1').show();
+    $('#outer').change(function () {
+        $('.option2').hide();
+        $('.option1').hide();
+        $('.'+$(this).val()).show();
+    })
 });
