@@ -44,10 +44,10 @@ class Student{
     
     /**
      * Menu Users admin
-     * Return the total courses of student $username
+     * Return the grade of student $username
      */
     public function getStudentGrade($conn, $username){
-        $query = "SELECT grade from Student where username='".$username.";";
+        $query = "SELECT grade from Student where username='".$username."';";
         return pg_exec($conn, $query);
     }
 }

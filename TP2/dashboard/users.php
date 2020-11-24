@@ -52,14 +52,16 @@ function role($var)
                             $totalCourses = $db->getTotalCoursesStudent($row["username"]);
                             $row2 = pg_fetch_assoc($totalCourses);
                             $courses = "--";
-                            if (isset($row3["count"]))
-                                $courses = strval($row3["count"]);
+                            if (isset($row2["count"]))
+                                $courses = strval($row2["count"]);
+
                             /*Obter nota do estudante*/
-                            $grade = $db->getTotalCoursesStudent($row["username"]);
+                            $grade = $db->getStudentGrade($row["username"]);
                             $row3 = pg_fetch_assoc($grade);
                             $grade = "--";
-                            if (isset($row3["username"]))
-                                $grade = sprintf("%.3f", $row3["grade"]);
+                            if (isset($row3["grade"]) && $row3["grade"] > 0.0)
+                                $grade = sprintf("%.1f", $row3["grade"]);
+                                
                             echo "<div class=\"p-2 m-3 content\">";
                             echo "   <div class=\"hovereffect\">";
                             echo       "<div class=\"box box-widget widget-user\">";
@@ -70,7 +72,7 @@ function role($var)
                             echo                "<img class=\"rounded-circle\" src=\"https://bootdey.com/img/Content/avatar/avatar1.png\" alt=\"User Avatar\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
-                            echo               "<h5 class=\"widget-user-desc text-center \">" . role($row['nivel']) . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
+                            echo               "<h5 class=\"widget-user-desc text-center \">" . role($row['role']) . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
                             echo                "<div class=\"row\">";
                             echo                    "<div class=\"col-sm\">";
                             echo                        "<div class=\"description-block text-center\">";
@@ -90,7 +92,7 @@ function role($var)
                             echo     "</div>";
                             echo     "<div class=\"overlay\">";
                             echo         "<h2>" . $row['username'] . "</h2>";/*USERNAME*/
-                            echo         "<button class=\"info btn btn-success btn-circle btn-md\" onclick=\"location.href='edit.php'\"><i class=\"fas fa-pencil-alt\"></i></button>";
+                            echo         "<button class=\"info btn btn-success btn-circle btn-md\" onclick=\"location.href='edit.php?username=".$row['username']."'\"><i class=\"fas fa-pencil-alt\"></i></button>";
                             echo         "<button class=\"info btn btn-danger btn-circle btn-xl\" href=\"#\"><i class=\"far fa-trash-alt\"></i></button>";
 
                             echo     "</div>";

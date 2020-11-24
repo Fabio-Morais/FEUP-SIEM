@@ -4,13 +4,13 @@ SET search_path to explicaFeup;
 CREATE TABLE IF NOT EXISTS Userr(
     userName VARCHAR(100) PRIMARY KEY,
     email VARCHAR(100),
-    telefone VARCHAR(100),
-    nome VARCHAR(100),
+    phone VARCHAR(100),
+    name VARCHAR(100),
     passHash VARCHAR(200),
     nif VARCHAR(100),
-    imagem bytea,
-    dataNascimento DATE,
-    nivel INTEGER
+    image bytea,
+    birthDate DATE,
+    role INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS Student(
