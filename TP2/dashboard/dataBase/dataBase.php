@@ -99,4 +99,19 @@ final class DataBase
         return $this->user->ins($this->conn, $data);
     }
 
+    public function editUserInfo($userName, $user)
+    {
+        return $this->user->editUserInfo($this->conn,$userName, $user);
+    }
+
+    public function addUser($name, $email, $role, $username)
+    {
+        return $this->user->addUser($this->conn,$name, $email, $role, $username);
+    }
+    
+    public function deleteUser($username)
+    {
+        return $this->user->deleteUser($this->conn, $username);
+    }
+
 }
