@@ -42,17 +42,18 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard/dataBase" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard/includes" />
+    <property name="settings.editor.selected.configurable" value="IntelliLang.Configuration" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\dataBase\tables" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\includes" />
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\dataBase" />
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\dataBase\tables" />
     </key>
   </component>
   <component name="RunManager">
@@ -76,6 +77,10 @@
       <workItem from="1604945175786" duration="215000" />
       <workItem from="1604951875905" duration="489000" />
       <workItem from="1605197093970" duration="18384000" />
+      <workItem from="1605912045211" duration="7075000" />
+      <workItem from="1606002762872" duration="5253000" />
+      <workItem from="1606083244553" duration="8288000" />
+      <workItem from="1606168902097" duration="1250000" />
     </task>
     <servers />
   </component>
@@ -119,22 +124,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605215951269" />
-    <state width="1293" height="247" key="GridCell.Tab.0.bottom" timestamp="1605219592751">
+    <state width="1293" height="38" key="GridCell.Tab.0.bottom" timestamp="1606091201283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605219592751" />
-    <state width="1293" height="247" key="GridCell.Tab.0.center" timestamp="1605219592751">
+    <state width="1293" height="38" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606091201283" />
+    <state width="1293" height="38" key="GridCell.Tab.0.center" timestamp="1606091201283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="247" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605219592751" />
-    <state width="1293" height="247" key="GridCell.Tab.0.left" timestamp="1605219592751">
+    <state width="1293" height="38" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606091201283" />
+    <state width="1293" height="38" key="GridCell.Tab.0.left" timestamp="1606091201283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="247" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605219592751" />
-    <state width="1293" height="247" key="GridCell.Tab.0.right" timestamp="1605219592751">
+    <state width="1293" height="38" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606091201283" />
+    <state width="1293" height="38" key="GridCell.Tab.0.right" timestamp="1606091201283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="247" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605219592751" />
+    <state width="1293" height="38" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606091201283" />
     <state width="1338" height="257" key="GridCell.Tab.1.bottom" timestamp="1604952364978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -155,17 +160,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605197621432" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1605223384997">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1605912308790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605223384997" />
-    <state x="349" y="329" key="SettingsEditor" timestamp="1604952337663">
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605912308790" />
+    <state x="349" y="329" key="SettingsEditor" timestamp="1605913117404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="349" y="329" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1604952337663" />
+    <state x="349" y="329" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605913117404" />
     <state x="188" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1604952262982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="188" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1604952262982" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1606090694653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1606090694653" />
   </component>
 </project>

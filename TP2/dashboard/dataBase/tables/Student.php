@@ -13,7 +13,7 @@ class Student{
      * Return all the students for all the courses that the $username teacher teaches
      */
     public function getAllStudentsTeacher($conn, $teacherUsername){
-        $query = "SELECT distinct username FROM explicafeup.course INNER JOIN explicafeup.enrolled e on course.name = e.coursename WHERE teacher = '".$teacherUsername."';";
+        $query = "SELECT aux.username, grade FROM (SELECT distinct username FROM explicafeup.course INNER JOIN explicafeup.enrolled e on course.name = e.coursename WHERE teacher = '".$teacherUsername."') AS aux LEFT JOIN explicafeup.student on student.username = aux.username;";
         return pg_exec($conn, $query);
     }
     /**
@@ -44,10 +44,10 @@ class Student{
     
     /**
      * Menu Users admin
-     * Return the total courses of student $username
+     * Return the grade of student $username
      */
     public function getStudentGrade($conn, $username){
-        $query = "SELECT grade from Student where username='".$username.";";
+        $query = "SELECT grade from Student where username='".$username."';";
         return pg_exec($conn, $query);
     }
 }

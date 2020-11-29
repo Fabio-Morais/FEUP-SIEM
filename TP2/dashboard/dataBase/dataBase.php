@@ -45,7 +45,7 @@ final class DataBase
      */
     public function connect()
     {   try{
-        $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
+            $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
         }catch(Exception $e){
             return false;
         }  
@@ -65,6 +65,10 @@ final class DataBase
     {
         return $this->user->getAllUsers($this->conn);
     }
+    public function getUser($username)
+    {
+        return $this->user->getUser($this->conn, $username);
+    }
     public function getAllStudentsTeacher($teacherUserName)
     {
         return $this->student->getAllStudentsTeacher($this->conn, $teacherUserName);
@@ -81,9 +85,33 @@ final class DataBase
     {
         return $this->student->getTotalCoursesStudent($this->conn, $userName);
     }
+    public function getStudentGrade($userName)
+    {
+        return $this->student->getStudentGrade($this->conn, $userName);
+    }
     public function getSalary($teacherUserName)
     {
         return $this->teacher->getSalary($this->conn, $teacherUserName);
+    }
+
+    public function insert($data)
+    {
+        return $this->user->ins($this->conn, $data);
+    }
+
+    public function editUserInfo($userName, $user)
+    {
+        return $this->user->editUserInfo($this->conn,$userName, $user);
+    }
+
+    public function addUser($name, $email, $role, $username)
+    {
+        return $this->user->addUser($this->conn,$name, $email, $role, $username);
+    }
+    
+    public function deleteUser($username)
+    {
+        return $this->user->deleteUser($this->conn, $username);
     }
 
 }
