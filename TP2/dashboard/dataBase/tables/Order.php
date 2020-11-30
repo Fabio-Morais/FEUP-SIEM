@@ -20,12 +20,12 @@ class Order{
         return $result;
     }
     public function getTotalMonthProfit($conn){
-        $query = "SELECT * FROM explicafeup.Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'MM/YYYY') = to_char(now()::date,  'MM/YYYY');";
+        $query = "SELECT * FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'MM/YYYY') = to_char(now()::date,  'MM/YYYY');";
         $result = pg_exec($conn, $query);
         return $result;
     }
     public function getTotalYearProfit($conn){
-        $query = "SELECT * FROM explicafeup.Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = to_char(now()::date,  'YYYY');";
+        $query = "SELECT * FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = to_char(now()::date,  'YYYY');";
         $result = pg_exec($conn, $query);
         return $result;
     }

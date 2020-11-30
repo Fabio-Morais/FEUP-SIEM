@@ -1,4 +1,3 @@
-
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 
@@ -18,7 +17,6 @@ if ($db->connect()) {
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
-
 ?>
 
 <?php
@@ -39,10 +37,10 @@ function role($var)
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <!--Barra de pesquisa-->
-                <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+                <div class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
                     <i class="fas fa-search" aria-hidden="true"></i>
-                    <input class="form-control form-control-sm ml-2 w-75" type="text" placeholder="Search" aria-label="Search" id="myInput">
-                </form>
+                    <input class="form-control form-control-sm ml-2 w-75" type="text" placeholder="Search" aria-label="Search" id="myInput" name="search">
+                </div>
                 <div class="d-flex flex-wrap no-gutters justify-content-around" id="jar" style="display:none">
                     <?php
                     if ($connected) :
