@@ -1,4 +1,4 @@
-<?php require_once(dirname(__FILE__) . "/../../includes/common/sension.php"); ?>
+<?php require_once(dirname(__FILE__) . "/../../access.php"); ?>
 
 <!DOCTYPE html>
 <html lang="pt">

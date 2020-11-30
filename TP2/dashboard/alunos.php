@@ -11,6 +11,7 @@
 
 $db = DataBase::Instance();
 $users = "";
+$courses = "";
 $connected = false;
 if ($db->connect()) {
     $users = $db->getAllStudentsTeacher("fabiouds");
@@ -33,7 +34,7 @@ if ($db->connect()) {
                     <?php
                     if ($connected) :
                         $row = pg_fetch_assoc($users);
-                    $count=0;
+                        $count = 0;
                         while (isset($row["username"])) {
                             $count++;
                             /*Obter numero de cursos*/
@@ -75,7 +76,7 @@ if ($db->connect()) {
                             /*OVERLAY -> ao passar o rato*/
                             echo     "<div class=\"overlay\">";
                             echo         "<h2>" . $row['username'] . "</h2>";/*USERNAME*/
-                            echo         "<button onclick=\"myFunction(".$count.")\" type=\"button\" class=\"info btn btn-success btn-circle btn-md\"  data-toggle=\"modal\" data-target=\"#modalRegisterForm\"><i class=\"far fa-edit\"></i></button>";
+                            echo         "<button onclick=\"myFunction(" . $count . ")\" type=\"button\" class=\"info btn btn-success btn-circle btn-md\"  data-toggle=\"modal\" data-target=\"#modalRegisterForm\"><i class=\"far fa-edit\"></i></button>";
 
                             echo     "</div>";
                             echo "</div>";
@@ -93,34 +94,57 @@ if ($db->connect()) {
         </div>
     </div>
 </div>
-    <div class="modal fade " id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-            <div class="modal-content">
-                <div class="card bg-light " >
-                    <article class="card-body mx-auto ">
-                        <h4 class="card-title mt-3 text-center">Atribuir Nota </h4>
-                        <form>
-                            <div class="form-group input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fas fa-user-graduate"></i> </span>
-                                </div>
-                                <input name="" class="form-control" placeholder="Nota" type="number" min="0" max="20">
-                            </div> <!-- form-group// -->
+<div class="modal fade " id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="card bg-light ">
+                <article class="card-body mx-auto ">
+                    <h4 class="card-title mt-3 text-center">Atribuir Nota </h4>
+                    <form method="POST" action="action/actionAddGradeStudent.php">
+                        <div class="form-group input-group mt-3 ">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-user"></i> </span>
+                            </div>
+                            <input name="user" class="form-control" placeholder="Nota" type="text" id="usernam" readonly="readonly" >
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block"> Enviar Nota </button>
-                            </div> <!-- form-group// -->
-                        </form>
-                    </article>
-                </div> <!-- card.// -->
+                        </div>
+                        <div class="form-group input-group mt-3 ">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-user-graduate"></i> </span>
+                            </div>
+                            <input name="grade" class="form-control" placeholder="Nota" type="number" min="0" max="20" required>
+                        </div>
+                        <select class="form-control mb-3" name="course">
+                            <?php
 
-            </div>
+                                $coursesTeacer = $db->getCoursesTeacher("fabiouds");
+                                $row = pg_fetch_assoc($coursesTeacer);
+                                while (isset($row["coursename"])) {
+                                    echo " <option  selected>" . $row['coursename'] . "</option>";
+                                    $row = pg_fetch_assoc($coursesTeacer);
+                                }
+
+
+                            ?>
+
+                        </select>
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Enviar Nota </button>
+                        </div>
+                    </form>
+                </article>
+            </div> <!-- card.// -->
+
         </div>
     </div>
+</div>
 <script>
     function myFunction(indice) {
         var x = document.getElementsByClassName("widget-user-username");
-        console.log(x[indice-1].innerHTML)
+        document.getElementById('usernam').value = x[indice - 1].innerHTML;
+
     }
 </script>
 

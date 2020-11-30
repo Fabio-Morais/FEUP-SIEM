@@ -85,6 +85,10 @@ final class DataBase
     {
         return $this->student->getTotalCoursesStudent($this->conn, $userName);
     }
+    public function getCoursesStudent($userName)
+    {
+        return $this->student->getCoursesStudent($this->conn, $userName);
+    }
     public function getStudentGrade($userName)
     {
         return $this->student->getStudentGrade($this->conn, $userName);
@@ -112,6 +116,37 @@ final class DataBase
     public function deleteUser($username)
     {
         return $this->user->deleteUser($this->conn, $username);
+    }
+        
+    public function getCoursesTeacher($username)
+    {
+        return $this->teacher->getCoursesTeacher($this->conn, $username);
+    }
+
+    public function getCoursesTeacherStudent($teacher, $username)
+    {
+        return $this->teacher->getCoursesTeacherStudent($this->conn, $teacher, $username);
+    }
+            
+    public function getTotalCoursesTeacher($username)
+    {
+        return $this->teacher->getTotalCoursesTeacher($this->conn, $username);
+    }
+            
+    public function setGradeStudent($username,  $grade, $course)
+    {
+        return $this->student->setGradeStudent($this->conn, $username,  $grade, $course);
+    }
+
+
+    public function getTotalMonthProfit()
+    {
+        return $this->order->getTotalMonthProfit($this->conn);
+    }
+
+    public function getTotalYearProfit()
+    {
+        return $this->order->getTotalYearProfit($this->conn);
     }
 
 }
