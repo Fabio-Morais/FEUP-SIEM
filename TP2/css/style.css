@@ -697,8 +697,8 @@
 
 #course {
   background-color: #f1f1f1;
-  width: 14em;
-  height: 17em;
+  width: 17em;
+  height: 20em;
   text-align: center;
   margin: 2em;
   box-shadow: 2px 2px 8px 4px #0000004f;
@@ -715,16 +715,22 @@
   background-color: white;
 }
 
+#course h3 {
+    font-size: 22px;
+    margin: 0.1em 0em;
+    padding: 0px;
+}
+
 #course h4 {
   font-size: 20px;
-  margin: 0.4em 0em;
+  margin: 0.1em 0em;
   padding: 0px;
 }
 
 #butnCourseBox {
   width: 100%;
   height: 3em;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 5px;
 }
 
@@ -747,6 +753,27 @@
   background-position: -99% 0;
   color: #F1FAEE;
   transition: all 0.5s;
+}
+
+.buttonBuy {
+    font-family: "Roboto";
+    background-color: #E63946;
+    color: #F1FAEE;
+    border: 2px solid #E63946;
+    padding: 0em 1em;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0.5em 0em;
+    cursor: pointer;
+}
+
+.buttonBuy:hover {
+    background-size: 201% 100%;
+    background-image: linear-gradient(to right, #E63946 50%, #F1FAEE 50%);
+    transition: background-position 0.6s;
+    background-position: -99% 0;
+    color: #E63946;
+    transition: all 0.5s;
 }
 
 /****************************************************************CONTACTOS********************************************************************/

@@ -4,6 +4,8 @@
 
 https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
 
+https://coolors.co/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529
+
 ## Fonts:
 
 Open Sans -> titulo

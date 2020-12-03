@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /**
  * Cria uma objeto da classe Weather, que vai buscar à API a informação do tempo relativo à cidade em que o utilizador se encontra, relativamente ao IP
  */

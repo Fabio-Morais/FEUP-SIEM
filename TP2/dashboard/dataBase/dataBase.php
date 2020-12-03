@@ -3,7 +3,7 @@ include_once(dirname(__FILE__) . "/tables/Order.php");
 include_once(dirname(__FILE__) . "/tables/Teacher.php");
 include_once(dirname(__FILE__) . "/tables/Student.php");
 include_once(dirname(__FILE__) . "/tables/User.php");
-
+include_once(dirname(__FILE__) . "/tables/Courses.php");
 
 final class DataBase
 {
@@ -12,6 +12,7 @@ final class DataBase
     private $teacher;
     private $student;
     private $user;
+    private $course;
 
     /**
      * Call this method to get singleton
@@ -37,6 +38,7 @@ final class DataBase
         $this->order = new Order();
         $this->teacher = new Teacher();
         $this->user = new User();
+        $this->course = new Courses();
 
     }
     /**
@@ -117,6 +119,12 @@ final class DataBase
     {
         return $this->user->deleteUser($this->conn, $username);
     }
+
+    public function getCoursesPrices()
+    {
+        return $this->course->getCoursesPrices($this->conn);
+    }
+
         
     public function getCoursesTeacher($username)
     {
@@ -148,5 +156,6 @@ final class DataBase
     {
         return $this->order->getTotalYearProfit($this->conn);
     }
+
 
 }

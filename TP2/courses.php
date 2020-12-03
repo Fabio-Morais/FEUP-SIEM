@@ -1,3 +1,20 @@
+﻿<?php
+session_start();
+include_once(dirname(__FILE__) . "/dashboard/dataBase/dataBase.php");
+/*Para retirar a visibilidade do erro*/
+/*error_reporting(E_ERROR | E_PARSE);*/
+$db = DataBase::Instance();
+$courses = "";
+$connected = false;
+
+if ($db->connect()) {
+    $courses = $db->getCoursesPrices();
+    $connected = true;
+} else
+    Alerts::showError(Alerts::DATABASEOFF);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -25,27 +42,41 @@
 
 <body>
   <header>
-    <div class="topnav">
-      <a class="logo" href="index.html">
-        <img src="img/icon.png">
-        <h5 id="explic">ExplicaFeup</h5>
-      </a>
-      <!--Versão mobile-->
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fas fa-bars"></i></button>
-        <div class="dropdown-content">
-          <a href="about.html">Quem Somos</a>
-          <a href="schedule.html">Horário</a>
-          <a href="courses.html">Cursos</a>
-          <a href="contacts.html">Contactos</a>
-        </div>
+      <div class="topnav">
+        <a class="logo" href="index.php">
+              <img src="img/icon.png">
+              <h5 id="explic">ExplicaFeup</h5>
+          </a>
+          <!--Versão mobile-->
+          <div class="dropdown">
+              <button class="dropbtn"><i class="fas fa-bars"></i></button>
+              <div class="dropdown-content">
+                  <a href="about.php">Quem Somos</a>
+                  <a href="schedule.php">Horário</a>
+                  <a href="courses.php">Cursos</a>
+                  <a href="contacts.php">Contactos</a>
+                  <?php 
+                  if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
+                    echo "<a id=\"elemnt\" href=\"dashboard/index.php\">Dashboard</a>";
+                  } else{
+                    echo "<a id=\"elemnt\" href=\"login.php\">Dashboard</a>";
+                  }
+                  ?>
+              </div>
+          </div>
+          <!--Versão desktop-->
+          <?php 
+          if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
+            echo "<a id=\"elemnt\" href=\"dashboard/index.php\">Dashboard</a>";
+          } else{
+            echo "<a id=\"elemnt\" href=\"login.php\">Dashboard</a>";
+          }
+          ?>
+          <a id="elemnt" href="contacts.php">Contactos</a>
+          <a id="elemnt" class="active" href="courses.php">Cursos</a>
+          <a id="elemnt" href="schedule.php">Horário</a>
+          <a id="elemnt" href="about.php">Quem Somos</a>
       </div>
-      <!--Versão desktop-->
-      <a id="elemnt" href="contacts.html">Contactos</a>
-      <a id="elemnt" class="active" href="courses.html">Cursos</a>
-      <a id="elemnt" href="schedule.html">Horário</a>
-      <a id="elemnt" href="about.html">Quem Somos</a>
-    </div>
   </header>
 
   <!-- HEAD -->
@@ -70,85 +101,37 @@
           </div>
         </div>
         <!--Curso C/C++-->
-        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
-          <div id="imgBorder"><img src="img/courses/c++.png" id="imgCourse"></div>
-          <h4>C/C++</h4>
-          <div class="flex-nowrap flex-around" id="butnCourseBox">
-            <button  onclick="document.getElementById('id01').style.display='block'" class=" buttonInfo">
-              <i class="far fa-question-circle"></i> Info
-            </button>
-          </div>
-        </div>
-        <!--Curso Java-->
-        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
-          <div id="imgBorder"><img src="img/courses/java2.png" id="imgCourse"></div>
-          <h4>Java</h4>
-          <div class="flex-nowrap flex-around" id="butnCourseBox">
-            <button  onclick="document.getElementById('id02').style.display='block'" class=" buttonInfo">
-              <i class="far fa-question-circle"></i> Info
-            </button>
-          </div>
-        </div>
-        <!--Curso Python-->
-        <div id="course" class="all soft box" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
-          <div id="imgBorder"><img src="img/courses/python.jpg" id="imgCourse"></div>
-          <h4 >Python</h4>
-          <div class="flex-nowrap flex-around" id="butnCourseBox" >
-            <button  onclick="document.getElementById('id03').style.display='block'" class=" buttonInfo">
-              <i class="far fa-question-circle"></i> Info
-            </button>
-          </div>
-        </div>
-        <!--Curso web dev-->
-        <div id="course" class="all web box" data-aos="fade-up" data-aos-delay="700" data-aos-once="true">
-          <div id="imgBorder"><img src="img/courses/web.png" id="imgCourse"></div>
-          <h4>Web Development</h4>
-          <div class="flex-nowrap flex-around" id="butnCourseBox">
-            <button  onclick="document.getElementById('id04').style.display='block'" class=" buttonInfo">
-              <i class="far fa-question-circle"></i> Info
-            </button>
-          </div>
-        </div>
-        <!--Curso web apis-->
-        <div id="course" class="all web box" data-aos="fade-up" data-aos-delay="800" data-aos-once="true">
-          <div id="imgBorder"><img src="img/courses/apis.png" id="imgCourse"></div>
-          <h4>Web APIs</h4>
-          <div class="flex-nowrap flex-around" id="butnCourseBox">
-            <button  onclick="document.getElementById('id05').style.display='block'" class=" buttonInfo">
-              <i class="far fa-question-circle"></i> Info
-            </button>
-          </div>
-        </div>
-        <!--Curso matematica-->
-        <div id="course" class="all ml box" data-aos="fade-up" data-aos-delay="900" data-aos-once="true">
-          <div id="imgBorder"><img src="img/courses/math.jpg" id="imgCourse"></div>
-          <h4>Matemática</h4>
-          <div class="flex-nowrap flex-around" id="butnCourseBox">
-            <button  onclick="document.getElementById('id06').style.display='block'" class=" buttonInfo">
-              <i class="far fa-question-circle"></i> Info
-            </button>
-          </div>
-        </div>
-        <!--Curso machine learning-->
-        <div id="course" class="all ml box" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
-          <div id="imgBorder"><img src="img/courses/ml.png" id="imgCourse"></div>
-          <h4>Machine Learning</h4>
-          <div class="flex-nowrap flex-around" id="butnCourseBox">
-            <button  onclick="document.getElementById('id07').style.display='block'" class=" buttonInfo">
-              <i class="far fa-question-circle"></i> Info
-            </button>
-          </div>
-        </div>
+        <?php
+        $row = pg_fetch_assoc($courses);
+        if($connected) :
+            while(isset($row["price"])){
+              echo "<div id=\"course\" class=\"all ". $row['type'] ." box\" data-aos=\"fade-up\" data-aos-delay=\"100\" data-aos-once=\"true\">";
+              echo    "<div id=\"imgBorder\"><img src=\"img/courses/" . $row['image'] . " \" id=\"imgCourse\"></div>";
+              echo    "<h4>" . ucwords($row['coursename']) . "</h4>";  // Primeira letra maiuscula
+              echo    "<h3>€" . $row['price'] . "</h3>";
+              echo  "<div class=\"flex-nowrap flex-around\" id=\"butnCourseBox\">";
+              echo       "<button onclick=\"document.getElementById('". preg_replace("/\s+/", "", $row['coursename']) ."').style.display = 'block'\" class=\"buttonInfo\">"; //Remove espaços brancos na string
+              echo          "<i class=\"far fa-question-circle\"></i> Info";
+              echo      "</button>";
+              echo      "<button onclick=\"location.href = 'register.php';\" class=\"buttonBuy\">";
+              echo          "<i class=\"fas fa-shopping-cart\"></i> Comprar";
+              echo      "</button>";
+              echo  "</div>";
+              echo "</div>";
+              $row = pg_fetch_assoc($courses);
+            }
+        endif;
+        ?>
       </div>
     </div>
   </div>
 
 <!--******Modals dos diferentes cursos******-->
   <!--Curso C/C++-->
-  <div id="id01" class="modal" >
+  <div id="c/c++" class="modal" >
     <div class="modal-content animate" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('c/c++').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
         <h2>C/C++</h2>
@@ -162,15 +145,15 @@
         </ol> 
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn button">Fechar</button>
+        <button type="button" onclick="document.getElementById('c/c++').style.display='none'" class="cancelbtn button">Fechar</button>
       </div>
     </div>
   </div>
   <!--Curso Java-->
-  <div id="id02" class="modal">
+  <div id="java" class="modal">
     <div class="modal-content animate" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('java').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
         <h2>Java</h2>
@@ -186,15 +169,15 @@
         </ol>  
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn button">Fechar</button>
+        <button type="button" onclick="document.getElementById('java').style.display='none'" class="cancelbtn button">Fechar</button>
       </div>
     </div>
   </div>
   <!--Curso Python-->
-  <div id="id03" class="modal">
+  <div id="python" class="modal">
     <div class="modal-content animate" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('python').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
         <h2>Python</h2>
@@ -208,15 +191,15 @@
         </ol> 
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn button">Fechar</button>
+        <button type="button" onclick="document.getElementById('python').style.display='none'" class="cancelbtn button">Fechar</button>
       </div>
     </div>
   </div>
   <!--Curso web dev-->
-  <div id="id04" class="modal">
+  <div id="webdevelopment" class="modal">
     <div class="modal-content animate" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('webdevelopment').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
         <h2>Web Development</h2>
@@ -230,15 +213,15 @@
         </ol> 
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn button">Fechar</button>
+        <button type="button" onclick="document.getElementById('webdevelopment').style.display='none'" class="cancelbtn button">Fechar</button>
       </div>
     </div>
   </div>
   <!--Curso web apis-->
-  <div id="id05" class="modal">
+  <div id="webapis" class="modal">
     <div class="modal-content animate" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('webapis').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
         <h2>Web APIs</h2>
@@ -257,15 +240,15 @@
         </ol> 
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn button">Fechar</button>
+        <button type="button" onclick="document.getElementById('webapis').style.display='none'" class="cancelbtn button">Fechar</button>
       </div>
     </div>
   </div>
   <!--Curso matematica-->
-  <div id="id06" class="modal">
+  <div id="matematica" class="modal">
     <div class="modal-content animate" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('matematica').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
         <h2>Matematica</h2>
@@ -283,15 +266,15 @@
       
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('id06').style.display='none'" class="cancelbtn button">Fechar</button>
+        <button type="button" onclick="document.getElementById('matematica').style.display='none'" class="cancelbtn button">Fechar</button>
       </div>
     </div>
   </div>
   <!--Curso machine learning-->
-  <div id="id07" class="modal">
+  <div id="machinelearning" class="modal">
     <div class="modal-content animate" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id07').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('machinelearning').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
         <h2>Machine Learning</h2>
@@ -309,7 +292,7 @@
 
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('id07').style.display='none'" class="cancelbtn button">Fechar</button>
+        <button type="button" onclick="document.getElementById('machinelearning').style.display='none'" class="cancelbtn button">Fechar</button>
       </div>
 
     </div>
