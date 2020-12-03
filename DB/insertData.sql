@@ -28,13 +28,13 @@ INSERT INTO Admin
 VALUES('admin');
 
 INSERT INTO Course
-VALUES('c/c++', '20', 'fabiouds'),
-('java', '20', 'fabiouds'),
-('python', '25', 'fabiouds'),
-('web development', '30', null),
-('web apis', '20', null),
-('matematica', '15', null),
-('machine learning', '40', 'fabiouds');
+VALUES('c/c++', '20', 'fabiouds', 'c++.png', 'soft'),
+('java', '20', 'fabiouds', 'java2.png', 'soft'),
+('python', '25', 'fabiouds', 'python.jpg', 'soft'),
+('web development', '30', null, 'web.png', 'web'),
+('web apis', '20', null, 'apis.png', 'web'),
+('matematica', '15', null, 'math.png', 'ml'),
+('machine learning', '40', 'fabiouds', 'ml.png', 'ml');
 
 
 INSERT INTO Orderr(deliveryDate,purchaseDate,price,productName, description, idStudent)
