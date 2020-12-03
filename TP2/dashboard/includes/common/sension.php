@@ -4,6 +4,6 @@
 * Se aux = 1 -> professor
 * Se aux = 2 -> admin
 */
-$aux = 1;
+$aux = 2;
 $username = "fabiouds";
 ?>

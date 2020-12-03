@@ -42,6 +42,13 @@ if (!empty($_POST['Guardar'])) {
     print($user->password."<br>");
 
 }
-header("Location:../users.php");
-exit();
+/*Reencaminha para as paginas, dependendo de onde veio*/
+if($_GET['page']== "perfil.php"){// edita perfil, vai para o perfil
+    header("Location:../perfil.php");
+    exit();
+}else{
+    header("Location:../users.php");
+    exit();
+}
+
 ?>

@@ -11,8 +11,6 @@ $db->connect();
 $db->deleteUser($userName);
 
 
-
-
 header("Location:../users.php");
 exit();
 ?>

@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS Salary(
 );
 
 CREATE TABLE IF NOT EXISTS Course(
-    name VARCHAR(50) PRIMARY KEY,
+    courseName VARCHAR(50) PRIMARY KEY,
     price VARCHAR(30),
     teacher VARCHAR(100) REFERENCES Teacher(username) ON UPDATE CASCADE
 );
