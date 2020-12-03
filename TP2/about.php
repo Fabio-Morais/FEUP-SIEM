@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<?php session_start(); ?>
+
+<!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -27,7 +29,7 @@
 <body>
   <header>
     <div class="topnav">
-      <a class="logo" href="index.html">
+      <a class="logo" href="index.php">
         <img src="img/icon.png">
         <h5 id="explic">ExplicaFeup</h5>
       </a>
@@ -35,17 +37,31 @@
       <div class="dropdown">
         <button class="dropbtn"><i class="fas fa-bars"></i></button>
         <div class="dropdown-content">
-          <a href="about.html">Quem Somos</a>
-          <a href="schedule.html">Horário</a>
-          <a href="courses.html">Cursos</a>
-          <a href="contacts.html">Contactos</a>
+            <a href="about.php">Quem Somos</a>
+            <a href="schedule.php">Horário</a>
+            <a href="courses.php">Cursos</a>
+            <a href="contacts.php">Contactos</a>
+            <?php 
+            if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
+              echo "<a id=\"elemnt\" href=\"dashboard/index.php\">Dashboard</a>";
+            } else{
+              echo "<a id=\"elemnt\" href=\"login.php\">Dashboard</a>";
+            }
+            ?>
         </div>
       </div>
       <!--Versão desktop-->
-      <a id="elemnt" href="contacts.html">Contactos</a>
-      <a id="elemnt" href="courses.html">Cursos</a>
-      <a id="elemnt" href="schedule.html">Horário</a>
-      <a id="elemnt" class="active" href="about.html">Quem Somos</a>
+      <?php 
+          if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
+            echo "<a id=\"elemnt\" href=\"dashboard/index.php\">Dashboard</a>";
+          } else{
+            echo "<a id=\"elemnt\" href=\"login.php\">Dashboard</a>";
+          }
+      ?>
+      <a id="elemnt" href="contacts.php">Contactos</a>
+      <a id="elemnt" href="courses.php">Cursos</a>
+      <a id="elemnt" href="schedule.php">Horário</a>
+      <a id="elemnt" class="active" href="about.php">Quem Somos</a>
     </div>
   </header>
 

@@ -42,18 +42,18 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard/includes" />
-    <property name="settings.editor.selected.configurable" value="IntelliLang.Configuration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\dataBase\tables" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\includes" />
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\dataBase" />
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\dataBase\tables" />
     </key>
   </component>
   <component name="RunManager">
@@ -81,6 +81,10 @@
       <workItem from="1606002762872" duration="5253000" />
       <workItem from="1606083244553" duration="8288000" />
       <workItem from="1606168902097" duration="1250000" />
+      <workItem from="1606745834036" duration="6029000" />
+      <workItem from="1606762895106" duration="3262000" />
+      <workItem from="1607013825347" duration="479000" />
+      <workItem from="1607014375909" duration="4039000" />
     </task>
     <servers />
   </component>
@@ -160,14 +164,23 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605197621432" />
+    <state x="456" y="135" key="NewPhpClassDialog" timestamp="1606764310241">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="456" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1606764310241" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1605912308790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605912308790" />
-    <state x="349" y="329" key="SettingsEditor" timestamp="1605913117404">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="279" y="115" key="SettingsEditor" timestamp="1606745871557">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="279" y="115" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606745871557" />
     <state x="349" y="329" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1605913117404" />
+    <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1606747001623">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1536.824@0.0.1536.824" timestamp="1606747001623" />
     <state x="188" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1604952262982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
