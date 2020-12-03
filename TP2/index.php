@@ -74,9 +74,9 @@
       <h3 data-aos="fade-up">Aprende ao teu ritmo</h3>
       <div class="container2">
         <div data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><button class="button butText" id="button1"
-            onclick="window.location.href='about.html';">Sobre nós</button></div>
+            onclick="window.location.href='about.php';">Sobre nós</button></div>
         <div data-aos="fade-right" data-aos-delay="400" data-aos-once="true"><button class="button butText" id="button2"
-            onclick="window.location.href='courses.html';"><span class="butText">Cursos</span></button></div>
+            onclick="window.location.href='courses.php';"><span class="butText">Cursos</span></button></div>
       </div>
     </div>
     <!--Animaçao da seta para baixo-->
