@@ -1,10 +1,9 @@
 <?php
 
-require_once(dirname(__FILE__) . "/includes/common/sension.php");
+require_once(dirname(__FILE__) . "/includes/common/session.php");
 
 $title = basename($_SERVER['SCRIPT_NAME']);
-
-$role = $aux; //0-aluno, 1-professor, 2-admin
+$role = $aux['role']; //0-aluno, 1-professor, 2-admin
 
 
 /*SO PARA ADMIN*/

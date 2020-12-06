@@ -1,3 +1,8 @@
+<?php
+include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
+include_once(dirname(__FILE__) . "../../../includes/common/session.php");
+?>
+
 <body class="sb-nav-fixed" >
 
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -32,7 +37,7 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-                    <?php if ($aux == 0) : ?>
+                    <?php if ($aux['role'] == 0) : ?>
                         <div class="sb-sidenav-menu-heading">Aprender</div>
                         <a class="nav-link" href="avaliacao.php">
                             <div class="sb-nav-link-icon"><i class="far fa-file-alt"></i></div>
@@ -57,7 +62,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-history"></i></div>
                             Historico
                         </a>
-                    <?php elseif ($aux == 1) : ?>
+                    <?php elseif ($aux['role'] == 1) : ?>
                         <a class="nav-link" href="alunos.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
                             Alunos
@@ -66,7 +71,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-euro-sign"></i></div>
                             Salário
                         </a>
-                    <?php elseif ($aux == 2) : ?>
+                    <?php elseif ($aux['role'] == 2) : ?>
                         <a class="nav-link" href="users.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Users
@@ -87,7 +92,7 @@
                     </div>
                 </h5>
                 <div class="small">Logged in as:</div>
-                <?php echo $username ?>
+                <?php echo $aux['username'] ?>
             </div>
         </nav>
     </div>
