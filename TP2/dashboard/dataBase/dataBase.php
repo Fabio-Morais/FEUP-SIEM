@@ -156,6 +156,8 @@ final class DataBase
     {
         return $this->order->getTotalYearProfit($this->conn);
     }
-
-
+    public function getOrdersByUser($username)
+    {
+        return $this->order->getOrdersByUser($this->conn, $username);
+    }
 }

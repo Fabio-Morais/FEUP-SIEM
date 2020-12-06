@@ -29,6 +29,11 @@ class Order{
         $result = pg_exec($conn, $query);
         return $result;
     }
+    public function getOrdersByUser($conn, $username){
+        $query = "SELECT * FROM orderr WHERE idstudent ='".$username."';";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 }
 
 ?>

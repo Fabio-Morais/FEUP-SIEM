@@ -5,7 +5,7 @@
 
 <?php
 
-$username = "fabio123";
+$username = $aux['username'];
 
 include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 /*Para retirar a visibilidade do erro*/
