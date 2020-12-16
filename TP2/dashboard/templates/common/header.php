@@ -1,7 +1,7 @@
 
 <?php 
-require_once(dirname(__FILE__) . "/../../includes/common/sension.php"); 
-session_start();    
+require_once(dirname(__FILE__) . "/../../includes/common/session.php");
+
 
     if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
     } else{
