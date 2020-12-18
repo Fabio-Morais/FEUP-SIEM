@@ -302,4 +302,16 @@ Paginas
 
 }
 
+#outer{
+    width:200px;
+    float:right;
+}
+.dataTables_filter input[type="search"]:focus{
+    width:350px;
+    transition: all 1s;
+}
 
+.dataTables_filter input[type="search"]:not(:focus){
+    width:150px;
+    transition: all 1s;
+}

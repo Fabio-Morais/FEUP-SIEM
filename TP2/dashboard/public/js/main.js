@@ -23,3 +23,8 @@ $(document).ready(function () {
         $('.'+$(this).val()).show();
     })
 });
+
+/*Ativa a tooltip do bootstrap*/
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })

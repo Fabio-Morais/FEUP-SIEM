@@ -22,12 +22,16 @@ if ($db->connect()) {
     <div class="justify-content-center m-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
-                <select id="outer">
+                <select id="outer" class="custom-select m-2">
                     <option value="option1">Tabela</option>
                     <option value="option2">Gráfico</option>
                 </select>
+                <div class="card-header option1">
+                    <i class="fas fa-table"></i>
+                    Tabela Salário recebido
+                </div>
+                <div class=" card-body table-responsive option1 ">
 
-                <div class="table-responsive option1">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
@@ -60,7 +64,7 @@ if ($db->connect()) {
                 </div>
                 <div class="card-header option2">
                     <i class="fas fa-chart-area mr-1"></i>
-                    Area Chart Example
+                    Gráfico Salário recebido
                 </div>
                 <div class="card-body option2"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
 
@@ -83,5 +87,17 @@ if ($db->connect()) {
     let chart = new ChartBuild("myAreaChart",data,"salário",label);
     chart.labelTextAxis( "Data", "Lucro (€)");
     chart.execute()
+
+
+   /* $(document).ready(function(){
+        $('input[type=\"search\"]').blur(function() {
+                $(".dataTables_filter input[type=\"search\"]").css({"width":"150px"});
+    });
+    $("input[type=\"search\"]").focus(function(){
+
+        $(".dataTables_filter input[type=\"search\"]").css({ "width":"350px"});
+    });
+
+});*/
 </script>
 
