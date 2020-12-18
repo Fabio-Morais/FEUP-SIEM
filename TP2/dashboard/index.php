@@ -29,6 +29,12 @@ if ($db->connect()) {
     $connected = true;
     $monthEarning = pg_fetch_assoc($monthEarningQuery);
     $dailyEarning = pg_fetch_assoc($dailyEarningQuery);
+    if(empty($dailyEarning['sum']) ){
+        $dailyEarning['sum']="0";
+    }
+    if(empty($monthEarning['sum']) ){
+        $monthEarning['sum']="0";
+    }
 
 } else
     Alerts::showError(Alerts::DATABASEOFF);

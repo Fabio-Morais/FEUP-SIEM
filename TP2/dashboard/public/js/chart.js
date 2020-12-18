@@ -1,5 +1,6 @@
 export default class ChartBuild{
-    constructor(id,data,name, label) {
+    constructor(graph, id,data,name, label) {
+        this.graph = graph;
         this.id = id;
         this.data = data;
         this.name = name;
@@ -7,6 +8,9 @@ export default class ChartBuild{
         this.limits();
         this.xAxis="";
         this.yAxis="";
+        if(this.graph==1){
+            this.colorsPie();
+        }
     }
     /*Determina os limites dos graficos*/
     limits() {
@@ -33,6 +37,10 @@ export default class ChartBuild{
         this.xAxis = xAxis;
         this.yAxis = yAxis;
     }
+    /*Cria um array de cores automaticamente*/
+    colorsPie(){
+        this.colorArray = ['#007bff', '#dc3545']
+    }
 
     execute(){
         // Set new default font family and font color to mimic Bootstrap's default styling
@@ -41,6 +49,7 @@ export default class ChartBuild{
 
         // Area Chart Example
         var ctx = document.getElementById(this.id);
+        if(this.graph==0){
         var myLineChart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -101,6 +110,20 @@ export default class ChartBuild{
                 }
             }
         });
+    }
+        else if(this.graph==1){
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                  labels: this.label,
+                  datasets: [{
+                    data: this.data,
+                    backgroundColor: this.colorArray,
+                  }],
+                },
+              });
+        }
+
 
     }
 

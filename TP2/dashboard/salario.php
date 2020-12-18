@@ -85,19 +85,8 @@ if ($db->connect()) {
     var data = <?php echo json_encode($data)?>;
     var label = <?php echo json_encode($label)?>;
     let chart = new ChartBuild("myAreaChart",data,"salário",label);
-    chart.labelTextAxis( "Data", "Lucro (€)");
+    chart.labelTextAxis(0, "Data", "Lucro (€)");
     chart.execute()
 
-
-   /* $(document).ready(function(){
-        $('input[type=\"search\"]').blur(function() {
-                $(".dataTables_filter input[type=\"search\"]").css({"width":"150px"});
-    });
-    $("input[type=\"search\"]").focus(function(){
-
-        $(".dataTables_filter input[type=\"search\"]").css({ "width":"350px"});
-    });
-
-});*/
 </script>
 

@@ -20,7 +20,7 @@ if(!$debug){
 
 /*PARA DEBUG*/
 $aux['username']="fabiouds";
-$aux['role']=1;
+$aux['role']=2;
 
 }
 
