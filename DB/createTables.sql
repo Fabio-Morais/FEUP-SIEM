@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS Orderr(
     price VARCHAR(100),
     productName VARCHAR(100),
     description VARCHAR(100),
-    idStudent VARCHAR(100) REFERENCES Student(username) ON UPDATE CASCADE ON DELETE CASCADE
+    idStudent VARCHAR(100) REFERENCES Student(username) ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Salary(

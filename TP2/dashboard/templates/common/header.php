@@ -1,12 +1,13 @@
 
 <?php 
-require_once(dirname(__FILE__) . "/../../includes/common/session.php");
 
+/*require_once(dirname(__FILE__) . "/../../includes/common/sension.php"); 
+session_start();    
 
     if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
     } else{
     header('Location: ../login.php');
-    }          
+    }    */      
 ?>
 
 <?php require_once(dirname(__FILE__) . "/../../access.php"); ?>

@@ -19,13 +19,18 @@ class Order{
         $result = pg_exec($conn, $query);
         return $result;
     }
-    public function getTotalMonthProfit($conn){
-        $query = "SELECT * FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'MM/YYYY') = to_char(now()::date,  'MM/YYYY');";
+    public function getTotalYearProfit($conn){
+        $query = "SELECT  SUM(CAST(price as INT)) as price,to_char(to_date(purchasedate, 'DD/MM/YYYY'),'DD/MM/YYYY') as date FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = to_char(now()::date,  'YYYY') GROUP BY purchasedate;";
         $result = pg_exec($conn, $query);
         return $result;
     }
-    public function getTotalYearProfit($conn){
-        $query = "SELECT * FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = to_char(now()::date,  'YYYY');";
+    public function getTotalMonthProfit($conn){
+        $query = "SELECT SUM(CAST(price AS int)) FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'MM/YYYY') = to_char(now()::date,  'MM/YYYY');";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+    public function getTotalDailyProfit($conn){
+        $query = "SELECT SUM(CAST(price AS int)) FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'DD/MM/YYYY') = to_char(now()::date,  'DD/MM/YYYY');";
         $result = pg_exec($conn, $query);
         return $result;
     }

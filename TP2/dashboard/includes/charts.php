@@ -1,18 +1,29 @@
 <?php
-global  $data, $label;
 
-function execute($data2, $label2)
-{
-    global  $data, $label;
-    $data = $data2;
-    $label = $label2;
-    echo "<script>aux();</script>";
+class Chart{
+    private  $data, $label;
+    private $yMin, $yMax;
 
+public function __construct($data, $label)
+    {
+        $this->data = $data;
+        $this->label = $label;
+
+    }
+public function execute()
+    {
+        echo "<script>aux();</script>";
+    }
+public function limits($yMin, $yMax)
+    {
+        $this->yMin = $yMin;
+        $this->yMax = $yMax;
+    }
 }
-
 ?>
 
 <script>
+    console.log("ola")
     function aux() {
 
                 // Set new default font family and font color to mimic Bootstrap's default styling
@@ -24,7 +35,7 @@ function execute($data2, $label2)
                 var myLineChart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: <?php echo json_encode($label)?>,
+                        labels: <?php echo json_encode($this->label)?>,
                         datasets: [{
                             label: "Sessions",
                             lineTension: 0.3,
@@ -37,7 +48,7 @@ function execute($data2, $label2)
                             pointHoverBackgroundColor: "rgba(2,117,216,1)",
                             pointHitRadius: 50,
                             pointBorderWidth: 2,
-                            data: <?php echo json_encode($data)?>,
+                            data: <?php echo json_encode($this->data)?>,
                 }],
             },
             options: {
@@ -59,8 +70,8 @@ function execute($data2, $label2)
                     }],
                     yAxes: [{
                         ticks: {
-                            min: 0,
-                            max: 2000,
+                            min: <?php echo json_encode($this->yMin)?>,
+                            max: <?php echo json_encode($this->yMax)?>,
                             maxTicksLimit: 5
                         },
                         gridLines: {
@@ -73,6 +84,7 @@ function execute($data2, $label2)
                 }
             }
         });
+
     }
 </script>
 

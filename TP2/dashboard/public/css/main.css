@@ -288,3 +288,26 @@ Paginas
 
 #loading_spinner { display:none; }
 
+.modal-dialog-full-width {
+    width: 90% !important;
+    height: 100% !important;
+    margin: auto !important;
+    padding: 0 !important;
+    max-width:none !important;
+
+}
+
+.modal-content-full-width  {
+    height: auto !important;
+    min-height: 100% !important;
+    border-radius: 0 !important;
+    background-color: #ececec !important
+}
+
+.modal-header-full-width  {
+    border-bottom: 1px solid #9ea2a2 !important;
+}
+
+.modal-footer-full-width  {
+    border-top: 1px solid #9ea2a2 !important;
+}

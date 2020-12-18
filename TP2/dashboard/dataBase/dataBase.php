@@ -146,15 +146,18 @@ final class DataBase
         return $this->student->setGradeStudent($this->conn, $username,  $grade, $course);
     }
 
-
+    public function getTotalYearProfit()
+    {
+        return $this->order->getTotalYearProfit($this->conn);
+    }
     public function getTotalMonthProfit()
     {
         return $this->order->getTotalMonthProfit($this->conn);
     }
 
-    public function getTotalYearProfit()
+    public function getTotalDailyProfit()
     {
-        return $this->order->getTotalYearProfit($this->conn);
+        return $this->order->getTotalDailyProfit($this->conn);
     }
     public function getOrdersByUser($username)
     {
