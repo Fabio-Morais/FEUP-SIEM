@@ -80,8 +80,8 @@ if ($db->connect()) {
     import ChartBuild from '/public/js/chart.js';
     var data = <?php echo json_encode($data)?>;
     var label = <?php echo json_encode($label)?>;
-    let chart = new ChartBuild("myAreaChart",data,label);
-    chart.limits(0,2000);
+    let chart = new ChartBuild("myAreaChart",data,"salário",label);
+    chart.labelTextAxis( "Data", "Lucro (€)");
     chart.execute()
 </script>
 
