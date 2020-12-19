@@ -16,11 +16,45 @@ $connected = false;
 if ($db->connect()) {
     $users = $db->getAllStudentsTeacher("fabiouds");
     $connected = true;
+
+    /*Se tiver no link o ?username=....*/
+    if($_GET){
+
+    }
+
 } else
     Alerts::showError(Alerts::DATABASEOFF);
+
+
+
+
 ?>
 
+<!--Se tiver no link o ?username=.... mostra um modal para visualizar o perfil-->
+<?php if($_GET && $connected):?>
+    <!-- Modal -->
+    <div class="modal fade "  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog-full-width modal-dialog momodel modal-fluid modal-dialog-centered" role="document"  >
+            <div class="modal-content-full-width modal-content "  >
+                <div class="modal-header-full-width   modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="removeGetUrl()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" >
+                    <!--Modal-->
+                    <?php include_once(dirname(__FILE__) . "/templates/viewProfile.php");?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="removeGetUrl()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+endif;?>
 
+<!--Lista de alunos-->
 <div class="container-fluid">
     <div class="justify-content-center m-4">
         <div class="card border-left-primary shadow h-100 py-2">
@@ -76,8 +110,8 @@ if ($db->connect()) {
                             /*OVERLAY -> ao passar o rato*/
                             echo     "<div class=\"overlay\">";
                             echo         "<h2>" . $row['username'] . "</h2>";/*USERNAME*/
-                            echo         "<button onclick=\"myFunction(" . $count . ")\" type=\"button\" class=\"info btn btn-success btn-circle btn-md\"  data-toggle=\"modal\" data-target=\"#modalRegisterForm\"><i class=\"far fa-edit\"></i></button>";
-
+                            echo         "<button data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Ver Perfil\" class=\"info btn btn-success btn-circle btn-md\" onclick=\"location.href='?username=".$row['username']."'\"><i class=\"fas fa-user-circle\" ></i></button>";
+                            echo         "<button data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Atribuir Nota\" onclick=\"myFunction(" . $count . ")\" type=\"button\" class=\"info btn btn-success btn-circle btn-md\"  data-toggle=\"modal\" data-target=\"#modalRegisterForm\"><i class=\"far fa-edit\"></i></button>";
                             echo     "</div>";
                             echo "</div>";
 
@@ -88,6 +122,8 @@ if ($db->connect()) {
                     endif;
                     ?>
                 </div>
+
+
                 <div class="pagination">
                 </div>
             </div>
@@ -117,12 +153,12 @@ if ($db->connect()) {
                         <select class="form-control mb-3" name="course">
                             <?php
 
-                                $coursesTeacer = $db->getCoursesTeacher("fabiouds");
+                            $coursesTeacer = $db->getCoursesTeacher("fabiouds");
+                            $row = pg_fetch_assoc($coursesTeacer);
+                            while (isset($row["coursename"])) {
+                                echo " <option  selected>" . $row['coursename'] . "</option>";
                                 $row = pg_fetch_assoc($coursesTeacer);
-                                while (isset($row["coursename"])) {
-                                    echo " <option  selected>" . $row['coursename'] . "</option>";
-                                    $row = pg_fetch_assoc($coursesTeacer);
-                                }
+                            }
 
 
                             ?>
@@ -149,3 +185,11 @@ if ($db->connect()) {
 </script>
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+
+<script type='text/javascript'>
+    $("#exampleModalLong").modal()
+
+    function removeGetUrl(){
+        window.history.replaceState(null, null, window.location.pathname);
+    }
+</script>

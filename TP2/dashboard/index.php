@@ -9,26 +9,37 @@ $data = $weather->get_data();
 $currentTime = $weather->get_time();
 ?>
 
+<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
 
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 <?php
 
-
 include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 /*Para retirar a visibilidade do erro*/
 /*error_reporting(E_ERROR | E_PARSE);*/
 $db = DataBase::Instance();
-$monthEarning = "";
-$yearEarning = "";
+$dailyEarning['sum']="0";
+$monthEarning['sum']="0";
+$totalCourses['sum']="0";
 $connected = false;
 if ($db->connect()) {
 
     $monthEarningQuery = $db->getTotalMonthProfit();
-    $yearEarningQuery = $db->getTotalYearProfit();
+    $dailyEarningQuery = $db->getTotalDailyProfit();
+    $totalCoursesQuery = $db->getTotalCourses();
+
     $connected = true;
     $monthEarning = pg_fetch_assoc($monthEarningQuery);
-    $yearEarning = pg_fetch_assoc($yearEarningQuery);
+    $dailyEarning = pg_fetch_assoc($dailyEarningQuery);
+    $totalCourses = pg_fetch_assoc($totalCoursesQuery);
+
+    if(empty($dailyEarning['sum']) ){
+        $dailyEarning['sum']="0";
+    }
+    if(empty($monthEarning['sum']) ){
+        $monthEarning['sum']="0";
+    }
 
 } else
     Alerts::showError(Alerts::DATABASEOFF);
@@ -67,11 +78,11 @@ if ($db->connect()) {
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Ganhos (Mensais)</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">€<?php echo $monthEarning['count']?>></div>
+                                    Ganhos (Diários)</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?php echo $dailyEarning['sum'] ?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                <i class="fas fa-euro-sign fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -86,10 +97,10 @@ if ($db->connect()) {
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Ganhos (Mensais)</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?php echo $monthEarning['sum'] ?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                <i class="fas fa-calendar  fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -105,11 +116,11 @@ if ($db->connect()) {
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Pending Requests</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                    Cursos Vendidos</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalCourses['count']?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>

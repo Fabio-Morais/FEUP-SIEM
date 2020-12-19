@@ -72,11 +72,11 @@ function role($var)
               <div class="card-body">
                 <div class="list-group-item d-flex flex-row justify-content-center">
 
-                  <div class="list-details m-2">
+                  <div class="list-details m-2 text-center">
                     <i class="fas fa-phone"></i> <span><?php echo $queryInfo['phone'] ?></span>
                   </div>
 
-                  <div class="list-details m-2">
+                  <div class="list-details m-2 text-center">
                     <i class="fa fa-envelope"></i><span> <?php echo $queryInfo['email'] ?></span>
                   </div>
                 </div>

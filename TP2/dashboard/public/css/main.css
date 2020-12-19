@@ -284,7 +284,44 @@ Paginas
     transform: scale(1);
   }
 
-  /*LOADING*/
 
-#loading_spinner { display:none; }
 
+.modal-dialog-full-width {
+    width: 90% !important;
+    margin: auto !important;
+    padding: 0 !important;
+    max-width:none !important;
+
+}
+
+.modal-content-full-width  {
+    height: auto !important;
+    border-radius: 0 !important;
+    background-color: #ececec !important;
+    padding: 0 !important;
+
+}
+
+#outer{
+    width:200px;
+    float:right;
+}
+.dataTables_filter input[type="search"]:focus{
+    width:350px;
+    transition: all 1s;
+}
+
+.dataTables_filter input[type="search"]:not(:focus){
+    width:150px;
+    transition: all 1s;
+}
+
+#myInput{
+ width:30%!important;
+    transition: all 1s;
+
+}
+#myInput:focus{
+    width:80%!important;
+    transition: all 1s;
+}

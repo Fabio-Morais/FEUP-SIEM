@@ -4,7 +4,6 @@
         width: 110px;
         margin: auto;
         margin-bottom: 20px;
-  
       }
   
       .user-box img {
@@ -16,6 +15,7 @@
         -moz-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
         -ms-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+
       }
   
       .profile-card-2 .card {
