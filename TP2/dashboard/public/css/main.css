@@ -315,3 +315,13 @@ Paginas
     width:150px;
     transition: all 1s;
 }
+
+#myInput{
+ width:30%!important;
+    transition: all 1s;
+
+}
+#myInput:focus{
+    width:80%!important;
+    transition: all 1s;
+}

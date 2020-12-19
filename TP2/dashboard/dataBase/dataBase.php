@@ -163,4 +163,16 @@ final class DataBase
     {
         return $this->order->getOrdersByUser($this->conn, $username);
     }
+    public function getSellsCourses()
+    {
+        return $this->order->getSellsCourses($this->conn);
+    }
+    public function getSellsCoursesMoney()
+    {
+        return $this->order->getSellsCoursesMoney($this->conn);
+    }
+    public function getTotalCourses()
+    {
+        return $this->order->getTotalCourses($this->conn);
+    }
 }

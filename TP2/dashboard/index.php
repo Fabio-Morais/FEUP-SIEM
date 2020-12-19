@@ -19,16 +19,21 @@ include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 /*Para retirar a visibilidade do erro*/
 /*error_reporting(E_ERROR | E_PARSE);*/
 $db = DataBase::Instance();
-$monthEarning = "";
-$yearEarning = "";
+$dailyEarning['sum']="0";
+$monthEarning['sum']="0";
+$totalCourses['sum']="0";
 $connected = false;
 if ($db->connect()) {
 
     $monthEarningQuery = $db->getTotalMonthProfit();
     $dailyEarningQuery = $db->getTotalDailyProfit();
+    $totalCoursesQuery = $db->getTotalCourses();
+
     $connected = true;
     $monthEarning = pg_fetch_assoc($monthEarningQuery);
     $dailyEarning = pg_fetch_assoc($dailyEarningQuery);
+    $totalCourses = pg_fetch_assoc($totalCoursesQuery);
+
     if(empty($dailyEarning['sum']) ){
         $dailyEarning['sum']="0";
     }
@@ -112,7 +117,7 @@ if ($db->connect()) {
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                     Cursos Vendidos</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalCourses['count']?></div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>

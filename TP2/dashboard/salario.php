@@ -79,7 +79,18 @@ if ($db->connect()) {
 
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+<script>
+    $(document).ready(function () {
+        $(".option2").hide();
+        $('.option1').show();
+        $('#outer').change(function () {
+            $('.option2').hide();
+            $('.option1').hide();
+            $('.'+$(this).val()).show();
+        })
+    });
 
+</script>
 <script type="module">
     import ChartBuild from '/public/js/chart.js';
     var data = <?php echo json_encode($data)?>;

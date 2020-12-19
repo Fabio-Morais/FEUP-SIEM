@@ -39,6 +39,33 @@ class Order{
         $result = pg_exec($conn, $query);
         return $result;
     }
+
+    /**
+     * Return total sells by courses (number)
+     */
+    public function getSellsCourses($conn){
+        $query = "SELECT Count(*), productname FROM explicafeup.orderr GROUP BY productname";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
+    /**
+     * Return total sells by courses (€)
+     */
+    public function getSellsCoursesMoney($conn){
+        $query = "SELECT sum(CAST(price AS int)), productname FROM explicafeup.orderr GROUP BY productname";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
+    /**
+     * Return total sells by courses (€)
+     */
+    public function getTotalCourses($conn){
+        $query = "SELECT COUNT(*) FROM explicafeup.orderr";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 }
 
 ?>

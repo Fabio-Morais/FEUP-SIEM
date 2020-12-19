@@ -38,19 +38,27 @@ export default class ChartBuild{
         this.yAxis = yAxis;
     }
     /*Cria um array de cores automaticamente*/
-    colorsPie(){
-        this.colorArray = ['#007bff', '#dc3545']
+    colorsPie() {
+        this.colorArray=["#CA6A63", "#A4C2C5", "#CE808E", "#C8D3A8", "#200E62", "#469343", "#6C1EE1"];
+        /*var i;
+        for (i = 0; i < this.data.length; i++) {
+            this.colorArray[i] = this.getRandomColor();
+        }
+        console.log(this.colorArray)*/
     }
+
 
     execute(){
         // Set new default font family and font color to mimic Bootstrap's default styling
         Chart.defaults.global.defaultFontFamily = 'Roboto,"Helvetica Neue",Arial,sans-serif';
         Chart.defaults.global.defaultFontColor = '#292b2c';
-
         // Area Chart Example
+
+
         var ctx = document.getElementById(this.id);
+
         if(this.graph==0){
-        var myLineChart = new Chart(ctx, {
+         this.myChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: this.label,
@@ -107,12 +115,22 @@ export default class ChartBuild{
                 },
                 legend: {
                     display: false
+                },
+                tooltips: {
+                    enabled: true,
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label;
+                            var val = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                            return label + ' : ' + val + '€';
+                        }
+                    }
                 }
             }
         });
     }
         else if(this.graph==1){
-            var myPieChart = new Chart(ctx, {
+            this.myChart  = new Chart(ctx, {
                 type: 'pie',
                 data: {
                   labels: this.label,
@@ -123,9 +141,70 @@ export default class ChartBuild{
                 },
               });
         }
+        else if(this.graph==2){
+            this.myChart  = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: this.label,
+                    datasets: [{
+                        label: this.name,
+                        backgroundColor: "rgba(2,117,216,1)",
+                        borderColor: "rgba(2,117,216,1)",
+                        data: this.data,
+                    }],
+                },
+                options: {
+                    scaleShowValues: true,
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                autoSkip: false,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: this.xAxis
+                            },
+                            gridLines: {
+                                display: false
+                            },
 
-
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: this.yAxis
+                            },
+                            ticks: {
+                                min: this.yMin,
+                                max: this.yMax,
+                                maxTicksLimit: 5
+                            },
+                            gridLines: {
+                                display: true
+                            }
+                        }],
+                    },
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        enabled: true,
+                        callbacks: {
+                            label: function(tooltipItem, data) {
+                                var label = data.datasets[tooltipItem.datasetIndex].label;
+                                var val = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                                return label + ' : ' + val + '€';
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        this.myChart.clear()
     }
+
+
+
 
 }
 

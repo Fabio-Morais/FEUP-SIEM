@@ -14,15 +14,7 @@ $(document).ready(function() {
 
 });
 
-$(document).ready(function () {
-    $(".option2").hide();
-    $('.option1').show();
-    $('#outer').change(function () {
-        $('.option2').hide();
-        $('.option1').hide();
-        $('.'+$(this).val()).show();
-    })
-});
+
 
 /*Ativa a tooltip do bootstrap*/
 $(function () {
