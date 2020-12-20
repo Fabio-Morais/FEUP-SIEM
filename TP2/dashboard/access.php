@@ -9,7 +9,7 @@ $role = $aux['role']; //0-aluno, 1-professor, 2-admin
 /*SO PARA ADMIN*/
 if ($title == "users.php" || $title == "estatisticas.php") {
     if ($role != 2) {
-        header("Location: templates/common/401.html " . $title);
+        header("Location: templates/common/401.html" );
         exit();
     }
 }/*SO PARA PROFESSOR*/ else if ($title ==  "alunos.php" ||  $title ==  "salario.php") {

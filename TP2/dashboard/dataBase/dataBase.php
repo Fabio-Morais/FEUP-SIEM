@@ -117,7 +117,12 @@ final class DataBase
     {
         return $this->user->addUser($this->conn,$name, $email, $role, $username);
     }
-    
+
+    public function usernameExists($username)
+    {
+        return $this->user->usernameExists($this->conn, $username);
+    }
+
     public function deleteUser($username)
     {
         return $this->user->deleteUser($this->conn, $username);
@@ -149,15 +154,18 @@ final class DataBase
         return $this->student->setGradeStudent($this->conn, $username,  $grade, $course);
     }
 
-
+    public function getTotalYearProfit()
+    {
+        return $this->order->getTotalYearProfit($this->conn);
+    }
     public function getTotalMonthProfit()
     {
         return $this->order->getTotalMonthProfit($this->conn);
     }
 
-    public function getTotalYearProfit()
+    public function getTotalDailyProfit()
     {
-        return $this->order->getTotalYearProfit($this->conn);
+        return $this->order->getTotalDailyProfit($this->conn);
     }
 
     public function getOrdersByUser($username)
@@ -175,4 +183,16 @@ final class DataBase
         return $this->video->getVideoLinks($this->conn, $coursename);
     }
 
+    public function getSellsCourses()
+    {
+        return $this->order->getSellsCourses($this->conn);
+    }
+    public function getSellsCoursesMoney()
+    {
+        return $this->order->getSellsCoursesMoney($this->conn);
+    }
+    public function getTotalCourses()
+    {
+        return $this->order->getTotalCourses($this->conn);
+    }
 }
