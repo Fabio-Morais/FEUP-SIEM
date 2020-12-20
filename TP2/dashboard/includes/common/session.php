@@ -4,13 +4,13 @@
 * Se aux = 1 -> professor
 * Se aux = 2 -> admin
 */
-$debug=true;
+$debug=false;
 if($debug){
     include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
     session_start();
     $db = DataBase::Instance();
     $aux = "";
-    $_SESSION['user']="admin";
+
     if ($db->connect()) {
         $auxQuery = $db->getUser($_SESSION['user']);
         $connected = true;

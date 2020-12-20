@@ -113,7 +113,7 @@ if ($db->connect()) {
               echo       "<button onclick=\"document.getElementById('". preg_replace("/\s+/", "", $row['coursename']) ."').style.display = 'block'\" class=\"buttonInfo\">"; //Remove espaços brancos na string
               echo          "<i class=\"far fa-question-circle\"></i> Info";
               echo      "</button>";
-              echo      "<button onclick=\"location.href = 'register.php';\" class=\"buttonBuy\">";
+              echo      "<button onclick=\"location.href = 'register.php?course=".$row['coursename']."';\" class=\"buttonBuy\">";
               echo          "<i class=\"fas fa-shopping-cart\"></i> Comprar";
               echo      "</button>";
               echo  "</div>";
@@ -125,7 +125,6 @@ if ($db->connect()) {
       </div>
     </div>
   </div>
-
 <!--******Modals dos diferentes cursos******-->
   <!--Curso C/C++-->
   <div id="c/c++" class="modal" >
