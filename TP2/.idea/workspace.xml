@@ -48,6 +48,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -91,6 +92,7 @@
       <workItem from="1606168902097" duration="1250000" />
       <workItem from="1606687214815" duration="2636000" />
       <workItem from="1606742651632" duration="6993000" />
+
       <workItem from="1608216611776" duration="17559000" />
       <workItem from="1608250026368" duration="238000" />
       <workItem from="1608285119925" duration="4297000" />
@@ -114,6 +116,7 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+
   <component name="WindowStateProjectService">
     <state x="633" y="193" key="#CLI_Interpreters" timestamp="1604951947659">
       <screen x="0" y="0" width="1920" height="1040" />

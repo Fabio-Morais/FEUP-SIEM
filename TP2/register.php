@@ -28,13 +28,19 @@
                                                 echo "<div class=\"form-group\">
                                                             <span style='color:red;'>* Por favor, preencha todos os campos</span>
                                                         </div>";
+                                                        $_SESSION['error'] = FALSE;
                                               }
-                                            ?>
-                                            <?php
                                               if (isset($_SESSION['passerror'])){
                                                 echo "<div class=\"form-group\">
                                                             <span style='color:red;'>* As passwords não correspondem</span>
                                                         </div>";
+                                                        $_SESSION['passerror'] = FALSE;
+                                              }
+                                              if (isset($_SESSION['usererror'])){
+                                                echo "<div class=\"form-group\">
+                                                            <span style='color:red;'>* O nome de utilizador já existe</span>
+                                                        </div>";
+                                                        $_SESSION['usererror'] = FALSE;
                                               }
                                             ?>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
