@@ -54,7 +54,6 @@ function role($var)
   }
 };
 ?>
-
 <?php if ($connected) : ?>
   <div class="container-fluid">
     <div class="justify-content-center m-4">
@@ -64,7 +63,7 @@ function role($var)
             <div class="card">
               <div class="card-body text-center bg-primary rounded-top">
                 <div class="user-box">
-                  <img src="/public/img/avatar.png" alt="user avatar">
+                  <img src="/public/img/users/<?php echo $queryInfo['image']?>" alt="user avatar">
                 </div>
                 <h5 class="mb-1 text-white"><?php echo  $queryInfo['name'] ?></h5>
                 <h6 class="text-light"><?php echo role($queryInfo['role']) ?></h6>
@@ -159,4 +158,23 @@ function role($var)
     </div>
   </div>
 <?php endif; ?>
+
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+
+<script>
+
+    function fileName(){
+        var fullPath = document.getElementById('exampleInputFile').value;
+        if (fullPath) {
+            var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+            var filename = fullPath.substring(startIndex);
+            if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                filename = filename.substring(1);
+            }
+            var fileLabel= document.getElementById('fileLabel');
+            fileLabel.innerHTML=filename;
+        }
+    }
+
+
+</script>

@@ -21,7 +21,7 @@ include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 $db = DataBase::Instance();
 $dailyEarning['sum']="0";
 $monthEarning['sum']="0";
-$totalCourses['sum']="0";
+$totalCourses['count']="0";
 $connected = false;
 if ($db->connect()) {
 

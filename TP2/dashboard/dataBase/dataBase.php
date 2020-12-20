@@ -114,7 +114,12 @@ final class DataBase
     {
         return $this->user->addUser($this->conn,$name, $email, $role, $username);
     }
-    
+
+    public function usernameExists($username)
+    {
+        return $this->user->usernameExists($this->conn, $username);
+    }
+
     public function deleteUser($username)
     {
         return $this->user->deleteUser($this->conn, $username);

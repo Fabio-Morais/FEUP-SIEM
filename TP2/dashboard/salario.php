@@ -11,7 +11,7 @@ $salary = "";
 $connected = false;
 
 if ($db->connect()) {
-    $salary = $db->getSalary("fabiouds");/*Mudar o username para o que vem da session*/
+    $salary = $db->getSalary($aux['username']);/*Mudar o username para o que vem da session*/
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
@@ -58,7 +58,6 @@ if ($db->connect()) {
                             endif;
 
                             ?>
-
                         </tbody>
                     </table>
                 </div>
@@ -95,7 +94,7 @@ if ($db->connect()) {
     import ChartBuild from '/public/js/chart.js';
     var data = <?php echo json_encode($data)?>;
     var label = <?php echo json_encode($label)?>;
-    let chart = new ChartBuild("myAreaChart",data,"salário",label);
+    let chart = new ChartBuild(0,"myAreaChart",data,"salário",label);
     chart.labelTextAxis(0, "Data", "Lucro (€)");
     chart.execute()
 

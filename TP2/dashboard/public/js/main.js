@@ -1,3 +1,6 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 $(document).ready(function() {
     setInterval( function() {
         var hours = new Date().getHours();
@@ -12,9 +15,18 @@ $(document).ready(function() {
         $(".sec").html(( seconds < 10 ? "0" : "" ) + seconds);
     },1000);
 
+
+
+
 });
 
-
+/*Elimina as mensagens de Sucesso passado X segundos*/
+async function demo() {
+    console.log('Taking a break...');
+    await sleep(3000);
+    $('#alertSucess').remove();
+}
+demo()
 
 /*Ativa a tooltip do bootstrap*/
 $(function () {

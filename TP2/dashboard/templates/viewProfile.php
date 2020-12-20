@@ -34,7 +34,7 @@ $courses = pg_fetch_assoc($coursesQuery);
                     <div class="card">
                         <div class="card-body text-center bg-primary rounded-top">
                             <div class="user-box">
-                                <img src="/public/img/avatar.png" alt="user avatar">
+                                <img  src="/public/img/users/<?php echo $queryInfo['image']?>" alt="user avatar">
                             </div>
                             <h5 class="mb-1 text-white"><?php echo  $queryInfo['name'] ?></h5>
                             <h6 class="text-light">Aluno</h6>

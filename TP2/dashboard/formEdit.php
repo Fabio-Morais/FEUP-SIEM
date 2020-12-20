@@ -118,3 +118,5 @@ function role($var)
 </div>
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+
+

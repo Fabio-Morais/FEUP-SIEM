@@ -107,12 +107,16 @@ Listar todos os users em cards
     top: 65px;
     left: 50%;
     margin-left: -45px;
+    width: 95px;
+    height: 100px;
+
 }
 
 .widget-user .widget-user-image>img {
-    width: 90px;
-    height: auto;
+    width: 95px;
+    height: 100px;
     border: 3px solid #fff;
+    object-fit: fill;
 }
 
 .widget-user .box-footer {
@@ -303,9 +307,9 @@ Paginas
 }
 
 #outer{
-    width:200px;
+    width:280px;
     float:right;
-}
+    text-align-last:center;}
 .dataTables_filter input[type="search"]:focus{
     width:350px;
     transition: all 1s;
@@ -325,3 +329,7 @@ Paginas
     width:80%!important;
     transition: all 1s;
 }
+
+
+
+

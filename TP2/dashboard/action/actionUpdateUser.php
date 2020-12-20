@@ -25,7 +25,15 @@ if (!empty($_POST['Guardar'])) {
     $user->nif = $_POST['nif'];
     $user->phone = $_POST['phone'];
     $user->birthDate = $_POST['birthDate'];
-    $user->image = $_FILES['image']['name'];
+
+    /*Guarda imagem e envia para a db o nome do ficheiro  (user_USERNAME_FILEEXAMPLE.png) */
+    $prefixo = 'user_'; // definir um prefixo apropriado para identificação
+    $fileName = $prefixo .$user->userName."_". $_FILES['image']['name'];
+    $fileName = str_replace(' ', '', $fileName);//remover os espaços para evitar erros
+    $destino = '../public/img/users/' . $fileName;
+    move_uploaded_file($_FILES["image"]["tmp_name"], $destino);//guarda imagem
+    $user->image = $fileName;
+
 
     $db = DataBase::Instance();
     $db->connect();
