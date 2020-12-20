@@ -19,7 +19,6 @@ if ($db->connect()) {
     $courses = pg_fetch_assoc($coursesQuery);
     $videosQuery = $db->getVideoLinks($courses['coursename']);
     $videos = pg_fetch_assoc($videosQuery);
-
     $arr_video_ids = array();
 } else
     Alerts::showError(Alerts::DATABASEOFF);
@@ -34,9 +33,9 @@ if ($db->connect()) {
                     if($connected) :
 
                         while(isset($courses["coursename"])) {
-                            echo " ". $courses["coursename"] . " ";                 #DEBUGGING
+                            # echo " ". $courses["coursename"] . " ";                 #DEBUGGING
                             while(isset($videos["youtubelink"])){
-                                echo " ". $videos["youtubelink"] . " ";             #DEBUGGING
+                                # echo " ". $videos["youtubelink"] . " ";             #DEBUGGING
                                 array_push($arr_video_ids, $videos["youtubelink"]);
                                 $videos = pg_fetch_assoc($videosQuery);
                             }
@@ -76,10 +75,7 @@ if ($db->connect()) {
                             <?php } ?>
                         </div>
                     </div>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-                </div>
+                   </div>
             </div>
         </div>
     </div>
