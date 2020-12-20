@@ -58,3 +58,9 @@ CREATE TABLE IF NOT EXISTS Enrolled(
 CREATE TABLE IF NOT EXISTS Admin(
     username VARCHAR(100) REFERENCES Userr(userName) ON UPDATE CASCADE PRIMARY KEY
 );        
+
+CREATE TABLE IF NOT EXISTS Video(
+    id SERIAL PRIMARY KEY,
+    youtubeLink VARCHAR(100),
+    courseName VARCHAR(100) REFERENCES Course(coursename) ON DELETE CASCADE
+);            
