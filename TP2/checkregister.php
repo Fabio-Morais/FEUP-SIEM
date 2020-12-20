@@ -16,18 +16,27 @@ if ($password !== $password_confirm) {
 	exit();
 }
 
+$query = "SELECT * FROM userr WHERE username = '$username'";
+$result = pg_exec($query);
+if(pg_num_rows($result) > 0){
+	$_SESSION['usererror'] = TRUE;
+	header("location: register.php");
+	exit();
+}
+
 if (empty($username) || empty($password) || empty($email) || empty($name) || empty($nif))
 	{
 	$_SESSION['error'] = TRUE;
-	echo "erro";
 	header("location: register.php");
 	exit();
 } else{
 	$query = "INSERT INTO userr (username, email, passhash, name, nif, role) 
-              VALUES ('$username', '$email', '$hash', '$name', $nif, 0)";
+            	VALUES ('$username', '$email', '$hash', '$name', $nif, 0)";
+	pg_exec($query);
+	$query = "INSERT INTO orderr (deliverydate, purchasedate, price, productname, idstudent) 
+				VALUES ('24-11-2020 12:47:19', '23-09-2020 11:47:19', '15', 'matematica', '$username')";
 	pg_exec($query);
     $_SESSION['user'] = $username;
-    $_SESSION['password'] = $password;
     $_SESSION['login'] = TRUE;
     header("location: dashboard/index.php");
 }
