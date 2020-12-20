@@ -14,7 +14,7 @@ $users = "";
 $courses = "";
 $connected = false;
 if ($db->connect()) {
-    $users = $db->getAllStudentsTeacher("fabiouds");
+    $users = $db->getAllStudentsTeacher($aux['username']);
     $connected = true;
 
     /*Se tiver no link o ?username=....*/
@@ -86,7 +86,7 @@ endif;?>
                             echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"https://bootdey.com/img/Content/avatar/avatar1.png\" alt=\"User Avatar\">";/*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . "Aluno" . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
@@ -111,7 +111,10 @@ endif;?>
                             echo     "<div class=\"overlay\">";
                             echo         "<h2>" . $row['username'] . "</h2>";/*USERNAME*/
                             echo         "<button data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Ver Perfil\" class=\"info btn btn-success btn-circle btn-md\" onclick=\"location.href='?username=".$row['username']."'\"><i class=\"fas fa-user-circle\" ></i></button>";
-                            echo         "<button data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Atribuir Nota\" onclick=\"myFunction(" . $count . ")\" type=\"button\" class=\"info btn btn-success btn-circle btn-md\"  data-toggle=\"modal\" data-target=\"#modalRegisterForm\"><i class=\"far fa-edit\"></i></button>";
+                            echo        "<span data-toggle='modal' data-target='#modalRegisterForm'>
+                            <button  data-toggle='tooltip' data-placement='bottom' title='Atribuir Nota' onclick='myFunction(" . $count . ")' type='button' class='info btn btn-success btn-circle btn-md'  >
+                            <i class='far fa-edit'></i>
+                            </button></span>";
                             echo     "</div>";
                             echo "</div>";
 
@@ -178,6 +181,7 @@ endif;?>
 </div>
 <script>
     function myFunction(indice) {
+        console.log("ola")
         var x = document.getElementsByClassName("widget-user-username");
         document.getElementById('usernam').value = x[indice - 1].innerHTML;
 

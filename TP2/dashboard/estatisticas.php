@@ -28,9 +28,9 @@ if ($db->connect()) {
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <select id="outer" class="custom-select m-2">
-                    <option value="option1">Tabela</option>
-                    <option value="option2">Gráfico</option>
-                    <option value="option3">Gráfico</option>
+                    <option value="option1">Lucro Total</option>
+                    <option value="option2">Numero de vendas por curso</option>
+                    <option value="option3">Lucro Total de vendas por curso</option>
                 </select>
 
                     <div class="card-header option1">

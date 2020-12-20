@@ -56,6 +56,15 @@ class User{
         $result = pg_exec($conn, $query);
         return $result;
     }
+    /**
+     * Confirm if the username already exists
+     */
+    public function usernameExists($conn,$username){
+        $query = "Select * from userr where username='".$username."';";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
 }
 
 ?>

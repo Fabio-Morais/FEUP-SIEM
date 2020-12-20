@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS Userr(
     name VARCHAR(100),
     passHash VARCHAR(200),
     nif VARCHAR(100),
-    image bytea,
+    image VARCHAR(100),
     birthDate DATE,
     role INTEGER
 );
