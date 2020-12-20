@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS Userr(
     name VARCHAR(100),
     passHash VARCHAR(200),
     nif VARCHAR(100),
-    image bytea,
+    image VARCHAR(100),
     birthDate DATE,
     role INTEGER
 );
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS Orderr(
     price VARCHAR(100),
     productName VARCHAR(100),
     description VARCHAR(100),
-    idStudent VARCHAR(100) REFERENCES Student(username) ON UPDATE CASCADE ON DELETE CASCADE
+    idStudent VARCHAR(100) REFERENCES Student(username) ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Salary(
@@ -58,3 +58,9 @@ CREATE TABLE IF NOT EXISTS Enrolled(
 CREATE TABLE IF NOT EXISTS Admin(
     username VARCHAR(100) REFERENCES Userr(userName) ON UPDATE CASCADE PRIMARY KEY
 );        
+
+CREATE TABLE IF NOT EXISTS Video(
+    id SERIAL PRIMARY KEY,
+    youtubeLink VARCHAR(100),
+    courseName VARCHAR(100) REFERENCES Course(coursename) ON DELETE CASCADE
+);            
