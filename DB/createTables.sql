@@ -10,7 +10,10 @@ CREATE TABLE IF NOT EXISTS Userr(
     nif VARCHAR(100),
     image VARCHAR(100),
     birthDate DATE,
-    role INTEGER
+    role INTEGER,
+    about text,
+    hobbies text,
+    color VARCHAR(20) DEFAULT '#1B49C2'
 );
 
 CREATE TABLE IF NOT EXISTS Student(

@@ -17,16 +17,8 @@ if ($db->connect()) {
     $users = $db->getAllStudentsTeacher($aux['username']);
     $connected = true;
 
-    /*Se tiver no link o ?username=....*/
-    if($_GET){
-
-    }
-
 } else
     Alerts::showError(Alerts::DATABASEOFF);
-
-
-
 
 ?>
 
@@ -75,18 +67,30 @@ endif;?>
                             $totalCourses = $db->getTotalCoursesStudent($row["username"]);
                             $row2 = pg_fetch_assoc($totalCourses);
                             $courses = "--";
-                            if (isset($row3["count"]))
-                                $courses = strval($row3["count"]);
+                            if (isset($row2["count"]))
+                                $courses = strval($row2["count"]);
 
+                            /*Obter nota do estudante*/
+                            $grade = $db->getStudentGrade($row["username"]);
+                            $row3 = pg_fetch_assoc($grade);
+                            $grade = "--";
+                            if (isset($row3["grade"]) && $row3["grade"] > 0.0)
+                                $grade = sprintf("%.1f", $row3["grade"]);
 
+                            /*Se user nao tiver imagem mete uma padrao*/
+                            if(!isset($row['image'])){
+                                $image="avatar.png";
+                            }else{
+                                $image="users/".$row['image'];
+                            }
                             echo "<div class=\"p-2 m-3 content\">";
                             echo "   <div class=\"hovereffect\">";
                             echo       "<div class=\"box box-widget widget-user\">";
-                            echo            "<div class=\"widget-user-header bg-aqua\">";
+                            echo            "<div class=\"widget-user-header\"style=\"background-color:".((empty($row["color"])) ? "#8585d3" : $row["color"])."\">";
                             echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\">";/*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/".$image ."\" alt=\"User Avatar\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . "Aluno" . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
@@ -100,7 +104,7 @@ endif;?>
 
                             echo                 "<div class=\"col-sm\">";
                             echo                     "<div class=\"description-block\">";
-                            echo                         "<h5 class=\"description-header\">" . $row["grade"] . "</h5>";/*NOTA*/
+                            echo                         "<h5 class=\"description-header\">" . $grade . "</h5>";/*NOTA*/
                             echo                         "<span class=\"description-text\">Nota</span>";
                             echo                     "</div>";
                             echo                 "</div>";

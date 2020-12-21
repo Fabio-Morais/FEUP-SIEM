@@ -684,7 +684,7 @@ true Pacific/Easter
 false Pacific/Efate
 false Pacific/Enderbury
 false Pacific/Fakaofo
-false Pacific/Fiji
+true Pacific/Fiji
 false Pacific/Funafuti
 false Pacific/Galapagos
 false Pacific/Gambier
@@ -1334,7 +1334,7 @@ true posix/Pacific/Easter
 false posix/Pacific/Efate
 false posix/Pacific/Enderbury
 false posix/Pacific/Fakaofo
-false posix/Pacific/Fiji
+true posix/Pacific/Fiji
 false posix/Pacific/Funafuti
 false posix/Pacific/Galapagos
 false posix/Pacific/Gambier
@@ -5508,7 +5508,7 @@ sequence|table|147133|147127|1
     <database id="1023" parent="1" name="siem2013">
       <ObjectId>6424591</ObjectId>
       <Owner>siem2013</Owner>
-      <IntrospectionStateNumber>59609510</IntrospectionStateNumber>
+      <IntrospectionStateNumber>59610696</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|490616|490608|3
 sequence|table|490618|490608|5
@@ -5561,6 +5561,7 @@ sequence|table|6356104|6356106|1
 sequence|table|6356113|6356115|1
 sequence|table|6438463|6438465|1
 sequence|table|6438476|6438478|1
+sequence|table|6451708|6451710|1
 </Relations>
     </database>
     <database id="1024" parent="1" name="siem2014">
@@ -17884,7 +17885,7 @@ sequence|table|6438476|6438478|1
       <ObjectId>6438432</ObjectId>
       <StateNumber>59598590</StateNumber>
       <Owner>siem2013</Owner>
-      <IntrospectionStateNumber>59609511</IntrospectionStateNumber>
+      <IntrospectionStateNumber>59610697</IntrospectionStateNumber>
     </schema>
     <schema id="3793" parent="1023" name="information_schema">
       <ObjectId>13090</ObjectId>
@@ -17974,68 +17975,79 @@ sequence|table|6438476|6438478|1
       <Owner>siem2013</Owner>
       <StateNumber>59598595</StateNumber>
     </sequence>
-    <table id="3809" parent="3792" name="admin">
+    <sequence id="3809" parent="3792" name="video_id_seq">
+      <ObjectId>6451708</ObjectId>
+      <Owner>siem2013</Owner>
+      <StateNumber>59610640</StateNumber>
+    </sequence>
+    <table id="3810" parent="3792" name="admin">
       <ObjectId>6438516</ObjectId>
       <Owner>siem2013</Owner>
       <StateNumber>59598598</StateNumber>
     </table>
-    <table id="3810" parent="3792" name="course">
+    <table id="3811" parent="3792" name="course">
       <ObjectId>6438490</ObjectId>
       <Owner>siem2013</Owner>
-      <StateNumber>59604576</StateNumber>
+      <StateNumber>59610640</StateNumber>
     </table>
-    <table id="3811" parent="3792" name="enrolled">
+    <table id="3812" parent="3792" name="enrolled">
       <ObjectId>6438500</ObjectId>
       <Owner>siem2013</Owner>
       <StateNumber>59598597</StateNumber>
     </table>
-    <table id="3812" parent="3792" name="orderr">
+    <table id="3813" parent="3792" name="orderr">
       <ObjectId>6438465</ObjectId>
       <Owner>siem2013</Owner>
       <StateNumber>59598594</StateNumber>
     </table>
-    <table id="3813" parent="3792" name="salary">
+    <table id="3814" parent="3792" name="salary">
       <ObjectId>6438478</ObjectId>
       <Owner>siem2013</Owner>
       <StateNumber>59598595</StateNumber>
     </table>
-    <table id="3814" parent="3792" name="student">
+    <table id="3815" parent="3792" name="student">
       <ObjectId>6438441</ObjectId>
       <Owner>siem2013</Owner>
       <StateNumber>59598597</StateNumber>
     </table>
-    <table id="3815" parent="3792" name="teacher">
+    <table id="3816" parent="3792" name="teacher">
       <ObjectId>6438452</ObjectId>
       <Owner>siem2013</Owner>
       <StateNumber>59598596</StateNumber>
     </table>
-    <table id="3816" parent="3792" name="userr">
+    <table id="3817" parent="3792" name="userr">
       <ObjectId>6438433</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>siem2013</Owner>
-      <StateNumber>59598598</StateNumber>
+      <StateNumber>59610250</StateNumber>
     </table>
-    <column id="3817" parent="3809" name="username">
+    <table id="3818" parent="3792" name="video">
+      <ObjectId>6451710</ObjectId>
+      <Owner>siem2013</Owner>
+      <StateNumber>59610640</StateNumber>
+    </table>
+    <column id="3819" parent="3810" name="username">
       <Position>1</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>59598598</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="3818" parent="3809" name="admin_pkey">
+    <index id="3820" parent="3810" name="admin_pkey">
       <ObjectId>6438519</ObjectId>
       <StateNumber>59598598</StateNumber>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="3819" parent="3809" name="admin_pkey">
+    <key id="3821" parent="3810" name="admin_pkey">
       <ObjectId>6438520</ObjectId>
       <StateNumber>59598598</StateNumber>
       <ColNames>username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>admin_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="3820" parent="3809" name="admin_username_fkey">
+    <foreign-key id="3822" parent="3810" name="admin_username_fkey">
       <ObjectId>6438521</ObjectId>
       <StateNumber>59598598</StateNumber>
       <ColNames>username</ColNames>
@@ -18046,52 +18058,52 @@ sequence|table|6438476|6438478|1
       <RefColNames>username</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="3821" parent="3810" name="coursename">
+    <column id="3823" parent="3811" name="coursename">
       <Position>1</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>59600542</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3822" parent="3810" name="price">
+    <column id="3824" parent="3811" name="price">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>59598596</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3823" parent="3810" name="teacher">
+    <column id="3825" parent="3811" name="teacher">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598596</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3824" parent="3810" name="image">
+    <column id="3826" parent="3811" name="image">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>59604531</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3825" parent="3810" name="type">
+    <column id="3827" parent="3811" name="type">
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>59604576</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="3826" parent="3810" name="course_pkey">
+    <index id="3828" parent="3811" name="course_pkey">
       <ObjectId>6438493</ObjectId>
       <StateNumber>59598596</StateNumber>
       <ColNames>coursename</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="3827" parent="3810" name="course_pkey">
+    <key id="3829" parent="3811" name="course_pkey">
       <ObjectId>6438494</ObjectId>
       <StateNumber>59598596</StateNumber>
       <ColNames>coursename</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>course_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="3828" parent="3810" name="course_teacher_fkey">
+    <foreign-key id="3830" parent="3811" name="course_teacher_fkey">
       <ObjectId>6438495</ObjectId>
       <StateNumber>59598596</StateNumber>
       <ColNames>teacher</ColNames>
@@ -18102,28 +18114,28 @@ sequence|table|6438476|6438478|1
       <RefColNames>username</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="3829" parent="3811" name="username">
+    <column id="3831" parent="3812" name="username">
       <Position>1</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>59598597</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3830" parent="3811" name="coursename">
+    <column id="3832" parent="3812" name="coursename">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>59598597</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3831" parent="3811" name="coursegrade">
+    <column id="3833" parent="3812" name="coursegrade">
       <Position>3</Position>
       <DataType>double precision|0s</DataType>
       <StateNumber>59598597</StateNumber>
       <DefaultExpression>0</DefaultExpression>
       <TypeId>701</TypeId>
     </column>
-    <index id="3832" parent="3811" name="enrolled_pkey">
+    <index id="3834" parent="3812" name="enrolled_pkey">
       <ObjectId>6438504</ObjectId>
       <StateNumber>59598597</StateNumber>
       <ColNames>username
@@ -18131,7 +18143,7 @@ coursename</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="3833" parent="3811" name="enrolled_pkey">
+    <key id="3835" parent="3812" name="enrolled_pkey">
       <ObjectId>6438505</ObjectId>
       <StateNumber>59598597</StateNumber>
       <ColNames>username
@@ -18139,7 +18151,7 @@ coursename</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>enrolled_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="3834" parent="3811" name="enrolled_username_fkey">
+    <foreign-key id="3836" parent="3812" name="enrolled_username_fkey">
       <ObjectId>6438506</ObjectId>
       <StateNumber>59598597</StateNumber>
       <ColNames>username</ColNames>
@@ -18151,7 +18163,7 @@ coursename</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="3835" parent="3811" name="enrolled_coursename_fkey">
+    <foreign-key id="3837" parent="3812" name="enrolled_coursename_fkey">
       <ObjectId>6438511</ObjectId>
       <StateNumber>59598597</StateNumber>
       <ColNames>coursename</ColNames>
@@ -18162,7 +18174,7 @@ coursename</ColNames>
       <RefColNames>coursename</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="3836" parent="3812" name="number">
+    <column id="3838" parent="3813" name="number">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -18170,57 +18182,57 @@ coursename</ColNames>
       <DefaultExpression>nextval(&apos;orderr_number_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="3837" parent="3812" name="deliverydate">
+    <column id="3839" parent="3813" name="deliverydate">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>59598594</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3838" parent="3812" name="purchasedate">
+    <column id="3840" parent="3813" name="purchasedate">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>59598594</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3839" parent="3812" name="price">
+    <column id="3841" parent="3813" name="price">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598594</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3840" parent="3812" name="productname">
+    <column id="3842" parent="3813" name="productname">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598594</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3841" parent="3812" name="description">
+    <column id="3843" parent="3813" name="description">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598594</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3842" parent="3812" name="idstudent">
+    <column id="3844" parent="3813" name="idstudent">
       <Position>7</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598594</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="3843" parent="3812" name="orderr_pkey">
+    <index id="3845" parent="3813" name="orderr_pkey">
       <ObjectId>6438469</ObjectId>
       <StateNumber>59598594</StateNumber>
       <ColNames>number</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="3844" parent="3812" name="orderr_pkey">
+    <key id="3846" parent="3813" name="orderr_pkey">
       <ObjectId>6438470</ObjectId>
       <StateNumber>59598594</StateNumber>
       <ColNames>number</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>orderr_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="3845" parent="3812" name="orderr_idstudent_fkey">
+    <foreign-key id="3847" parent="3813" name="orderr_idstudent_fkey">
       <ObjectId>6438471</ObjectId>
       <StateNumber>59598594</StateNumber>
       <ColNames>idstudent</ColNames>
@@ -18232,7 +18244,7 @@ coursename</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="3846" parent="3813" name="id">
+    <column id="3848" parent="3814" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -18240,40 +18252,40 @@ coursename</ColNames>
       <DefaultExpression>nextval(&apos;salary_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="3847" parent="3813" name="username">
+    <column id="3849" parent="3814" name="username">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598595</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3848" parent="3813" name="salary">
+    <column id="3850" parent="3814" name="salary">
       <Position>3</Position>
       <DataType>double precision|0s</DataType>
       <StateNumber>59598595</StateNumber>
       <DefaultExpression>0</DefaultExpression>
       <TypeId>701</TypeId>
     </column>
-    <column id="3849" parent="3813" name="salarydate">
+    <column id="3851" parent="3814" name="salarydate">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598595</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="3850" parent="3813" name="salary_pkey">
+    <index id="3852" parent="3814" name="salary_pkey">
       <ObjectId>6438483</ObjectId>
       <StateNumber>59598595</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="3851" parent="3813" name="salary_pkey">
+    <key id="3853" parent="3814" name="salary_pkey">
       <ObjectId>6438484</ObjectId>
       <StateNumber>59598595</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>salary_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="3852" parent="3813" name="salary_username_fkey">
+    <foreign-key id="3854" parent="3814" name="salary_username_fkey">
       <ObjectId>6438485</ObjectId>
       <StateNumber>59598595</StateNumber>
       <ColNames>username</ColNames>
@@ -18284,35 +18296,35 @@ coursename</ColNames>
       <RefColNames>username</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="3853" parent="3814" name="username">
+    <column id="3855" parent="3815" name="username">
       <Position>1</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>59598592</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3854" parent="3814" name="grade">
+    <column id="3856" parent="3815" name="grade">
       <Position>2</Position>
       <DataType>double precision|0s</DataType>
       <StateNumber>59598592</StateNumber>
       <DefaultExpression>0</DefaultExpression>
       <TypeId>701</TypeId>
     </column>
-    <index id="3855" parent="3814" name="student_pkey">
+    <index id="3857" parent="3815" name="student_pkey">
       <ObjectId>6438445</ObjectId>
       <StateNumber>59598592</StateNumber>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="3856" parent="3814" name="student_pkey">
+    <key id="3858" parent="3815" name="student_pkey">
       <ObjectId>6438446</ObjectId>
       <StateNumber>59598592</StateNumber>
       <ColNames>username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>student_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="3857" parent="3814" name="student_username_fkey">
+    <foreign-key id="3859" parent="3815" name="student_username_fkey">
       <ObjectId>6438447</ObjectId>
       <StateNumber>59598592</StateNumber>
       <ColNames>username</ColNames>
@@ -18323,35 +18335,35 @@ coursename</ColNames>
       <RefColNames>username</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="3858" parent="3815" name="username">
+    <column id="3860" parent="3816" name="username">
       <Position>1</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>59598593</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3859" parent="3815" name="salary">
+    <column id="3861" parent="3816" name="salary">
       <Position>2</Position>
       <DataType>double precision|0s</DataType>
       <StateNumber>59598593</StateNumber>
       <DefaultExpression>0</DefaultExpression>
       <TypeId>701</TypeId>
     </column>
-    <index id="3860" parent="3815" name="teacher_pkey">
+    <index id="3862" parent="3816" name="teacher_pkey">
       <ObjectId>6438456</ObjectId>
       <StateNumber>59598593</StateNumber>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="3861" parent="3815" name="teacher_pkey">
+    <key id="3863" parent="3816" name="teacher_pkey">
       <ObjectId>6438457</ObjectId>
       <StateNumber>59598593</StateNumber>
       <ColNames>username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>teacher_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="3862" parent="3815" name="teacher_username_fkey">
+    <foreign-key id="3864" parent="3816" name="teacher_username_fkey">
       <ObjectId>6438458</ObjectId>
       <StateNumber>59598593</StateNumber>
       <ColNames>username</ColNames>
@@ -18362,74 +18374,119 @@ coursename</ColNames>
       <RefColNames>username</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="3863" parent="3816" name="username">
+    <column id="3865" parent="3817" name="username">
       <Position>1</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>59598591</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3864" parent="3816" name="email">
+    <column id="3866" parent="3817" name="email">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598591</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3865" parent="3816" name="phone">
+    <column id="3867" parent="3817" name="phone">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598591</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3866" parent="3816" name="name">
+    <column id="3868" parent="3817" name="name">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598591</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3867" parent="3816" name="passhash">
+    <column id="3869" parent="3817" name="passhash">
       <Position>5</Position>
       <DataType>varchar(200)|0s</DataType>
       <StateNumber>59598591</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3868" parent="3816" name="nif">
+    <column id="3870" parent="3817" name="nif">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>59598591</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="3869" parent="3816" name="image">
+    <column id="3871" parent="3817" name="image">
       <Position>7</Position>
-      <DataType>bytea|0s</DataType>
-      <StateNumber>59598591</StateNumber>
-      <TypeId>17</TypeId>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>59610250</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="3870" parent="3816" name="birthdate">
+    <column id="3872" parent="3817" name="birthdate">
       <Position>8</Position>
       <DataType>date|0s</DataType>
       <StateNumber>59598591</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="3871" parent="3816" name="role">
+    <column id="3873" parent="3817" name="role">
       <Position>9</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>59598591</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="3872" parent="3816" name="userr_pkey">
+    <index id="3874" parent="3817" name="userr_pkey">
       <ObjectId>6438439</ObjectId>
-      <StateNumber>59598591</StateNumber>
+      <StateNumber>59610250</StateNumber>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="3873" parent="3816" name="userr_pkey">
+    <key id="3875" parent="3817" name="userr_pkey">
       <ObjectId>6438440</ObjectId>
       <StateNumber>59598591</StateNumber>
       <ColNames>username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>userr_pkey</UnderlyingIndexName>
     </key>
+    <column id="3876" parent="3818" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>59610640</StateNumber>
+      <DefaultExpression>nextval(&apos;video_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="3877" parent="3818" name="youtubelink">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>59610640</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="3878" parent="3818" name="coursename">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>59610640</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="3879" parent="3818" name="video_pkey">
+      <ObjectId>6451714</ObjectId>
+      <StateNumber>59610640</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="3880" parent="3818" name="video_pkey">
+      <ObjectId>6451715</ObjectId>
+      <StateNumber>59610640</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>video_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="3881" parent="3818" name="video_coursename_fkey">
+      <ObjectId>6451716</ObjectId>
+      <StateNumber>59610640</StateNumber>
+      <ColNames>coursename</ColNames>
+      <RefTableId>6438490</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>course</RefTableName>
+      <RefKeyName>course_pkey</RefKeyName>
+      <RefColNames>coursename</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
   </database-model>
 </dataSource>
