@@ -13,7 +13,11 @@ class Courses{
         return $result;
     }
 
-
+    public function getCourseInfo($conn, $coursename){
+        $query = "SELECT * FROM course WHERE coursename = '".$coursename."';";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 
 }
 

@@ -4,6 +4,7 @@
 * Se aux = 1 -> professor
 * Se aux = 2 -> admin
 */
+
 $debug=true;
 $aux['role']="1";
 $aux['username']="admin";

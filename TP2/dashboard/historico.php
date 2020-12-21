@@ -39,21 +39,21 @@ if ($db->connect()) {
                         <th>Preço</th>
                     </tr>
                     </thead>
+                    <tbody>
                     <?php
                     if($connected) :
                         while(isset($orders["productname"])) {
-                            echo "<tbody>";
                             echo "<tr>";
                             echo "<td scope=\"row\">". $orders['purchasedate'] ."</td>";
                             echo "<td scope=\"row\">". $orders['deliverydate'] ."</td>";
                             echo "<td>". ucwords($orders['productname']) ."</td>";
                             echo "<td>". $orders['price'] ."€</td>";
                             echo "</tr>";
-                            echo "</tbody>";
                             $orders = pg_fetch_assoc($ordersQuery);
                         }
                     endif;
                     ?>
+                    </tbody>
                 </table>
             </div>
         </div>
