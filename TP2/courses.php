@@ -100,7 +100,6 @@ if ($db->connect()) {
             </select>
           </div>
         </div>
-        <!--Curso C/C++-->
         <?php
         $row = pg_fetch_assoc($courses);
         if($connected) :

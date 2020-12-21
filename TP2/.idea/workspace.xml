@@ -38,7 +38,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1k41hhXDWnXXzaVOBtQuUfBoIbK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -52,7 +51,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -98,7 +97,8 @@
       <workItem from="1608331580404" duration="8616000" />
       <workItem from="1608374010920" duration="24380000" />
       <workItem from="1608429541452" duration="1423000" />
-      <workItem from="1608476838901" duration="13544000" />
+      <workItem from="1608476838901" duration="14977000" />
+      <workItem from="1608566768121" duration="11966000" />
     </task>
     <servers />
   </component>
@@ -116,5 +116,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

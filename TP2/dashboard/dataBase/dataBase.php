@@ -133,6 +133,10 @@ final class DataBase
         return $this->course->getCoursesPrices($this->conn);
     }
 
+    public function getCourseInfo($coursename)
+    {
+        return $this->course->getCourseInfo($this->conn, $coursename);
+    }
         
     public function getCoursesTeacher($username)
     {

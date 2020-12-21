@@ -330,6 +330,36 @@ Paginas
     transition: all 1s;
 }
 
+#course {
+    background-color: #f1f1f1;
+    width: 17em;
+    height: 20em;
+    text-align: center;
+    margin: 2em;
+    box-shadow: 2px 2px 8px 4px #0000004f;
+}
 
+#course>#imgBorder {
+    width: 100%;
+    height: 65%;
+}
+
+#imgBorder>#imgCourse {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#course h3 {
+    font-size: 22px;
+    margin: 0.1em 0em;
+    padding: 10px;
+}
+
+#course h4 {
+    font-size: 20px;
+    margin: 0.1em 0em;
+    padding: 10px;
+}
 
 

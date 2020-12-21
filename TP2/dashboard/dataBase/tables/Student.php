@@ -72,10 +72,11 @@ class Student{
     }
 
     public function getStudentCourses($conn, $username){
-        $query = "SELECT coursename FROM enrolled WHERE username ='".$username."';";
+        $query = "SELECT * FROM enrolled WHERE username ='".$username."';";
         $result = pg_exec($conn, $query);
         return $result;
     }
+
 }
 
 ?>
