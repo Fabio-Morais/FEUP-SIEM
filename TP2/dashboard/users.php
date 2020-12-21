@@ -17,9 +17,9 @@ if ($db->connect()) {
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
-if($_SESSION['add'])
+if(isset($_SESSION['add']))
     echo $_SESSION['add'];
-    $_SESSION['add']="";
+    $_SESSION['add']=NULL;
 ?>
 
 <?php
@@ -66,11 +66,11 @@ function role($var)
                             echo "<div class=\"p-2 m-3 content\">";
                             echo "   <div class=\"hovereffect\">";
                             echo       "<div class=\"box box-widget widget-user\">";
-                            echo            "<div class=\"widget-user-header bg-aqua\">";
+                            echo            "<div class=\"widget-user-header \" style=\"background-color:".((empty($row["color"])) ? "#8585d3" : $row["color"])."\">";
                             echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\">";/*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . role($row['role']) . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/

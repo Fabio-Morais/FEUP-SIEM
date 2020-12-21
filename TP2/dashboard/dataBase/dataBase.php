@@ -128,6 +128,11 @@ final class DataBase
         return $this->user->deleteUser($this->conn, $username);
     }
 
+    public function addUserColor($username,$color)
+    {
+        return $this->user->addUserColor($this->conn,$username, $color);
+    }
+
     public function getCoursesPrices()
     {
         return $this->course->getCoursesPrices($this->conn);

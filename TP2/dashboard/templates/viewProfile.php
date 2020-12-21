@@ -32,9 +32,9 @@ $courses = pg_fetch_assoc($coursesQuery);
             <div class="col-lg-4 m-1">
                 <div class="profile-card-4 z-depth-3">
                     <div class="card">
-                        <div class="card-body text-center bg-primary rounded-top">
+                        <div class="card-body text-center rounded-top" style="background-color:<?php echo ((empty($queryInfo["color"])) ? "#8585d3" : $queryInfo["color"]) ?>">
                             <div class="user-box">
-                                <img  src="/public/img/users/<?php echo $queryInfo['image']?>" alt="user avatar">
+                                <img  src="public/img/users/<?php echo $queryInfo['image']?>" alt="user avatar" onerror="javascript:this.src='public/img/avatar.png'">>
                             </div>
                             <h5 class="mb-1 text-white"><?php echo  $queryInfo['name'] ?></h5>
                             <h6 class="text-light">Aluno</h6>
@@ -81,13 +81,13 @@ $courses = pg_fetch_assoc($coursesQuery);
                                     <div class="col-md-6">
                                         <h6>Username</h6>
                                         <p><?php echo $queryInfo['username'];?></p>
-                                        <h6>About</h6>
+                                        <h6>Sobre</h6>
                                         <p>
-                                            Web Designer, UI/UX Engineer
+                                            <?php echo (empty($queryInfo["about"])) ? "Não existe descrição adicionada." : $queryInfo["about"]?>
                                         </p>
-                                        <h6>Hobbies</h6>
+                                        <h6>Atividades</h6>
                                         <p>
-                                            Indie music, skiing and hiking. I love the great outdoors.
+                                            <?php echo (empty($queryInfo["hobbies"])) ?  "Não existe atividades adicionadas." : $queryInfo["hobbies"]?>
                                         </p>
                                         <h6>Data de nascimento</h6>
                                         <p><?php echo $queryInfo['birthdate']?></p>

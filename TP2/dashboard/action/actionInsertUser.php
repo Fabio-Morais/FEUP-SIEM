@@ -20,7 +20,6 @@ if (!empty($_POST['criaConta'])) {
     $exists = $db->usernameExists($userName);
     $row = pg_fetch_assoc($exists);
 
-    echo $exists;
     if(empty($row)){
         $db->addUser($name, $email, $role, $userName);
         $_SESSION['add']="<div class=\"alert alert-success\" id=\"alertSucess\" role=\"alert\">Foi adicionado o user corretamente</div>";
