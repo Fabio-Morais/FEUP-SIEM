@@ -18,6 +18,7 @@
 <script src="public/js/table.js"></script>
 <script src="public/js/scripts.js"></script>
 <script src="public/js/validateForms.js"></script>
+<script src="includes/libs/nif-pt.js"></script>
 
 <!--Get the title of the page-->
 <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>

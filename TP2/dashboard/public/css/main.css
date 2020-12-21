@@ -116,7 +116,7 @@ Listar todos os users em cards
     width: 95px;
     height: 100px;
     border: 3px solid #fff;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .widget-user .box-footer {
@@ -363,3 +363,12 @@ Paginas
 }
 
 
+/*PERFIL.PHP -> change the background color of the profile*/
+#colorPick{
+    width: 130px;
+    display:none;
+}
+#colorPickButton{
+    display:none;
+
+}
