@@ -9,8 +9,8 @@ VALUES('fabio123','fabio@hotmail.com','915487895','Fabio Andre', '$2y$10$VwAhND9
 ('ana12','ana12@hotmail.com','915127895','Ana Silva', '$2y$10$PSjSNAc.JESmfn9jOU/vP.eiGRuAO3wXY4nCaNYJU27kCdWUBwR8m', '268948550', null ,'02/23/1985',0, null, null, null),
 ('rita123','rita123@hotmail.com','915487895','Rita Martins', '$2y$10$PSjSNAc.JESmfn9jOU/vP.eiGRuAO3wXY4nCaNYJU27kCdWUBwR8m', '268948550', null ,'05/22/1995',0, null, null, null),
 ('admin','electrusintelligentus@gmail.com','926901471','', '$2y$10$lPu1AU1qKkSmvmWTIDWHhecLZFEGdZG.rMCzm3EPHfx.fXIs0LTg.', '', null ,null,2, null, null, null),
-('fabiouds','fabiouds@hotmail.com','926901937','Fabio Morais', '$2y$10$sTCYatGB7IYSLGcYK/Gz2.CZdvI31InCvHI2/HJ1KBuTJsEAoTIwi', '258975229', null ,'06/15/1997',1, null, null, null);
-
+('fabiouds','fabiouds@hotmail.com','926901937','Fabio Morais', '$2y$10$sTCYatGB7IYSLGcYK/Gz2.CZdvI31InCvHI2/HJ1KBuTJsEAoTIwi', '258975229', null ,'06/15/1997',1, null, null, null),
+('aluno','aluno@aluno.com','926901937','Aluno', '$2y$10$YLA6GUwAlAx2bV1Q.ekthOWW2nrUPZ91KgxT/fXQpQZt1f62jMpAO', '233487875', 'aa.jpg' ,'06/15/1996',0);
 
 INSERT INTO Student
 VALUES('fabio123', 12.5),
@@ -19,7 +19,8 @@ VALUES('fabio123', 12.5),
 ('rodrigo123', 0),
 ('rod4as', 0),
 ('rita123', 0),
-('ana12', 0);
+('ana12', 0),
+('aluno', 10);
 
 INSERT INTO Teacher
 VALUES('fabiouds', 1200);
@@ -46,17 +47,22 @@ VALUES ( (SELECT TO_CHAR((SELECT current_timestamp - (2 * interval '1 day') + (2
 ((SELECT TO_CHAR((SELECT current_timestamp - (1 * interval '1 day') + (1 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (1 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '40', 'machine learning', '' ,  'rod4as' ),
 ((SELECT TO_CHAR((SELECT current_timestamp - (0 * interval '1 day') + (0 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (0 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '25', 'python', '' , 'rita123' ),
 ((SELECT TO_CHAR((SELECT current_timestamp - (0 * interval '1 day') + (0 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (0 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '20', 'java', '' ,  'rodrigo123' ),
-( (SELECT TO_CHAR((SELECT current_timestamp - (1 * interval '1 day') + (1 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (1 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '15', 'matematica', '' ,  'fabio123' ),
+((SELECT TO_CHAR((SELECT current_timestamp - (1 * interval '1 day') + (1 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (1 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '15', 'matematica', '' ,  'fabio123' ),
 ((SELECT TO_CHAR((SELECT current_timestamp - (2 * interval '1 day') + (2 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (2 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '30', 'web development', '' ,  'rita123' ),
-((SELECT TO_CHAR((SELECT current_timestamp - (3 * interval '1 day') + (3 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (3 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '20', 'web apis', '' ,  'ana12' );
-
+((SELECT TO_CHAR((SELECT current_timestamp - (3 * interval '1 day') + (3 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (3 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '20', 'web apis', '' ,  'ana12' ),
+((SELECT TO_CHAR((SELECT current_timestamp - (3 * interval '1 day') + (3 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (3 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '40', 'machine learning', '' ,  'aluno' ),
+((SELECT TO_CHAR((SELECT current_timestamp - (4 * interval '1 day') + (4 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (4 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '20', 'java', '' ,  'aluno' ),
+((SELECT TO_CHAR((SELECT current_timestamp - (5 * interval '1 day') + (5 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (5 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '25', 'python', '' ,  'aluno' );
 
 INSERT INTO Enrolled
 VALUES ('fabio123', 'c/c++', 10),
 ('fabio123', 'java', 15),
 ('joao12', 'c/c++', 0),
 ('rodrigo1', 'python', 18),
-('joao12', 'machine learning', 17);
+('joao12', 'machine learning', 17),
+('aluno', 'java', 15),
+('aluno', 'python', 19),
+('aluno', 'machine learning', 0);
 
 INSERT INTO Salary(username, salary, salaryDate)
 VALUES ('fabiouds', 1200.50, '01-11-2020'),
@@ -67,3 +73,13 @@ VALUES ('fabiouds', 1200.50, '01-11-2020'),
 ('fabiouds', 1220.50, '01-06-2020'),
 ('fabiouds', 1300.50, '01-05-2020'),
 ('fabiouds', 1000.50, '02-04-2020');
+
+INSERT INTO Video(youtubeLink, courseName)
+VALUES ('https://www.youtube.com/watch?v=YRGeyA2a0cQ', 'java'),
+       ('https://www.youtube.com/watch?v=e9ffbsgMarE', 'java'),
+       ('https://www.youtube.com/watch?v=h7A-YTEu-uI', 'java'),
+       ('https://www.youtube.com/watch?v=xCixkaXrVMI', 'python'),
+       ('https://www.youtube.com/watch?v=6wW-rpbecIA', 'java'),
+       ('https://www.youtube.com/watch?v=1W228rb267o', 'python'),
+       ('https://www.youtube.com/watch?v=9L5IHWTVyEs', 'machine learning'),
+       ('https://www.youtube.com/watch?v=jDJsT3zm-NE', 'machine learning');
