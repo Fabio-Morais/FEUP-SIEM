@@ -76,6 +76,14 @@ class User{
         return $result;
     }
 
+    /**
+     * Change the password of user
+     */
+    public function changePassword($conn,$username, $passwordHash){
+        $query = "UPDATE userr set passHash ='".$passwordHash."' WHERE username='".$username."' ;";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 }
 
 ?>

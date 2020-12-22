@@ -28,9 +28,12 @@ if ($db->connect()) {
         $totalQuery = $db->getTotalCoursesStudent($username);
         $gradeQuery = $db->getStudentGrade($username);
         $coursesQuery = $db->getCoursesStudent($username);
+        $ordersQuery = $db->getOrdersByUser($username);
+
         $total = pg_fetch_assoc($totalQuery);
         $grade = pg_fetch_assoc($gradeQuery);
         $courses = pg_fetch_assoc($coursesQuery);
+        $orders = pg_fetch_assoc($ordersQuery);
     } else if ($queryInfo["role"] == 1) {
         $totalQuery = $db->getTotalCoursesTeacher($username);
         $total = pg_fetch_assoc($totalQuery);
@@ -142,18 +145,31 @@ $title = basename($_SERVER['SCRIPT_NAME']);
 
 
                                         </div>
+                                        <?php if($queryInfo["role"]==0): ?>
                                         <div class="col-md-12">
                                             <h5 class="mt-2 mb-3"><i class="far fa-clock float-right"></i>Últimas 3 compras</h5>
                                             <table class="table table-hover table-striped">
                                                 <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <strong>Abby</strong> joined ACME Project Team in <strong>`Collaboration`</strong>
-                                                    </td>
-                                                </tr>
+                                                   <?php
+                                                   $count=3;
+                                                   while(isset($orders["productname"]) && $count>0) {
+                                                       $date = new DateTime($orders['purchasedate']);
+                                                       echo "<tr>";
+                                                           echo "<td>";
+                                                           echo "<strong>Curso:</strong> ".$orders['productname'];
+                                                           echo "</td>";
+                                                           echo "<td>";
+                                                           echo "<strong>Data de compra: </strong>".$date->format('d-m-Y');;
+                                                           echo "</td>";
+                                                       echo " </tr>";
+                                                       $orders = pg_fetch_assoc($ordersQuery);
+                                                       $count--;
+                                                   }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </div>
+                                         <?php endif; ?>
                                     </div>
                                     <!--/row-->
                                 </div>
@@ -205,3 +221,10 @@ $title = basename($_SERVER['SCRIPT_NAME']);
     // triggers 'onInput' and 'onChange' on all color pickers when they are ready
     jscolor.trigger('input change');
 </script>
+<?php
+/*invalid password*/
+if($_SESSION['errorForm']==1){
+    echo "<script type=\"text/javascript\">$(document).ready(function() {\$('#passModal').modal('show');validatePass() });</script>" ;
+    $_SESSION['errorForm']=0;
+}
+?>
