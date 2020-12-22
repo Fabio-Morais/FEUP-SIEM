@@ -20,8 +20,8 @@ include_once(dirname(__FILE__) . "../../../includes/common/session.php");
 
         <?php if ($title == "comprar_curso.php" ) :?>
             <li class="nav-item mr-2">
-                <a class="nav-link " id="shoppingCart" href="#" role="button"
-                   aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-cart"></i></a>
+                <a class="nav-link " id="cart" href="#" ><i class="fas fa-shopping-cart" style="font-size:20px">&#xf07a;</i>
+<span class='badge badge-warning' id='lblCartCount'>3</span></a>
             </li>
         <?php endif;?>
         <li class="nav-item dropdown">

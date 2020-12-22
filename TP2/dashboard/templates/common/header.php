@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 
 /*require_once(dirname(__FILE__) . "/../../includes/common/sension.php"); 
 session_start();    
@@ -7,7 +6,7 @@ session_start();
     if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
     } else{
     header('Location: ../login.php');
-    }    */      
+    }    */
 ?>
 
 <?php require_once(dirname(__FILE__) . "/../../access.php"); ?>
@@ -26,9 +25,21 @@ session_start();
     <link href="public/css/styles.css" rel="stylesheet" />
     <link href="public/css/main.css" rel="stylesheet" />
     <link href="public/css/profile.css" rel="stylesheet" />
+    <!--Get the title of the page-->
+    <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
+
+    <?php if ($title == "comprar_curso.php") : ?>
+        <!-- custom style -->
+        <link href="public/css/e.scss"/>
+
+        <link href="public/css/ui.css" rel="stylesheet" type="text/css" />
+        <link href="public/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <?php endif; ?>
+
 
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </head>

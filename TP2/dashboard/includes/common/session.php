@@ -1,4 +1,6 @@
 <?php
+require_once(dirname(__FILE__) . "/alerts.php");
+
 /**
 * Se aux = 0 -> aluno
 * Se aux = 1 -> professor
