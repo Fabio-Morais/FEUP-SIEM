@@ -33,7 +33,7 @@ VALUES('c/c++', '20', 'fabiouds', 'c++.png', 'soft'),
 ('python', '25', 'fabiouds', 'python.jpg', 'soft'),
 ('web development', '30', null, 'web.png', 'web'),
 ('web apis', '20', null, 'apis.png', 'web'),
-('matematica', '15', null, 'math.png', 'ml'),
+('matematica', '15', null, 'math.jpg', 'ml'),
 ('machine learning', '40', 'fabiouds', 'ml.png', 'ml');
 
 

@@ -140,6 +140,10 @@ final class DataBase
         return $this->course->getCoursesPrices($this->conn);
     }
 
+    public function getAllCoursesExceptStudentOwn($username)
+    {
+        return $this->course->getAllCoursesExceptStudentOwn($this->conn,$username);
+    }
         
     public function getCoursesTeacher($username)
     {
