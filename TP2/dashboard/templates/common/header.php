@@ -30,8 +30,6 @@ session_start();
 
     <?php if ($title == "comprar_curso.php") : ?>
         <!-- custom style -->
-        <link href="public/css/e.scss"/>
-
         <link href="public/css/ui.css" rel="stylesheet" type="text/css" />
         <link href="public/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
     <?php endif; ?>
