@@ -21,7 +21,7 @@ class User{
         return $result;
     }
 
-         /**
+    /**
      * Return user info
      */
     public function ins($conn, $data){
@@ -34,13 +34,16 @@ class User{
      * Edit user info
      */
     public function editUserInfo($conn,$originalUser, $user){
-        $query = "UPDATE userr set username = '".$user->userName."' , name = '".$user->name."', email = '".$user->email."',phone= '".$user->phone."', image = '".$user->image."', nif = '".$user->nif."',birthDate = '".$user->birthDate."' WHERE username='".$originalUser."'";
+        if(!empty($user->image))
+            $query = "UPDATE userr set  name = '".$user->name."', email = '".$user->email."',phone= '".$user->phone."', image = '".$user->image."', nif = '".$user->nif."',birthDate = '".$user->birthDate."',about = '".$user->about."',hobbies = '".$user->hobbies."' WHERE username='".$originalUser."'";
+        else
+            $query = "UPDATE userr set  name = '".$user->name."', email = '".$user->email."',phone= '".$user->phone."', nif = '".$user->nif."',birthDate = '".$user->birthDate."',about = '".$user->about."',hobbies = '".$user->hobbies."' WHERE username='".$originalUser."'";
         $result = pg_exec($conn, $query);
         return $result;
     }
         
     /**
-     * Ass user
+     * Add user
      */
     public function addUser($conn, $name, $email, $role, $username){
         $query = "INSERT INTO userr (name, email, role,username ) VALUES('".$name."', '".$email."', ".$role.", '".$username."') ";
@@ -48,14 +51,31 @@ class User{
         return $result;
     }
 
-        /**
-     * Ass user
+    /**
+     * Delete user
      */
     public function deleteUser($conn,$username){
         $query = "DELETE FROM userr WHERE username='".$username."'";
         $result = pg_exec($conn, $query);
         return $result;
     }
+    /**
+     * Confirm if the username already exists
+     */
+    public function usernameExists($conn,$username){
+        $query = "Select * from userr where username='".$username."';";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+    /**
+     * Add background color to the user
+     */
+    public function addUserColor($conn,$username, $color){
+        $query = "UPDATE userr set color ='".$color."' WHERE username='".$username."' ;";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
 }
 
 ?>

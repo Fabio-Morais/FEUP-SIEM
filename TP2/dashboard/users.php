@@ -17,6 +17,9 @@ if ($db->connect()) {
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
+if(isset($_SESSION['add']))
+    echo $_SESSION['add'];
+    $_SESSION['add']=NULL;
 ?>
 
 <?php
@@ -47,27 +50,33 @@ function role($var)
                         $row = pg_fetch_assoc($users);
                         while (isset($row["username"])) {
                             /*Obter numero de cursos*/
-                            $totalCourses = $db->getTotalCoursesStudent($row["username"]);
-                            $row2 = pg_fetch_assoc($totalCourses);
                             $courses = "--";
-                            if (isset($row2["count"]))
-                                $courses = strval($row2["count"]);
-
+                            if($row["role"]==0){
+                                $totalCourses = $db->getTotalCoursesStudent($row["username"]);
+                                $row2 = pg_fetch_assoc($totalCourses);
+                                if (isset($row2["count"]))
+                                    $courses = strval($row2["count"]);
+                            }
+                             if($row["role"]==1) {
+                                 $totalQuery = $db->getTotalCoursesTeacher($row["username"]);
+                                 $total = pg_fetch_assoc($totalQuery);
+                                 $courses=$total['count'];
+                             }
                             /*Obter nota do estudante*/
                             $grade = $db->getStudentGrade($row["username"]);
                             $row3 = pg_fetch_assoc($grade);
                             $grade = "--";
                             if (isset($row3["grade"]) && $row3["grade"] > 0.0)
                                 $grade = sprintf("%.1f", $row3["grade"]);
-                                
+
                             echo "<div class=\"p-2 m-3 content\">";
                             echo "   <div class=\"hovereffect\">";
                             echo       "<div class=\"box box-widget widget-user\">";
-                            echo            "<div class=\"widget-user-header bg-aqua\">";
+                            echo            "<div class=\"widget-user-header \" style=\"background-color:".((empty($row["color"])) ? "#8585d3" : $row["color"])."\">";
                             echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"https://bootdey.com/img/Content/avatar/avatar1.png\" alt=\"User Avatar\">";/*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . role($row['role']) . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
@@ -111,56 +120,18 @@ function role($var)
     </div>
 </div>
 
+    <script type=\"text/javascript\">$(document).ready(function() {$('#modalRegisterForm').modal('show'); });</script>
 <!--Modal de registar novo user-->
-<div class="modal fade " id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="card bg-light ">
-                <article class="card-body mx-auto" style="max-width: 400px;">
-                    <h4 class="card-title mt-3 text-center">Criar Conta</h4>
-                    <form method = "POST" action = "/action/actionInsertUser.php">
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                            </div>
-                            <input name="name" class="form-control" placeholder="Nome Completo" type="text">
-                        </div> <!-- form-group// -->
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                            </div>
-                            <input name="email" class="form-control" placeholder="Email" type="email">
-                        </div> <!-- form-group// -->
+<?php include_once(dirname(__FILE__) . "/formCreateUser.php"); ?>
 
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-                            </div>
-                            <select class="form-control" name="role">
-                                <option selected="" value="0"> Aluno</option>
-                                <option value="1">Professor</option>
-                                <option value="2">Admin</option>
-                            </select>
-                        </div> <!-- form-group end.// -->
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                            </div>
-                            <input class="form-control" placeholder="Username" type="text" name="userName">
-                        </div> <!-- form-group// -->
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block" name="criaConta" value="criaConta"> Criar Conta </button>
-                        </div> <!-- form-group// -->
-                    </form>
-                </article>
-            </div> <!-- card.// -->
-
-        </div>
-    </div>
-</div>
 
 <!--Botao de registar novo user-->
 <button type="button" class="btn btn-success btn-circle btn-xl" id="addUser" data-toggle="modal" data-target="#modalRegisterForm"><i class="fas fa-plus"></i></button>
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+<?php
+if($_SESSION['errorForm']==1){
+    echo "<script type=\"text/javascript\">$(document).ready(function() {\$('#modalRegisterForm').modal('show'); });</script>" ;
+    $_SESSION['errorForm']=0;
+}
+?>

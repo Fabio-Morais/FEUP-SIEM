@@ -8,9 +8,12 @@ CREATE TABLE IF NOT EXISTS Userr(
     name VARCHAR(100),
     passHash VARCHAR(200),
     nif VARCHAR(100),
-    image bytea,
+    image VARCHAR(100),
     birthDate DATE,
-    role INTEGER
+    role INTEGER,
+    about text,
+    hobbies text,
+    color VARCHAR(20) DEFAULT '#1B49C2'
 );
 
 CREATE TABLE IF NOT EXISTS Student(
@@ -30,7 +33,7 @@ CREATE TABLE IF NOT EXISTS Orderr(
     price VARCHAR(100),
     productName VARCHAR(100),
     description VARCHAR(100),
-    idStudent VARCHAR(100) REFERENCES Student(username) ON UPDATE CASCADE ON DELETE CASCADE
+    idStudent VARCHAR(100) REFERENCES Student(username) ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Salary(
@@ -43,16 +46,24 @@ CREATE TABLE IF NOT EXISTS Salary(
 CREATE TABLE IF NOT EXISTS Course(
     courseName VARCHAR(50) PRIMARY KEY,
     price VARCHAR(30),
-    teacher VARCHAR(100) REFERENCES Teacher(username) ON UPDATE CASCADE
+    teacher VARCHAR(100) REFERENCES Teacher(username) ON UPDATE CASCADE,
+    image VARCHAR(30),
+    type VARCHAR(30)
 );
 
 CREATE TABLE IF NOT EXISTS Enrolled(
     userName VARCHAR(100) REFERENCES Student(userName) ON UPDATE CASCADE ON DELETE CASCADE,
-    courseName VARCHAR(100) REFERENCES Course(name) ON DELETE CASCADE,
+    courseName VARCHAR(100) REFERENCES Course(courseName) ON DELETE CASCADE,
     courseGrade FLOAT default 0,
     PRIMARY KEY(userName, courseName)
 );            
 
 CREATE TABLE IF NOT EXISTS Admin(
     username VARCHAR(100) REFERENCES Userr(userName) ON UPDATE CASCADE PRIMARY KEY
-);        
+);
+
+CREATE TABLE IF NOT EXISTS Video(
+    id SERIAL PRIMARY KEY,
+    youtubeLink VARCHAR(100),
+    courseName VARCHAR(100) REFERENCES Course(coursename) ON DELETE CASCADE
+);

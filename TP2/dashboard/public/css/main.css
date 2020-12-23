@@ -107,12 +107,16 @@ Listar todos os users em cards
     top: 65px;
     left: 50%;
     margin-left: -45px;
+    width: 95px;
+    height: 100px;
+
 }
 
 .widget-user .widget-user-image>img {
-    width: 90px;
-    height: auto;
+    width: 95px;
+    height: 100px;
     border: 3px solid #fff;
+    object-fit: cover;
 }
 
 .widget-user .box-footer {
@@ -284,7 +288,87 @@ Paginas
     transform: scale(1);
   }
 
-  /*LOADING*/
 
-#loading_spinner { display:none; }
 
+.modal-dialog-full-width {
+    width: 90% !important;
+    margin: auto !important;
+    padding: 0 !important;
+    max-width:none !important;
+
+}
+
+.modal-content-full-width  {
+    height: auto !important;
+    border-radius: 0 !important;
+    background-color: #ececec !important;
+    padding: 0 !important;
+
+}
+
+#outer{
+    width:280px;
+    float:right;
+    text-align-last:center;}
+.dataTables_filter input[type="search"]:focus{
+    width:350px;
+    transition: all 1s;
+}
+
+.dataTables_filter input[type="search"]:not(:focus){
+    width:150px;
+    transition: all 1s;
+}
+
+#myInput{
+ width:30%!important;
+    transition: all 1s;
+
+}
+#myInput:focus{
+    width:80%!important;
+    transition: all 1s;
+}
+
+#course {
+    background-color: #f1f1f1;
+    width: 17em;
+    height: 20em;
+    text-align: center;
+    margin: 2em;
+    box-shadow: 2px 2px 8px 4px #0000004f;
+}
+
+#course>#imgBorder {
+    width: 100%;
+    height: 65%;
+}
+
+#imgBorder>#imgCourse {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#course h3 {
+    font-size: 22px;
+    margin: 0.1em 0em;
+    padding: 10px;
+}
+
+#course h4 {
+    font-size: 20px;
+    margin: 0.1em 0em;
+    padding: 10px;
+}
+
+
+/*PERFIL.PHP -> change the background color of the profile*/
+#colorPick{
+    width: 130px;
+    display:none;
+}
+#colorPickButton{
+    display:none;
+
+}

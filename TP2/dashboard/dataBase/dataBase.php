@@ -4,6 +4,7 @@ include_once(dirname(__FILE__) . "/tables/Teacher.php");
 include_once(dirname(__FILE__) . "/tables/Student.php");
 include_once(dirname(__FILE__) . "/tables/User.php");
 include_once(dirname(__FILE__) . "/tables/Courses.php");
+include_once(dirname(__FILE__) . "/tables/Video.php");
 
 final class DataBase
 {
@@ -13,6 +14,7 @@ final class DataBase
     private $student;
     private $user;
     private $course;
+    private $video;
 
     /**
      * Call this method to get singleton
@@ -39,6 +41,7 @@ final class DataBase
         $this->teacher = new Teacher();
         $this->user = new User();
         $this->course = new Courses();
+        $this->video = new Video();
 
     }
     /**
@@ -114,10 +117,20 @@ final class DataBase
     {
         return $this->user->addUser($this->conn,$name, $email, $role, $username);
     }
-    
+
+    public function usernameExists($username)
+    {
+        return $this->user->usernameExists($this->conn, $username);
+    }
+
     public function deleteUser($username)
     {
         return $this->user->deleteUser($this->conn, $username);
+    }
+
+    public function addUserColor($username,$color)
+    {
+        return $this->user->addUserColor($this->conn,$username, $color);
     }
 
     public function getCoursesPrices()
@@ -125,6 +138,10 @@ final class DataBase
         return $this->course->getCoursesPrices($this->conn);
     }
 
+    public function getCourseInfo($coursename)
+    {
+        return $this->course->getCourseInfo($this->conn, $coursename);
+    }
         
     public function getCoursesTeacher($username)
     {
@@ -141,21 +158,50 @@ final class DataBase
         return $this->teacher->getTotalCoursesTeacher($this->conn, $username);
     }
             
-    public function setGradeStudent($username,  $grade, $course)
+    public function setGradeStudent($username, $grade, $course)
     {
         return $this->student->setGradeStudent($this->conn, $username,  $grade, $course);
-    }
-
-
-    public function getTotalMonthProfit()
-    {
-        return $this->order->getTotalMonthProfit($this->conn);
     }
 
     public function getTotalYearProfit()
     {
         return $this->order->getTotalYearProfit($this->conn);
     }
+    public function getTotalMonthProfit()
+    {
+        return $this->order->getTotalMonthProfit($this->conn);
+    }
 
+    public function getTotalDailyProfit()
+    {
+        return $this->order->getTotalDailyProfit($this->conn);
+    }
 
+    public function getOrdersByUser($username)
+    {
+        return $this->order->getOrdersByUser($this->conn, $username);
+    }
+
+    public function getStudentCourses($username)
+    {
+        return $this->student->getStudentCourses($this->conn, $username);
+    }
+
+    public function getVideoLinks($coursename)
+    {
+        return $this->video->getVideoLinks($this->conn, $coursename);
+    }
+
+    public function getSellsCourses()
+    {
+        return $this->order->getSellsCourses($this->conn);
+    }
+    public function getSellsCoursesMoney()
+    {
+        return $this->order->getSellsCoursesMoney($this->conn);
+    }
+    public function getTotalCourses()
+    {
+        return $this->order->getTotalCourses($this->conn);
+    }
 }

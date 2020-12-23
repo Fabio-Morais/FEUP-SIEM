@@ -14,13 +14,39 @@ $users = "";
 $courses = "";
 $connected = false;
 if ($db->connect()) {
-    $users = $db->getAllStudentsTeacher("fabiouds");
+    $users = $db->getAllStudentsTeacher($aux['username']);
     $connected = true;
+
 } else
     Alerts::showError(Alerts::DATABASEOFF);
+
 ?>
 
+<!--Se tiver no link o ?username=.... mostra um modal para visualizar o perfil-->
+<?php if($_GET && $connected):?>
+    <!-- Modal -->
+    <div class="modal fade "  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog-full-width modal-dialog momodel modal-fluid modal-dialog-centered" role="document"  >
+            <div class="modal-content-full-width modal-content "  >
+                <div class="modal-header-full-width   modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="removeGetUrl()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" >
+                    <!--Modal-->
+                    <?php include_once(dirname(__FILE__) . "/templates/viewProfile.php");?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="removeGetUrl()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+endif;?>
 
+<!--Lista de alunos-->
 <div class="container-fluid">
     <div class="justify-content-center m-4">
         <div class="card border-left-primary shadow h-100 py-2">
@@ -41,18 +67,30 @@ if ($db->connect()) {
                             $totalCourses = $db->getTotalCoursesStudent($row["username"]);
                             $row2 = pg_fetch_assoc($totalCourses);
                             $courses = "--";
-                            if (isset($row3["count"]))
-                                $courses = strval($row3["count"]);
+                            if (isset($row2["count"]))
+                                $courses = strval($row2["count"]);
 
+                            /*Obter nota do estudante*/
+                            $grade = $db->getStudentGrade($row["username"]);
+                            $row3 = pg_fetch_assoc($grade);
+                            $grade = "--";
+                            if (isset($row3["grade"]) && $row3["grade"] > 0.0)
+                                $grade = sprintf("%.1f", $row3["grade"]);
 
+                            /*Se user nao tiver imagem mete uma padrao*/
+                            if(!isset($row['image'])){
+                                $image="avatar.png";
+                            }else{
+                                $image="users/".$row['image'];
+                            }
                             echo "<div class=\"p-2 m-3 content\">";
                             echo "   <div class=\"hovereffect\">";
                             echo       "<div class=\"box box-widget widget-user\">";
-                            echo            "<div class=\"widget-user-header bg-aqua\">";
+                            echo            "<div class=\"widget-user-header\"style=\"background-color:".((empty($row["color"])) ? "#8585d3" : $row["color"])."\">";
                             echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"https://bootdey.com/img/Content/avatar/avatar1.png\" alt=\"User Avatar\">";/*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/".$image ."\" alt=\"User Avatar\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . "Aluno" . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
@@ -66,7 +104,7 @@ if ($db->connect()) {
 
                             echo                 "<div class=\"col-sm\">";
                             echo                     "<div class=\"description-block\">";
-                            echo                         "<h5 class=\"description-header\">" . $row["grade"] . "</h5>";/*NOTA*/
+                            echo                         "<h5 class=\"description-header\">" . $grade . "</h5>";/*NOTA*/
                             echo                         "<span class=\"description-text\">Nota</span>";
                             echo                     "</div>";
                             echo                 "</div>";
@@ -76,8 +114,11 @@ if ($db->connect()) {
                             /*OVERLAY -> ao passar o rato*/
                             echo     "<div class=\"overlay\">";
                             echo         "<h2>" . $row['username'] . "</h2>";/*USERNAME*/
-                            echo         "<button onclick=\"myFunction(" . $count . ")\" type=\"button\" class=\"info btn btn-success btn-circle btn-md\"  data-toggle=\"modal\" data-target=\"#modalRegisterForm\"><i class=\"far fa-edit\"></i></button>";
-
+                            echo         "<button data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Ver Perfil\" class=\"info btn btn-success btn-circle btn-md\" onclick=\"location.href='?username=".$row['username']."'\"><i class=\"fas fa-user-circle\" ></i></button>";
+                            echo        "<span data-toggle='modal' data-target='#modalRegisterForm'>
+                            <button  data-toggle='tooltip' data-placement='bottom' title='Atribuir Nota' onclick='myFunction(" . $count . ")' type='button' class='info btn btn-success btn-circle btn-md'  >
+                            <i class='far fa-edit'></i>
+                            </button></span>";
                             echo     "</div>";
                             echo "</div>";
 
@@ -88,6 +129,8 @@ if ($db->connect()) {
                     endif;
                     ?>
                 </div>
+
+
                 <div class="pagination">
                 </div>
             </div>
@@ -117,12 +160,12 @@ if ($db->connect()) {
                         <select class="form-control mb-3" name="course">
                             <?php
 
-                                $coursesTeacer = $db->getCoursesTeacher("fabiouds");
+                            $coursesTeacer = $db->getCoursesTeacher("fabiouds");
+                            $row = pg_fetch_assoc($coursesTeacer);
+                            while (isset($row["coursename"])) {
+                                echo " <option  selected>" . $row['coursename'] . "</option>";
                                 $row = pg_fetch_assoc($coursesTeacer);
-                                while (isset($row["coursename"])) {
-                                    echo " <option  selected>" . $row['coursename'] . "</option>";
-                                    $row = pg_fetch_assoc($coursesTeacer);
-                                }
+                            }
 
 
                             ?>
@@ -142,6 +185,7 @@ if ($db->connect()) {
 </div>
 <script>
     function myFunction(indice) {
+        console.log("ola")
         var x = document.getElementsByClassName("widget-user-username");
         document.getElementById('usernam').value = x[indice - 1].innerHTML;
 
@@ -149,3 +193,11 @@ if ($db->connect()) {
 </script>
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+
+<script type='text/javascript'>
+    $("#exampleModalLong").modal()
+
+    function removeGetUrl(){
+        window.history.replaceState(null, null, window.location.pathname);
+    }
+</script>
