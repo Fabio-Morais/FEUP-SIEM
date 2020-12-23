@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS Enrolled(
     courseName VARCHAR(100) REFERENCES Course(courseName) ON DELETE CASCADE,
     courseGrade FLOAT default 0,
     PRIMARY KEY(userName, courseName)
-);            
+);
 
 CREATE TABLE IF NOT EXISTS Admin(
     username VARCHAR(100) REFERENCES Userr(userName) ON UPDATE CASCADE PRIMARY KEY

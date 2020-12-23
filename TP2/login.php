@@ -1,44 +1,75 @@
 <?php session_start(); ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
-
-    <title>Login</title>
-
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/signin.css" rel="stylesheet">
-</head>
-
-<body class="text-center">
-    <form class="form-signin" method="post" action="dashboard/action/checkLogin.php">
-        <img class="mb-4" src="img/icon.png" alt="" width="100" height="100">
-        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-        <?php
-        if (isset($_SESSION['error']))
-            echo "<div class=\"form-group\"> <span style='color:red;'>* Username e/ou password incorretos</span> </div>";
-        ?>
-        <?php
-        if (isset($_SESSION['errorInexistente']))
-            echo "<div class=\"form-group\"> <span style='color:red;'>* O utilizador não existe</span> </div>";
-        ?>
-        <label for="user" class="sr-only">Username</label>
-        <input id="user" type="user" name="user" class="form-control" placeholder="Username" required autofocus>
-
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input id="password" type="password" name="password" class="form-control" placeholder="Password" required>
-
-        <div class="checkbox mb-3" style="text-align: left; margin-left: 5px">
-            <label>
-                <input type="checkbox" value="remember-me"> Lembrar-me
-            </label>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ExplicaFeup - Login</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-body">
+                                        <form method="post" action="checklogin.php">
+                                        <?php
+                                           if (isset($_SESSION['error'])){
+                                             echo "<div class=\"form-group\">
+                                                        <span style='color:red;'>* Username e/ou password incorretos</span>
+                                                    </div>";
+                                           }
+                                        ?>
+                                            <div class="form-group">
+                                                <label class="small mb-1">Username</label>
+                                                <input class="form-control py-4" id="user" type="user" name="user" placeholder="Username" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="small mb-1">Password</label>
+                                                <input class="form-control py-4" id="password" type="password" name="password" placeholder="Password" required/>
+                                            </div>
+                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                <a class="small" href="password.html">Forgot Password?</a>
+                                                <input class="btn btn-primary" type="submit" value="Login"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Entrar</button>
-        <p class="mt-5 mb-3 text-muted">&copy; Fábio Morais e Fernando Silva 2020</p>
-    </form>
-</body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+    </body>
 </html>

@@ -5,7 +5,7 @@
 * Se aux = 2 -> admin
 */
 
-$debug=false;
+$debug=true;
 $aux['role']="1";
 $aux['username']="admin";
 if($debug){
