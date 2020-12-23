@@ -50,7 +50,7 @@ final class DataBase
      */
     public function connect()
     {   try{
-            $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
+            $this->conn = pg_connect("host=localhost dbname=postgres user=postgres password=siem");
         }catch(Exception $e){
             return false;
         }  
@@ -131,6 +131,11 @@ final class DataBase
     public function addUserColor($username,$color)
     {
         return $this->user->addUserColor($this->conn,$username, $color);
+    }
+
+    public function changePassword($username,$passwordHash)
+    {
+        return $this->user->changePassword($this->conn,$username, $passwordHash);
     }
 
     public function getCoursesPrices()

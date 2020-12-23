@@ -50,12 +50,18 @@ function role($var)
                         $row = pg_fetch_assoc($users);
                         while (isset($row["username"])) {
                             /*Obter numero de cursos*/
-                            $totalCourses = $db->getTotalCoursesStudent($row["username"]);
-                            $row2 = pg_fetch_assoc($totalCourses);
                             $courses = "--";
-                            if (isset($row2["count"]))
-                                $courses = strval($row2["count"]);
-
+                            if($row["role"]==0){
+                                $totalCourses = $db->getTotalCoursesStudent($row["username"]);
+                                $row2 = pg_fetch_assoc($totalCourses);
+                                if (isset($row2["count"]))
+                                    $courses = strval($row2["count"]);
+                            }
+                             if($row["role"]==1) {
+                                 $totalQuery = $db->getTotalCoursesTeacher($row["username"]);
+                                 $total = pg_fetch_assoc($totalQuery);
+                                 $courses=$total['count'];
+                             }
                             /*Obter nota do estudante*/
                             $grade = $db->getStudentGrade($row["username"]);
                             $row3 = pg_fetch_assoc($grade);
