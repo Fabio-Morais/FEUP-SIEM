@@ -1,8 +1,4 @@
-<?php
-/** $_SESSION
- * errorForm = 1 -> Username already exists
- */
-require_once(dirname(__FILE__) . "/../dataBase/dataBase.php"); ?>
+<?php require_once(dirname(__FILE__) . "/../dataBase/dataBase.php"); ?>
 
 <?php
 session_start();

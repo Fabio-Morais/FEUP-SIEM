@@ -43,8 +43,7 @@ function setContrast(picker) {
     const brightness = Math.round(((parseInt(rgb[0]) * 299) +
         (parseInt(rgb[1]) * 587) +
         (parseInt(rgb[2]) * 114)) / 1000);
-    const textColour = (brightness > 200) ? 'black' : 'white';
+    const textColour = (brightness > 125) ? 'black' : 'white';
     $('.textAdapt').css('color', textColour);
 
 }
-
