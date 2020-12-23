@@ -104,7 +104,7 @@ if ($db->connect()) {
 <!--Incluir os graficos para gerar-->
 
 <script type="module">
-    import ChartBuild from './public/js/chart.js';
+    import ChartBuild from '/public/js/chart.js';
     function aaa(){
         var option = $("option:selected").val();
         if ( option=== "option1") {

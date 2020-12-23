@@ -27,10 +27,6 @@
     <script src="public/js/users.js"></script>
 <?php endif;?>
 
-<?php if ($title == "perfil.php" ) :?>
-    <script src="public/js/validatePassword.js"></script>
-<?php endif;?>
-
 
 </body>
 

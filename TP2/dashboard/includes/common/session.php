@@ -12,7 +12,7 @@ if($debug){
     include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
     session_start();
     $db = DataBase::Instance();
-    $_SESSION['user']="admin";
+    $_SESSION['user']="fabiouds";
     if ($db->connect()) {
         $auxQuery = $db->getUser($_SESSION['user']);
         $connected = true;
