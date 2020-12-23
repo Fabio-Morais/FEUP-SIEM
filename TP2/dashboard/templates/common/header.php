@@ -23,6 +23,8 @@ session_start();
     <meta name="author" content="" />
     <title>ExplicaFeup - Dashboard</title>
     <link href="public/css/styles.css" rel="stylesheet" />
+    <link href="public/css/cart/style.css" rel="stylesheet" />
+
     <link href="public/css/main.css" rel="stylesheet" />
     <link href="public/css/profile.css" rel="stylesheet" />
     <!--Get the title of the page-->

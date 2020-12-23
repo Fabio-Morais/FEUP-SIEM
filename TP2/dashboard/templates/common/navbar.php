@@ -15,15 +15,7 @@ include_once(dirname(__FILE__) . "../../../includes/common/session.php");
     </form>
     <!-- Navbar-->
     <ul class="navbar-nav ml-auto ml-md-0">
-        <!--Get the title of the page-->
-        <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
-        <?php if ($title == "comprar_curso.php" ) :?>
-            <li class="nav-item mr-2">
-                <a class="nav-link " id="cart" href="#" ><i class="fas fa-shopping-cart" style="font-size:20px">&#xf07a;</i>
-<span class='badge badge-warning' id='lblCartCount'>3</span></a>
-            </li>
-        <?php endif;?>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>

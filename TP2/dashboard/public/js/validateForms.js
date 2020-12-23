@@ -29,6 +29,17 @@ function validePhone(phone) {
     return check;
 }
 
+
+function valideDate(inputText) {
+    var x = Date.parse(inputText)
+    var inputDate = new Date(x)
+    var d1 = new Date();
+
+
+
+    return !(inputDate.getFullYear() >= d1.getFullYear()-5);
+}
+
 /**
  * Form validation of add user in user.php
  * */
@@ -75,18 +86,6 @@ function validateFormAddUser() {
     }
 
     return (isOk == 1);
-}
-
-
-function valideDate(inputText)
-{
-    var x = Date.parse(inputText)
-    var inputDate = new Date(x)
-    var d1 = new Date();
-
-
-
-    return !(inputDate.getFullYear() >= d1.getFullYear()-5);
 }
 
 /**

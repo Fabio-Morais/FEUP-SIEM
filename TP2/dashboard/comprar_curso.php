@@ -25,7 +25,7 @@ if ($db->connect()) {
             <div class="card-body">
 
                 <div class="row">
-                    <aside class="col-md-3">
+                    <aside class="col-xl-3 ">
                         <div class="card">
                             <article class="filter-group">
                                 <header class="card-header">
@@ -40,7 +40,6 @@ if ($db->connect()) {
                                             <div class="input-group">
                                                 <input type="text" class="form-control" placeholder="Search">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
                                                 </div>
                                             </div>
                                         </form>
@@ -84,7 +83,6 @@ if ($db->connect()) {
 
                     </aside> <!-- col.// -->
                     <main class="col-md-9">
-
                         <header class="border-bottom mb-4 pb-3">
                             <div class="form-inline">
                                 <span class="mr-md-auto"><?php echo pg_num_rows($courses) ?> Cursos encontrados </span>
@@ -103,12 +101,12 @@ if ($db->connect()) {
                             </div>
                         </header><!-- sect-heading -->
 
-                        <div class="row">
+                        <div class="d-flex flex-wrap justify-content-start items">
                             <?php
                             if ($connected) :
                                 $row = pg_fetch_assoc($courses);
                                 while (isset($row["coursename"])) {
-                                    echo "<div class=\"col-md-4\">";
+                                    echo "<div class=\"p-2 \" style=\"width:250px\">";
                                     echo "<figure class=\"card card-product-grid\">";
                                     echo "  <div class=\"img-wrap\">";
                                     echo "      <span class=\"badge badge-danger\"> Promo </span>";
@@ -123,7 +121,7 @@ if ($db->connect()) {
                                     echo "              <del class=\"price-old\">" . (intval($row["price"]) + 5) . "€</del> ";
                                     echo "          </div> ";
                                     echo "      </div> ";
-                                    echo "      <a href=\"#\" class=\"btn btn-block btn-primary\">Adicionar ao carrinho</a> ";
+                                    echo "      <a  class=\"btn btn-block btn-primary js-cd-add-to-cart my-btn\"  data-price=\"".$row["price"]."\">Adicionar ao carrinho</a> ";
                                     echo "  </figcaption> ";
                                     echo " </figure> ";
                                     echo "</div>";
@@ -148,8 +146,50 @@ if ($db->connect()) {
 
 </div>
 
+<div class="cd-cart js-cd-cart ">
+	<a href="#0" class="cd-cart__trigger text-replace">
+		<ul class="cd-cart__count"> <!-- cart items count -->
+			<li>0</li>
+			<li>0</li>
+		</ul> <!-- .cd-cart__count -->
+	</a>
 
+	<div class="cd-cart__content ">
+		<div class="cd-cart__layout ">
+			<header class="cd-cart__header ">
+				<h2>Cart</h2>
+				<span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
+			</header>
+			
+			<div class="cd-cart__body ">
+				<ul id="cartElements">
+					<!-- products added to the cart will be inserted here using JavaScript -->
+				</ul>
+			</div>
+
+			<footer class="cd-cart__footer">
+				<a href="#0" class="cd-cart__checkout">
+          <em>Checkout : <span>0</span>€
+            <svg class="icon2 icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
+            </svg>
+          </em>
+        </a>
+			</footer>
+		</div>
+	</div> <!-- .cd-cart__content -->
+
+</div> <!-- cd-cart -->
 
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="public/js/cart/flyto.js"></script>
+    <script>
+        $('.items').flyto({
+            item      : '.card-product-grid',
+            target    : '.cd-cart__header',
+            button    : '.my-btn'
+        });
+    </script>
+	<!--/ js -->

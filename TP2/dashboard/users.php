@@ -120,7 +120,6 @@ function role($var)
     </div>
 </div>
 
-    <script type=\"text/javascript\">$(document).ready(function() {$('#modalRegisterForm').modal('show'); });</script>
 <!--Modal de registar novo user-->
 <?php include_once(dirname(__FILE__) . "/formCreateUser.php"); ?>
 
