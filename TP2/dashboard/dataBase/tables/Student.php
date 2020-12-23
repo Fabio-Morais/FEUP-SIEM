@@ -70,6 +70,13 @@ class Student{
         $query = "UPDATE explicafeup.enrolled SET coursegrade= ".$grade." WHERE username='".$username."' and coursename='". $course."';";
         return pg_exec($conn, $query);
     }
+
+    public function getStudentCourses($conn, $username){
+        $query = "SELECT * FROM enrolled WHERE username ='".$username."';";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
 }
 
 ?>

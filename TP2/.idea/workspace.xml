@@ -38,7 +38,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1k41hhXDWnXXzaVOBtQuUfBoIbK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,10 +47,11 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -96,6 +96,12 @@
       <workItem from="1608250026368" duration="238000" />
       <workItem from="1608285119925" duration="4297000" />
       <workItem from="1608331580404" duration="8616000" />
+
+      <workItem from="1608374010920" duration="24380000" />
+      <workItem from="1608429541452" duration="1423000" />
+      <workItem from="1608476838901" duration="14977000" />
+      <workItem from="1608566768121" duration="11966000" />
+
       <workItem from="1608374010920" duration="25572000" />
       <workItem from="1608460466781" duration="22993000" />
       <workItem from="1608541796473" duration="4523000" />
@@ -121,6 +127,12 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+
+
   <component name="WindowStateProjectService">
     <state x="633" y="193" key="#CLI_Interpreters" timestamp="1604951947659">
       <screen x="0" y="0" width="1920" height="1040" />
