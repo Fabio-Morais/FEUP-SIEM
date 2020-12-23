@@ -1,4 +1,6 @@
 <?php
+require_once(dirname(__FILE__) . "/alerts.php");
+
 /**
 * Se aux = 0 -> aluno
 * Se aux = 1 -> professor
@@ -12,7 +14,7 @@ if($debug){
     include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
     session_start();
     $db = DataBase::Instance();
-    $_SESSION['user']="admin";
+    $_SESSION['user']="fabio123";
     if ($db->connect()) {
         $auxQuery = $db->getUser($_SESSION['user']);
         $connected = true;
