@@ -148,6 +148,7 @@ final class DataBase
     public function getAllCoursesExceptStudentOwn($username)
     {
         return $this->course->getAllCoursesExceptStudentOwn($this->conn,$username);
+    }
     public function getCourseInfo($coursename)
     {
         return $this->course->getCourseInfo($this->conn, $coursename);
@@ -213,5 +214,9 @@ final class DataBase
     public function getTotalCourses()
     {
         return $this->order->getTotalCourses($this->conn);
+    }
+    public function addOrder($price, $course, $username)
+    {
+        return $this->order->addOrder($this->conn, $price, $course, $username);
     }
 }

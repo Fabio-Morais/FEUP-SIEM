@@ -28,10 +28,13 @@ switch ($title) {
     case "users.php":
         $title = "USERS";
         break;
+    case "carrinho.php":
+        $title = "Checkout";
+        break;
 }
 
 ?>
 
 <div class="container-fluid">
-    <h1 class="m-4 text-center"><?php echo $title ?></h1>
+    <h1 class="m-4 mb-5 p-3 text-center"><?php echo $title ?></h1>
    

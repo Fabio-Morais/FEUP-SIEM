@@ -38,7 +38,7 @@ if ($db->connect()) {
                                     <div class="card-body">
                                         <form class="pb-3">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Search">
+                                                <input type="text" class="form-control" placeholder="Search" id="myInput" name="search">
                                                 <div class="input-group-append">
                                                 </div>
                                             </div>
@@ -106,8 +106,8 @@ if ($db->connect()) {
                             if ($connected) :
                                 $row = pg_fetch_assoc($courses);
                                 while (isset($row["coursename"])) {
-                                    echo "<div class=\"p-2 \" style=\"width:250px\">";
-                                    echo "<figure class=\"card card-product-grid\">";
+                                    echo "<div class=\"p-2 content\" style=\"width:250px\">";
+                                    echo "<figure class=\"card card-product-grid contentSearch\">";
                                     echo "  <div class=\"img-wrap\">";
                                     echo "      <span class=\"badge badge-danger\"> Promo </span>";
                                     echo "      <img src=\"public/img/courses/" . $row["image"] . "\">";
@@ -115,7 +115,7 @@ if ($db->connect()) {
                                     echo "  </div> ";
                                     echo "  <figcaption class=\"info-wrap\"> ";
                                     echo "      <div class=\"fix-height\"> ";
-                                    echo "          <a href=\"#\" class=\"title\">" . $row["coursename"] . "</a> ";
+                                    echo "          <a href=\"#\" class=\"title text-capitalize\">" . $row["coursename"] . "</a> ";
                                     echo "          <div class=\"price-wrap mt-2\"> ";
                                     echo "              <span class=\"price\">" . $row["price"] ."€</span> ";
                                     echo "              <del class=\"price-old\">" . (intval($row["price"]) + 5) . "€</del> ";
@@ -160,15 +160,17 @@ if ($db->connect()) {
 				<h2>Cart</h2>
 				<span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
 			</header>
-			
+
 			<div class="cd-cart__body ">
+                <form action="carrinho.php" id="carrinho" method="POST">
 				<ul id="cartElements">
 					<!-- products added to the cart will be inserted here using JavaScript -->
 				</ul>
+                </form>
 			</div>
 
 			<footer class="cd-cart__footer">
-				<a href="#0" class="cd-cart__checkout">
+				<a type="button" class="cd-cart__checkout" id="submitButton">
           <em>Checkout : <span>0</span>€
             <svg class="icon2 icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
             </svg>
@@ -191,5 +193,8 @@ if ($db->connect()) {
             target    : '.cd-cart__header',
             button    : '.my-btn'
         });
+        document.getElementById("submitButton").onclick = function () {
+            document.getElementById("carrinho").submit();
+        }
     </script>
 	<!--/ js -->

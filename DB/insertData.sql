@@ -36,7 +36,6 @@ VALUES('c/c++', '20', 'fabiouds', 'c++.png', 'soft'),
 ('matematica', '15', null, 'math.jpg', 'ml'),
 ('machine learning', '40', 'fabiouds', 'ml.png', 'ml');
 
-
 INSERT INTO Orderr(deliveryDate,purchaseDate,price,productName, description, idStudent)
 VALUES ( (SELECT TO_CHAR((SELECT current_timestamp - (2 * interval '1 day') + (2 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (2 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '20', 'c/c++', '' ,  'fabio123' ),
 ((SELECT TO_CHAR((SELECT current_timestamp  - (1 * interval '1 day') + (1 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (1 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '20', 'java', '' ,  'fabio123'),

@@ -10,12 +10,12 @@ class Order{
         return $result;
     }
     public function getProfitByCourse($conn){
-        $query = "select productname, sum(CAST(price AS DECIMAL(10,2))) from explicafeup.Orderr GROUP BY productname;";
+        $query = "select productname, sum(CAST(price AS DECIMAL(10,2))) from Orderr GROUP BY productname;";
         $result = pg_exec($conn, $query);
         return $result;
     }
     public function getTotalProfit($conn){
-        $query = "select sum(CAST(price AS DECIMAL(10,2))) from explicafeup.Orderr;";
+        $query = "select sum(CAST(price AS DECIMAL(10,2))) from Orderr;";
         $result = pg_exec($conn, $query);
         return $result;
     }
@@ -44,7 +44,7 @@ class Order{
      * Return total sells by courses (number)
      */
     public function getSellsCourses($conn){
-        $query = "SELECT Count(*), productname FROM explicafeup.orderr GROUP BY productname";
+        $query = "SELECT Count(*), productname FROM orderr GROUP BY productname";
         $result = pg_exec($conn, $query);
         return $result;
     }
@@ -53,7 +53,7 @@ class Order{
      * Return total sells by courses (€)
      */
     public function getSellsCoursesMoney($conn){
-        $query = "SELECT sum(CAST(price AS int)), productname FROM explicafeup.orderr GROUP BY productname";
+        $query = "SELECT sum(CAST(price AS int)), productname FROM orderr GROUP BY productname";
         $result = pg_exec($conn, $query);
         return $result;
     }
@@ -62,7 +62,17 @@ class Order{
      * Return total sells by courses (€)
      */
     public function getTotalCourses($conn){
-        $query = "SELECT COUNT(*) FROM explicafeup.orderr";
+        $query = "SELECT COUNT(*) FROM orderr";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
+    /**
+     * Add order
+     */
+    public function addOrder($conn, $price, $course, $username){
+        $query = "INSERT INTO orderr (price, productname,idstudent) VALUES ('$price', '$course', '$username')";
+        echo $query;
         $result = pg_exec($conn, $query);
         return $result;
     }

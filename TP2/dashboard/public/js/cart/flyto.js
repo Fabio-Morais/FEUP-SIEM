@@ -6,6 +6,8 @@
 
 // self-invoking
 ;(function ($, window, document, undefined) {
+    var coursesArray = [];
+
     $.fn.flyto = function ( options ) {
         
     // Establish default settings
@@ -28,6 +30,10 @@
         flybtn.on('click', function () {
             var _this = $(this),
                 eltoDrag = _this.parent().parent().find("img").eq(0);
+            var course=$(this).parent().parent().find('.title').html()
+            var aux = $("."+course.replace(/ /g,''))
+            if(aux.length != 0)
+                return
 
         if (eltoDrag) {
             var imgclone = eltoDrag.clone()

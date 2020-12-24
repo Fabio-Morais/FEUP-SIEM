@@ -784,13 +784,13 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1608572502</StartupTime>
+      <StartupTime>1608802230</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>502</IntrospectionStateNumber>
+      <IntrospectionStateNumber>527</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|16746|16748|1
 sequence|table|16759|16761|1
@@ -833,7 +833,7 @@ sequence|table|16759|16761|1
       <ObjectId>16714</ObjectId>
       <StateNumber>492</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>503</IntrospectionStateNumber>
+      <IntrospectionStateNumber>528</IntrospectionStateNumber>
     </schema>
     <schema id="13" parent="2" name="information_schema">
       <ObjectId>13158</ObjectId>
@@ -851,7 +851,6 @@ sequence|table|16759|16761|1
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>504</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="16" parent="2" name="heap">
@@ -1140,13 +1139,15 @@ coursename</ColNames>
     <column id="59" parent="34" name="deliverydate">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
-      <StateNumber>492</StateNumber>
+      <StateNumber>514</StateNumber>
+      <DefaultExpression>to_char(now(), &apos;DD-MM-YYYY HH:MI:SS&apos;::text)</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
     <column id="60" parent="34" name="purchasedate">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
-      <StateNumber>492</StateNumber>
+      <StateNumber>526</StateNumber>
+      <DefaultExpression>to_char(now(), &apos;DD-MM-YYYY HH:MI:SS&apos;::text)</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
     <column id="61" parent="34" name="price">
