@@ -167,7 +167,6 @@ echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
                                 <p id="length" class="invalid ">Minimo de <b>4 characters</b> e máximo <b>20
                                         characters</b>; </p>
                                 <p id="space" class="valid ">Não ter <b>espaços</b>;</p>
-
                             </div>
 
                         </div>
