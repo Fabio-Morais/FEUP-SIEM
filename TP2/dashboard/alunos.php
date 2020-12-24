@@ -85,7 +85,7 @@ endif;?>
                             }
                             echo "<div class=\"p-2 m-3 content\">";
                             echo "   <div class=\"hovereffect\">";
-                            echo       "<div class=\"box box-widget widget-user\">";
+                            echo       "<div class=\"contentSearch box box-widget widget-user\">";
                             echo            "<div class=\"widget-user-header\"style=\"background-color:".((empty($row["color"])) ? "#8585d3" : $row["color"])."\">";
                             echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
@@ -185,7 +185,6 @@ endif;?>
 </div>
 <script>
     function myFunction(indice) {
-        console.log("ola")
         var x = document.getElementsByClassName("widget-user-username");
         document.getElementById('usernam').value = x[indice - 1].innerHTML;
 

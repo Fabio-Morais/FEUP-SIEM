@@ -23,7 +23,7 @@
 <!--Get the title of the page-->
 <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
-<?php if ($title == "users.php" || $title == "alunos.php") :?>
+<?php if ($title == "users.php" || $title == "alunos.php" || $title == "comprar_curso.php") :?>
     <script src="public/js/users.js"></script>
 <?php endif;?>
 

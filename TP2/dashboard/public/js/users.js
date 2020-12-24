@@ -1,7 +1,8 @@
 $(document).ready(function() {
     $("#myInput").on("keyup", function() {
+        console.log("sd")
         var value = $(this).val().toLowerCase();
-        $(".box").filter(function() {
+        $(".contentSearch").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
