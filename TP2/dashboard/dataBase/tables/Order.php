@@ -76,6 +76,16 @@ class Order{
         $result = pg_exec($conn, $query);
         return $result;
     }
+
+    /**
+     * Add Order
+     */
+    public function addOrder($conn, $productname, $username){
+        $query = "INSERT INTO Orderr (deliverydate, purchasedate, price, productname, idstudent) 
+                VALUES((SELECT to_char((SELECT current_timestamp), 'DD-MM-YYYY HH:MI:SS')), (SELECT to_char((SELECT current_timestamp), 'DD-MM-YYYY HH:MI:SS')), (SELECT price FROM course WHERE coursename ='".$productname."'),'".$productname."','".$username."')";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 }
 
 ?>

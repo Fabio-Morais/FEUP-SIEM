@@ -43,16 +43,16 @@ class User{
     }
         
     /**
-     * Ass user
+     * Add user
      */
     public function addUser($conn, $name, $email, $role, $username){
-        $query = "INSERT INTO userr (name, email, role,username ) VALUES('".$name."', '".$email."', ".$role.", '".$username."') ";
+        $query = "INSERT INTO userr (name, email, role, username) VALUES('".$name."', '".$email."', ".$role.", '".$username."') ";
         $result = pg_exec($conn, $query);
         return $result;
     }
 
-        /**
-     * Ass user
+    /**
+     * Delete user
      */
     public function deleteUser($conn,$username){
         $query = "DELETE FROM userr WHERE username='".$username."'";
@@ -81,6 +81,15 @@ class User{
      */
     public function changePassword($conn,$username, $passwordHash){
         $query = "UPDATE userr set passHash ='".$passwordHash."' WHERE username='".$username."' ;";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
+    /**
+     * Add user as student
+     */
+    public function addUserStudent($conn, $name, $email, $username, $passhash, $phone, $nif){
+        $query = "INSERT INTO userr (name, email, role, username, passhash, phone, nif) VALUES('".$name."', '".$email."', 0, '".$username."', '".$passhash."', '".$phone."', '".$nif."') ";
         $result = pg_exec($conn, $query);
         return $result;
     }

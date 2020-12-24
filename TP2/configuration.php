@@ -5,6 +5,6 @@ $query = "SET SCHEMA 'explicafeup'";
 pg_exec($query);
 // Check connection
     if(!$conn){
-        echo "Ligaçãoo não foi bem estabelecida";
+        echo "Ligação não foi bem estabelecida";
     }
 ?>
