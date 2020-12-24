@@ -85,7 +85,7 @@ if ($db->connect()) {
             ?>
             <h4 class="mb-3">Informação Pessoal</h4>
             <?php
-               echo "<form class=\"needs-validation\" method=\"post\" action=\"dashboard/action/checkRegister.php?course=".$_GET['course']."\" novalidate>";
+               echo "<form class=\"needs-validation\" method=\"post\" action=\"dashboard/action/checkRegister.php?course=".$courses['coursename']."\" novalidate>";
             ?>
 
                 <div class="mb-3">
@@ -133,12 +133,12 @@ if ($db->connect()) {
 
                 <div class="mb-3">
                     <label for="nif">NIF <span class="text-muted">(Opcional)</span></label>
-                    <input type="text" class="form-control" id="nif" placeholder="ex: 123456789">
+                    <input type="text" class="form-control" id="nif" name="nif" placeholder="ex: 123456789">
                 </div>
 
                 <div class="mb-3">
                     <label for="phone">Nº Telefone <span class="text-muted">(Opcional)</span></label>
-                    <input type="phone" class="form-control" id="phone" placeholder="ex: 912345678">
+                    <input type="phone" class="form-control" id="phone" name="phone" placeholder="ex: 912345678">
                 </div>
 
 
