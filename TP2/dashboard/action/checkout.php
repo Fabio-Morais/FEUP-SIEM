@@ -2,12 +2,18 @@
 <?php
 session_start();
 print_r($_POST);
+$course = $_POST['course'];
+$price = $_POST['price'];
+$size = sizeof($course);
 
 $db = DataBase::Instance();
 $connected = $db->connect();
-
 $username= $_SESSION['user'];
-$db->addOrder($_POST['price'][0],$_POST['course'][0], $username);
+
+for($i = 0; $i < $size; $i++){
+    $db->addOrder($price[$i],$course[$i], $username);
+    $db->enrollStudent($username, $course[$i]);
+}
 
 
 header("Location:../thankYou.php");

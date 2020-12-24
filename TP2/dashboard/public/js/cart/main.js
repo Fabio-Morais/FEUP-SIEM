@@ -4,6 +4,7 @@ function sleep(ms) {
 
 (function () {
     var coursesArray = [];
+    var arrCookie = [];
 
     // Add to Cart Interaction - by CodyHouse.co
     var cart = document.getElementsByClassName('js-cd-cart');
@@ -84,6 +85,7 @@ function sleep(ms) {
             }
             else
                 return;
+
             if (animatingQuantity) return;
             var cartIsEmpty = Util.hasClass(cart[0], 'cd-cart--empty');
             //update cart product list
@@ -115,7 +117,12 @@ function sleep(ms) {
                 Util.addClass(cart[0], 'cd-cart--open');
             }
         };
-
+        function createCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
         function addProduct(target, image, course, price) {
             // this is just a product placeholder
             // you should insert an item with the selected product info
@@ -124,11 +131,35 @@ function sleep(ms) {
             productId = productId + 1;
             var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + image + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + course + '</a></h3><span class="cd-cart__price">' + price + '</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Delete</a><div class="cd-cart__quantity"><span class="cd-cart__select"><select class="reset" id="cd-product-' + productId + '" name="quantity"><option value="1">1</option></select></span></div></div></div></li>';
             cartList.insertAdjacentHTML('beforeend', productAdded);
+            
+
+            var size = $('.cd-cart__product').length;
+
+            for(i = 0; i < size; i++){
+                arrCookie.push($('.cd-cart__product')[i])
+                var json_str = JSON.stringify(arrCookie);
+            }
+            console.log(arrCookie)
+            createCookie('cartCookie', json_str,1);
+
+           /* arrCookie.push(productAdded)
+            console.log(arrCookie)
+            var json_str = JSON.stringify(arrCookie);*/
+
             var input = '<input type="hidden" name="course[]" value="'+course+'" class="'+course.replace(/ /g,'') +'"/> <input type="hidden" name="image[]" value="'+image+'" class="'+course.replace(/ /g,'') +'"/><input type="hidden" name="price[]" value="'+price+'" class="'+course.replace(/ /g,'') +'"/>';
             cartList.insertAdjacentHTML('beforeend', input);
         };
 
         function removeProduct(product) {
+
+            var size = $('.cd-cart__product').length;
+            arrCookie=[] //reset no array
+            for(i = 0; i < size; i++){
+                arrCookie.push($('.cd-cart__product')[i])
+                var json_str = JSON.stringify(arrCookie);
+            }
+            createCookie('cartCookie', json_str,1);
+
             /*Remove all inputs forms*/
             var course = $(product).find('.truncate a')[0].innerHTML
             $("."+course.replace(/ /g,'')).remove()
