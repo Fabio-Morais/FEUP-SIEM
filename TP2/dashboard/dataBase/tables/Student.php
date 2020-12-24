@@ -77,6 +77,23 @@ class Student{
         return $result;
     }
 
+    /**
+     * Add Student
+     */
+    public function addStudent($conn, $username){
+        $query = "INSERT INTO Student (username) VALUES('".$username."')";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
+    /**
+     * Enroll Student
+     */
+    public function enrollStudent($conn, $username, $coursename){
+        $query = "INSERT INTO enrolled (username, coursename, coursegrade) VALUES('".$username."', '".$coursename."', 0)";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 }
 
 ?>
