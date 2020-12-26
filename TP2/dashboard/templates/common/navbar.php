@@ -40,11 +40,6 @@ include_once(dirname(__FILE__) . "../../../includes/common/session.php");
                     </a>
                     <?php if ($aux['role'] == 0) : ?>
                         <div class="sb-sidenav-menu-heading">Aprender</div>
-                        <a class="nav-link" href="avaliacao.php">
-                            <div class="sb-nav-link-icon"><i class="far fa-file-alt"></i></div>
-                            Avaliação
-                        </a>
-
                         <a class="nav-link" href="aula.php">
                             <div class="sb-nav-link-icon"><i class="fab fa-youtube"></i></div>
                             Aula

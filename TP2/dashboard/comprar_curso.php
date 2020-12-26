@@ -87,13 +87,22 @@ if ($db->connect()) {
                         <header class="border-bottom mb-4 pb-3">
                             <div class="form-inline">
                                 <span class="mr-md-auto" id="numberCourses"><?php echo pg_num_rows($courses) ?> Cursos encontrados </span>
-                                <select class="mr-2 form-control">
-                                    <option>Ultimos cursos</option>
-                                    <option>Ordenar por nome</option>
-                                    <option>Mais barato</option>
+                                <select class="mr-2 form-control" onchange="selectChange(this)">
+                                    <option value="1" >Posição</option>
+                                    <option value="2">Ordenar por nome</option>
+                                    <option value="3">Ordenar por preço</option>
                                 </select>
+                                <div class="btn-group">
+                                    <a class="btn btn-outline-secondary" onclick="changeSort(this)" id="sortIconAsc">
+                                        <i class="fas fa-sort-amount-up" ></i>
+                                    </a>
+                                    <a class="btn btn-outline-secondary" onclick="changeSort(this)" id="sortIconDesc">
+                                        <i class="fas fa-sort-amount-down"> </i>
+                                    </a>
 
+                                </div>
                             </div>
+
                         </header><!-- sect-heading -->
 
                         <div class="d-flex flex-wrap justify-content-start items">
@@ -101,7 +110,7 @@ if ($db->connect()) {
                             if ($connected) :
                                 $row = pg_fetch_assoc($courses);
                                 while (isset($row["coursename"])) {
-                                    echo "<div class=\"p-2 content all ".$row["type"]." \" style=\"width:250px\">";
+                                    echo "<div class=\"p-2 content all ".$row["type"]." \" style=\"width:250px\" >";
                                     echo "<figure class=\"card card-product-grid contentSearch\">";
                                     echo "  <div class=\"img-wrap\">";
                                     echo "      <span class=\"badge badge-danger\"> Promo </span>";
@@ -110,7 +119,7 @@ if ($db->connect()) {
                                     echo "  </div> ";
                                     echo "  <figcaption class=\"info-wrap\"> ";
                                     echo "      <div class=\"fix-height\"> ";
-                                    echo "          <a href=\"#\" class=\"title text-capitalize\">" . $row["coursename"] . "</a> ";
+                                    echo "          <a href=\"#\" class=\"title text-capitalize \">" . $row["coursename"] . "</a> ";
                                     echo "          <div class=\"price-wrap mt-2\"> ";
                                     echo "              <span class=\"price\">" . $row["price"] ."€</span> ";
                                     echo "              <del class=\"price-old\">" . (intval($row["price"]) + 5) . "€</del> ";
@@ -188,6 +197,5 @@ if ($db->connect()) {
             document.getElementById("carrinho").submit();
         }
         $("#ex2").slider({});
-
     </script>
 	<!--/ js -->

@@ -121,7 +121,7 @@ function sleep(ms) {
             var course = $(this).parent().parent().find('.title').html()
             var price = $(this).parent().parent().find('.price').html()
 
-            if (!coursesArray.find(element => element == course)) {
+            if ($('.'+course.replace(/ /g, '').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-')).length <= 0) {
                 coursesArray.push(course);
             } else
                 return;
@@ -206,11 +206,9 @@ function sleep(ms) {
             var course = $(product).find('.truncate a')[0].innerHTML
             arrUndo=[];
             var courseWithoutSpecialChar = course.replace(/ /g, '').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-')
-            console.log(courseWithoutSpecialChar)
             for(i=0; i<$("." + courseWithoutSpecialChar).length; i++){
                 arrUndo.push($("." + courseWithoutSpecialChar)[i].outerHTML)
             }
-            console.log(arrUndo)
             $("." + courseWithoutSpecialChar).remove()
             var index = coursesArray.indexOf(courseWithoutSpecialChar)
             coursesArray.splice(index, 1)
