@@ -5,8 +5,11 @@
  */
 
 // self-invoking
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 ;(function ($, window, document, undefined) {
-    var coursesArray = [];
 
     $.fn.flyto = function ( options ) {
         
@@ -20,14 +23,14 @@
         }, options);
         
         
-        return this.each(function () {
+        return this.each( function () {
             var 
                 $this    = $(this),
                 flybtn   = $this.find(settings.button),
                 target   = $(settings.target),
                 itemList = $this.find(settings.item);
-            
-        flybtn.on('click', function () {
+
+        flybtn.on('click',  function () {
             var _this = $(this),
                 eltoDrag = _this.parent().parent().find("img").eq(0);
             var course=$(this).parent().parent().find('.title').html()
@@ -36,6 +39,7 @@
                 return
 
         if (eltoDrag) {
+
             var imgclone = eltoDrag.clone()
                 .offset({
                 top: eltoDrag.offset().top+50,
@@ -65,7 +69,9 @@
                 'height': 0
             }, function () {
                 $(this).detach()
+
             });
+
         }
         });
         });

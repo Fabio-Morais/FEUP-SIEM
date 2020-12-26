@@ -1,12 +1,13 @@
 $(document).ready(function() {
     $("#myInput").on("keyup", function() {
-        console.log("sd")
         var value = $(this).val().toLowerCase();
         $(".contentSearch").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
 });
+
+
 
 // Returns an array of maxLength (or less) page numbers
 // where a 0 in the returned array denotes a gap in the series.

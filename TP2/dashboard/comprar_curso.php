@@ -36,14 +36,11 @@ if ($db->connect()) {
                                 </header>
                                 <div class="filter-content collapse show" id="collapse_1" style="">
                                     <div class="card-body">
-                                        <form class="pb-3">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Search" id="myInput" name="search">
-                                                <div class="input-group-append">
-                                                </div>
+                                        <div class="input-group mb-3 mt-1">
+                                            <input type="text" class="form-control search" placeholder="Search"  name="search">
+                                            <div class="input-group-append">
                                             </div>
-                                        </form>
-
+                                        </div>
                                         <ul class="list-menu">
                                             <li><a href="#">Software </a></li>
                                             <li><a href="#">Machine Learning </a></li>
@@ -63,18 +60,21 @@ if ($db->connect()) {
                                 </header>
                                 <div class="filter-content collapse show" id="collapse_3" style="">
                                     <div class="card-body">
-                                        <input type="range" class="custom-range" min="0" max="100" name="">
+
+                                        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+
+                                        <div id="slider-range"></div>
+
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label>Min</label>
-                                                <input class="form-control" placeholder="0€" type="number">
+                                                <input class="form-control minPrice" placeholder="0€" type="number" name="minPrice" value="0">
                                             </div>
                                             <div class="form-group text-right col-md-6">
                                                 <label>Max</label>
-                                                <input class="form-control" placeholder="50€" type="number">
+                                                <input class="form-control maxPrice" placeholder="50€" type="number" name="maxPrice" value="50">
                                             </div>
                                         </div> <!-- form-row.// -->
-                                        <button class="btn btn-block btn-primary">Aplicar</button>
                                     </div><!-- card-body.// -->
                                 </div>
                             </article> <!-- filter-group .// -->
@@ -87,17 +87,11 @@ if ($db->connect()) {
                             <div class="form-inline">
                                 <span class="mr-md-auto"><?php echo pg_num_rows($courses) ?> Cursos encontrados </span>
                                 <select class="mr-2 form-control">
-                                    <option>Latest items</option>
-                                    <option>Trending</option>
-                                    <option>Most Popular</option>
-                                    <option>Cheapest</option>
+                                    <option>Ultimos cursos</option>
+                                    <option>Ordenar por nome</option>
+                                    <option>Mais barato</option>
                                 </select>
-                                <div class="btn-group">
-                                    <a href="#" class="btn btn-outline-secondary" data-toggle="tooltip" title="List view">
-                                        <i class="fa fa-bars"></i></a>
-                                    <a href="#" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="Grid view">
-                                        <i class="fa fa-th"></i></a>
-                                </div>
+
                             </div>
                         </header><!-- sect-heading -->
 
@@ -136,13 +130,9 @@ if ($db->connect()) {
 
                 </div>
 
-
-
-
             </div>
         </div>
     </div>
-
 
 </div>
 
@@ -196,5 +186,36 @@ if ($db->connect()) {
         document.getElementById("submitButton").onclick = function () {
             document.getElementById("carrinho").submit();
         }
+        $("#ex2").slider({});
+
     </script>
 	<!--/ js -->
+<script>
+    var min=0;
+    var max=0;
+    $( function() {
+        $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 50,
+            values: [ 0, 50 ],
+            slide: function( event, ui ) {
+                //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                $('input[name=minPrice]').val(ui.values[ 0 ])
+                $('input[name=maxPrice]').val(ui.values[ 1 ])
+                if(min != ui.values[ 0 ]){
+                    min=ui.values[ 0 ]
+                    $("input[name=minPrice]").change()
+                }
+                if(max != ui.values[ 1 ]){
+                    max=ui.values[ 1 ]
+                    $("input[name=maxPrice]").change()
+                }
+
+            }
+        });
+
+    } );
+
+
+</script>
