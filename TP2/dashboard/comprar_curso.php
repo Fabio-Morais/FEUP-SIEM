@@ -42,10 +42,10 @@ if ($db->connect()) {
                                             </div>
                                         </div>
                                         <ul class="list-menu">
-                                            <li><a type="button" class="menuCategory text-primary font-weight-bold" onclick="categoryFunction(this)">Todos </a></li>
-                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)">Software </a></li>
-                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)">Machine Learning </a></li>
-                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)">Web Development </a></li>
+                                            <li><a type="button" class="menuCategory text-primary font-weight-bold" onclick="categoryFunction(this)" data-value="all">Todos </a></li>
+                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)" data-value="soft">Software </a></li>
+                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)" data-value="ml">Machine Learning </a></li>
+                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)" data-value="web">Web Development </a></li>
                                         </ul>
 
                                     </div> <!-- card-body.// -->
@@ -101,7 +101,7 @@ if ($db->connect()) {
                             if ($connected) :
                                 $row = pg_fetch_assoc($courses);
                                 while (isset($row["coursename"])) {
-                                    echo "<div class=\"p-2 content ".$row["type"]." \" style=\"width:250px\">";
+                                    echo "<div class=\"p-2 content all ".$row["type"]." \" style=\"width:250px\">";
                                     echo "<figure class=\"card card-product-grid contentSearch\">";
                                     echo "  <div class=\"img-wrap\">";
                                     echo "      <span class=\"badge badge-danger\"> Promo </span>";
@@ -116,7 +116,7 @@ if ($db->connect()) {
                                     echo "              <del class=\"price-old\">" . (intval($row["price"]) + 5) . "€</del> ";
                                     echo "          </div> ";
                                     echo "      </div> ";
-                                    echo "      <a  class=\"btn btn-block btn-primary js-cd-add-to-cart my-btn\"  data-price=\"".$row["price"]."\" >Adicionar ao carrinho</a> ";
+                                    echo "      <button  class=\"btn btn-block btn-primary js-cd-add-to-cart my-btn\"  data-price=\"".$row["price"]."\" >Adicionar ao carrinho</button> ";
                                     echo "  </figcaption> ";
                                     echo " </figure> ";
                                     echo "</div>";
