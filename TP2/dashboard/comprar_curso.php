@@ -112,14 +112,14 @@ if ($db->connect()) {
                                 while (isset($row["coursename"])) {
                                     echo "<div class=\"p-2 content all ".$row["type"]." \" style=\"width:250px\" >";
                                     echo "<figure class=\"card card-product-grid contentSearch\">";
-                                    echo "  <div class=\"img-wrap\">";
+                                    echo "  <div class=\"img-wrap\" type=\"button\" class=\"btn-overlay\" data-toggle=\"modal\" data-target=\"#exampleModalLong\" onclick=\"showProductDetail('".$row["coursename"]."', this)\">";
                                     echo "      <span class=\"badge badge-danger\"> Promo </span>";
                                     echo "      <img src=\"public/img/courses/" . $row["image"] . "\">";
-                                    echo "      <a class=\"btn-overlay\" href=\"#\"><i class=\"fa fa-search-plus\"></i> Info</a>";
+                                    echo "      <a type=\"button\" class=\"btn-overlay\" data-toggle=\"modal\" data-target=\"#exampleModalLong\" onclick=\"showProductDetail('".$row["coursename"]."', this)\"><i class=\"fa fa-search-plus\" ></i> Info</a>";
                                     echo "  </div> ";
                                     echo "  <figcaption class=\"info-wrap\"> ";
                                     echo "      <div class=\"fix-height\"> ";
-                                    echo "          <a href=\"#\" class=\"title text-capitalize \">" . $row["coursename"] . "</a> ";
+                                    echo "          <a type=\"button\" data-toggle=\"modal\" data-target=\"#exampleModalLong\" onclick=\"showProductDetail('".$row["coursename"]."', this)\" class=\"title text-capitalize \">" . $row["coursename"] . "</a> ";
                                     echo "          <div class=\"price-wrap mt-2\"> ";
                                     echo "              <span class=\"price\">" . $row["price"] ."€</span> ";
                                     echo "              <del class=\"price-old\">" . (intval($row["price"]) + 5) . "€</del> ";
@@ -182,6 +182,67 @@ if ($db->connect()) {
 
 </div> <!-- cd-cart -->
 
+<!-- Product detail-->
+<div class="modal fade "  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog-full-width2 modal-dialog momodel modal-fluid modal-dialog-centered" role="document"  >
+        <div class="modal-content-full-width2 modal-content "  >
+            <div class="modal-header-full-width   modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <aside class="col-sm-4 border-right">
+                            <article class="gallery-wrap">
+                                <div class="img-wrap">
+                                    <a ><img id="modalImg" src=""></a>
+                                </div> <!-- img-big-wrap.// -->
+
+                            </article> <!-- gallery-wrap .end// -->
+                        </aside>
+                        <main class="col-sm-8">
+                            <article class="content-body">
+                                <h2 class="title"><!-- COURSE NAME HERE --></h2>
+                                <div class="rating-wrap mb-4">
+                                    <ul class="rating-stars">
+                                        <li style="width:90%" class="stars-active">
+                                            <img src="public/img/icons/stars-active.svg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="public/img/icons/starts-disable.svg" alt="">
+                                        </li>
+                                    </ul>
+                                    <small class="label-rating text-muted">132 reviews</small>
+                                </div> <!-- rating-wrap.// -->
+                                <ul class="mb-4 list-dots">
+                                    <!-- DETAILS HERE -->
+                                </ul>
+                                <div class="form-group ">
+                                    <div class="text-center">
+                                        <img src="public/img/certificate.png"  style="width: 20px">
+                                        <label class="text-muted mr-4">Curso certificado</label>
+                                        <img src="public/img/online.png"  style="width: 20px;">
+                                        <label class="text-muted mr-4">Curso 100% online</label>
+                                        <img src="public/img/language.png"  style="width: 20px;">
+                                        <label class="text-muted mr-4">Português</label>
+                                    </div>
+                                </div>
+                                <div class="h3 mb-4 text-center">
+                                    <var class="price h4" id="modalPrice"><!-- PRICE HERE --></var>
+                                </div> <!-- price-wrap.// -->
+
+
+
+                            </article> <!-- product-info-aside .// -->
+                        </main> <!-- col.// -->
+                    </div> <!-- row.// -->
+                </div> <!-- card.// -->
+
+        </div>
+    </div>
+</div>
+
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
 
@@ -199,3 +260,36 @@ if ($db->connect()) {
         $("#ex2").slider({});
     </script>
 	<!--/ js -->
+<script>
+     function updateModal(response){
+         var course = response['coursename'];
+         var price = response['price'];
+         var details = response['details'];
+         var image = response['image'];
+
+         $("h2.title")[0].innerText="Curso de "+course
+         $(".content-body > ul")[0].innerHTML=details
+         $("#modalPrice")[0].innerText="Preço: "+price +" €"
+         $("#modalImg")[0].src="public/img/courses/"+image
+         $(".label-rating")[0].innerHTML=(Math.floor(Math.random() * (100 - 70) ) + 70)+" reviews"
+         var random= (Math.floor(Math.random() *(100 - 80) ) + 80);
+         $(".stars-active").css("width", random+"%")
+     }
+    function showProductDetail(course, object){
+        if (course == "") {
+            return;
+        }
+        var xhttp;
+        xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "webservices/getProductDetail.php?course="+encodeURIComponent(course), true);
+        xhttp.send();
+console.log(encodeURIComponent(course))
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(this.responseText);//json encode to array
+                console.log(response)
+                updateModal(response)
+            }
+        };
+    }
+</script>

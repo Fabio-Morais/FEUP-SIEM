@@ -159,7 +159,6 @@ endif;?>
                         </div>
                         <select class="form-control mb-3" name="course">
                             <?php
-
                             $coursesTeacer = $db->getCoursesTeacher("fabiouds");
                             $row = pg_fetch_assoc($coursesTeacer);
                             while (isset($row["coursename"])) {

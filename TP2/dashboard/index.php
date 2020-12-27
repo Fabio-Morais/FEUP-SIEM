@@ -46,7 +46,7 @@ if ($db->connect()) {
 
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid" >
     <h1 class="m-4 text-center">BEM VINDO <?php echo strtoupper($aux['username']) ?></h1>
     <div class="justify-content-center m-4" >
         <div class="card border-left-primary shadow " id="weatherCard" >
