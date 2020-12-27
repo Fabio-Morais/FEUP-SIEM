@@ -91,9 +91,12 @@ function validateFormAddUser() {
 /**
  * Form validation of edit user in perfil.php
  * */
- function validateFormProfile() {
-    document.getElementById("profile").setAttribute("class", "tab-pane show");
-    document.getElementById("edit").setAttribute("class", "tab-pane  active ");
+ function validateFormProfile(option) {
+     if(option =="users.php"){
+         document.getElementById("profile").setAttribute("class", "tab-pane show");
+         document.getElementById("edit").setAttribute("class", "tab-pane  active ");
+     }
+
     var name = document.forms["editUserProfile"]["name"].value;
     var email = document.forms["editUserProfile"]["email"].value;
     var username = document.forms["editUserProfile"]["username"].value;

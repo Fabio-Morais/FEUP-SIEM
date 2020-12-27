@@ -94,6 +94,14 @@ class Student{
         $result = pg_exec($conn, $query);
         return $result;
     }
+    /**
+     * Student average
+     */
+    public function getStudentAverage($conn, $username){
+        $query = "SELECT avg(coursegrade) from enrolled where username='".$username."' and coursegrade>-1";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 }
 
 ?>

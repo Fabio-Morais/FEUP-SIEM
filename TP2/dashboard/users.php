@@ -49,6 +49,10 @@ function role($var)
                     if ($connected) :
                         $row = pg_fetch_assoc($users);
                         while (isset($row["username"])) {
+                            if($row["username"] == $_SESSION['user']){//prevent auto delete
+                                $row = pg_fetch_assoc($users);
+                                continue;
+                            }
                             /*Obter numero de cursos*/
                             $courses = "--";
                             if($row["role"]==0){
@@ -63,17 +67,17 @@ function role($var)
                                  $courses=$total['count'];
                              }
                             /*Obter nota do estudante*/
-                            $grade = $db->getStudentGrade($row["username"]);
+                            $grade = $db->getStudentAverage($row["username"]);
                             $row3 = pg_fetch_assoc($grade);
                             $grade = "--";
-                            if (isset($row3["grade"]) && $row3["grade"] > 0.0)
-                                $grade = sprintf("%.1f", $row3["grade"]);
+                            if (isset($row3["avg"]) && $row3["avg"] > 0.0)
+                                $grade = sprintf("%.1f", $row3["avg"]);
 
                             echo "<div class=\"p-2 m-3 content\">";
                             echo "   <div class=\"hovereffect\">";
                             echo       "<div class=\"contentSearch box box-widget widget-user\">";
-                            echo            "<div class=\"widget-user-header \" style=\"background-color:".((empty($row["color"])) ? "#8585d3" : $row["color"])."\">";
-                            echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
+                            echo            "<div class=\"widget-user-header \" style=\"background-color:".((empty($row["color"])) ? "#1B49C2" : $row["color"])."\">";
+                            echo                "<h3 class=\"widget-user-username text-center textAdapt\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
                             echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">";/*AVATAR*/
@@ -91,7 +95,7 @@ function role($var)
                             echo                 "<div class=\"col-sm\">";
                             echo                     "<div class=\"description-block\">";
                             echo                         "<h5 class=\"description-header\">" . $grade . "</h5>";/*NOTA*/
-                            echo                         "<span class=\"description-text\">Nota</span>";
+                            echo                         "<span class=\"description-text\">Média</span>";
                             echo                     "</div>";
                             echo                 "</div>";
                             echo             "</div>";
@@ -134,3 +138,20 @@ if($_SESSION['errorForm']==1){
     $_SESSION['errorForm']=0;
 }
 ?>
+<script>
+    const rgb = [255, 0, 0];
+    for(i=0; i<$(".widget-user-header").length; i++){
+       aux = $(".widget-user-header")[i].style['backgroundColor'].replace(/[^\d,]/g, '').split(',');
+        rgb[0] = Math.round(aux[0]);
+        rgb[1] = Math.round(aux[1]);
+        rgb[2] = Math.round(aux[2]);
+        // http://www.w3.org/TR/AERT#color-contrast
+        const brightness = Math.round(((parseInt(rgb[0]) * 299) +
+            (parseInt(rgb[1]) * 587) +
+            (parseInt(rgb[2]) * 114)) / 1000);
+        const textColour = (brightness > 200) ? 'black' : 'white';
+        $('.textAdapt').eq(i).css({'color': textColour});
+    }
+
+
+</script>
