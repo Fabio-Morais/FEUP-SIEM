@@ -29,7 +29,7 @@ class Teacher{
      * Return the courses of teacher $username
      */
     public function getCoursesTeacherStudent($conn, $teacher, $username){
-        $query = "SELECT * from course where teacher='".$teacher."' and username  ='".$username."';";
+        $query = "SELECT * from explicafeup.enrolled as e INNER JOIN explicafeup.course as x ON e.coursename = x.coursename WHERE username='".$username."' and teacher='".$teacher."'";
         return pg_exec($conn, $query);
     }
 

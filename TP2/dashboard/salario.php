@@ -23,14 +23,14 @@ if ($db->connect()) {
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <select id="outer" class="custom-select m-2">
-                    <option value="option1">Tabela</option>
-                    <option value="option2">Gráfico</option>
+                    <option value="option1" onclick="aux()">Gráfico</option>
+                    <option value="option2" >Tabela</option>
                 </select>
-                <div class="card-header option1">
+                <div class="card-header option2">
                     <i class="fas fa-table"></i>
                     Tabela Salário recebido
                 </div>
-                <div class=" card-body table-responsive option1 ">
+                <div class=" card-body table-responsive option2 ">
 
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
@@ -61,11 +61,11 @@ if ($db->connect()) {
                         </tbody>
                     </table>
                 </div>
-                <div class="card-header option2">
+                <div class="card-header option1">
                     <i class="fas fa-chart-area mr-1"></i>
                     Gráfico Salário recebido
                 </div>
-                <div class="card-body option2"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
+                <div class="card-body option1"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
 
             </div>
         </div>
@@ -91,12 +91,15 @@ if ($db->connect()) {
 
 </script>
 <script type="module">
-    import ChartBuild from '/public/js/chart.js';
-    var data = <?php echo json_encode($data)?>;
-    var label = <?php echo json_encode($label)?>;
-    let chart = new ChartBuild(0,"myAreaChart",data,"salário",label);
-    chart.labelTextAxis(0, "Data", "Lucro (€)");
-    chart.execute()
+
+        import ChartBuild from './public/js/chart.js';
+        var data = <?php echo json_encode($data)?>;
+        var label = <?php echo json_encode($label)?>;
+            let chart = new ChartBuild(0,"myAreaChart",data,"salário",label);
+            chart.labelTextAxis(0, "Data", "Lucro (€)");
+            chart.execute()
+
+
 
 </script>
 

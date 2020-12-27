@@ -14,7 +14,7 @@ if ($title == "perfil.php") {
 echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
 <form name="editUserProfile" method="POST"
       action="<?php echo "action/actionUpdateUser.php?originalUser=$username&page=$title" ?>"
-      enctype="multipart/form-data" onsubmit="return validateFormProfile()">
+      enctype="multipart/form-data" onsubmit="return validateFormProfile('<?php echo $title?>')">
     <div class="form-group row">
         <label class="col-lg-3 col-form-label form-control-label">Username</label>
         <div class="col-lg-9">
@@ -91,12 +91,20 @@ echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
     <div class="form-group row">
         <label class="col-lg-3 col-form-label form-control-label"></label>
         <div class="col-lg-9">
-            <button type="reset" class="btn btn-secondary" value="Cancelar" onclick="location.href='perfil.php'"><i
+            <?php
+                $string="perfil.php";
+                if($title == "formEdit.php")
+                    $string ="users.php";
+            ?>
+
+            <button type="reset" class="btn btn-secondary" value="Cancelar" onclick="location.href='<?php echo $string?>'"><i
                         class="far fa-times-circle mr-2"></i> Cancelar
             </button>
+            <?php if($title == "perfil.php"):?>
             <button type="button" data-toggle="modal" onclick="validatePass()" data-target="#passModal"
                     class="btn btn-primary"><i class="fas fa-lock mr-2"></i> Mudar Password
             </button>
+            <?php endif; ?>
             <button type="submit" class="btn btn-primary" value="Guardar" name="Guardar"><i
                         class="fas fa-file-download mr-2"></i> Guardar
             </button>

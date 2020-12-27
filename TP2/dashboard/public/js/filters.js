@@ -3,6 +3,10 @@
  * Features: search by name, search by price range
  * */
 
+
+/**
+ * COMPRAR_CURSO.PHP
+ * */
 var min = 0;
 var max = 300;
 var input = "";
@@ -75,35 +79,28 @@ $(document).on('change', '.maxPrice', function (event) {
 * From API https://jqueryui.com/slider/#range with some changes to our code
 * */
 $(function () {
-    $("#slider-range").slider({
-        range: true,
-        min: 0,
-        max: 50,
-        values: [0, 50],
-        slide: function (event, ui) {
-            //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-            $('input[name=minPrice]').val(ui.values[0])
-            $('input[name=maxPrice]').val(ui.values[1])
-            if (min != ui.values[0]) {
-                min = ui.values[0]
-                $("input[name=minPrice]").change()
+    if($("#slider-range").length > 0){
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 50,
+            values: [0, 50],
+            slide: function (event, ui) {
+                //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                $('input[name=minPrice]').val(ui.values[0])
+                $('input[name=maxPrice]').val(ui.values[1])
+                if (min != ui.values[0]) {
+                    min = ui.values[0]
+                    $("input[name=minPrice]").change()
+                }
+                if (max != ui.values[1]) {
+                    max = ui.values[1]
+                    $("input[name=maxPrice]").change()
+                }
+
             }
-            if (max != ui.values[1]) {
-                max = ui.values[1]
-                $("input[name=maxPrice]").change()
-            }
-
-        }
-    });
-
-
-
-
-
-
-
-
-
+        });
+    }
 });
 
 function sortPriceAsc(){
@@ -196,3 +193,19 @@ $( document ).ready(function() {
     $("#sortIconAsc").hide()
 
 });
+/*********************************************************************/
+/**
+ * ALUNOS.PHP and USERS.PHP
+ * */
+
+jQuery.expr[':'].ContainsStudent = function (a, i, m) {
+    input = m[3].toUpperCase();
+    return jQuery(a).find(".widget-user-username").text().toUpperCase().indexOf(input) >= 0 ;
+};
+$(document).on('input', '#myInput', function (event) {
+    var text = $(this).val();
+    $('.content').hide();
+    $('.content:ContainsStudent(' + text + ')').show();
+
+});
+/*********************************************************************/

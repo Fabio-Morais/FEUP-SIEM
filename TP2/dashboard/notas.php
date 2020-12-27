@@ -13,7 +13,7 @@ $connected = false;
 $infoQuery = "";
 $info = "";
 if ($db->connect()) {
-    $coursesQuery = $db->getStudentCourses($aux['username']);
+    $coursesQuery = $db->getStudentCourses($_SESSION['user']);
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);

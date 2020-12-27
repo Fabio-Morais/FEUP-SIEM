@@ -5,11 +5,7 @@
 $db = DataBase::Instance();
 $connected = $db->connect();
 if($connected){
-    $aux = $_GET['course'];
-    if($aux == "cc++")
-        $query = $db->getCourseInfo("c/c++");
-    else
-        $query = $db->getCourseInfo($aux);
+    $query = $db->getCourseInfo($_GET['course']);
 }
 $courses = pg_fetch_assoc($query);
 

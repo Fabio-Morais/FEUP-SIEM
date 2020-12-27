@@ -13,20 +13,26 @@ $user = "";
 $connected = false;
 
 $total['count']="--";
-$grade['grade']="--";
+$grade['avg']="--";
 if ($db->connect()) {
-/*$image = 'public/img/avatar1.png';
-$imageData = base64_encode(file_get_contents($image));
-$db->insert($imageData);*/
+
     $user = $db->getUser($username);
     $connected = true;
     $queryInfo = pg_fetch_assoc($user);
     if($queryInfo["role"] == 0){/*Aluno*/
         $totalQuery = $db->getTotalCoursesStudent($username);
-        $gradeQuery = $db->getStudentGrade($username);
+        $gradeQuery = $db->getStudentAverage($username);
         $total = pg_fetch_assoc($totalQuery);
+        if(!isset($total['count']))
+            $total['count']="--";
         $grade = pg_fetch_assoc($gradeQuery);
-
+    }else if($queryInfo["role"] == 1){
+        $totalQuery2 = $db->getTotalCoursesTeacher($username);
+        $total2 = pg_fetch_assoc($totalQuery2);
+        if(!isset($total2['count']))
+            $total2['count']="--";
+        else
+            $total['count'] = $total2['count'];//pass total courses teacher
     }
 } else
     Alerts::showError(Alerts::DATABASEOFF);
@@ -43,9 +49,7 @@ function role($var)
         return "Admin";
     }
 };
-
-
-
+$title = basename($_SERVER['SCRIPT_NAME']);
 
 ?>
 
@@ -56,17 +60,19 @@ function role($var)
             <div class="col-lg-4 m-1">
                 <div class="profile-card-4 z-depth-3">
                     <div class="card">
-                        <div class="card-body text-center bg-primary rounded-top">
-                            <div class="user-box">
-                            <?php if ($queryInfo['image']!=null){
-                                $src = 'data:jpg;base64,'.$queryInfo['image'];
-                                echo '<img src="'.$src.'">';
-                            } else{
-                                echo "<img src=\"/public/img/avatar.png\" alt=\"user avatar\">";
-                            }?>
+                        <div class="card-body text-center  rounded-top" id="pr1">
+                            <script src="includes/libs/jscolor.js"></script>
+                            <form action=<?php echo "action/actionUpdateUser.php?originalUser=$username&page=$title"?> method="POST">
+                                <div class="d-flex flex-row ">
+                                    <input name="color" class="m-1"data-jscolor="{onInput: 'update(this, \'#pr1\')',value:'<?php echo (empty($queryInfo["color"])) ? "#1B49C2" : $queryInfo["color"]?>'}" id="colorPick"></input>
+                                    <input class="m-1 btn btn-outline-info" type="submit" id="colorPickButton" value="Guardar" name="SaveColor">
+                                </div>
+                            </form>
+                            <div class="user-box  mb-4">
+                                <img src="public/img/users/<?php echo $queryInfo['image']?>" onerror="javascript:this.src='public/img/avatar.png'" alt="user avatar">
                             </div>
-                            <h5 class="mb-1 text-white"><?php echo $queryInfo['name']?></h5>
-                            <h6 class="text-light"><?php echo role($queryInfo['role']) ?></h6>
+                            <h5 class="mb-2 textAdapt"><?php echo $queryInfo['name']?></h5>
+                            <h6 class="mb-1 textAdapt"><?php echo role($queryInfo['role']) ?></h6>
                         </div>
                         <div class="card-body">
                                 <div class="list-group-item d-flex flex-row justify-content-center">
@@ -86,7 +92,7 @@ function role($var)
                                     <small class="mb-0 font-weight-bold">Cursos</small>
                                 </div>
                                 <div class="col p-2">
-                                    <h4 class="mb-1 line-height-5"><?php echo $grade['grade'];?></h4>
+                                    <h4 class="mb-1 line-height-5"><?php echo ($grade['avg'])!=null ? $grade['avg'] : "--";?></h4>
                                     <small class="mb-0 font-weight-bold">Nota</small>
                                 </div>
 
@@ -118,5 +124,20 @@ function role($var)
 </div>
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+<script>
+    var lastColor=null;
 
+    $('#pr1').bind("mouseenter focus ",
+        function(event) { document.getElementById("colorPick").style.display = "block";document.getElementById("colorPickButton").style.display = "block"; });
+    $('#pr1').bind("focusout  mouseleave",
+        function(event) { document.getElementById("colorPick").style.display = "none";document.getElementById("colorPickButton").style.display = "none"; });
+
+    function update(picker, selector) {
+        document.querySelector(selector).style.background = picker.toBackground()
+        setContrast(picker)
+    }
+
+    // triggers 'onInput' and 'onChange' on all color pickers when they are ready
+    jscolor.trigger('input change');
+</script>
 
