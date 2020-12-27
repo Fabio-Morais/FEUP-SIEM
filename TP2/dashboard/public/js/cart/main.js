@@ -120,7 +120,8 @@ function sleep(ms) {
             var image = $(this).parent().parent().find('.img-wrap img').attr('src')
             var course = $(this).parent().parent().find('.title').html()
             var price = $(this).parent().parent().find('.price').html()
-            if (!coursesArray.find(element => element == course)) {
+
+            if ($('.'+course.replace(/ /g, '').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-')).length <= 0) {
                 coursesArray.push(course);
             } else
                 return;
@@ -175,7 +176,7 @@ function sleep(ms) {
             var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + image + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + course + '</a></h3><span class="cd-cart__price">' + price + '</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Delete</a><div class="cd-cart__quantity"><span class="cd-cart__select"><select class="reset" id="cd-product-' + productId + '" name="quantity"><option value="1">1</option></select></span></div></div></div></li>';
             cartList.insertAdjacentHTML('beforeend', productAdded);
 
-            var input = '<input type="hidden" name="course[]" value="' + course + '" class="' + course.replace(/ /g, '') + ' cartInput"/> <input type="hidden" name="image[]" value="' + image + '" class="' + course.replace(/ /g, '') + ' cartInput"/><input type="hidden" name="price[]" value="' + price + '" class="' + course.replace(/ /g, '') + ' cartInput"/>';
+            var input = '<input type="hidden" name="course[]" value="' + course + '" class="' + course.replace(/ /g, '').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-') + ' cartInput"/> <input type="hidden" name="image[]" value="' + image + '" class="' + course.replace(/ /g, '').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-') + ' cartInput"/><input type="hidden" name="price[]" value="' + price + '" class="' + course.replace(/ /g, '').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-') + ' cartInput"/>';
             cartList.insertAdjacentHTML('beforeend', input);
 
             updateCookie()
@@ -204,12 +205,12 @@ function sleep(ms) {
             /*Remove all inputs forms*/
             var course = $(product).find('.truncate a')[0].innerHTML
             arrUndo=[];
-            for(i=0; i<$("." + course.replace(/ /g, '')).length; i++){
-                arrUndo.push($("." + course.replace(/ /g, ''))[i].outerHTML)
+            var courseWithoutSpecialChar = course.replace(/ /g, '').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-')
+            for(i=0; i<$("." + courseWithoutSpecialChar).length; i++){
+                arrUndo.push($("." + courseWithoutSpecialChar)[i].outerHTML)
             }
-            console.log(arrUndo)
-            $("." + course.replace(/ /g, '')).remove()
-            var index = coursesArray.indexOf(course)
+            $("." + courseWithoutSpecialChar).remove()
+            var index = coursesArray.indexOf(courseWithoutSpecialChar)
             coursesArray.splice(index, 1)
 
             if (cartTimeoutId) clearInterval(cartTimeoutId);

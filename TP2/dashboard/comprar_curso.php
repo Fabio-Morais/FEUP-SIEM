@@ -37,14 +37,15 @@ if ($db->connect()) {
                                 <div class="filter-content collapse show" id="collapse_1" style="">
                                     <div class="card-body">
                                         <div class="input-group mb-3 mt-1">
-                                            <input type="text" class="form-control search" placeholder="Search"  name="search">
+                                            <input type="text" class="form-control search" placeholder="Search"  name="search" value="">
                                             <div class="input-group-append">
                                             </div>
                                         </div>
                                         <ul class="list-menu">
-                                            <li><a href="#">Software </a></li>
-                                            <li><a href="#">Machine Learning </a></li>
-                                            <li><a href="#">Web Development </a></li>
+                                            <li><a type="button" class="menuCategory text-primary font-weight-bold" onclick="categoryFunction(this)" data-value="all">Todos </a></li>
+                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)" data-value="soft">Software </a></li>
+                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)" data-value="ml">Machine Learning </a></li>
+                                            <li><a type="button" class="menuCategory" onclick="categoryFunction(this)" data-value="web">Web Development </a></li>
                                         </ul>
 
                                     </div> <!-- card-body.// -->
@@ -85,14 +86,23 @@ if ($db->connect()) {
                     <main class="col-md-9">
                         <header class="border-bottom mb-4 pb-3">
                             <div class="form-inline">
-                                <span class="mr-md-auto"><?php echo pg_num_rows($courses) ?> Cursos encontrados </span>
-                                <select class="mr-2 form-control">
-                                    <option>Ultimos cursos</option>
-                                    <option>Ordenar por nome</option>
-                                    <option>Mais barato</option>
+                                <span class="mr-md-auto" id="numberCourses"><?php echo pg_num_rows($courses) ?> Cursos encontrados </span>
+                                <select class="mr-2 form-control" onchange="selectChange(this)">
+                                    <option value="1" >Posição</option>
+                                    <option value="2">Ordenar por nome</option>
+                                    <option value="3">Ordenar por preço</option>
                                 </select>
+                                <div class="btn-group">
+                                    <a class="btn btn-outline-secondary" onclick="changeSort(this)" id="sortIconAsc">
+                                        <i class="fas fa-sort-amount-up" ></i>
+                                    </a>
+                                    <a class="btn btn-outline-secondary" onclick="changeSort(this)" id="sortIconDesc">
+                                        <i class="fas fa-sort-amount-down"> </i>
+                                    </a>
 
+                                </div>
                             </div>
+
                         </header><!-- sect-heading -->
 
                         <div class="d-flex flex-wrap justify-content-start items">
@@ -100,7 +110,7 @@ if ($db->connect()) {
                             if ($connected) :
                                 $row = pg_fetch_assoc($courses);
                                 while (isset($row["coursename"])) {
-                                    echo "<div class=\"p-2 content\" style=\"width:250px\">";
+                                    echo "<div class=\"p-2 content all ".$row["type"]." \" style=\"width:250px\" >";
                                     echo "<figure class=\"card card-product-grid contentSearch\">";
                                     echo "  <div class=\"img-wrap\">";
                                     echo "      <span class=\"badge badge-danger\"> Promo </span>";
@@ -109,13 +119,13 @@ if ($db->connect()) {
                                     echo "  </div> ";
                                     echo "  <figcaption class=\"info-wrap\"> ";
                                     echo "      <div class=\"fix-height\"> ";
-                                    echo "          <a href=\"#\" class=\"title text-capitalize\">" . $row["coursename"] . "</a> ";
+                                    echo "          <a href=\"#\" class=\"title text-capitalize \">" . $row["coursename"] . "</a> ";
                                     echo "          <div class=\"price-wrap mt-2\"> ";
                                     echo "              <span class=\"price\">" . $row["price"] ."€</span> ";
                                     echo "              <del class=\"price-old\">" . (intval($row["price"]) + 5) . "€</del> ";
                                     echo "          </div> ";
                                     echo "      </div> ";
-                                    echo "      <a  class=\"btn btn-block btn-primary js-cd-add-to-cart my-btn\"  data-price=\"".$row["price"]."\">Adicionar ao carrinho</a> ";
+                                    echo "      <button  class=\"btn btn-block btn-primary js-cd-add-to-cart my-btn\"  data-price=\"".$row["price"]."\" >Adicionar ao carrinho</button> ";
                                     echo "  </figcaption> ";
                                     echo " </figure> ";
                                     echo "</div>";
@@ -187,35 +197,5 @@ if ($db->connect()) {
             document.getElementById("carrinho").submit();
         }
         $("#ex2").slider({});
-
     </script>
 	<!--/ js -->
-<script>
-    var min=0;
-    var max=0;
-    $( function() {
-        $( "#slider-range" ).slider({
-            range: true,
-            min: 0,
-            max: 50,
-            values: [ 0, 50 ],
-            slide: function( event, ui ) {
-                //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-                $('input[name=minPrice]').val(ui.values[ 0 ])
-                $('input[name=maxPrice]').val(ui.values[ 1 ])
-                if(min != ui.values[ 0 ]){
-                    min=ui.values[ 0 ]
-                    $("input[name=minPrice]").change()
-                }
-                if(max != ui.values[ 1 ]){
-                    max=ui.values[ 1 ]
-                    $("input[name=maxPrice]").change()
-                }
-
-            }
-        });
-
-    } );
-
-
-</script>

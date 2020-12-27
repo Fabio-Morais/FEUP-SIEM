@@ -34,7 +34,8 @@ function sleep(ms) {
             var _this = $(this),
                 eltoDrag = _this.parent().parent().find("img").eq(0);
             var course=$(this).parent().parent().find('.title').html()
-            var aux = $("."+course.replace(/ /g,''))
+            console.log(course.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-'))
+            var aux = $("."+course.replace(/ /g,'').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-'))
             if(aux.length != 0)
                 return
 

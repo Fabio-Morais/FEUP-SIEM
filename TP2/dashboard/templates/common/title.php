@@ -2,39 +2,40 @@
 $title = basename($_SERVER['SCRIPT_NAME']); 
 switch ($title) {
     case "alunos.php":
-        $title = "ALUNOS";
+        $title = "alunos";
         break;
     case "aula.php":
-        $title = "AULA";
-        break;
-    case "avaliacao.php":
-        $title = "AVALIAÇÃO";
+        $title = "aula";
         break;
     case "comprar_curso.php":
-        $title = "COMPRAR CURSOS";
+        $title = "comprar cursos";
         break;
     case "estatisticas.php":
-        $title = "ESTATISTICAS";
+        $title = "estatisticas";
         break;
     case "historico.php":
-        $title = "HISTÓRICO";
+        $title = "histórico";
         break;
     case "notas.php":
-        $title = "NOTAS";
+        $title = "notas";
         break;
     case "salario.php":
-        $title = "SALÁRIO";
+        $title = "salário";
         break;
     case "users.php":
-        $title = "USERS";
+        $title = "users";
         break;
     case "carrinho.php":
-        $title = "Checkout";
+        $title = "checkout";
         break;
 }
 
 ?>
 
-<div class="container-fluid">
-    <h1 class="m-4 mb-5 p-3 text-center"><?php echo $title ?></h1>
+<div class="container-fluid ">
+    <h1 class="mt-4 text-center ml-5 mb-2 text-capitalize"><?php echo $title ?></h1>
+    <!--<ol class="breadcrumb mb-4 ml-5">
+        <li class="breadcrumb-item "><a href="index.php">Dashboard</a></li>
+        <li class="breadcrumb-item active text-capitalize"><?php echo $title ?></li>
+    </ol>-->
    
