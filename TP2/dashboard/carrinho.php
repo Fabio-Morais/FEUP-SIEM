@@ -54,7 +54,7 @@ if (isset($_POST["course"])) {
                                         <div class="aside"><img src="<?php echo $image[$i] ?>"
                                                                 class="img-sm"></div>
                                         <figcaption class="info">
-                                            <a href="#" class="title text-dark">Curso de <?php echo $course[$i] ?></a>
+                                            <a href="#" class="title text-dark">Curso de <?php echo ucwords($course[$i]) ?></a>
                                             <p class="text-muted small">Curso Online</p>
                                         </figcaption>
                                     </figure>

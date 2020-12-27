@@ -8,12 +8,7 @@ $db = DataBase::Instance();
 $courses = "";
 $coursesQuery = "";
 $connected = false;
-$curso = "";
-
-if($_GET['course'] == "c/c  ")
-    $curso = "c/c++";
-else
-    $curso = $_GET['course'];
+$curso = $_GET['course'];
 
 if ($db->connect()) {
     $coursesQuery = $db->getCourseInfo($curso);
@@ -85,7 +80,7 @@ if ($db->connect()) {
             ?>
             <h4 class="mb-3">Informação Pessoal</h4>
             <?php
-               echo "<form class=\"needs-validation\" method=\"post\" action=\"dashboard/action/checkRegister.php?course=".$courses['coursename']."\" novalidate>";
+               echo "<form class=\"needs-validation\" method=\"post\" action=\"dashboard/action/checkRegister.php?course=".urlencode($courses['coursename'])."\" novalidate>";
             ?>
 
                 <div class="mb-3">

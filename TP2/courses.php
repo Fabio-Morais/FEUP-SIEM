@@ -112,7 +112,7 @@ if ($db->connect()) {
               echo       "<button onclick=\"document.getElementById('". preg_replace("/\s+/", "", $row['coursename']) ."').style.display = 'block'\" class=\"buttonInfo\">"; //Remove espaços brancos na string
               echo          "<i class=\"far fa-question-circle\"></i> Info";
               echo      "</button>";
-              echo      "<button onclick=\"location.href = 'register.php?course=".$row['coursename']."';\" class=\"buttonBuy\">";
+              echo      "<button onclick=\"location.href = 'register.php?course=".urlencode($row['coursename'])."';\" class=\"buttonBuy\">";
               echo          "<i class=\"fas fa-shopping-cart\"></i> Comprar";
               echo      "</button>";
               echo  "</div>";
@@ -125,14 +125,14 @@ if ($db->connect()) {
     </div>
   </div>
 <!--******Modals dos diferentes cursos******-->
-  <!--Curso C/C++-->
-  <div id="c/c++" class="modal" >
+  <!--Curso C++-->
+  <div id="c++" class="modal" >
     <div class="modal-content animate" >
       <div class="imgcontainer">
-        <span onclick="document.getElementById('c/c++').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('c++').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container" id="modalContainer">
-        <h2>C/C++</h2>
+        <h2>C++</h2>
         <div class="line3"></div>
         <ol>
           <li> Programação em C e Metodologias de Desenvolvimento</li><br>
@@ -143,7 +143,7 @@ if ($db->connect()) {
         </ol> 
       </div>
       <div class="container" id="modalBtnContainer">
-        <button type="button" onclick="document.getElementById('c/c++').style.display='none'" class="cancelbtn button">Fechar</button>
+        <button type="button" onclick="document.getElementById('c++').style.display='none'" class="cancelbtn button">Fechar</button>
       </div>
     </div>
   </div>
