@@ -17,7 +17,7 @@ if ($title == "users.php" || $title == "estatisticas.php") {
         header("Location: templates/common/401.html");
         exit();
     }
-}/*SO PARA ALUNOS*/ else if ($title ==  "avaliacao.php" ||  $title ==  "aula.php" ||  $title ==  "notas.php" ||  $title ==  "comprar_curso.php" ||  $title ==  "historico.php") {
+}/*SO PARA ALUNOS*/ else if ($title ==  "aula.php" ||  $title ==  "notas.php" ||  $title ==  "comprar_curso.php" ||  $title ==  "historico.php" ||  $title ==  "comprar_curso.php" ||  $title ==  "carrinho.php" ||  $title ==  "thankYou.php") {
     if ($role != 0) {
         header("Location: templates/common/401.html");
         exit();

@@ -1,12 +1,12 @@
 <?php
 
-session_start();
+/*session_start();
 
     if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
     } else{
     header('Location: ../login.php');
 
-    }
+    }*/
 ?>
 
 <?php require_once(dirname(__FILE__) . "/../../access.php"); ?>
@@ -30,7 +30,7 @@ session_start();
     <!--Get the title of the page-->
     <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
-    <?php if ($title == "comprar_curso.php") : ?>
+    <?php if ($title == "comprar_curso.php" || $title == "carrinho.php") : ?>
         <!-- custom style -->
         <link href="public/css/ui.css" rel="stylesheet" type="text/css" />
         <link href="public/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
@@ -43,6 +43,3 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-
-</head>

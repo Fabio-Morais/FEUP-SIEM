@@ -149,6 +149,7 @@ final class DataBase
     public function getAllCoursesExceptStudentOwn($username)
     {
         return $this->course->getAllCoursesExceptStudentOwn($this->conn,$username);
+    }
     public function getCourseInfo($coursename)
     {
         return $this->course->getCourseInfo($this->conn, $coursename);
@@ -215,6 +216,10 @@ final class DataBase
     {
         return $this->order->getTotalCourses($this->conn);
     }
+    public function addOrder($price, $course, $username)
+    {
+        return $this->order->addOrder($this->conn, $price, $course, $username);
+    }
 
     public function addUserStudent($name, $email, $username, $passhash, $phone, $nif)
     {
@@ -225,11 +230,11 @@ final class DataBase
     {
         return $this->student->addStudent($this->conn, $username);
     }
-
-    public function addOrder($productname, $username)
+// É PRECISO VER ISTO
+    /*public function addOrder($productname, $username)
     {
         return $this->order->addOrder($this->conn, $productname, $username);
-    }
+    }*/
 
     public function enrollStudent($username, $coursename)
     {

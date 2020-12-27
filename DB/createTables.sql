@@ -28,8 +28,8 @@ CREATE TABLE IF NOT EXISTS Teacher(
 
 CREATE TABLE IF NOT EXISTS Orderr(
     number SERIAL PRIMARY KEY,
-    deliveryDate VARCHAR(30),
-    purchaseDate VARCHAR(30),
+    deliveryDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH:MI:SS'::text),
+    purchaseDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH:MI:SS'::text),
     price VARCHAR(100),
     productName VARCHAR(100),
     description VARCHAR(100),
@@ -48,7 +48,8 @@ CREATE TABLE IF NOT EXISTS Course(
     price VARCHAR(30),
     teacher VARCHAR(100) REFERENCES Teacher(username) ON UPDATE CASCADE,
     image VARCHAR(30),
-    type VARCHAR(30)
+    type VARCHAR(30),
+    details text
 );
 
 CREATE TABLE IF NOT EXISTS Enrolled(

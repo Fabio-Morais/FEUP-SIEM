@@ -296,11 +296,25 @@ Paginas
     max-width: none !important;
 
 }
+.modal-dialog-full-width2 {
+    width: 60% !important;
+    margin: auto !important;
+    padding: 0 !important;
+    max-width: none !important;
+}
+
 
 .modal-content-full-width {
     height: auto !important;
     border-radius: 0 !important;
     background-color: #ececec !important;
+    padding: 0 !important;
+
+}
+.modal-content-full-width2 {
+    height: auto !important;
+    border-radius: 0 !important;
+    background-color: white !important;
     padding: 0 !important;
 
 }

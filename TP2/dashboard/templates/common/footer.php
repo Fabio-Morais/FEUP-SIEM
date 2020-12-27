@@ -23,7 +23,7 @@
 <!--Get the title of the page-->
 <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
-<?php if ($title == "users.php" || $title == "alunos.php") :?>
+<?php if ($title == "users.php" || $title == "alunos.php" || $title == "comprar_curso.php") :?>
     <script src="public/js/users.js"></script>
 <?php endif;?>
 
@@ -35,6 +35,9 @@
 <?php if ($title == "comprar_curso.php" ) :?>
     <script src="public/js/cart/util.js"></script>
     <script src="public/js/cart/main.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="public/js/filters.js"></script>
+
 
 <?php endif;?>
 </body>
