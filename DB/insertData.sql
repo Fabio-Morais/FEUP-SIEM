@@ -13,13 +13,13 @@ VALUES('fabio123','fabio@hotmail.com','915487895','Fabio Andre', '$2y$10$VwAhND9
 
 
 INSERT INTO Student
-VALUES('fabio123', 12.5),
-('joao12', 0),
-('rodrigo1', 0),
-('rodrigo123', 0),
-('rod4as', 0),
-('rita123', 0),
-('ana12', 0);
+VALUES('fabio123'),
+('joao12', ),
+('rodrigo1'),
+('rodrigo123'),
+('rod4as'),
+('rita123'),
+('ana12');
 
 INSERT INTO Teacher
 VALUES('fabiouds', 1200);
