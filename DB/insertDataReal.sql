@@ -22,17 +22,29 @@ VALUES('fabio123','fabio@hotmail.com','915487895','Fabio Andre', '$2y$10$rnf7Rb4
 ('zorlando','csrlosandre20metros@gmail.com','912575773','Carlos André', '$2y$10$Iwt5mn2OXwfQ5M5eJm5Qy.qNcmFGpNlwCYyzUTGZRHbwZ1Z6aVLni', '246072830', 'user_zorlando_5341.jpg' ,'05/31/2003',0, 'Sou estudante, neste momento no 10 ano, curso de eletricista. Gostava de me tornar num grande jogador de csgo. Inspiro me bastante no coach Zorlakoka  e espero um dia poder jogar numa grande equipa.', 'Jogar computador ', null),
 ('ritaantunes811','ritaantunes_2005@hotmail.com','935017368','Rita Antunes', '$2y$10$29QRmv3MJmuIdHMSm5CKzutAGQcLCLMbYwxJVLLAZP0WxYPdVBWLm', '243701764', null ,'03/04/1997',0, 'Estudante de medicina em busca de desenvolver as suas capacidades no ramo da informatica para melhorar a sua preparação e execução de investigação clínica', 'Exercício físico, cinema, literatura', null),
 
-('admin','electrusintelligentus@gmail.com','926901471','', '$2y$10$m0LEz76GJykSVq/QIt1iXesMa.0rUwcX5njCpTEdjblzTxNodPK5W', '280825358', 'user_admin_12.jpg' ,null,2, null, null, null),
+('admin','electrusintelligentus@gmail.com','926901471','Admin', '$2y$10$m0LEz76GJykSVq/QIt1iXesMa.0rUwcX5njCpTEdjblzTxNodPK5W', '280825358', 'user_admin_12.jpg' ,null,2, null, null, null),
 ('fabiouds','fabiouds@hotmail.com','926901937','Fabio Morais', '$2y$10$Qog6MBSLHuiXGXvizGJ83OgVgsNw9wTJitwzVcEPaOy6G/vTrPtlC', '265075408', null ,'06/15/1997',1, null, null, null),
+('fernandojpsilva','up201604125@fe.up.pt','915985839','Fernando Silva', '$2y$10$mi3hMyymks/xM0hkSjZcx.pCr46XCyk3YOzf4zM3hAQKs8ZXXyr5e', '243701764', null ,'06/14/1998',0, 'Estudante no 5º ano do MIEEC. Tenho grande interesse em áreas da gestão industrial como o Lean manufacturing, a indústria 4.0, sistemas de gestão de qualidade, sistemas de apoio à decisão, data science aplicada a negócios, entre outros.', 'Praticar desportos, ver futebol, formula 1, esports, ler', null),
 ('aluno','aluno@aluno.com','926901937','Aluno', '$2y$10$YLA6GUwAlAx2bV1Q.ekthOWW2nrUPZ91KgxT/fXQpQZt1f62jMpAO', '261832468', 'aa.jpg' ,'06/15/1996',0, null, null, null);
 
 INSERT INTO Student
 VALUES('fabio123'),
+('asantos98'),
+('catarina4'),
+('rsmartins'),
+('diogoOGrande'),
+('AnaAlves01'),
+('zeBisnagas'),
+('carlos_manu'),
+('sebeira'),
+('zorlando'),
+('ritaantunes811'),
 ('aluno');
 
 
 INSERT INTO Teacher
 VALUES('fabiouds', 1200);
+VALUES('fernandojpsilva', 1200);
 
 INSERT INTO Admin
 VALUES('admin');
