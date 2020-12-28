@@ -11,6 +11,7 @@ $coursesQuery = "";
 $videosQuery = "";
 $videos = "";
 $courses = "";
+$courses2 = "";
 $connected = false;
 
 if ($db->connect()) {
@@ -36,6 +37,12 @@ function extractVideoID($url){
     preg_match($regExp, $url, $video);
     return $video[7];
 }
+
+function clean($string) {
+    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+    return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+}
 ?>
 
 <div class="container-fluid">
@@ -48,7 +55,7 @@ function extractVideoID($url){
 
                     while(isset($courses2["coursename"]))
                     {
-                        echo "<option value='". preg_replace("/\s+/", "", $courses2['coursename']) ."'> ". ucwords($courses2["coursename"]) ." </option>";
+                        echo "<option value='". preg_replace("/\s+/", "", clean($courses2['coursename'])) ."'> ". ucwords($courses2["coursename"]) ." </option>";
                         $courses2 = pg_fetch_assoc($coursesQuery2);
                     }
 
@@ -66,11 +73,15 @@ function extractVideoID($url){
                                     while(isset($videos["youtubelink"])){
                                         $video_id = extractVideoID($videos["youtubelink"]);
                                         $video_thumbnail = getYouTubeThumbnailImage($video_id);
-                                        echo "<div class=\"col-md-4 ". preg_replace("/\s+/", "", $courses['coursename']) ."\">";
+
+                                        #echo "".$courses["coursename"]." ".$videos["youtubelink"]." ";
+                                        #echo "". preg_replace("/\s+/", "", $courses['coursename']) ."";
+
+                                        echo "<div class=\"col-md-4 ". preg_replace("/\s+/", "", clean($courses['coursename'])) ." all\">";
                                         echo "<div class=\"pb-2\">";
                                         echo    "<a data-fancybox=\"video-gallery\" href=\" ".$videos["youtubelink"]." ;\">";
                                         echo        "<div class=\"card-header\">";
-                                        echo            "<img src=\"".$video_thumbnail." \" class=\"img-thumbnail\" />";
+                                        echo            "<img src=\"".$video_thumbnail."\" class=\"img-thumbnail\" />";
                                         echo        "</div>";
                                         echo    "</a>";
                                         echo "</div>";
@@ -91,21 +102,9 @@ function extractVideoID($url){
 
 <script>
     $(document).ready(function () {
-        $(".webapis").hide();
-        $(".webdevelopment").hide();
-        $(".machinelearning").hide();
-        $(".c\\/c++").hide();
-        $(".matematica").hide();
-        $(".java").hide();
-        $(".python").hide();
+        $(".all").hide();
         $('#outer').change(function () {
-            $(".webapis").hide();
-            $(".webdevelopment").hide();
-            $(".machinelearning").hide();
-            $(".c\\/c++").hide();
-            $(".matematica").hide();
-            $('.java').hide();
-            $(".python").hide();
+            $(".all").hide();
             $('.'+$(this).val()).show();
         })
     });

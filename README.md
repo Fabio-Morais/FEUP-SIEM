@@ -20,4 +20,7 @@ Ideias : https://docs.google.com/document/d/19qAnUV3mSlFpSj_ocKOagl6rVr7m-tm71Ye
 
 
 https://jscolor.com/
+
 jquery fancybox
+
+https://jqueryui.com/slider/#range
