@@ -23,7 +23,6 @@
     <meta name="author" content="" />
     <title>ExplicaFeup - Dashboard</title>
     <link href="public/css/styles.css" rel="stylesheet" />
-    <link href="public/css/cart/style.css" rel="stylesheet" />
 
     <link href="public/css/main.css" rel="stylesheet" />
     <link href="public/css/profile.css" rel="stylesheet" />
@@ -34,6 +33,7 @@
         <!-- custom style -->
         <link href="public/css/ui.css" rel="stylesheet" type="text/css" />
         <link href="public/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+        <link href="public/css/cart/style.css" rel="stylesheet" />
     <?php endif; ?>
 
 

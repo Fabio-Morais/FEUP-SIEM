@@ -43,7 +43,7 @@ $courses = pg_fetch_assoc($coursesQuery);
                             <div class="list-group-item d-flex flex-row justify-content-center">
 
                                 <div class="list-details m-2 text-center">
-                                    <i class="fas fa-phone  fa-lg text-gray-300"></i> <span><?php echo $queryInfo['phone'] ?></span>
+                                    <i class="fas fa-phone  fa-lg text-gray-300"></i> <span ><?php echo $queryInfo['phone'] ?></span>
                                 </div>
 
                                 <div class="list-details m-2 text-center" >
@@ -94,7 +94,7 @@ $courses = pg_fetch_assoc($coursesQuery);
 
                                     </div>
                                     <div class="col-md-6">
-                                        <h6>Cursos:</h6>
+                                        <h6 >Cursos:</h6>
                                         <?php while (isset($courses["coursename"])) {
                                             echo "<a class=\"badge badge-dark text-uppercase m-1\"> " . $courses['coursename'] . " </a>";
                                             $courses = pg_fetch_assoc($coursesQuery);

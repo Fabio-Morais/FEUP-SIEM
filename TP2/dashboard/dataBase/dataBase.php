@@ -239,4 +239,9 @@ final class DataBase
     {
         return $this->student->enrollStudent($this->conn, $username, $coursename);
     }
+
+    public function getStudentAverage($username)
+    {
+        return $this->student->getStudentAverage($this->conn, $username);
+    }
 }
