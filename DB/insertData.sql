@@ -60,7 +60,34 @@ VALUES('c++', '20', 'fabiouds', 'c++.png', 'soft', '<li> Programação em C e Me
 ('machine learning', '40', 'fabiouds', 'ml.png', 'ml','<li>Introdução à área: o que é machine learning atualmente</li>
           <li>Modelos simples de classificação e regressão (modelos lineares e de vizinho mais próximo) e a sua validação: paradigmas de aprendizagem, funções de perda, erro de viés e de variância.</li>
           <li>Métodos de inferência de modelos: Procura, Expectation-maximization, agregação.</li>
-          <li>Redes neuronais, modelos deep e aprendizagem de representação</li>');
+          <li>Redes neuronais, modelos deep e aprendizagem de representação</li>'),
+('controlo de sistemas', '35', null, 'controlo.png', 'ml', '<li> Análise e projecto de sistemas de controlo automático.</li>
+          <li>Ferramentas de análise qualitativa e quantitativa para projecto de controladores dinâmicos de sistemas SISO de dinâmica linear, ou linearizável.</li>
+          <li>Aplicação no domínio do tempo contínuo e no domínio do tempo discreto.</li>'),
+('swift', '55', null, 'swift.png', 'soft','<li>Introdução à programação de aplicações iOS e macOS.</li>
+          <li>Estutura e sintaxe básica, boas práticas e tratamento de dados.</li>
+          <li>Programação orientada a protocolos.</li>
+          <li>Desenvolvimento de uma aplicação de complexidade média para iPhone, iPad e Mac.</li>'),
+('visão computacional', '40', null, 'visao.jpg', 'ml','<li>Introdução à visão computacional.</li>
+          <li>Fundamentos de criação de imagens, geometria multiview, estimativa e rastreamento de movimento e classificação.</li>
+          <li>Desenvolvimento de métodos para aplicações que incluem identificar modelos em imagens, estabilização, calibração e reconhecimento de ações.</li>
+          <li>Utilização de algoritmos de inteligência artificial na implementação dos trabalhos.</li>'),
+('web design', '25', null, 'design.png', 'web','<li>Introdução ao design gráfico.</li>
+          <li>Utilização de 3 ferramentas Adobe transversais ao web design: Adobe Illustrator, Photoshop e InDesign.</li>
+          <li>Criação de designs gráficos responsivos, templates e filtros "Scalable Vector Graphics".</li>
+          <li>Criação e aplicação de animações.</li>'),
+('MATLAB', '20', null, 'matlab.jpg', 'soft','<li>Introdução à programação com MATLAB.</li>
+          <li>Conceitos fundamentais de programação como variáveis, estruturas de controlo e funções.</li>
+          <li>Utilização do apoio poderoso do MATLAB na manipulação de matrizes.</li>
+          <li>Simulação e modelação em Simulink, ferramenta integrada no ambiente MATLAB.</li>'),
+('digital marketing', '25', null, 'marketing.jpg', 'web','<li>Noções fundamentais de marketing digital.</li>
+          <li>Consolidar competências para se promover a si e à sua empresa online.</li>
+          <li>Captar a atenção das pessoas certas e tirar o máximo partido da web para alcançar os seus objetivos.</li>
+          <li>Exploração de diversos tópicos associados à otimização de motores de busca, marketing nas redes sociais e impressão 3D.</li>'),
+('data science', '30', null, 'data.jpg', 'ml','<li>Base teórica sólida sobre os principais algoritmos de Machine Learning e Data Science.</li>
+          <li>Utilizar as mais recentes teorias de análise de dados, incluindo métodos de previsão e de dedução causal;.</li>
+          <li>Utilizar uma linguagem de programação de estatística para pôr em prática os novos métodos de machine learning e modelação causal.</li>
+          <li>Utilize as bibliotecas numpy, scikit-learn e pandas aplicado em Data Science e Machine Learning.</li>');
 
 INSERT INTO Orderr(deliveryDate,purchaseDate,price,productName, description, idStudent)
 VALUES ( (SELECT TO_CHAR((SELECT current_timestamp - (2 * interval '1 day') + (2 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (2 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '20', 'c++', '' ,  'fabio123' ),
@@ -118,5 +145,25 @@ VALUES ('https://www.youtube.com/watch?v=YRGeyA2a0cQ', 'java'),
        ('https://www.youtube.com/watch?v=UNPrrP25voU', 'web development'),
        ('https://www.youtube.com/watch?v=t_ispmWmdjY', 'web apis'),
        ('https://www.youtube.com/watch?v=DLX62G4lc44', 'web apis'),
-       ('https://www.youtube.com/watch?v=Fdf5aTYRW0E', 'web apis');
+       ('https://www.youtube.com/watch?v=Fdf5aTYRW0E', 'web apis'),
+       ('https://www.youtube.com/watch?v=_eh1conN6YM', 'controlo de sistemas'),
+       ('https://www.youtube.com/watch?v=CSAp9ooQRT0', 'controlo de sistemas'),
+       ('https://www.youtube.com/watch?v=E6R2XUEyRy0', 'controlo de sistemas'),
+       ('https://www.youtube.com/watch?v=5sXPZeSLDSc', 'swift'),
+       ('https://www.youtube.com/watch?v=45XUCShB7c0', 'swift'),
+       ('https://www.youtube.com/watch?v=wlGExn2NNFQ', 'swift'),
+       ('https://www.youtube.com/watch?v=vT1JzLTH4G4', 'visão computacional'),
+       ('https://www.youtube.com/watch?v=OoUX-nOEjG0', 'visão computacional'),
+       ('https://www.youtube.com/watch?v=h7iBpEHGVNc', 'visão computacional'),
+       ('https://www.youtube.com/watch?v=DF4P0cjStkM', 'web design'),
+       ('https://www.youtube.com/watch?v=b-0HekkbdJM', 'web design'),
+       ('https://www.youtube.com/watch?v=iHDy_nEvgd4', 'web design'),
+       ('https://www.youtube.com/watch?v=8aL0SCq80U4', 'MATLAB'),
+       ('https://www.youtube.com/watch?v=w4-Z9jF8kpo', 'MATLAB'),
+       ('https://www.youtube.com/watch?v=9k-V3rNNDDg', 'MATLAB'),
+       ('https://www.youtube.com/watch?v=nU-IIXBWlS4', 'digital marketing'),
+       ('https://www.youtube.com/watch?v=fsDwHJa_xcE', 'digital marketing'),
+       ('https://www.youtube.com/watch?v=ua-CiDNNj30', 'data science'),
+       ('https://www.youtube.com/watch?v=sbbYntt5CJk', 'data science');
+
 

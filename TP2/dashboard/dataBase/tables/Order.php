@@ -78,11 +78,20 @@ class Order{
     }
 
     /**
-     * Add Order
+     * Add First Order
      */
     public function addFirstOrder($conn, $productname, $username){
         $query = "INSERT INTO Orderr (price, productname, idstudent) 
                 VALUES((SELECT price FROM course WHERE coursename ='".$productname."'),'".$productname."','".$username."')";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
+    /**
+     * Get All Orders
+     */
+    public function getAllOrders($conn){
+        $query = "SELECT * FROM orderr";
         $result = pg_exec($conn, $query);
         return $result;
     }

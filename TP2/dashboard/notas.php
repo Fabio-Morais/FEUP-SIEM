@@ -43,7 +43,6 @@ if ($db->connect()) {
                             $infoQuery = $db->getCourseInfo($courses['coursename']);
                             $info = pg_fetch_assoc($infoQuery);
                         }
-
                     }
                 endif;
                 ?>

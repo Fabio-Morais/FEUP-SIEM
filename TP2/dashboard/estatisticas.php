@@ -16,7 +16,7 @@ if ($db->connect()) {
     $yearQuery = $db->getTotalYearProfit();
     $courseQuery = $db->getSellsCourses();
     $courseTotalQuery = $db->getSellsCoursesMoney();
-
+    $ordersQuery = $db->getAllOrders();
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
@@ -28,14 +28,14 @@ if ($db->connect()) {
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <select id="outer" class="custom-select m-2">
-                    <option value="option1">Lucro Total</option>
-                    <option value="option2">Numero de vendas por curso</option>
-                    <option value="option3">Lucro Total de vendas por curso</option>
+                    <option value="option1">Lucro total</option>
+                    <option value="option2">Número de vendas por curso</option>
+                    <option value="option3">Lucro de vendas por curso</option>
                 </select>
 
                     <div class="card-header option1">
                         <i class="fas fa-chart-area mr-1"></i>
-                        Lucro Total
+                        Lucro total
                     </div>
 
                     <div class="card-body option1"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
@@ -82,7 +82,7 @@ if ($db->connect()) {
 
             <div class="card-header option2">
                 <i class="fas fa-chart-pie mr-1"></i>
-                Numero de vendas por curso
+                Número de vendas por curso
             </div>
             <div class="card-body option2"><canvas id="myPieChart" width="100%" height="30"></canvas></div>
             <div class="card-footer small text-muted option2">Atualizado a <?php echo date("d-m-Y - H:i:s")?></div>
@@ -90,11 +90,12 @@ if ($db->connect()) {
 
             <div class="card-header option3">
                 <i class="fas fa-chart-bar mr-1"></i>
-                Lucro Total de vendas por curso
+                Lucro de vendas por curso
             </div>
             <div class="card-body option3"><canvas id="myBarChart" width="100%" height="30"></canvas></div>
             <div class="card-footer small text-muted option3">Atualizado a <?php echo date("d-m-Y - H:i:s")?></div>
             </div>
+
         </div>
     </div>
 

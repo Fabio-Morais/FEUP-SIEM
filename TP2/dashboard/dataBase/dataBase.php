@@ -244,4 +244,9 @@ final class DataBase
     {
         return $this->student->getStudentAverage($this->conn, $username);
     }
+
+    public function getAllOrders()
+    {
+        return $this->order->getAllOrders($this->conn);
+    }
 }
