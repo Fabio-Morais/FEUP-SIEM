@@ -27,14 +27,14 @@
             echo "<div class=\"form-group\"> <span style='color:red;'>* O utilizador não existe</span> </div>";
         ?>
         <label for="user" class="sr-only">Username</label>
-        <input id="user" type="user" name="user" class="form-control" placeholder="Username" required autofocus>
+        <input id="user" type="user" name="user" class="form-control" placeholder="Username" value="<?php if(isset($_COOKIE["user"])) { echo $_COOKIE["user"]; } ?>" required autofocus>
 
         <label for="inputPassword" class="sr-only">Password</label>
-        <input id="password" type="password" name="password" class="form-control" placeholder="Password" required>
+        <input id="password" type="password" name="password" class="form-control" placeholder="Password" value="" required>
 
         <div class="checkbox mb-3" style="text-align: left; margin-left: 5px">
             <label>
-                <input type="checkbox" value="remember-me"> Lembrar-me
+                <input type="checkbox" name="remember" checked> Lembrar-me
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Entrar</button>

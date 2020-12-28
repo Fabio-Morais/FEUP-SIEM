@@ -39,8 +39,10 @@ if ($db->connect()) {
                         echo    "<h4>Nota: " . $courses['coursegrade'] . " Valores</h4>";
                         echo "</div>";
                         $courses = pg_fetch_assoc($coursesQuery);
-                        $infoQuery = $db->getCourseInfo($courses['coursename']);
-                        $info = pg_fetch_assoc($infoQuery);
+                        if(isset($courses["coursename"])){
+                            $infoQuery = $db->getCourseInfo($courses['coursename']);
+                            $info = pg_fetch_assoc($infoQuery);
+                        }
                     }
                 endif;
                 ?>

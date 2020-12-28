@@ -11,7 +11,7 @@ switch ($title) {
         $title = "comprar cursos";
         break;
     case "estatisticas.php":
-        $title = "estatisticas";
+        $title = "Key performance indicators";
         break;
     case "historico.php":
         $title = "histórico";
@@ -27,6 +27,9 @@ switch ($title) {
         break;
     case "carrinho.php":
         $title = "checkout";
+        break;
+    case "vendas.php":
+        $title = "histórico de vendas";
         break;
 }
 
