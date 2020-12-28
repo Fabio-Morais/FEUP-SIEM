@@ -26,6 +26,13 @@ if(pg_num_rows($query) > 0){
         $_SESSION['user'] = $user;
         $_SESSION['password'] = $password;
         $_SESSION['login'] = TRUE;
+        if(!empty($_POST["remember"]))
+        {
+            $hour = time() + (86400 * 30);
+            setcookie("user", $user, $hour, '/');
+        }else {
+            setcookie ("user", "", '/');
+        }
         header('location: ../index.php');
         exit();
     }

@@ -74,7 +74,11 @@ include_once(dirname(__FILE__) . "../../../includes/common/session.php");
                         </a>
                         <a class="nav-link" href="estatisticas.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
-                            Estatisticas
+                            KPIs
+                        </a>
+                        <a class="nav-link" href="vendas.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-history"></i></div>
+                            Histórico de Vendas
                         </a>
                     <?php endif; ?>
                 </div>
