@@ -14,7 +14,7 @@ $users = "";
 $connected = false;
 
 if ($db->connect()) {
-    $courses = $db->getAllCoursesExceptStudentOwn($aux['username']);
+    $courses = $db->getAllCoursesExceptStudentOwn($_SESSION['user']);
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
@@ -23,7 +23,6 @@ if ($db->connect()) {
     <div class="justify-content-center m-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
-
                 <div class="row">
                     <aside class="col-xl-3 ">
                         <div class="card">
