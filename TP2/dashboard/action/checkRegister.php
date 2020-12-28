@@ -14,15 +14,15 @@ $name = $_POST['name'];
 $nif = $_POST['nif'];
 $phone = $_POST['phone'];
 $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-if ($_GET['course'] == "c/c  ")
-    $productname = "c/c++";
-else
-    $productname = $_GET['course'];
+$productname = $_GET['course'];
+#$productnameEncoded = $_GET['course'];
+#$productname =  str_replace(" ", "+", $productnameEncoded);
+#while(isset($productname))
+    #echo "".$productname."";
 
 if ($password !== $password_confirm) {
 	$_SESSION['passerror'] = TRUE;
-	header("location: ../../register.php?course=".$productname."");
+	header("location: ../../register.php?course=".urlencode($productname)."");
 	exit();
 }
 
@@ -30,21 +30,21 @@ $query = "SELECT * FROM userr WHERE username = '$username'";
 $result = pg_exec($query);
 if(pg_num_rows($result) > 0){
 	$_SESSION['usererror'] = TRUE;
-	header("location: ../../register.php?course=".$productname."");
+	header("location: ../../register.php?course=".urlencode($productname)."");
 	exit();
 }
 
 if (empty($username) || empty($password) || empty($name))
 	{
 	$_SESSION['regerror'] = TRUE;
-	header("location: ../../register.php?course=".$productname."");
+	header("location: ../../register.php?course=".urlencode($productname)."");
 	exit();
 } else{
     $db = DataBase::Instance();
     $db->connect();
     $db->addUserStudent($name, $email, $username, $hash, $phone, $nif);
     $db->addStudent($username);
-    $db->addOrder($productname, $username);
+    $db->addFirstOrder($productname, $username);
     $db->enrollStudent($username, $productname);
 
     $_SESSION['user'] = $username;
