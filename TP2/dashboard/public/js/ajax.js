@@ -12,7 +12,7 @@ function updateModalStudent(response){
      username: "joao12"*/
     user = response[0]
     numCourses = response[1]['count']
-    grade = response[2]['grade']
+    grade = response[2]['avg']
     /**coursegrade: "0"
      coursename: "c++"
      username: "joao12"*/
@@ -60,7 +60,7 @@ function updateModalStudent(response){
         $("#countCourse")[0].innerHTML = "--"
     }
     /*GRADE*/
-    if(grade != 0){
+    if(grade != 0 && grade != null){
         $("#grade")[0].innerHTML = grade
     }else{
         $("#grade")[0].innerHTML = "--"
@@ -107,9 +107,6 @@ function showStudentInfo(student){
     console.log(student)
     xhttp.open("GET", "webservices/getStudentInfo.php?username="+student, true);
     xhttp.send();
-    xhttp.onload = function() {
-        console.log("loading")
-    };
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array

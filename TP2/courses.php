@@ -59,7 +59,7 @@ if ($db->connect()) {
                   if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
                     echo "<a id=\"elemnt\" href=\"dashboard/index.php\">Dashboard</a>";
                   } else{
-                    echo "<a id=\"elemnt\" href=\"login.php\">Dashboard</a>";
+                    echo "<a id=\"elemnt\" href=\"dashboard/login.php\">Dashboard</a>";
                   }
                   ?>
               </div>
@@ -69,7 +69,7 @@ if ($db->connect()) {
           if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
             echo "<a id=\"elemnt\" href=\"dashboard/index.php\">Dashboard</a>";
           } else{
-            echo "<a id=\"elemnt\" href=\"login.php\">Dashboard</a>";
+            echo "<a id=\"elemnt\" href=\"dashboard/login.php\">Dashboard</a>";
           }
           ?>
           <a id="elemnt" href="contacts.php">Contactos</a>
@@ -112,7 +112,7 @@ if ($db->connect()) {
               echo       "<button onclick=\"document.getElementById('". preg_replace("/\s+/", "", $row['coursename']) ."').style.display = 'block'\" class=\"buttonInfo\">"; //Remove espaços brancos na string
               echo          "<i class=\"far fa-question-circle\"></i> Info";
               echo      "</button>";
-              echo      "<button onclick=\"location.href = 'register.php?course=".urlencode($row['coursename'])."';\" class=\"buttonBuy\">";
+              echo      "<button onclick=\"location.href = 'dashboard/register.php?course=".urlencode($row['coursename'])."';\" class=\"buttonBuy\">";
               echo          "<i class=\"fas fa-shopping-cart\"></i> Comprar";
               echo      "</button>";
               echo  "</div>";

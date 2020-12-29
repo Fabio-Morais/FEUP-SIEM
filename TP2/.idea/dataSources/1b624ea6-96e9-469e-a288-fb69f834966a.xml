@@ -954,6 +954,7 @@ sequence|table|16859|16861|1
     </table>
     <table id="33" parent="12" name="course">
       <ObjectId>16873</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>541</StateNumber>
     </table>
@@ -970,6 +971,7 @@ sequence|table|16859|16861|1
     </table>
     <table id="36" parent="12" name="salary">
       <ObjectId>16861</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>541</StateNumber>
     </table>

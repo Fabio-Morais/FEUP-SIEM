@@ -76,7 +76,7 @@ VALUES('c++', '20', 'fabiouds', 'c++.png', 'soft', '<li> Programação em C e Me
           <li>Utilização de 3 ferramentas Adobe transversais ao web design: Adobe Illustrator, Photoshop e InDesign.</li>
           <li>Criação de designs gráficos responsivos, templates e filtros "Scalable Vector Graphics".</li>
           <li>Criação e aplicação de animações.</li>'),
-('MATLAB', '20', null, 'matlab.jpg', 'soft','<li>Introdução à programação com MATLAB.</li>
+('matlab', '20', null, 'matlab.jpg', 'soft','<li>Introdução à programação com MATLAB.</li>
           <li>Conceitos fundamentais de programação como variáveis, estruturas de controlo e funções.</li>
           <li>Utilização do apoio poderoso do MATLAB na manipulação de matrizes.</li>
           <li>Simulação e modelação em Simulink, ferramenta integrada no ambiente MATLAB.</li>'),
@@ -158,9 +158,9 @@ VALUES ('https://www.youtube.com/watch?v=YRGeyA2a0cQ', 'java'),
        ('https://www.youtube.com/watch?v=DF4P0cjStkM', 'web design'),
        ('https://www.youtube.com/watch?v=b-0HekkbdJM', 'web design'),
        ('https://www.youtube.com/watch?v=iHDy_nEvgd4', 'web design'),
-       ('https://www.youtube.com/watch?v=8aL0SCq80U4', 'MATLAB'),
-       ('https://www.youtube.com/watch?v=w4-Z9jF8kpo', 'MATLAB'),
-       ('https://www.youtube.com/watch?v=9k-V3rNNDDg', 'MATLAB'),
+       ('https://www.youtube.com/watch?v=8aL0SCq80U4', 'matlab'),
+       ('https://www.youtube.com/watch?v=w4-Z9jF8kpo', 'matlab'),
+       ('https://www.youtube.com/watch?v=9k-V3rNNDDg', 'matlab'),
        ('https://www.youtube.com/watch?v=nU-IIXBWlS4', 'digital marketing'),
        ('https://www.youtube.com/watch?v=fsDwHJa_xcE', 'digital marketing'),
        ('https://www.youtube.com/watch?v=ua-CiDNNj30', 'data science'),

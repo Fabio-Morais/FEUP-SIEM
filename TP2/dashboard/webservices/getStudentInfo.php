@@ -9,7 +9,7 @@ $returnArr="";
 if($connected) {
     $user = $db->getUser($_GET['username']);
     $totalQuery = $db->getTotalCoursesStudent($_GET['username']);
-    $gradeQuery = $db->getStudentGrade($_GET['username']);
+    $gradeQuery = $db->getStudentAverage($_GET['username']);
     $coursesQuery = $db->getCoursesStudent($_GET['username']);
     $queryInfo = pg_fetch_assoc($user);
     $total = pg_fetch_assoc($totalQuery);

@@ -21,7 +21,7 @@ VALUES('fabio123','fabio@hotmail.com','915487895','Fabio Andre', '$2y$10$rnf7Rb4
 ('ritaantunes811','ritaantunes_2005@hotmail.com','935017368','Rita Antunes', '$2y$10$29QRmv3MJmuIdHMSm5CKzutAGQcLCLMbYwxJVLLAZP0WxYPdVBWLm', '243701764', null ,'03/04/1997',0, 'Estudante de medicina em busca de desenvolver as suas capacidades no ramo da informatica para melhorar a sua preparação e execução de investigação clínica', 'Exercício físico, cinema, literatura', '#1B49C2'),
 ('admin','electrusintelligentus@gmail.com','926901471','Admin', '$2y$10$m0LEz76GJykSVq/QIt1iXesMa.0rUwcX5njCpTEdjblzTxNodPK5W', '280825358', 'user_admin_12.jpg' ,null,2, null, null, '#1B49C2'),
 ('fabiouds','fabiouds@hotmail.com','926901937','Fabio Morais', '$2y$10$Qog6MBSLHuiXGXvizGJ83OgVgsNw9wTJitwzVcEPaOy6G/vTrPtlC', '265075408', null ,'06/15/1997',1, null, null, '#1B49C2'),
-('fernandojpsilva','up201604125@fe.up.pt','915985839','Fernando Silva', '$2y$10$mi3hMyymks/xM0hkSjZcx.pCr46XCyk3YOzf4zM3hAQKs8ZXXyr5e', '243701764', null ,'06/14/1998',0, 'Estudante no 5º ano do MIEEC. Tenho grande interesse em áreas da gestão industrial como o Lean manufacturing, a indústria 4.0, sistemas de gestão de qualidade, sistemas de apoio à decisão, data science aplicada a negócios, entre outros.', 'Praticar desportos, ver futebol, formula 1, esports, ler', '#1B49C2');
+('fernandojpsilva','up201604125@fe.up.pt','915985839','Fernando Silva', '$2y$10$mi3hMyymks/xM0hkSjZcx.pCr46XCyk3YOzf4zM3hAQKs8ZXXyr5e', '243701764', null ,'06/14/1998',1, 'Estudante no 5º ano do MIEEC. Tenho grande interesse em áreas da gestão industrial como o Lean manufacturing, a indústria 4.0, sistemas de gestão de qualidade, sistemas de apoio à decisão, data science aplicada a negócios, entre outros.', 'Praticar desportos, ver futebol, formula 1, esports, ler', '#1B49C2');
 
 INSERT INTO Student
 VALUES('fabio123'),
@@ -29,7 +29,7 @@ VALUES('fabio123'),
 ('catarina4'),
 ('rsmartins'),
 ('diogoOGrande'),
-('AnaAlves01'),
+('anaAlves01'),
 ('zeBisnagas'),
 ('carlos_manu'),
 ('sebeira'),
@@ -91,7 +91,7 @@ VALUES('c++', '20', 'fabiouds', 'c++.png', 'soft', '<li> Programação em C e Me
           <li>Utilização de 3 ferramentas Adobe transversais ao web design: Adobe Illustrator, Photoshop e InDesign.</li>
           <li>Criação de designs gráficos responsivos, templates e filtros "Scalable Vector Graphics".</li>
           <li>Criação e aplicação de animações.</li>'),
-('MATLAB', '20', null, 'matlab.jpg', 'soft','<li>Introdução à programação com MATLAB.</li>
+('matlab', '20', null, 'matlab.jpg', 'soft','<li>Introdução à programação com MATLAB.</li>
           <li>Conceitos fundamentais de programação como variáveis, estruturas de controlo e funções.</li>
           <li>Utilização do apoio poderoso do MATLAB na manipulação de matrizes.</li>
           <li>Simulação e modelação em Simulink, ferramenta integrada no ambiente MATLAB.</li>'),
@@ -114,7 +114,7 @@ VALUES ( (SELECT TO_CHAR((SELECT current_timestamp - (27 * interval '1 day') + (
 ((SELECT TO_CHAR((SELECT current_timestamp - (22 * interval '1 day') + (2 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (22 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '25', 'python', '' ,  'rsmartins' ),
 ((SELECT TO_CHAR((SELECT current_timestamp - (12 * interval '1 day') + (1 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (12 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '40', 'machine learning', '' ,  'diogoOGrande' ),
 ((SELECT TO_CHAR((SELECT current_timestamp - (11 * interval '1 day') + (2 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (11 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '25', 'python', '' , 'diogoOGrande' ),
-((SELECT TO_CHAR((SELECT current_timestamp - (6 * interval '1 day') + (1 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (6 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '40', 'machine learning', '' ,  'AnaAlves01' ),
+((SELECT TO_CHAR((SELECT current_timestamp - (6 * interval '1 day') + (1 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (6 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '40', 'machine learning', '' ,  'anaAlves01' ),
 ((SELECT TO_CHAR((SELECT current_timestamp - (11 * interval '1 day') + (1 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (11 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '40', 'machine learning', '' ,  'zeBisnagas' ),
 ((SELECT TO_CHAR((SELECT current_timestamp - (21 * interval '1 day') + (3 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (21 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '55', 'swift', '' ,  'carlos_manu' ),
 ((SELECT TO_CHAR((SELECT current_timestamp - (28 * interval '1 day') + (3 * interval '1 hour')), 'DD-MM-YYYY HH:MI:SS')), (SELECT TO_CHAR((SELECT current_timestamp - (3 * interval '1 day')), 'DD-MM-YYYY HH:MI:SS')) , '40', 'machine learning', '' ,  'sebeira' ),
@@ -130,7 +130,7 @@ VALUES ('fabio123', 'c++', -1),
 ('rsmartins', 'python', -1),
 ('diogoOGrande', 'machine learning', -1),
 ('diogoOGrande', 'python', -1),
-('AnaAlves01', 'machine learning', -1),
+('anaAlves01', 'machine learning', -1),
 ('zeBisnagas', 'machine learning', -1),
 ('carlos_manu', 'swift', -1),
 ('sebeira', 'machine learning', -1),
@@ -188,9 +188,9 @@ VALUES ('https://www.youtube.com/watch?v=YRGeyA2a0cQ', 'java'),
        ('https://www.youtube.com/watch?v=DF4P0cjStkM', 'web design'),
        ('https://www.youtube.com/watch?v=b-0HekkbdJM', 'web design'),
        ('https://www.youtube.com/watch?v=iHDy_nEvgd4', 'web design'),
-       ('https://www.youtube.com/watch?v=8aL0SCq80U4', 'MATLAB'),
-       ('https://www.youtube.com/watch?v=w4-Z9jF8kpo', 'MATLAB'),
-       ('https://www.youtube.com/watch?v=9k-V3rNNDDg', 'MATLAB'),
+       ('https://www.youtube.com/watch?v=8aL0SCq80U4', 'matlab'),
+       ('https://www.youtube.com/watch?v=w4-Z9jF8kpo', 'matlab'),
+       ('https://www.youtube.com/watch?v=9k-V3rNNDDg', 'matlab'),
        ('https://www.youtube.com/watch?v=nU-IIXBWlS4', 'digital marketing'),
        ('https://www.youtube.com/watch?v=fsDwHJa_xcE', 'digital marketing'),
        ('https://www.youtube.com/watch?v=ua-CiDNNj30', 'data science'),

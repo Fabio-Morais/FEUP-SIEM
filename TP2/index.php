@@ -45,7 +45,7 @@
                   if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
                     echo "<a id=\"elemnt\" href=\"dashboard/index.php\">Dashboard</a>";
                   } else{
-                    echo "<a id=\"elemnt\" href=\"login.php\">Dashboard</a>";
+                    echo "<a id=\"elemnt\" href=\"dashboard/login.php\">Dashboard</a>";
                   }
                   ?>
               </div>
@@ -55,7 +55,7 @@
           if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){
             echo "<a id=\"elemnt\" href=\"dashboard/index.php\">Dashboard</a>";
           } else{
-            echo "<a id=\"elemnt\" href=\"login.php\">Dashboard</a>";
+            echo "<a id=\"elemnt\" href=\"dashboard/login.php\">Dashboard</a>";
           }
           ?>
           <a id="elemnt" href="contacts.php">Contactos</a>
