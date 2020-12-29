@@ -29,7 +29,7 @@ if ($db->connect()) {
 
     <title>Registo</title>
 
-    <link href="public/css/styles.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
     <link href="public/css/register.css" rel="stylesheet">
 </head>
 
@@ -79,16 +79,14 @@ if ($db->connect()) {
                 echo "<div class=\"form-group\"> <span style='color:red;'>* As passwords não correspondem</span> </div>";
             ?>
             <h4 class="mb-3">Informação Pessoal</h4>
-            <?php
-               echo "<form class=\"needs-validation\" method=\"post\" action=\"action/checkRegister.php?course=".urlencode($courses['coursename'])."\" novalidate>";
-            ?>
+             <form class="needs-validation" method="post" action="action/checkRegister.php?course= <?php echo urlencode($courses['coursename']) ?> "
+                   onsubmit="return validateFormRegister()">
+
 
                 <div class="mb-3">
                     <label for="name">Nome</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nome" value="" required>
-                    <div class="invalid-feedback">
-                        Nome inválido.
-                    </div>
+
                 </div>
 
                 <div class="mb-3">
@@ -98,26 +96,20 @@ if ($db->connect()) {
                             <span class="input-group-text">@</span>
                         </div>
                         <input type="text" class="form-control" id="user" name="user" placeholder="Username" required>
-                        <div class="invalid-feedback" style="width: 100%;">
-                            Your username is required.
-                        </div>
+
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-                    <div class="invalid-feedback">
-                        Password inválida.
-                    </div>
+
                 </div>
 
                 <div class="mb-3">
                     <label for="confirmarpassword">Confirmar Password</label>
                     <input type="password" class="form-control" id="confirmarpassword" name="confirmarpassword" placeholder="Password" required>
-                    <div class="invalid-feedback">
-                        Password inválida.
-                    </div>
+
                 </div>
 
                 <div class="mb-3">
@@ -150,3 +142,4 @@ if ($db->connect()) {
 
 </body>
 </html>
+<script src="public/js/validateForms.js"></script>
