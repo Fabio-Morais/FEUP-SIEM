@@ -41,14 +41,14 @@ if(pg_num_rows($query) > 0){
         unset($_SESSION['user']);
         unset($_SESSION['password']);
         $_SESSION['error'] = TRUE;
-        header('location: ../../login.php');
+        header('location: ../login.php');
         exit();
     }
 } else{
     unset($_SESSION['user']);
     unset($_SESSION['password']);
     $_SESSION['errorInexistente'] = TRUE;
-    header('location: ../../login.php');
+    header('location: ../login.php');
     exit();
 }
 
