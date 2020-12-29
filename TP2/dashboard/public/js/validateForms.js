@@ -190,7 +190,7 @@ function validateFormAddUser() {
  * Form validation of register user in register.php
  * */
 function validateFormRegister() {
-    
+
 
     console.log("asdasd")
     return false;
