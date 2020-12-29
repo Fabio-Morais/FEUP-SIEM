@@ -254,7 +254,10 @@ if ($db->connect()) {
             button    : '.my-btn'
         });
         document.getElementById("submitButton").onclick = function () {
-            document.getElementById("carrinho").submit();
+            /*just submit when the checkout is > than 0*/
+            if($("#submitButton > em > span")[0].innerHTML > 0.0){
+                document.getElementById("carrinho").submit();
+            }
         }
         $("#ex2").slider({});
     </script>
@@ -291,4 +294,5 @@ console.log(encodeURIComponent(course))
             }
         };
     }
+
 </script>

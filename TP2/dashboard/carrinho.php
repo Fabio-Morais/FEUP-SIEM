@@ -80,8 +80,8 @@ if (isset($_POST["course"])) {
                     </table>
 
                     <div class="card-body border-top">
-                        <a type="submit" class="btn btn-primary float-md-right" id="submitButton"> Comprar <i
-                                    class="fa fa-chevron-right"></i> </a>
+                        <button type="submit" class="btn btn-primary float-md-right" id="submitButton"> Comprar <i
+                                    class="fa fa-chevron-right"></i> </button>
                         <a href="comprar_curso.php" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Continuar
                             a comprar </a>
                     </div>
@@ -173,5 +173,10 @@ if (isset($_POST["course"])) {
         createCookie('cartCookie', json_str,1, "day");
         $("."+course).remove()
         e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+        if(finalPrice <= 0){
+            $('#submitButton').attr("disabled", true);
+        }
     }
+
+
 </script>
