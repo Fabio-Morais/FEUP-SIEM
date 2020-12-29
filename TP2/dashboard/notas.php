@@ -36,7 +36,10 @@ if ($db->connect()) {
                         echo "<div id=\"course\" class=\"all ". $courses['coursename'] ." box\" data-aos=\"fade-up\" data-aos-delay=\"100\" data-aos-once=\"true\">";
                         echo    "<div id=\"imgBorder\"><img src=\"../img/courses/". $info['image'] ." \" id=\"imgCourse\"></div>";
                         echo    "<h3>" . ucwords($courses['coursename']) . "</h3>";  // Primeira letra maiuscula
-                        echo    "<h4>Nota: " . $courses['coursegrade'] . " Valores</h4>";
+                        if($courses['coursegrade'] != -1)
+                            echo    "<h4>Nota: " . $courses['coursegrade'] . " Valores</h4>";
+                        else
+                            echo    "<h4>Nota: Sem avaliação</h4>";
                         echo "</div>";
                         $courses = pg_fetch_assoc($coursesQuery);
                         if(isset($courses["coursename"])){
