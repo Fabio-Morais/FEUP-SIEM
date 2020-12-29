@@ -15,21 +15,19 @@ export default class ChartBuild{
     /*Determina os limites dos graficos*/
     limits() {
         var keys = Object.keys(this.data);
-        var min = this.data[keys[0]]; // ignoring case of empty list for conciseness
-        var max = this.data[keys[0]];
+        var min = parseInt(this.data[keys[0]]); // ignoring case of empty list for conciseness
+        var max = parseInt(this.data[keys[0]]);
         var i;
-
+        console.log("init:"+min+":"+max)
         for (i = 1; i < keys.length; i++) {
-            var value = this.data[keys[i]];
+            var value = parseInt(this.data[keys[i]]);
             if (value < min) min = value;
             if (value > max) max = value;
         }
-    /*Margem para se ver melhor*/
-        this.yMin = parseInt(min) - Math.round(parseInt(min)/4);
+        this.yMin =min - Math.round(min/4);
         if(this.yMin <= 0)
             this.yMin=0;
-        this.yMax = parseInt(max) + Math.round(parseInt(max)/4);
-
+        this.yMax = max + Math.round(max/4);
 
     }
     /*Coloca o texto nos eixos X e Y*/
