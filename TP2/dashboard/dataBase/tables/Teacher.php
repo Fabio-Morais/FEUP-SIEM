@@ -9,7 +9,7 @@ class Teacher{
      * Return salary historic of teacher $teacherUserName
      */
     public function getSalary($conn, $teacherUserName){
-        $query = "select * from Salary WHERE username = '".$teacherUserName."';";
+        $query = "select * from Salary WHERE username = '".$teacherUserName."' ORDER BY to_date(salarydate, 'DD/MM/YYYY') ASC;";
         $result = pg_exec($conn, $query);
         return $result;
     }

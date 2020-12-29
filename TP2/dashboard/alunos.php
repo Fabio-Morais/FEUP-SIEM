@@ -194,7 +194,7 @@ if ($db->connect()) {
                                                 </div>
                                                 <div class="col p-2">
                                                     <h4 class="mb-1 line-height-5" id="grade"> <!-- GRADE HERE --></h4>
-                                                    <small class="mb-0 font-weight-bold">Nota</small>
+                                                    <small class="mb-0 font-weight-bold">Média</small>
                                                 </div>
 
                                             </div>
@@ -284,7 +284,6 @@ if ($db->connect()) {
                 for(i=0; i<response.length; i++){
                     if(response[i]['coursegrade']<0){//courses that was not graded
                             string = " <option selected >"+response[i]['coursename']+"</option>"
-
                         $("#courseOptions").append(string)
                     }else{
                             string = " <option disabled >'"+response[i]['coursename']+"' já avaliado</option>"
