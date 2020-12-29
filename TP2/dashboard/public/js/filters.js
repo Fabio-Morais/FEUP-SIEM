@@ -83,8 +83,8 @@ $(function () {
         $("#slider-range").slider({
             range: true,
             min: 0,
-            max: 50,
-            values: [0, 50],
+            max: 100,
+            values: [0, 100],
             slide: function (event, ui) {
                 //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
                 $('input[name=minPrice]').val(ui.values[0])

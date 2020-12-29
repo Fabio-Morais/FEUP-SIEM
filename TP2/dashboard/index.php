@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Cria uma objeto da classe Weather, que vai buscar à API a informação do tempo relativo à cidade em que o utilizador se encontra, relativamente ao IP
  */
@@ -9,8 +8,7 @@ $data = $weather->get_data();
 $currentTime = $weather->get_time();
 ?>
 
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
-
+<?php include_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 <?php
@@ -44,10 +42,11 @@ if ($db->connect()) {
 } else
     Alerts::showError(Alerts::DATABASEOFF);
 
+
 ?>
 
 <div class="container-fluid" >
-    <h1 class="m-4 text-center">BEM VINDO <?php echo strtoupper($aux['username']) ?></h1>
+    <h1 class="m-4 text-center">BEM VINDO <?php echo strtoupper($_SESSION['user']) ?></h1>
     <div class="justify-content-center m-4" >
         <div class="card border-left-primary shadow " id="weatherCard" >
             <div class="report-container">
@@ -68,7 +67,7 @@ if ($db->connect()) {
         </div>
     </div>
 
-    <?php if ($aux['role'] == 2) : ?>
+    <?php if ($_SESSION['role'] == 2) : ?>
         <!-- Content Row -->
         <div class="row justify-content-center">
             <!-- Earnings (Monthly) Card Example -->

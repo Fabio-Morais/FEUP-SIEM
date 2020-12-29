@@ -22,6 +22,8 @@ class Weather
     function set_weather($city)
     {
         $apiKey = "49fb978a57bb7cc84127bdd1700a3d94";
+        if($city=="")
+            $city="Porto";
         $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" . $city . "&lang=pt&units=metric&APPID=" . $apiKey;
 
         $ch = curl_init();

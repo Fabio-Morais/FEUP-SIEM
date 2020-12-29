@@ -1,6 +1,5 @@
 <?php
 include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
-include_once(dirname(__FILE__) . "../../../includes/common/session.php");
 ?>
 
 <body class="sb-nav-fixed" >
@@ -38,7 +37,7 @@ include_once(dirname(__FILE__) . "../../../includes/common/session.php");
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-                    <?php if ($aux['role'] == 0) : ?>
+                    <?php if ($_SESSION['role'] == 0) : ?>
                         <div class="sb-sidenav-menu-heading">Aprender</div>
                         <a class="nav-link" href="aula.php">
                             <div class="sb-nav-link-icon"><i class="fab fa-youtube"></i></div>
@@ -58,7 +57,7 @@ include_once(dirname(__FILE__) . "../../../includes/common/session.php");
                             <div class="sb-nav-link-icon"><i class="fas fa-history"></i></div>
                             Historico
                         </a>
-                    <?php elseif ($aux['role'] == 1) : ?>
+                    <?php elseif ($_SESSION['role'] == 1) : ?>
                         <a class="nav-link" href="alunos.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
                             Alunos
@@ -67,7 +66,7 @@ include_once(dirname(__FILE__) . "../../../includes/common/session.php");
                             <div class="sb-nav-link-icon"><i class="fas fa-euro-sign"></i></div>
                             Salário
                         </a>
-                    <?php elseif ($aux['role'] == 2) : ?>
+                    <?php elseif ($_SESSION['role'] == 2) : ?>
                         <a class="nav-link" href="users.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Users
@@ -92,7 +91,7 @@ include_once(dirname(__FILE__) . "../../../includes/common/session.php");
                     </div>
                 </h5>
                 <div class="small">Logged in as:</div>
-                <?php echo $aux['username'] ?>
+                <?php echo $_SESSION['user'] ?>
             </div>
         </nav>
     </div>

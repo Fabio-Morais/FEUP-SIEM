@@ -97,10 +97,6 @@ final class DataBase
     {
         return $this->student->getCoursesStudent($this->conn, $userName);
     }
-    public function getStudentGrade($userName)
-    {
-        return $this->student->getStudentGrade($this->conn, $userName);
-    }
     public function getSalary($teacherUserName)
     {
         return $this->teacher->getSalary($this->conn, $teacherUserName);

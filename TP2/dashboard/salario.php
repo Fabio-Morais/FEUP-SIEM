@@ -11,7 +11,7 @@ $salary = "";
 $connected = false;
 
 if ($db->connect()) {
-    $salary = $db->getSalary($aux['username']);/*Mudar o username para o que vem da session*/
+    $salary = $db->getSalary($_SESSION['user']);/*Mudar o username para o que vem da session*/
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
