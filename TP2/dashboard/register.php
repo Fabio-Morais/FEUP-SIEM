@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once(dirname(__FILE__) . "/dashboard/dataBase/dataBase.php");
+include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 /*Para retirar a visibilidade do erro*/
 /*error_reporting(E_ERROR | E_PARSE);*/
 $db = DataBase::Instance();
@@ -19,25 +19,25 @@ if ($db->connect()) {
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/icon.png">
+    <link rel="icon" href="../img/icon.png">
 
     <title>Registo</title>
 
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/register.css" rel="stylesheet">
+    <link href="public/css/styles.css" rel="stylesheet">
+    <link href="public/css/register.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
 
 <div class="container">
     <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="img/icon.png" alt="" width="72" height="72">
+        <img class="d-block mx-auto mb-4" src="../img/icon.png" alt="" width="72" height="72">
         <h2>Registo</h2>
     </div>
 
@@ -80,7 +80,7 @@ if ($db->connect()) {
             ?>
             <h4 class="mb-3">Informação Pessoal</h4>
             <?php
-               echo "<form class=\"needs-validation\" method=\"post\" action=\"dashboard/action/checkRegister.php?course=".urlencode($courses['coursename'])."\" novalidate>";
+               echo "<form class=\"needs-validation\" method=\"post\" action=\"action/checkRegister.php?course=".urlencode($courses['coursename'])."\" novalidate>";
             ?>
 
                 <div class="mb-3">
@@ -148,35 +148,5 @@ if ($db->connect()) {
     </footer>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../assets/js/vendor/popper.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
-<script src="../../assets/js/vendor/holder.min.js"></script>
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-        'use strict';
-
-        window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script>
 </body>
 </html>
