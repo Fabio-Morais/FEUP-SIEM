@@ -17,7 +17,6 @@ function updateModalStudent(response){
      coursename: "c++"
      username: "joao12"*/
     courses = response[3]
-    console.log(user['color'])
     /*BACK COLOR*/
     if(user['color']!=null){
         $("#modalColor").css("background-color",user['color'])
@@ -28,7 +27,10 @@ function updateModalStudent(response){
     if(user['image'] != null){
         $(".user-box > img").attr('src',"public/img/users/"+user['image'])
     }else{
-        $(".user-box > img").attr('src',"public/img/avatar.png")
+        if(user['gender']=='m')
+            $(".user-box > img").attr('src',"public/img/avatar.png")
+        else
+            $(".user-box > img").attr('src',"public/img/avatarGirl.png")
     }
     /*NAME*/
     if(user['name'] != null){
@@ -36,7 +38,6 @@ function updateModalStudent(response){
     }else{
         $("h5.text-white")[0].innerHTML = ""
     }
-    console.log($(".modalPhone"))
     /*PHONE*/
     if(user['phone'] != null){
         $(".modalPhone")[0].innerHTML = user['phone']
@@ -92,7 +93,13 @@ function updateModalStudent(response){
     /*BADGE COURSES*/
     $(".badge-dark").remove()//delete all badge
     for(i=0; i< courses.length; i++){
-        string = "<a class=\"badge badge-dark text-uppercase m-1 p-2\">"+courses[i]['coursename']+"<br><p class=\"mt-2\"><b>"+((courses[i]['coursegrade'])>-1 ? courses[i]['coursegrade'] : "--")+"</b></p></a>"
+        if((courses[i]['coursegrade'])>-1){
+            string = "<a class=\"badge badge-dark text-uppercase m-1 p-2\">"+courses[i]['coursename']+"<br><p class=\"mt-2 mb-0\"><b>"+(courses[i]['coursegrade'])+"</b></p></a>"
+        }else{
+            string = "<a class=\"badge badge-dark text-uppercase m-1 p-2\">"+courses[i]['coursename']+"</a>"
+
+        }
+        console.log(string)
         $(string).insertAfter("#modalCoursesBadge")
     }
 
@@ -104,13 +111,11 @@ function showStudentInfo(student){
     }
     var xhttp;
     xhttp = new XMLHttpRequest();
-    console.log(student)
     xhttp.open("GET", "webservices/getStudentInfo.php?username="+student, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
-            console.log(response)
             updateModalStudent(response)
 
         }

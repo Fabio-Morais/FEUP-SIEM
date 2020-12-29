@@ -13,7 +13,7 @@ class Student{
      * Return all the students for all the courses that the $username teacher teaches
      */
     public function getAllStudentsTeacher($conn, $teacherUsername){
-        $query = "SELECT image,pp.username, color FROM (SELECT aux.username FROM (SELECT distinct username FROM course INNER JOIN enrolled e on course.coursename = e.coursename WHERE teacher = '".$teacherUsername."') AS aux LEFT JOIN student on student.username = aux.username) AS pp inner join userr ee on pp.username = ee.username;";
+        $query = "SELECT image,pp.username, color,gender FROM (SELECT aux.username FROM (SELECT distinct username FROM course INNER JOIN enrolled e on course.coursename = e.coursename WHERE teacher = '".$teacherUsername."') AS aux LEFT JOIN student on student.username = aux.username) AS pp inner join userr ee on pp.username = ee.username;";
         return pg_exec($conn, $query);
     }
     /**
