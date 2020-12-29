@@ -153,5 +153,4 @@ if($_SESSION['errorForm']==1){
         $('.textAdapt').eq(i).css({'color': textColour});
     }
 
-
 </script>

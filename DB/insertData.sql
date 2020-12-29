@@ -14,12 +14,12 @@ VALUES('fabio123','fabio@hotmail.com','915487895','Fabio Andre', '$2y$10$VwAhND9
 
 INSERT INTO Student
 VALUES('fabio123'),
-('joao12', ),
+('joao12' ),
 ('rodrigo1'),
 ('rodrigo123'),
 ('rod4as'),
 ('rita123'),
-('ana12');
+('ana12'),
 ('aluno');
 
 

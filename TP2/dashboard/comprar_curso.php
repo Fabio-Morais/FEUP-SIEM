@@ -72,7 +72,7 @@ if ($db->connect()) {
                                             </div>
                                             <div class="form-group text-right col-md-6">
                                                 <label>Max</label>
-                                                <input class="form-control maxPrice" placeholder="50€" type="number" name="maxPrice" value="50">
+                                                <input class="form-control maxPrice" placeholder="100€" type="number" name="maxPrice" value="100">
                                             </div>
                                         </div> <!-- form-row.// -->
                                     </div><!-- card-body.// -->

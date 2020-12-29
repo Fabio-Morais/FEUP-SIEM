@@ -975,6 +975,7 @@ sequence|table|16859|16861|1
     </table>
     <table id="37" parent="12" name="student">
       <ObjectId>16822</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>541</StateNumber>
     </table>
@@ -985,11 +986,13 @@ sequence|table|16859|16861|1
     </table>
     <table id="39" parent="12" name="userr">
       <ObjectId>16813</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>541</StateNumber>
     </table>
     <table id="40" parent="12" name="video">
       <ObjectId>16914</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>541</StateNumber>
     </table>
