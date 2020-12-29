@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="public/img/icon.png" />
 
     <title>Login</title>
 
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/signin.css" rel="stylesheet">
+    <link href="public/css/styles.css" rel="stylesheet">
+    <link href="public/css/signin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
-    <form class="form-signin" method="post" action="dashboard/action/checkLogin.php">
-        <img class="mb-4" src="img/icon.png" alt="" width="100" height="100">
+    <form class="form-signin" method="post" action="action/checkLogin.php">
+        <img class="mb-4" src="../img/icon.png" alt="" width="100" height="100">
         <h1 class="h3 mb-3 font-weight-normal">Login</h1>
         <?php
         if (isset($_SESSION['error']))

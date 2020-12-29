@@ -5,7 +5,7 @@ $title = basename($_SERVER['SCRIPT_NAME']);
 //role: 0-aluno, 1-professor, 2-admin
 
 if(!isset($_SESSION['user'])&& $_SESSION['login'] == FALSE){
-    header("Location: ../login.php" );
+    header("Location: login.php" );
     exit();
 }
 
