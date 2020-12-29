@@ -1,4 +1,4 @@
-SET search_path to explicaFeup;
+SET search_path to explicaFeup2;
 
 INSERT INTO Userr
 VALUES('fabio123','fabio@hotmail.com','915487895','Fabio Andre', '$2y$10$VwAhND9H9voMR.rrlyd.8umf3B4M2YTMJ1mo7VDmUClRLIdaR.8q2', '266757014', null ,'08/12/1997',0, null, null, null),
