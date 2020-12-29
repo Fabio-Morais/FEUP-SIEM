@@ -34,10 +34,12 @@ class User{
      * Edit user info
      */
     public function editUserInfo($conn,$originalUser, $user){
-        if(!empty($user->image))
-            $query = "UPDATE userr set  name = '".$user->name."', email = '".$user->email."',phone= '".$user->phone."', image = '".$user->image."', nif = '".$user->nif."',birthDate = '".$user->birthDate."',about = '".$user->about."',hobbies = '".$user->hobbies."' WHERE username='".$originalUser."'";
+        if($user->birthDate =="")
+            $query = "UPDATE userr set  name = '".$user->name."', email = '".$user->email."',phone= '".$user->phone."', image = '".$user->image."', nif = '".$user->nif."',about = '".$user->about."',hobbies = '".$user->hobbies."',gender = '".$user->gender."' WHERE username='".$originalUser."'";
+        else if(!empty($user->image))
+            $query = "UPDATE userr set  name = '".$user->name."', email = '".$user->email."',phone= '".$user->phone."', image = '".$user->image."', nif = '".$user->nif."',birthDate = '".$user->birthDate."',about = '".$user->about."',hobbies = '".$user->hobbies."',gender = '".$user->gender."' WHERE username='".$originalUser."'";
         else
-            $query = "UPDATE userr set  name = '".$user->name."', email = '".$user->email."',phone= '".$user->phone."', nif = '".$user->nif."',birthDate = '".$user->birthDate."',about = '".$user->about."',hobbies = '".$user->hobbies."' WHERE username='".$originalUser."'";
+            $query = "UPDATE userr set  name = '".$user->name."', email = '".$user->email."',phone= '".$user->phone."', nif = '".$user->nif."',birthDate = '".$user->birthDate."',about = '".$user->about."',hobbies = '".$user->hobbies."',gender = '".$user->gender."' WHERE username='".$originalUser."'";
         $result = pg_exec($conn, $query);
         return $result;
     }

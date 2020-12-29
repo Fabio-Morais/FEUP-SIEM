@@ -46,6 +46,17 @@ echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
             </div>
         </div>
     </div>
+    <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Sexo</label>
+        <div class="col-lg-9">
+            <label class="radio-inline" >
+                <input type="radio" class="form-check-label" name="gender" style="transform:scale(1.6);" value="f" checked> Mulher
+            </label>
+        <label class="radio-inline ml-4">
+            <input type="radio" class="form-check-label" name="gender" style="transform:scale(1.6);" value="m"> Homem
+        </label>
+        </div>
+    </div>
 
     <div class="form-group row">
         <label class="col-lg-3 col-form-label form-control-label">NIF</label>

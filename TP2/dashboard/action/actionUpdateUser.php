@@ -12,6 +12,7 @@ class FormulUser{
     public $birthDate;
     public $about;
     public $hobbies;
+    public $gender;
 
 }
 $originalUser = $_GET['originalUser'];
@@ -32,8 +33,9 @@ if($connected){
         $user->birthDate = $_POST['birthDate'];
         $user->about = $_POST['about'];
         $user->hobbies = $_POST['hobbies'];
-
+        $user->gender = $_POST['gender'];
         $user->image="";
+        echo $_POST['birthDate'];
         /*Guarda imagem e envia para a db o nome do ficheiro  (user_USERNAME_FILEEXAMPLE.png) */
         if(!empty($_FILES['image']['name'])){
             $prefixo = 'user_'; // definir um prefixo apropriado para identificação
