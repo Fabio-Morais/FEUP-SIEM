@@ -51,16 +51,6 @@ class Student{
         return pg_exec($conn, $query);
     }
 
-    
-    /**
-     * Menu Users admin
-     * Return the grade of student $username
-     */
-    public function getStudentGrade($conn, $username){
-        $query = "SELECT grade from Student where username='".$username."';";
-        return pg_exec($conn, $query);
-    }
-
        
     /**
      * Menu Alunos professor
@@ -90,7 +80,7 @@ class Student{
      * Enroll Student
      */
     public function enrollStudent($conn, $username, $coursename){
-        $query = "INSERT INTO enrolled (username, coursename, coursegrade) VALUES('".$username."', '".$coursename."', 0)";
+        $query = "INSERT INTO enrolled (username, coursename, coursegrade) VALUES('".$username."', '".$coursename."', -1)";
         $result = pg_exec($conn, $query);
         return $result;
     }

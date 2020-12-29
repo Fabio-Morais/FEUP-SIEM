@@ -13,7 +13,7 @@ $ordersQuery = "";
 $connected = false;
 if ($db->connect()) {
 
-    $ordersQuery = $db->getOrdersByUser($aux['username']);
+    $ordersQuery = $db->getOrdersByUser($_SESSION['user']);
     $connected = true;
     $orders = pg_fetch_assoc($ordersQuery);
 

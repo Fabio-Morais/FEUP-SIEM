@@ -5,7 +5,7 @@
 
 <?php
 
-$username = $aux['username'];
+$username = $_SESSION['user'];
 
 include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 /*Para retirar a visibilidade do erro*/
@@ -16,7 +16,7 @@ $connected = false;
 
 
 $total['count'] = "--";
-$grade['grade'] = "--";
+$grade['avg'] = "--";
 if ($db->connect()) {
     /*$image = 'public/img/avatar1.png';
   $imageData = base64_encode(file_get_contents($image));
@@ -26,7 +26,7 @@ if ($db->connect()) {
     $queryInfo = pg_fetch_assoc($user);
     if ($queryInfo["role"] == 0) {/*Aluno*/
         $totalQuery = $db->getTotalCoursesStudent($username);
-        $gradeQuery = $db->getStudentGrade($username);
+        $gradeQuery = $db->getStudentAverage($username);
         $coursesQuery = $db->getCoursesStudent($username);
         $ordersQuery = $db->getOrdersByUser($username);
 
@@ -99,8 +99,8 @@ $title = basename($_SERVER['SCRIPT_NAME']);
                                         <small class="mb-0 font-weight-bold">Cursos</small>
                                     </div>
                                     <div class="col p-2">
-                                        <h4 class="mb-1 line-height-5"> <?php echo $grade['grade'] ?></h4>
-                                        <small class="mb-0 font-weight-bold">Nota</small>
+                                        <h4 class="mb-1 line-height-5"> <?php echo ($grade['avg'] != "") ? $grade['avg'] :"--" ?></h4>
+                                        <small class="mb-0 font-weight-bold">Média</small>
                                     </div>
 
                                 </div>

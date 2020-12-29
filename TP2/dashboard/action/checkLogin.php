@@ -25,6 +25,7 @@ if(pg_num_rows($query) > 0){
         unset($_SESSION['error']);
         $_SESSION['user'] = $user;
         $_SESSION['password'] = $password;
+        $_SESSION['role'] = $data['role'];
         $_SESSION['login'] = TRUE;
         if(!empty($_POST["remember"]))
         {

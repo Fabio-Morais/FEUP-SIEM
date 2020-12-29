@@ -15,12 +15,12 @@ $courses2 = "";
 $connected = false;
 
 if ($db->connect()) {
-    $coursesQuery = $db->getStudentCourses($aux['username']);
+    $coursesQuery = $db->getStudentCourses($_SESSION['user']);
     $connected = true;
     $courses = pg_fetch_assoc($coursesQuery);
     $videosQuery = $db->getVideoLinks($courses['coursename']);
     $videos = pg_fetch_assoc($videosQuery);
-    $coursesQuery2 = $db->getStudentCourses($aux['username']);
+    $coursesQuery2 = $db->getStudentCourses($_SESSION['user']);
     $courses2 = pg_fetch_assoc($coursesQuery2);
 } else
     Alerts::showError(Alerts::DATABASEOFF);
@@ -89,8 +89,10 @@ function clean($string) {
                                         $videos = pg_fetch_assoc($videosQuery);
                                     }
                                     $courses = pg_fetch_assoc($coursesQuery);
-                                    $videosQuery = $db->getVideoLinks($courses['coursename']);
-                                    $videos = pg_fetch_assoc($videosQuery);
+                                    if(isset($courses['coursename'])){
+                                        $videosQuery = $db->getVideoLinks($courses['coursename']);
+                                        $videos = pg_fetch_assoc($videosQuery);
+                                    }
                             }
                             endif;
                             ?>

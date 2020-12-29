@@ -9,14 +9,14 @@ if(!empty($_SESSION['email']))
     $email=$_SESSION['email'];
 if(!empty($_SESSION['username'])){
     $username=$_SESSION['username'];
-    $role[0]=$_SESSION['role'][0];
-    $role[1]=$_SESSION['role'][1];
-    $role[2]=$_SESSION['role'][2];
+    $role[0]=$_SESSION['roleCreate'][0];
+    $role[1]=$_SESSION['roleCreate'][1];
+    $role[2]=$_SESSION['roleCreate'][2];
 }
 $_SESSION['name']=NULL;
 $_SESSION['email']=NULL;
 $_SESSION['username']=NULL;
-$_SESSION['role']=NULL;
+$_SESSION['roleCreate']=NULL;
 ?>
 
 <div class="modal fade " id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
