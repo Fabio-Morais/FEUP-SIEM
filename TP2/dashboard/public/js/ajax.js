@@ -1,21 +1,12 @@
+/**
+ * Ajax Functions
+ * @author- Fábio and Fernando
+ * */
+
 function updateModalStudent(response){
-    /**about: null
-     birthdate: "1998-01-12"
-     color: null
-     email: "joao@hotmail.com"
-     hobbies: null
-     image: null
-     name: "Joao Silva"
-     nif: "233487875"
-     phone: "915487895"
-     role: "0"
-     username: "joao12"*/
     user = response[0]
     numCourses = response[1]['count']
     grade = response[2]['avg']
-    /**coursegrade: "0"
-     coursename: "c++"
-     username: "joao12"*/
     courses = response[3]
     /*BACK COLOR*/
     if(user['color']!=null){
@@ -105,6 +96,9 @@ function updateModalStudent(response){
 
 }
 
+/*Alunos.php
+* When the user press the button to see more informations about the user X
+* */
 function showStudentInfo(student){
     if (student == "") {
         return;

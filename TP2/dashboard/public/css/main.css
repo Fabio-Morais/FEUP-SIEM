@@ -1,3 +1,12 @@
+body {
+    font-family: Roboto, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family:  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #1D3557;
+}
 a .icon {
     height: 50px;
 }
@@ -514,5 +523,61 @@ Paginas
     }
 }
 
+.customIconWeather {
+    font-size: 30px;
+}
+.fa-tint{
+    color:#457B9D;
+}
+.fa-wind{
+ color: #E63946;
+}
+.container-fluid > .text-center{
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    animation-delay: 0.3s;
+}
 
+.title{
+    color:#457B9D;
+    font-weight: 700;
+}
+.card-header{
+    background-color: #F8F9FA;
+}
+.js-cd-add-to-cart{
+    background-color: #457B9D;
+    color:#F1FAEE;
 
+}
+.cd-cart__checkout{
+    background-color: #457B9D!important;
+}
+.breadcrumb{
+    background-color: #F8F9FA;
+}
+
+.breadcrumb-item + .active{
+    color:#1D3557 !important;
+}
+.card-header{
+    color: #1D3557;
+}
+.card-header  .mr-1{
+    color: #457B9D;
+}
+.card-header .fa-history{
+    color: #457B9D;
+}
+.indexBox{
+    color:#457B9D!important
+}
+.indexBox2{
+    color:#1D3557!important
+}
+.col-auto > .text-gray-300{
+    color: rgba(29, 53, 87,0.5) !important
+}
+.textClock{
+    color:#CED4DA!important;
+}

@@ -17,21 +17,21 @@
 <script src="public/js/main.js"></script>
 <script src="public/js/table.js"></script>
 <script src="public/js/scripts.js"></script>
-<script src="public/js/validateForms.js"></script>
+<script src="public/js/cookie.js"></script>
+<script src="public/js/forms/validateForms.js"></script>
 <script src="includes/libs/nif-pt.js"></script>
 
 <!--Get the title of the page-->
 <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
 <?php if ($title == "users.php" || $title == "alunos.php" || $title == "comprar_curso.php") :?>
-    <script src="public/js/users.js"></script>
+    <script src="public/js/pagination.js"></script>
     <script src="public/js/ajax.js"></script>
     <script src="public/js/filters.js"></script>
-
 <?php endif;?>
 
 <?php if ($title == "perfil.php" ) :?>
-    <script src="public/js/validatePassword.js"></script>
+    <script src="public/js/forms/validatePassword.js"></script>
 <?php endif;?>
 
 
@@ -39,9 +39,13 @@
     <script src="public/js/cart/util.js"></script>
     <script src="public/js/cart/main.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-
 <?php endif;?>
+
+<?php if ($title == "index.php" ) :?>
+    <script src="includes/libs/postIt/jquery.postitall.js"></script>
+    <script src="public/js/postIt.js"></script>
+<?php endif;?>
+
 </body>
 
 </html>

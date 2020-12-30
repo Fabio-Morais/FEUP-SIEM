@@ -77,7 +77,7 @@ function clean($string) {
                                         #echo "".$courses["coursename"]." ".$videos["youtubelink"]." ";
                                         #echo "". preg_replace("/\s+/", "", $courses['coursename']) ."";
 
-                                        echo "<div class=\"col-md-4 ". preg_replace("/\s+/", "", clean($courses['coursename'])) ." all\">";
+                                        echo "<div class=\"col-md-4 ". preg_replace("/\s+/", "", clean($courses['coursename'])) ." all\" style=\"display:none\">";
                                         echo "<div class=\"pb-2\">";
                                         echo    "<a data-fancybox=\"video-gallery\" href=\" ".$videos["youtubelink"]." ;\">";
                                         echo        "<div class=\"card-header\">";

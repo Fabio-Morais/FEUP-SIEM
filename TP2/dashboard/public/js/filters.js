@@ -1,12 +1,13 @@
 /**
  * Filters implementation
  * Features: search by name, search by price range
+ * @author- Fábio and Fernando
  * */
 
 
-/**
+/****************************************************
  * COMPRAR_CURSO.PHP
- * */
+ ****************************************************/
 var min = 0;
 var max = 300;
 var input = "";
@@ -103,6 +104,7 @@ $(function () {
     }
 });
 
+
 function sortPriceAsc(){
     /*price ASC*/
     $('.content').sort(function(a, b) {
@@ -141,6 +143,7 @@ function categoryFunction(event) {
     category = $(event).data('value')
 }
 
+/*Button when the user choose between order by name, order by price....*/
 function changeSort(event) {
     $(event).hide()
     console.log($("option:selected")[0].value)
@@ -165,7 +168,7 @@ function changeSort(event) {
     }
 }
 
-
+/*Button when the user choose between ASC or DESC*/
 function selectChange(event) {
     var optionSelected = $("option:selected", event)[0].value;
     /*hide and show sort icon*/
@@ -191,12 +194,11 @@ function selectChange(event) {
 $( document ).ready(function() {
     $("#sortIconDesc").hide()
     $("#sortIconAsc").hide()
-
 });
-/*********************************************************************/
-/**
+
+/****************************************************
  * ALUNOS.PHP and USERS.PHP
- * */
+ ****************************************************/
 
 jQuery.expr[':'].ContainsStudent = function (a, i, m) {
     input = m[3].toUpperCase();

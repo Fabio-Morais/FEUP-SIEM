@@ -1,4 +1,15 @@
+/**
+ * Chart Class
+ * @author- Fábio and Fernando
+ * */
 export default class ChartBuild{
+    /**
+     * @param- graph-> 0:line chart; 1: pie chart; 2:bar chart
+     * @param- id-> id of the graph
+     * @param- data-> data for the graph
+     * @param- name-> name for the graph
+     * @param- label-> label for the graph
+     * */
     constructor(graph, id,data,name, label) {
         this.graph = graph;
         this.id = id;
@@ -18,7 +29,6 @@ export default class ChartBuild{
         var min = parseInt(this.data[keys[0]]); // ignoring case of empty list for conciseness
         var max = parseInt(this.data[keys[0]]);
         var i;
-        console.log("init:"+min+":"+max)
         for (i = 1; i < keys.length; i++) {
             var value = parseInt(this.data[keys[i]]);
             if (value < min) min = value;
@@ -34,12 +44,12 @@ export default class ChartBuild{
     labelTextAxis(xAxis, yAxis){
         this.xAxis = xAxis;
         this.yAxis = yAxis;
+
     }
     /*Create an array of colors*/
     colorsPie() {
         this.colorArray=["#CA6A63", "#A4C2C5", "#CE808E", "#C8D3A8", "#200E62", "#469343", "#6C1EE1", "#5de35e", "#ec9576", "#fa173a", "#6c7160", "#bc0d79", "#8fbab4", "#1d61d6", "#656234", "#2d04df", "#d16881", "#f9b799", "#595875", "#35644e"];
     }
-
 
     execute(){
         // Set new default font family and font color to mimic Bootstrap's default styling
@@ -58,13 +68,13 @@ export default class ChartBuild{
                 datasets: [{
                     label: this.name,
                     lineTension: 0.3,
-                    backgroundColor: "rgba(2,117,216,0.2)",
-                    borderColor: "rgba(2,117,216,1)",
+                    backgroundColor: "rgba(69,123,157,0.2)",
+                    borderColor: "rgba(69,123,157,1)",
                     pointRadius: 5,
                     pointBackgroundColor: "rgba(2,117,216,1)",
                     pointBorderColor: "rgba(255,255,255,0.8)",
                     pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(2,117,216,1)",
+                    pointHoverBackgroundColor: "rgba(230,57,70,0.7)",
                     pointHitRadius: 50,
                     pointBorderWidth: 2,
                     data: this.data ,
@@ -141,8 +151,8 @@ export default class ChartBuild{
                     labels: this.label,
                     datasets: [{
                         label: this.name,
-                        backgroundColor: "rgba(2,117,216,1)",
-                        borderColor: "rgba(2,117,216,1)",
+                        backgroundColor: "rgba(69,123,157,0.8)",
+                        borderColor: "rgba(69,123,157,0.8)",
                         data: this.data,
                     }],
                 },
