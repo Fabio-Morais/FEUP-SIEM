@@ -15,10 +15,6 @@ $nif = $_POST['nif'];
 $phone = $_POST['phone'];
 $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $productname = $_GET['course'];
-#$productnameEncoded = $_GET['course'];
-#$productname =  str_replace(" ", "+", $productnameEncoded);
-#while(isset($productname))
-    #echo "".$productname."";
 
 if ($password !== $password_confirm) {
 	$_SESSION['passerror'] = TRUE;
@@ -48,6 +44,7 @@ if (empty($username) || empty($password) || empty($name))
     $db->enrollStudent($username, $productname);
 
     $_SESSION['user'] = $username;
+    $_SESSION['role'] = 0;
     $_SESSION['login'] = TRUE;
 
     header("location: ../index.php");
