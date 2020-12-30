@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS Userr(
     about text,
     hobbies text,
     color VARCHAR(20) DEFAULT '#1B49C2',
-    gender VARCHAR(5) DEFAULT 'm';
+    gender VARCHAR(5) DEFAULT 'm'
 );
 
 CREATE TABLE IF NOT EXISTS Student(

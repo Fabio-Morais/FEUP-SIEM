@@ -1,13 +1,16 @@
 $(document).ready(function() {
+    var json_str = getCookie('postIt');
+    var arr = JSON.parse(json_str);
 
     $.PostItAll.changeConfig('global', {
         randomColor : false,
         addArrow : 'all',
 
     });
+
     $.PostItAll.changeConfig('note', {
         width : 160,
-        height : 100,
+        height : 70,
         style : {
             backgroundcolor : '#fffa3c',
             textcolor       : '#333333',
@@ -23,11 +26,12 @@ $(document).ready(function() {
     });
     var timer=0;
     setTimeout(function() { $('.idAddDemoPostit').postitall({
+        content : arr[0],
         onChange: function(id) {
-            console.log("onChange");
+            console.log($(id)[0].innerHTML)
             clearTimeout(timer); //cancel the previous timer.
             timer = null;
-            timer =setTimeout(function() { createCookiePostIt();}, 1500);
+            timer =setTimeout(function() { createCookiePostIt(id)}, 1500);
         }
 
     }); }, 1000);
@@ -37,6 +41,9 @@ $(document).ready(function() {
 
 });
 
-function createCookiePostIt(){
-    console.log("entrou")
+function createCookiePostIt(id){
+    var arr=[];
+    arr.push($(id)[0].innerText)
+    var result = JSON.stringify(arr)
+    createCookie('postIt', result, 1, 'day')
 }

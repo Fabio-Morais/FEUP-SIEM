@@ -1,6 +1,5 @@
 <?php
 session_start();
-require "../../configuration.php";
 include_once(dirname(__FILE__) . "/../dataBase/dataBase.php");
 
 unset($_SESSION['error']);
