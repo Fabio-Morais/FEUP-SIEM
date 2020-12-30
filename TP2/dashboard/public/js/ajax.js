@@ -111,8 +111,26 @@ function showStudentInfo(student){
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
             updateModalStudent(response)
-
         }
     };
+
+}
+
+/*Chat.php
+* Send the message to database
+* */
+function sendMessageDb(message, from, to){
+    if (message == "" || from == "" ||  to == ""  ) {
+        return false;
+    }
+    console.log(message)
+    console.log(from)
+    console.log(to)
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/addMessage.php?message="+message+"&userFrom="+from+"&userTo="+to, true);
+    xhttp.send();
+
+return true;
 
 }

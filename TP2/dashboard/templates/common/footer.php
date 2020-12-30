@@ -46,6 +46,11 @@
     <script src="public/js/postIt.js"></script>
 <?php endif;?>
 
+<?php if ($title == "chat.php" ) :?>
+    <script src="public/js/chat.js"></script>
+    <script src="public/js/ajax.js"></script>
+<?php endif;?>
+
 </body>
 
 </html>

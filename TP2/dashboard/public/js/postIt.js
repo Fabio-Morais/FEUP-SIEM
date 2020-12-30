@@ -1,6 +1,8 @@
 $(document).ready(function() {
     var json_str = getCookie('postIt');
-    var arr = JSON.parse(json_str);
+    var arr=[]
+    if(json_str)
+        arr = JSON.parse(json_str);
 
     $.PostItAll.changeConfig('global', {
         randomColor : false,
@@ -28,7 +30,6 @@ $(document).ready(function() {
     setTimeout(function() { $('.idAddDemoPostit').postitall({
         content : arr[0],
         onChange: function(id) {
-            console.log($(id)[0].innerHTML)
             clearTimeout(timer); //cancel the previous timer.
             timer = null;
             timer =setTimeout(function() { createCookiePostIt(id)}, 1500);

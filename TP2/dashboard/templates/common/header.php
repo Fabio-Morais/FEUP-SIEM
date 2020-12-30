@@ -16,6 +16,8 @@
     <link href="public/css/styles.css" rel="stylesheet" />
     <link href="public/css/main.css" rel="stylesheet" />
     <link href="public/css/profile.css" rel="stylesheet" />
+    <link href="public/css/chat.css" rel="stylesheet" />
+
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
