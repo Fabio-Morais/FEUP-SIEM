@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS Userr(
     role INTEGER DEFAULT 0,
     about text,
     hobbies text,
-    color VARCHAR(20) DEFAULT '#1B49C2'
+    color VARCHAR(20) DEFAULT '#1B49C2',
+    gender VARCHAR(5) DEFAULT 'm';
 );
 
 CREATE TABLE IF NOT EXISTS Student(

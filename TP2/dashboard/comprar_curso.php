@@ -60,9 +60,6 @@ if ($db->connect()) {
                                 </header>
                                 <div class="filter-content collapse show" id="collapse_3" style="">
                                     <div class="card-body">
-
-                                        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-
                                         <div id="slider-range"></div>
 
                                         <div class="form-row">
@@ -254,7 +251,10 @@ if ($db->connect()) {
             button    : '.my-btn'
         });
         document.getElementById("submitButton").onclick = function () {
-            document.getElementById("carrinho").submit();
+            /*just submit when the checkout is > than 0*/
+            if($("#submitButton > em > span")[0].innerHTML > 0.0){
+                document.getElementById("carrinho").submit();
+            }
         }
         $("#ex2").slider({});
     </script>
@@ -291,4 +291,5 @@ console.log(encodeURIComponent(course))
             }
         };
     }
+
 </script>

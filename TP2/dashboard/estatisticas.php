@@ -111,6 +111,7 @@ if ($db->connect()) {
         if ( option=== "option1") {
             var data = <?php echo json_encode($data) ?>;
             var label = <?php echo json_encode($label) ?>;
+            console.log(data)
             let chart = new ChartBuild(0, "myAreaChart", data, "Lucro", label);
             chart.labelTextAxis("Data", "Lucro (€)");
             chart.execute();

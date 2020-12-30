@@ -184,3 +184,15 @@ function validateFormAddUser() {
 
     return (isOk==1);
 }
+
+
+/**
+ * Form validation of register user in register.php
+ * */
+function validateFormRegister() {
+
+
+    console.log("asdasd")
+    return false;
+    return (isOk==1);
+}

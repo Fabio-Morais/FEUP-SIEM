@@ -44,7 +44,7 @@ if (isset($_POST["course"])) {
                         <?php
                         $total = 0;
                         for ($i = 0; $i < $size; $i++):?>
-                            <input type="hidden" name="course[]" value="<?php echo $course[$i] ?>" class="<?php echo str_replace(" ","",$course[$i]) ?> "/>
+                            <input type="hidden" name="course[]" value="<?php echo $course[$i] ?>" class="<?php echo preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(" ","",$course[$i])) ?>"/>
                             <input type="hidden" name="image[]" value="<?php echo $image[$i] ?>" class="<?php echo str_replace(" ","",$course[$i]) ?>"/>
                             <input type="hidden" name="price[]" value="<?php echo explode("€", $price[$i])[0]?>" class="<?php echo str_replace(" ","",$course[$i]) ?>"/>
 
@@ -66,7 +66,7 @@ if (isset($_POST["course"])) {
                                 </td>
                                 <td>
                                     <div class="price-wrap">
-                                        <var class="price"><?php echo explode("€", $price[$i])[0];
+                                        <var class="price<?php echo preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(" ","",$course[$i])) ?>"><?php echo explode("€", $price[$i])[0];
                                             $total += explode("€", $price[$i])[0] ?> €</var>
                                     </div> <!-- price-wrap .// -->
                                 </td>
@@ -80,8 +80,8 @@ if (isset($_POST["course"])) {
                     </table>
 
                     <div class="card-body border-top">
-                        <a type="submit" class="btn btn-primary float-md-right" id="submitButton"> Comprar <i
-                                    class="fa fa-chevron-right"></i> </a>
+                        <button type="submit" class="btn btn-primary float-md-right" id="submitButton"> Comprar <i
+                                    class="fa fa-chevron-right"></i> </button>
                         <a href="comprar_curso.php" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Continuar
                             a comprar </a>
                     </div>
@@ -129,10 +129,25 @@ if (isset($_POST["course"])) {
     document.getElementById("submitButton").onclick = function () {
         document.getElementById("checkout").submit();
     }
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    function createCookie(cname, cvalue, exdays, dayMinute) {
+        var d = new Date();
+        if (dayMinute == "day")
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        else if (dayMinute == "minute")
+            d.setTime(d.getTime() + (exdays * 60 * 1000));
 
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
     //window.history.replaceState(null, null, window.location.pathname);
     function remove(e, count) {
-        var price = document.getElementsByClassName("price")[count].innerHTML.split("€")[0]
+        var course = e.id.replace(/[^\w\s]/gi, '')
+        var price = document.getElementsByClassName("price"+course+"")[0].innerHTML.split("€")[0]
         totalPrice = document.getElementById("totalPrice").innerText.split("€")[0]
         iva = document.getElementById("iva").innerText.split("€")[0]
         finalPrice = document.getElementById("finalPrice").innerText.split("€")[0]
@@ -146,8 +161,22 @@ if (isset($_POST["course"])) {
         document.getElementById("iva").innerText = iva + " €";
         document.getElementById("finalPrice").innerText = finalPrice + " €";
 
-        console.log(e.id)
-console.log($("."+e.id).remove())
+        var asd = JSON.parse(getCookie('cartCookie'))//get the cookie
+        /*search for the id or class that are defined and delete from the array*/
+        for(i=asd.length; i >= 0; i--){
+            if($(asd[i]).filter("#"+course).html() != null || $(asd[i]).filter("."+course).html() != null){
+                asd.splice(i, 1);
+            }
+        }
+        /*reset the cookie*/
+        var json_str = JSON.stringify(asd);
+        createCookie('cartCookie', json_str,1, "day");
+        $("."+course).remove()
         e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+        if(finalPrice <= 0){
+            $('#submitButton').attr("disabled", true);
+        }
     }
+
+
 </script>

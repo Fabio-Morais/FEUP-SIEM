@@ -20,7 +20,11 @@ class Order{
         return $result;
     }
     public function getTotalYearProfit($conn){
-        $query = "SELECT  SUM(CAST(price as INT)) as price,to_char(to_date(purchasedate, 'DD/MM/YYYY'),'DD/MM/YYYY') as date FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = to_char(now()::date,  'YYYY') GROUP BY purchasedate ORDER BY to_date(purchasedate, 'DD/MM/YYYY');";
+        $query = "SELECT  SUM(CAST(price as INT)) as price,to_char(to_date(purchasedate, 'DD/MM/YYYY'),'DD/MM/YYYY') as date
+                    FROM explicafeup.Orderr
+                    WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = to_char(now()::date,  'YYYY')
+                    GROUP BY to_date(purchasedate, 'DD/MM/YYYY')
+                    ORDER BY to_date(purchasedate, 'DD/MM/YYYY');";
         $result = pg_exec($conn, $query);
         return $result;
     }

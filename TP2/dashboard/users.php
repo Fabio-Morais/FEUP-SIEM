@@ -53,7 +53,7 @@ function role($var)
                                 $row = pg_fetch_assoc($users);
                                 continue;
                             }
-                            /*Obter numero de cursos*/
+                            /*Get number of courses*/
                             $courses = "--";
                             if($row["role"]==0){
                                 $totalCourses = $db->getTotalCoursesStudent($row["username"]);
@@ -64,12 +64,19 @@ function role($var)
                              if($row["role"]==1) {
                                  $totalQuery = $db->getTotalCoursesTeacher($row["username"]);
                                  $total = pg_fetch_assoc($totalQuery);
-                                 $courses=$total['count'];
+                                 if(isset($total['count']))
+                                     $courses=$total['count'];
                              }
-                            /*Obter nota do estudante*/
+                            /*Get student grade*/
                             $grade = $db->getStudentAverage($row["username"]);
                             $row3 = pg_fetch_assoc($grade);
                             $grade = "--";
+
+                            /*if the user is a girl, show a default girl avatar*/
+                            $avatar="avatar.png";
+                            if($row['gender']=='f')
+                                $avatar="avatarGirl.png";
+
                             if (isset($row3["avg"]) && $row3["avg"] > 0.0)
                                 $grade = sprintf("%.1f", $row3["avg"]);
 
@@ -80,7 +87,7 @@ function role($var)
                             echo                "<h3 class=\"widget-user-username text-center textAdapt\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">";/*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/$avatar'\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . role($row['role']) . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/

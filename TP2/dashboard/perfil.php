@@ -40,6 +40,10 @@ if ($db->connect()) {
         $coursesQuery = $db->getCoursesTeacher($username);
         $courses = pg_fetch_assoc($coursesQuery);
     }
+    /*if the user is a girl, show a default girl avatar*/
+    $avatar="avatar.png";
+    if($queryInfo['gender']=='f')
+        $avatar="avatarGirl.png";
 } else
     Alerts::showError(Alerts::DATABASEOFF);
 
@@ -77,7 +81,7 @@ $title = basename($_SERVER['SCRIPT_NAME']);
                                     </div>
                                 </form>
                                 <div class="user-box mb-4">
-                                    <img src="public/img/users/<?php echo $queryInfo['image']?>" alt="user avatar" onerror="javascript:this.src='public/img/avatar.png'"/>
+                                    <img src="public/img/users/<?php echo $queryInfo['image']?>" alt="user avatar" onerror="javascript:this.src='public/img/<?php echo $avatar?>'"/>
                                 </div>
                                 <h4 class="mb-2 textAdapt" ><?php echo  $queryInfo['name'] ?></h4>
                                 <h6 class="mb-1 textAdapt" ><?php echo role($queryInfo['role']) ?></h6>

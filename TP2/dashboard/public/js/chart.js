@@ -12,39 +12,32 @@ export default class ChartBuild{
             this.colorsPie();
         }
     }
-    /*Determina os limites dos graficos*/
+    /*Generate the limits of the graph*/
     limits() {
         var keys = Object.keys(this.data);
-        var min = this.data[keys[0]]; // ignoring case of empty list for conciseness
-        var max = this.data[keys[0]];
+        var min = parseInt(this.data[keys[0]]); // ignoring case of empty list for conciseness
+        var max = parseInt(this.data[keys[0]]);
         var i;
-
+        console.log("init:"+min+":"+max)
         for (i = 1; i < keys.length; i++) {
-            var value = this.data[keys[i]];
+            var value = parseInt(this.data[keys[i]]);
             if (value < min) min = value;
             if (value > max) max = value;
         }
-    /*Margem para se ver melhor*/
-        this.yMin = parseInt(min) - Math.round(parseInt(min)/4);
+        this.yMin =min - Math.round(min/4);
         if(this.yMin <= 0)
             this.yMin=0;
-        this.yMax = parseInt(max) + Math.round(parseInt(max)/4);
-
+        this.yMax = max + Math.round(max/4);
 
     }
-    /*Coloca o texto nos eixos X e Y*/
+    /*Put the text in the axis */
     labelTextAxis(xAxis, yAxis){
         this.xAxis = xAxis;
         this.yAxis = yAxis;
     }
-    /*Cria um array de cores automaticamente*/
+    /*Create an array of colors*/
     colorsPie() {
-        this.colorArray=["#CA6A63", "#A4C2C5", "#CE808E", "#C8D3A8", "#200E62", "#469343", "#6C1EE1"];
-        /*var i;
-        for (i = 0; i < this.data.length; i++) {
-            this.colorArray[i] = this.getRandomColor();
-        }
-        console.log(this.colorArray)*/
+        this.colorArray=["#CA6A63", "#A4C2C5", "#CE808E", "#C8D3A8", "#200E62", "#469343", "#6C1EE1", "#5de35e", "#ec9576", "#fa173a", "#6c7160", "#bc0d79", "#8fbab4", "#1d61d6", "#656234", "#2d04df", "#d16881", "#f9b799", "#595875", "#35644e"];
     }
 
 
