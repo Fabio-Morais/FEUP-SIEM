@@ -1,21 +1,12 @@
+/**
+ * Ajax Functions
+ * @author- Fábio and Fernando
+ * */
+
 function updateModalStudent(response){
-    /**about: null
-     birthdate: "1998-01-12"
-     color: null
-     email: "joao@hotmail.com"
-     hobbies: null
-     image: null
-     name: "Joao Silva"
-     nif: "233487875"
-     phone: "915487895"
-     role: "0"
-     username: "joao12"*/
     user = response[0]
     numCourses = response[1]['count']
     grade = response[2]['avg']
-    /**coursegrade: "0"
-     coursename: "c++"
-     username: "joao12"*/
     courses = response[3]
     /*BACK COLOR*/
     if(user['color']!=null){
@@ -105,6 +96,9 @@ function updateModalStudent(response){
 
 }
 
+/*Alunos.php
+* When the user press the button to see more informations about the user X
+* */
 function showStudentInfo(student){
     if (student == "") {
         return;
@@ -117,8 +111,26 @@ function showStudentInfo(student){
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
             updateModalStudent(response)
-
         }
     };
+
+}
+
+/*Chat.php
+* Send the message to database
+* */
+function sendMessageDb(message, from, to){
+    if (message == "" || from == "" ||  to == ""  ) {
+        return false;
+    }
+    console.log(message)
+    console.log(from)
+    console.log(to)
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/addMessage.php?message="+message+"&userFrom="+from+"&userTo="+to, true);
+    xhttp.send();
+
+return true;
 
 }

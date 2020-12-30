@@ -1,4 +1,9 @@
 /**
+ * Forms validations
+ * @author- Fábio and Fernando
+ * */
+
+/**
  * Email validation
  * */
 function validateEmail(email) {

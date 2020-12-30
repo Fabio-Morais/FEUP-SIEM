@@ -121,7 +121,7 @@ if ($db->connect()) {
                                     echo "              <del class=\"price-old\">" . (intval($row["price"]) + 5) . "€</del> ";
                                     echo "          </div> ";
                                     echo "      </div> ";
-                                    echo "      <button  class=\"btn btn-block btn-primary js-cd-add-to-cart my-btn\"  data-price=\"".$row["price"]."\" >Adicionar ao carrinho</button> ";
+                                    echo "      <button  class=\"btn btn-block btn-primary js-cd-add-to-cart my-btn\"  data-price=\"".$row["price"]."\" data-user=\"".$_SESSION['user']."\">Adicionar ao carrinho</button> ";
                                     echo "  </figcaption> ";
                                     echo " </figure> ";
                                     echo "</div>";

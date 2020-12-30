@@ -83,8 +83,8 @@ include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
                 </div>
             </div>
             <div class="sb-sidenav-footer">
-                <h5 class="card-title text-center">
-                    <div class="d-flex flex-wrap justify-content-center mt-2">
+                <h5 class="card-title text-center textClock">
+                    <div class="d-flex flex-wrap justify-content-center mt-2 ">
                         <a><span class="badge hours"><?php date_default_timezone_set('UTC'); echo date("H")?></span></a> :
                         <a><span class="badge min"><?php echo date("i")?></span></a> :
                         <a><span class="badge sec"><?php echo date("s")?></span></a>
