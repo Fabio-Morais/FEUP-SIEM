@@ -5,6 +5,7 @@ include_once(dirname(__FILE__) . "/tables/Student.php");
 include_once(dirname(__FILE__) . "/tables/User.php");
 include_once(dirname(__FILE__) . "/tables/Courses.php");
 include_once(dirname(__FILE__) . "/tables/Video.php");
+include_once(dirname(__FILE__) . "/tables/Chat.php");
 
 final class DataBase
 {
@@ -15,6 +16,7 @@ final class DataBase
     private $user;
     private $course;
     private $video;
+    private $chat;
 
     /**
      * Call this method to get singleton
@@ -42,6 +44,7 @@ final class DataBase
         $this->user = new User();
         $this->course = new Courses();
         $this->video = new Video();
+        $this->chat = new Chat();
 
     }
     /**
@@ -241,8 +244,18 @@ final class DataBase
         return $this->student->getStudentAverage($this->conn, $username);
     }
 
+    public function getTeachersStudent($username)
+    {
+        return $this->student->getTeachersStudent($this->conn, $username);
+    }
+
     public function getAllOrders()
     {
         return $this->order->getAllOrders($this->conn);
+    }
+
+    public function insertMessage($message, $from, $to)
+    {
+        return $this->chat->insertMessage($this->conn, $message, $from, $to);
     }
 }

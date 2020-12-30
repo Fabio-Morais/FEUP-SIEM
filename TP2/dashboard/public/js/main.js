@@ -1,6 +1,11 @@
+/**
+ * Main functions that are common in different pages
+ * */
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+/*Clock*/
 $(document).ready(function() {
     setInterval( function() {
         var hours = new Date().getHours();
@@ -20,22 +25,21 @@ $(document).ready(function() {
 
 });
 
-/*Elimina as mensagens de Sucesso passado X segundos*/
+/*Delete all message after X seconds*/
 async function demo() {
     await sleep(3000);
     $('#alertSucess').remove();
 }
 demo()
 
-/*Ativa a tooltip do bootstrap*/
+/*Tooltip activation */
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
 
-/*Atualiza cor de texto conforme o background*/
+/*Update the text color depending on background color*/
 function setContrast(picker) {
     const rgb = [255, 0, 0];
-
     rgb[0] = Math.round(picker.channel('R'));
     rgb[1] = Math.round(picker.channel('G'));
     rgb[2] = Math.round(picker.channel('B'));

@@ -1,7 +1,9 @@
+
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
     $('#dataTable').DataTable();
 });
+/*Change the language of dataTable*/
 $('#dataTable').DataTable( {
     "language": {
         "lengthMenu": "Mostrar _MENU_ dados por página",

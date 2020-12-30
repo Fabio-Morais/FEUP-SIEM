@@ -19,6 +19,7 @@ if ($db->connect()) {
 ?>
 
 <div class="container-fluid">
+    <div class="justify-content-center m-4">
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-history"></i>
@@ -58,7 +59,7 @@ if ($db->connect()) {
         </div>
         </div>
     </div>
-
+</div>
 
 </div>
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>

@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS Userr(
     about text,
     hobbies text,
     color VARCHAR(20) DEFAULT '#1B49C2',
-    gender VARCHAR(5) DEFAULT 'm';
+    gender VARCHAR(5) DEFAULT 'm'
 );
 
 CREATE TABLE IF NOT EXISTS Student(
@@ -67,4 +67,13 @@ CREATE TABLE IF NOT EXISTS Video(
     id SERIAL PRIMARY KEY,
     youtubeLink VARCHAR(100),
     courseName VARCHAR(100) REFERENCES Course(coursename) ON DELETE CASCADE
-);            
+);        
+
+
+CREATE TABLE IF NOT EXISTS Chat(
+    id SERIAL PRIMARY KEY,
+    messageDate VARCHAR(100) DEFAULT to_char(now(), 'DD-MM-YYYY HH:MI:SS'::text),
+    message VARCHAR(500),
+    userFrom VARCHAR(100) ,
+    userTo VARCHAR(100) 
+); 

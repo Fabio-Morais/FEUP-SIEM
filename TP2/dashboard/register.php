@@ -142,4 +142,4 @@ if ($db->connect()) {
 
 </body>
 </html>
-<script src="public/js/validateForms.js"></script>
+<script src="public/js/forms/validateForms.js"></script>

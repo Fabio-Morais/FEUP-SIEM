@@ -2,6 +2,7 @@
  * jQuery lightweight Fly to
  * Author: @ElmahdiMahmoud
  * Licensed under the MIT license
+
  */
 
 // self-invoking
@@ -14,7 +15,6 @@ function sleep(ms) {
     $.fn.flyto = function ( options ) {
         
     // Establish default settings
-        
         var settings = $.extend({
             item      : '.flyto-item',
             target    : '.flyto-target',
@@ -29,12 +29,11 @@ function sleep(ms) {
                 flybtn   = $this.find(settings.button),
                 target   = $(settings.target),
                 itemList = $this.find(settings.item);
-
+        /*Some changes here*/
         flybtn.on('click',  function () {
             var _this = $(this),
                 eltoDrag = _this.parent().parent().find("img").eq(0);
             var course=$(this).parent().parent().find('.title').html()
-            console.log(course.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-'))
             var aux = $("."+course.replace(/ /g,'').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-'))
             if(aux.length != 0)
                 return
