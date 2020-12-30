@@ -190,9 +190,35 @@ function validateFormAddUser() {
  * Form validation of register user in register.php
  * */
 function validateFormRegister() {
+    var email = document.forms["registo"]["email"].value;
+    var user = document.forms["registo"]["user"].value;
+    var isOk = true;
+    $('.feedbackJs').remove();
+    $('.valid-feedback').remove();
 
+    /*EMAIL*/
+    if (!validateEmail(email)) {
+        document.getElementsByName("email")[0].setAttribute("class", "form-control is-invalid");
+        $("[name='email']").after('<div class="invalid-feedback feedbackJs">É necessário colocar um email válido</div>');
+        isOk &= false;
+    } else {
+        document.getElementsByName("email")[0].setAttribute("class", "form-control is-valid");
+        $("[name='email']").after('<div class="valid-feedback ">Correto</div>');
+        isOk &= true;
+    }
 
-    console.log("asdasd")
+    /*USERNAME*/
+    if (isEmpty(user)) {
+        $('.invalid-feedback').remove();
+        document.getElementsByName("user")[0].setAttribute("class", "form-control is-invalid");
+        $("[name='user']").after('<div class="invalid-feedback feedbackJs">É necessário colocar um username válido</div>');
+        isOk &= false;
+    } else {
+        document.getElementsByName("user")[0].setAttribute("class", "form-control is-valid");
+        $("[name='user']").after('<div class="valid-feedback ">Correto</div>');
+        isOk &= true;
+    }
+
+    console.log();
     return false;
-    return (isOk==1);
 }

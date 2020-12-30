@@ -79,7 +79,7 @@ if ($db->connect()) {
                 echo "<div class=\"form-group\"> <span style='color:red;'>* As passwords não correspondem</span> </div>";
             ?>
             <h4 class="mb-3">Informação Pessoal</h4>
-             <form class="needs-validation" method="post" action="action/checkRegister.php?course= <?php echo urlencode($courses['coursename']) ?> "
+             <form name="registo" method="post" action="action/checkRegister.php?course=<?php echo urlencode($courses['coursename']) ?> "
                    onsubmit="return validateFormRegister()">
 
 
@@ -113,7 +113,7 @@ if ($db->connect()) {
                 </div>
 
                 <div class="mb-3">
-                    <label for="email">Email <span class="text-muted">(Opcional)</span></label>
+                    <label for="email">Email </label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com">
                 </div>
 
@@ -132,14 +132,5 @@ if ($db->connect()) {
                 <hr class="mb-4">
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Comprar</button>
             </form>
-        </div>
-    </div>
+            <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
 
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mt-5 mb-3 text-muted">&copy; Fábio Morais e Fernando Silva 2020</p>
-    </footer>
-</div>
-
-</body>
-</html>
-<script src="public/js/validateForms.js"></script>
