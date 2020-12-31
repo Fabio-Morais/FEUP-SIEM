@@ -86,7 +86,7 @@ class Order{
      */
     public function addFirstOrder($conn, $productname, $username){
         $query = "INSERT INTO Orderr (price, productname, idstudent) 
-                VALUES((SELECT price FROM course WHERE coursename ='".$productname."'),'".$productname."','".$username."')";
+                VALUES ((SELECT price FROM course WHERE coursename ='$productname'),'$productname','$username')";
         $result = pg_exec($conn, $query);
         return $result;
     }
