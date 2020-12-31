@@ -96,9 +96,11 @@ class Student{
      * Get all the teachers that the student have
      */
     public function getTeachersStudent($conn, $username){
-        $query = "SELECT DISTINCT teacher from explicafeup.course as e
-    INNER JOIN (SELECT * from explicafeup.enrolled WHERE username='".$username."') AS a
-        ON a.coursename = e.coursename";
+        $query = "SELECT * FROM explicafeup.userr as us
+       INNER JOIN (SELECT DISTINCT teacher from explicafeup.course as e
+       INNER JOIN (SELECT * from explicafeup.enrolled WHERE username='".$username."') AS a
+       ON a.coursename = e.coursename) AS tea
+       ON us.username = teacher";
         $result = pg_exec($conn, $query);
         return $result;
     }

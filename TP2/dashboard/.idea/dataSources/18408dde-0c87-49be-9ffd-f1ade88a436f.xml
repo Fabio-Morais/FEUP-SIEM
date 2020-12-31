@@ -784,13 +784,13 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1609356286</StartupTime>
+      <StartupTime>1609406588</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>743</IntrospectionStateNumber>
+      <IntrospectionStateNumber>886</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|17416|17418|1
 sequence|table|17431|17433|1
@@ -836,7 +836,7 @@ sequence|table|17555|17557|1
       <ObjectId>17384</ObjectId>
       <StateNumber>677</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>744</IntrospectionStateNumber>
+      <IntrospectionStateNumber>887</IntrospectionStateNumber>
     </schema>
     <schema id="13" parent="2" name="information_schema">
       <ObjectId>13158</ObjectId>
@@ -1048,8 +1048,8 @@ sequence|table|17555|17557|1
     <column id="48" parent="34" name="messagedate">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
-      <StateNumber>741</StateNumber>
-      <DefaultExpression>to_char(now(), &apos;DD-MM-YYYY HH:MI:SS&apos;::text)</DefaultExpression>
+      <StateNumber>885</StateNumber>
+      <DefaultExpression>to_char(timezone(&apos;utc&apos;::text, now()), &apos;DD-MM-YYYY HH:MI:SS&apos;::text)</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
     <column id="49" parent="34" name="message">

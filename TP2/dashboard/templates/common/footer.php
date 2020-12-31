@@ -49,6 +49,7 @@
 <?php if ($title == "chat.php" ) :?>
     <script src="public/js/chat.js"></script>
     <script src="public/js/ajax.js"></script>
+    <script src="public/js/filters.js"></script>
 <?php endif;?>
 
 </body>

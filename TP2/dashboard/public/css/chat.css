@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     max-height: 500px;
+    min-height: 500px;
     overflow-y: scroll
 }
 
@@ -41,4 +42,7 @@
 }
 .border-top {
     border-top: 1px solid #dee2e6!important;
+}
+.bg-light-custom{
+    background-color: #E9ECEF;
 }

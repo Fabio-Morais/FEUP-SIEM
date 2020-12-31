@@ -120,17 +120,36 @@ function showStudentInfo(student){
 * Send the message to database
 * */
 function sendMessageDb(message, from, to){
-    if (message == "" || from == "" ||  to == ""  ) {
+    if (!message.trim() || !from.trim()  ||  !to.trim() ) {
         return false;
     }
-    console.log(message)
-    console.log(from)
-    console.log(to)
+
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.open("GET", "webservices/addMessage.php?message="+message+"&userFrom="+from+"&userTo="+to, true);
     xhttp.send();
-
 return true;
+}
 
+/*Chat.php
+* Get all the messages from an user
+* */
+function getMessagesDb(from, to){
+    if (!from.trim()  ||  !to.trim() ) {
+        return false;
+    }
+
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/getAllMessagesFromUser.php?userFrom="+from+"&userTo="+to, true);
+    xhttp.send();
+    console.log("webservices/getAllMessagesFromUser.php?userFrom="+from+"&userTo="+to)
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);//json encode to array
+            updateConversation(response, from)
+        }
+    };
+
+    return true;
 }

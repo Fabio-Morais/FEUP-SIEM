@@ -54,8 +54,8 @@ final class DataBase
     public function connect()
     {   try{
 
-           //$this->conn = pg_connect("host=localhost  dbname=postgres user=postgres password=siem");
-           $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
+           $this->conn = pg_connect("host=localhost  dbname=postgres user=postgres password=siem");
+           //$this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
 
         }catch(Exception $e){
             return false;
@@ -107,7 +107,7 @@ final class DataBase
 
     public function insert($data)
     {
-        return $this->user->ins($this->conn, $data);
+        return $this->user->insert($this->conn, $data);
     }
 
     public function editUserInfo($userName, $user)
@@ -257,5 +257,10 @@ final class DataBase
     public function insertMessage($message, $from, $to)
     {
         return $this->chat->insertMessage($this->conn, $message, $from, $to);
+    }
+
+    public function getAllMessagesFromUser($username, $recipient)
+    {
+        return $this->chat->getAllMessagesFromUser($this->conn, $username, $recipient);
     }
 }

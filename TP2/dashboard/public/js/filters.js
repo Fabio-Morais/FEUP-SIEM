@@ -210,4 +210,17 @@ $(document).on('input', '#myInput', function (event) {
     $('.content:ContainsStudent(' + text + ')').show();
 
 });
-/*********************************************************************/
+/****************************************************
+ * CHAT.PHP
+ ****************************************************/
+
+jQuery.expr[':'].ContainsStudent = function (a, i, m) {
+    input = m[3].toUpperCase();
+    return jQuery(a).find("#nameLeftSide").text().toUpperCase().indexOf(input) >= 0 ;
+};
+$(document).on('input', '#searchUsers', function (event) {
+    var text = $(this).val();
+    $('.content').hide();
+    $('.content:ContainsStudent(' + text + ')').show();
+
+});
