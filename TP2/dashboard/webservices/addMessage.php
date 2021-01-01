@@ -9,5 +9,4 @@ if($connected) {
     echo true;
 }else
     echo false;
-
 ?>

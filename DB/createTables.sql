@@ -28,8 +28,8 @@ CREATE TABLE IF NOT EXISTS Teacher(
 
 CREATE TABLE IF NOT EXISTS Orderr(
     number SERIAL PRIMARY KEY,
-    deliveryDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH:MI:SS'::text),
-    purchaseDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH:MI:SS'::text),
+    deliveryDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH24:MI:SS'::text),
+    purchaseDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH24:MI:SS'::text),
     price VARCHAR(100),
     productName VARCHAR(100),
     description VARCHAR(100),
@@ -72,8 +72,9 @@ CREATE TABLE IF NOT EXISTS Video(
 
 CREATE TABLE IF NOT EXISTS Chat(
     id SERIAL PRIMARY KEY,
-    messageDate VARCHAR(100) DEFAULT to_char(now(), 'DD-MM-YYYY HH:MI:SS'::text),
+    messageDate VARCHAR(100) DEFAULT to_char(now(), 'DD-MM-YYYY HH24:MI:SS'::text),
     message VARCHAR(500),
     userFrom VARCHAR(100) ,
-    userTo VARCHAR(100) 
+    userTo VARCHAR(100),
+    itWasRead BOOLEAN DEFAULT false 
 ); 

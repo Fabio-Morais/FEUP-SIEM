@@ -263,4 +263,12 @@ final class DataBase
     {
         return $this->chat->getAllMessagesFromUser($this->conn, $username, $recipient);
     }
+    public function getLengthAllMessagesFromUser($username, $recipient)
+    {
+        return $this->chat->getLengthAllMessagesFromUser($this->conn, $username, $recipient);
+    }
+    public function getAllMessagesFromUserStartId($username, $recipient, $id)
+    {
+        return $this->chat->getAllMessagesFromUserStartId($this->conn, $username, $recipient, $id);
+    }
 }

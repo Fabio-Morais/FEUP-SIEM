@@ -103,6 +103,7 @@ function getImage($queryInfo)
                                     <?php
                                     $messagesQuery = $db->getAllMessagesFromUser($_SESSION['user'], $firstElement['username']);
                                     $messages = pg_fetch_assoc($messagesQuery);
+                                    $id=0;
                                     while (isset($messages['message'])):
                                         ?>
                                         <?php
@@ -118,7 +119,7 @@ function getImage($queryInfo)
 
                                         ?>
                                         <!-- PRINT ALL THE MESSAGES HERE-->
-                                        <div class="<?php echo $leftRitght; ?> pb-4 chatMessage">
+                                        <div class="<?php echo $leftRitght; ?> pb-4 chatMessage" id="<?php echo $messages['id'] ?>">
                                             <div>
                                                 <img src="public/img/<?php echo $image ?>" class="rounded-circle mr-1"
                                                      width="40" height="40">
@@ -161,4 +162,7 @@ function getImage($queryInfo)
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
 
-
+<script>
+    scrollDown()
+    initializeAutoUpdate('<?php echo $_SESSION['user'] ?>', '<?php echo $firstElement['username']?>')//auto update, every 1s
+</script>

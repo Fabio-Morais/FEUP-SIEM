@@ -134,20 +134,36 @@ return true;
 /*Chat.php
 * Get all the messages from an user
 * */
-function getMessagesDb(from, to){
-    if (!from.trim()  ||  !to.trim() ) {
+function getMessagesDb(userSession, to){
+    if (!userSession.trim()  ||  !to.trim() ) {
         return false;
     }
 
     var xhttp;
     xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "webservices/getAllMessagesFromUser.php?userFrom="+from+"&userTo="+to, true);
+    xhttp.open("GET", "webservices/getAllMessagesFromUser.php?userFrom="+userSession+"&userTo="+to+"&option="+1, true);
     xhttp.send();
-    console.log("webservices/getAllMessagesFromUser.php?userFrom="+from+"&userTo="+to)
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
-            updateConversation(response, from)
+            updateConversation(response, userSession)
+        }
+    };
+
+    return true;
+}
+function getNewMessagesDb(userSession, to, id){
+    if (!userSession.trim()  ||  !to.trim() ) {
+        return false;
+    }
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/getAllMessagesFromUser.php?userFrom="+userSession+"&userTo="+to+"&option="+2+"&id="+id, true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);//json encode to array
+            needToUpdateChange(response,userSession)
         }
     };
 
