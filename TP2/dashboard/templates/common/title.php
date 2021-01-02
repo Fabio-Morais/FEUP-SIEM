@@ -4,6 +4,9 @@ switch ($title) {
     case "alunos.php":
         $title = "alunos";
         break;
+    case "chat.php":
+        $title = "chat";
+        break;
     case "aula.php":
         $title = "aula";
         break;

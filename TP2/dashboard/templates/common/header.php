@@ -22,6 +22,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+
     <!--Get the title of the page-->
     <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 

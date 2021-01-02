@@ -784,13 +784,13 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1609505702</StartupTime>
+      <StartupTime>1609578285</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>937</IntrospectionStateNumber>
+      <IntrospectionStateNumber>982</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|17416|17418|1
 sequence|table|17431|17433|1
@@ -836,7 +836,7 @@ sequence|table|17555|17557|1
       <ObjectId>17384</ObjectId>
       <StateNumber>677</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>938</IntrospectionStateNumber>
+      <IntrospectionStateNumber>983</IntrospectionStateNumber>
     </schema>
     <schema id="13" parent="2" name="information_schema">
       <ObjectId>13158</ObjectId>
@@ -1070,10 +1070,10 @@ sequence|table|17555|17557|1
       <StateNumber>741</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="52" parent="34" name="itWasRead">
+    <column id="52" parent="34" name="itwasread">
       <Position>6</Position>
       <DataType>boolean|0s</DataType>
-      <StateNumber>936</StateNumber>
+      <StateNumber>981</StateNumber>
       <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>

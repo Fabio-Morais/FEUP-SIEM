@@ -271,4 +271,12 @@ final class DataBase
     {
         return $this->chat->getAllMessagesFromUserStartId($this->conn, $username, $recipient, $id);
     }
+    public function setMessageToAlreadyRead($username, $recipient)
+    {
+        return $this->chat->setMessageToAlreadyRead($this->conn, $username, $recipient);
+    }
+    public function getCountOfUnreadMessages($username)
+    {
+        return $this->chat->getCountOfUnreadMessages($this->conn, $username);
+    }
 }

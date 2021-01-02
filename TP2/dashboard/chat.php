@@ -41,11 +41,11 @@ function getImage($queryInfo)
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
 
-                <h1 class="h3 mb-3">Messages</h1>
+                <h1 class="h3 mb-3">Mensagens</h1>
 
                 <div class="card">
                     <div class="row g-0">
-                        <div class="col-12 col-lg-5 col-xl-3 border-right">
+                        <div class="col-12 col-lg-5 col-xl-3 border-right usersSide customScrollBar">
                             <!-- SEARCH-->
                             <div class="px-4 d-none d-md-block">
                                 <div class="d-flex align-items-center">
@@ -65,14 +65,20 @@ function getImage($queryInfo)
                                 <!-- Names, left side-->
                                 <a type="button" onclick="selectChat(this)"
                                    class="content list-group-item list-group-item-action border-0<?php echo $first ?>"
-                                   data-username="<?php echo $chatPeople['username'] ?>">
-                                    <div class="badge bg-success float-right">5</div>
+                                   data-username="<?php echo $chatPeople['username'] ?>"
+                                   id="<?php echo $chatPeople['username'] ?>">
+                                    <div class="badge float-right unseenMessages p-1 mt-2" style="display: none">0</div>
                                     <div class="d-flex align-items-start">
                                         <img src="public/img/<?php echo getImage($chatPeople) ?>"
-                                             class="rounded-circle mr-1" width="40" height="40"
+                                             class="rounded-circle mr-1 userImageChat" width="40" height="40"
                                              onerror="javascript:this.src='public/img/avatar.png'">
-                                        <div class="flex-grow-1 ml-3" id="nameLeftSide">
-                                            <?php echo $chatPeople['name'] ?>
+                                        <div class="d-flex flex-column">
+                                            <div class="flex-grow-1 ml-3 " id="nameLeftSide">
+                                                <?php echo $chatPeople['name'] ?>
+                                            </div>
+                                            <div class="flex-grow-1 ml-3">
+                                                (<?php echo $chatPeople['username'] ?>)
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
@@ -82,12 +88,13 @@ function getImage($queryInfo)
                             ?>
                             <hr class="d-block d-lg-none mt-1 mb-0">
                         </div>
+                        <!-- CONVERSATION START HERE-->
                         <div class="col-12 col-lg-7 col-xl-9">
                             <div class="py-2 px-4 border-bottom d-none d-lg-block">
                                 <div class="d-flex align-items-center py-1">
                                     <div class="position-relative">
                                         <img id="topImageUser" src="public/img/<?php echo getImage($firstElement) ?>"
-                                             class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
+                                             class="rounded-circle mr-1 userImageChat" alt="Sharon Lessman" width="40" height="40">
                                     </div>
                                     <div class="flex-grow-1 pl-3">
                                         <strong><?php echo $firstElement['name'] ?></strong>
@@ -96,14 +103,14 @@ function getImage($queryInfo)
 
                                 </div>
                             </div>
-
                             <div class="position-relative">
-                                <div class="chat-messages p-4" id="nameTo" data-from="<?php echo $_SESSION['user'] ?>" data-to="<?php echo $firstElement['username'] ?>"
+                                <div class="chat-messages p-4 customScrollBar" id="nameTo" data-from="<?php echo $_SESSION['user'] ?>"
+                                     data-to="<?php echo $firstElement['username'] ?>"
                                      data-image="<?php echo getImage($queryInfo) ?>">
                                     <?php
                                     $messagesQuery = $db->getAllMessagesFromUser($_SESSION['user'], $firstElement['username']);
                                     $messages = pg_fetch_assoc($messagesQuery);
-                                    $id=0;
+                                    $id = 0;
                                     while (isset($messages['message'])):
                                         ?>
                                         <?php
@@ -119,9 +126,10 @@ function getImage($queryInfo)
 
                                         ?>
                                         <!-- PRINT ALL THE MESSAGES HERE-->
-                                        <div class="<?php echo $leftRitght; ?> pb-4 chatMessage" id="<?php echo $messages['id'] ?>">
+                                        <div class="<?php echo $leftRitght; ?> pb-4 chatMessage"
+                                             id="<?php echo $messages['id'] ?>">
                                             <div>
-                                                <img src="public/img/<?php echo $image ?>" class="rounded-circle mr-1"
+                                                <img src="public/img/<?php echo $image ?>" class="rounded-circle mr-1 userImageChat"
                                                      width="40" height="40">
                                             </div>
                                             <div>
@@ -164,5 +172,8 @@ function getImage($queryInfo)
 
 <script>
     scrollDown()
-    initializeAutoUpdate('<?php echo $_SESSION['user'] ?>', '<?php echo $firstElement['username']?>')//auto update, every 1s
+    selectChat($('#<?php echo $firstElement['username']?>'))
+    $("#<?php echo $firstElement['username']?>").find('.unseenMessages').hide()//remove the unseen message FOR THE FIRST ELEMENT
+
+
 </script>

@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
 ?>
 
-<body class="sb-nav-fixed" >
+<body class="sb-nav-fixed customScrollBar" >
 
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <a href="index.php"><img src="public/img/icon.png" class="icon ml-3"></a>
@@ -26,10 +26,10 @@ include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
         </li>
     </ul>
 </nav>
-<div id="layoutSidenav">
+<div id="layoutSidenav" >
     <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-            <div class="sb-sidenav-menu">
+        <nav class="sb-sidenav accordion sb-sidenav-dark " id="sidenavAccordion">
+            <div class="sb-sidenav-menu customScrollBar">
                 <div class="nav">
 
                     <div class="sb-sidenav-menu-heading">Menu principal</div>
@@ -39,6 +39,10 @@ include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
                     </a>
                     <?php if ($_SESSION['role'] == 0) : ?>
                         <div class="sb-sidenav-menu-heading">Aprender</div>
+                        <a class="nav-link" href="chat.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-comment-dots"></i></div>
+                            Chat
+                        </a>
                         <a class="nav-link" href="aula.php">
                             <div class="sb-nav-link-icon"><i class="fab fa-youtube"></i></div>
                             Aula
@@ -58,10 +62,16 @@ include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
                             Historico
                         </a>
                     <?php elseif ($_SESSION['role'] == 1) : ?>
+                        <div class="sb-sidenav-menu-heading">Aulas</div>
+                        <a class="nav-link" href="chat.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-comment-dots"></i></div>
+                            Chat
+                        </a>
                         <a class="nav-link" href="alunos.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
                             Alunos
                         </a>
+                        <div class="sb-sidenav-menu-heading">Salário</div>
                         <a class="nav-link" href="salario.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-euro-sign"></i></div>
                             Salário

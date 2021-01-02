@@ -89,11 +89,9 @@
       }
   
       .profile-card-4 .list-details {
-        display: table-cell;
-        vertical-align: middle;
         font-weight: 600;
-        color: #223035;
-        font-size: 15px;
+        color: #1D3557;
+        font-size: 16px;
         line-height: 15px;
       }
   
@@ -483,4 +481,11 @@
       content: "✖";
       margin-right: 8px;
 
+    }
+.customText h4{
+  color:#1D3557
+
+}
+    .customText small{
+      color:#1D3557
     }

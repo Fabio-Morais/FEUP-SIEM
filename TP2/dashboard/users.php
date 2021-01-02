@@ -2,8 +2,8 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php");
-?>
+<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
+<?php require_once(dirname(__FILE__) . "/includes/common/functions.php"); ?>
 
 <?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 /*Para retirar a visibilidade do erro*/
@@ -87,7 +87,7 @@ function role($var)
                             echo                "<h3 class=\"widget-user-username text-center textAdapt\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/$avatar'\">";/*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".getImage($row) ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . role($row['role']) . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/

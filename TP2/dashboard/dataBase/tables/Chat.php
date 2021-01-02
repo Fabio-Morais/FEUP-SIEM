@@ -43,6 +43,24 @@ class Chat
         $result = pg_exec($conn, $query);
         return $result;
     }
+    /**
+     * Set to already read
+     */
+    public function setMessageToAlreadyRead($conn, $username, $recipient)
+    {
+        $query = "UPDATE explicafeup.chat SET itwasread=true WHERE ((userfrom='".$username."' and userTo ='".$recipient."') or (userto='".$username."' and userfrom='".$recipient."'))";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 
+    /**
+     * view all messages that are unread group by users
+     */
+    public function getCountOfUnreadMessages($conn, $username)
+    {
+        $query = "SELECT count(*), userfrom FROM explicafeup.chat WHERE userTo='".$username."' and itwasread=false GROUP BY userfrom";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 }
 ?>

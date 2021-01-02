@@ -6,11 +6,12 @@ $('#textMessage').keypress(function (e) {
     }
 });
 
+var selectedUserTo="";
+
 function sendMessage() {
     var userFrom = $('#nameTo').data('from');
-    var userTo = $('#nameTo').data('to');
     var message=$('#textMessage').val()
-    sendMessageDb(message, userFrom, userTo)
+    sendMessageDb(message.replace(/<[^>]*>/g, ""), userFrom, selectedUserTo)
     $('#textMessage').val(null);
 }
 
@@ -29,9 +30,14 @@ function selectChat(e){
     var userTo = $(e).data('username')
     var name = $(e).find('.flex-grow-1')[0].innerText
     var userSession = $('#nameTo').data('from');
+
+    selectedUserTo=userTo;//select the user that want to send a message
+    $(e).find(".unseenMessages").remove()//remove the unseen message
     changeChatConversation(image, userTo, name)
     getMessagesDb(userSession, userTo)//ajax function
     initializeAutoUpdate(userSession, userTo)
+    setMessagesToAlreadyRead(userSession, userTo)// ajax function
+    getUnseenMessagesDb(userSession)
 }
 function getImage(user){
     if(user['image']){
@@ -70,17 +76,25 @@ function updateConversation(jsonResponse, userSession){
         $('.chat-messages').append(messageString)
     }
     scrollDown()
-    console.log("asdasdasd")
 }
 
 var myTime;
+var myTime2;
 function initializeAutoUpdate(userSession, userTo){
     clearInterval(myTime);//reset all the timers defined
+    clearInterval(myTime2);//reset all the timers defined
     myTime = setInterval(function(){
         var messagesLength = $('.chatMessage').length;
-        var idOfLastMessage = $('.chatMessage')[messagesLength-1].id;
+        var idOfLastMessage = 0
+        if(messagesLength>0){
+            idOfLastMessage = $('.chatMessage')[messagesLength-1].id;
+        }
         getNewMessagesDb(userSession, userTo, idOfLastMessage);
     }, 1000);
+    myTime2 = setInterval(function(){
+        getUnseenMessagesDb(userSession)//ajax function
+    }, 2000);
+
 }
 
 /*Get Json messages object and set the variable "needToUpdate" */
@@ -96,3 +110,29 @@ function scrollDown(){
         scrollTop: $('.chat-messages').get(0).scrollHeight
     }, 10);
 }
+
+function searchJson(user, jsonResponse){
+    for(var i=0; i<jsonResponse.length; i++){
+        if(jsonResponse[i]['userfrom'].localeCompare(user) == 0){
+            return jsonResponse[i]['count'];
+        }
+    }
+    return 0;
+}
+
+function unSeenMessagesWatch(jsonResponse){
+    var users = $('.content');
+    var max = users.length
+    for(var i=0; i<max; i++){
+       var count = searchJson(users[i].id,jsonResponse)
+        if(count > 0){
+            if(selectedUserTo.localeCompare(users[i].id)!=0){
+                $("#"+users[i].id).find('.unseenMessages')[0].innerText=count
+                $("#"+users[i].id).find('.unseenMessages').show()
+            }
+       }else{
+           $("#"+users[i].id).find('.unseenMessages').hide()
+       }
+    }
+}
+

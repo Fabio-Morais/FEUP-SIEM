@@ -32,7 +32,7 @@ $(document).ready(function() {
         onChange: function(id) {
             clearTimeout(timer); //cancel the previous timer.
             timer = null;
-            timer =setTimeout(function() { createCookiePostIt(id)}, 1500);
+            timer =setTimeout(function() { createCookiePostIt(id)}, 1000);
         }
 
     }); }, 1000);

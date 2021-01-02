@@ -128,7 +128,9 @@ function sendMessageDb(message, from, to){
     xhttp = new XMLHttpRequest();
     xhttp.open("GET", "webservices/addMessage.php?message="+message+"&userFrom="+from+"&userTo="+to, true);
     xhttp.send();
-return true;
+    console.log(message + "->"+from+"->"+to)
+
+    return true;
 }
 
 /*Chat.php
@@ -164,6 +166,34 @@ function getNewMessagesDb(userSession, to, id){
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
             needToUpdateChange(response,userSession)
+        }
+    };
+
+    return true;
+}
+
+function setMessagesToAlreadyRead(userSession, to){
+    if (!userSession.trim()  ||  !to.trim() ) {
+        return false;
+    }
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/setMessagesToAlreadyRead.php?userFrom="+userSession+"&userTo="+to, true);
+    xhttp.send();
+    return true;
+}
+function getUnseenMessagesDb(userSession){
+    if (!userSession.trim()  ) {
+        return false;
+    }
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/getUnseenMessagesDb.php?userFrom="+userSession, true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);//json encode to array
+            unSeenMessagesWatch(response)
         }
     };
 

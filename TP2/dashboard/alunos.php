@@ -4,7 +4,8 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
 <?php require_once(dirname(__FILE__) . "/includes/common/alerts.php");
 ?>
-
+<?php require_once(dirname(__FILE__) . "/includes/common/functions.php");
+?>
 <?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 /*Para retirar a visibilidade do erro*/
 /*error_reporting(E_ERROR | E_PARSE);*/
@@ -23,7 +24,10 @@ if ($db->connect()) {
 ?>
 
 
+<?php
 
+
+?>
 <!--Lista de alunos-->
 <div class="container-fluid">
     <div class="justify-content-center m-4">
@@ -55,16 +59,6 @@ if ($db->connect()) {
                             if (isset($row3["avg"]) && $row3["avg"] > 0.0)
                                 $grade = sprintf("%.1f", $row3["avg"]);
 
-                            /*Se user nao tiver imagem mete uma padrao*/
-                            if(!isset($row['image'])){
-                                $image="avatar.png";
-                            }else{
-                                $image="users/".$row['image'];
-                            }
-                            /*if the user is a girl, show a default girl avatar*/
-                            $avatar="avatar.png";
-                            if($row['gender']=='f')
-                                $avatar="avatarGirl.png";
 
                             echo "<div class=\"p-2 m-3 content\">";
                             echo "   <div class=\"hovereffect\">";
@@ -73,7 +67,7 @@ if ($db->connect()) {
                             echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"public/img/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/$avatar'\">"; /*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/".getImage($row) ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">"; /*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . "Aluno" . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
