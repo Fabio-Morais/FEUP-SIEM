@@ -24,3 +24,5 @@ https://jscolor.com/
 jquery fancybox
 
 https://jqueryui.com/slider/#range
+
+http://sedepigreco.no-ip.net/postit/plugin.html
