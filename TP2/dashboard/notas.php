@@ -20,8 +20,6 @@ if ($db->connect()) {
 
 ?>
 
-
-
 <div class="container-fluid">
     <div class="justify-content-center m-4">
         <div class="card border-left-primary shadow h-100 py-2">
@@ -35,11 +33,19 @@ if ($db->connect()) {
                     while(isset($courses["coursename"])){
                         echo "<div id=\"course\" class=\"all ". $courses['coursename'] ." box\" data-aos=\"fade-up\" data-aos-delay=\"100\" data-aos-once=\"true\">";
                         echo    "<div id=\"imgBorder\"><img src=\"../img/courses/". $info['image'] ." \" id=\"imgCourse\"></div>";
-                        echo    "<h3>" . ucwords($courses['coursename']) . "</h3>";  // Primeira letra maiuscula
-                        if($courses['coursegrade'] != -1)
-                            echo    "<h4>Nota: " . $courses['coursegrade'] . " Valores</h4>";
+                        echo    "<h3 style='z-index: 100'>" . ucwords($courses['coursename']) . "</h3>";  // Primeira letra maiuscula
+
+                        if ($courses['coursegrade'] > 9.5) {
+                            echo "<h4>Nota: " . $courses['coursegrade'] . " Valores</h4>";
+                            echo "<div class=\"outer\"><img class=\"imgl\" width=\"20%\" src=\"public/img/pos.png\"><img class=\"imgr\" width=\"20%\" src=\"public/img/pos.png\"></div>";
+                        }
+                        elseif (10 > $courses['coursegrade'] && $courses['coursegrade'] >= 0) {
+                            echo "<h4>Nota: " . $courses['coursegrade'] . " Valores</h4>";
+                            echo "<div class=\"outer\"><img class=\"imgc\" width=\"30%\" src=\"public/img/f.png\"></div>";
+                        }
                         else
-                            echo    "<h4>Nota: Sem avaliação</h4>";
+                            echo "<h4>Nota: Sem avaliação</h4>";
+
                         echo "</div>";
                         $courses = pg_fetch_assoc($coursesQuery);
                         if(isset($courses["coursename"])){
