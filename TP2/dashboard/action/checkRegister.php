@@ -1,7 +1,9 @@
 <?php
 session_start();
-require "../../configuration.php";
+
 require_once(dirname(__FILE__) . "/../dataBase/dataBase.php");
+$db = DataBase::Instance();
+$db->connect();
 
 unset($_SESSION['regerror']);
 unset($_SESSION['usererror']);
@@ -18,7 +20,7 @@ $productname = $_GET['course'];
 
 if ($password !== $password_confirm) {
 	$_SESSION['passerror'] = TRUE;
-	header("location: ../../register.php?course=".urlencode($productname)."");
+	header("location: ../register.php?course=".urlencode($productname)."");
 	exit();
 }
 
@@ -26,18 +28,16 @@ $query = "SELECT * FROM userr WHERE username = '$username'";
 $result = pg_exec($query);
 if(pg_num_rows($result) > 0){
 	$_SESSION['usererror'] = TRUE;
-	header("location: ../../register.php?course=".urlencode($productname)."");
+	header("location: ../register.php?course=".urlencode($productname)."");
 	exit();
 }
 
 if (empty($username) || empty($password) || empty($name))
 	{
 	$_SESSION['regerror'] = TRUE;
-	header("location: ../../register.php?course=".urlencode($productname)."");
+	header("location: ../register.php?course=".urlencode($productname)."");
 	exit();
 } else{
-    $db = DataBase::Instance();
-    $db->connect();
     $db->addUserStudent($name, $email, $username, $hash, $phone, $nif);
     $db->addStudent($username);
     $db->addFirstOrder($productname, $username);

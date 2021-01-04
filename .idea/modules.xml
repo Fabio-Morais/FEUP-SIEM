@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FEUP-SIEM.iml" filepath="$PROJECT_DIR$/.idea/FEUP-SIEM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ExplicaFEUP.iml" filepath="$PROJECT_DIR$/.idea/ExplicaFEUP.iml" />
     </modules>
   </component>
 </project>
