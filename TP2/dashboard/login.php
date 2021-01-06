@@ -39,7 +39,8 @@
         </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" style="margin-bottom: 5%">Entrar</button>
-    <a href="../index.php" class="card-link" style="margin-top: 20%">← Voltar à página inicial</a>
+    <a href="../courses.php" class="card-link" style="margin-top: 20%; font-size: 0.9rem">Ainda não tem conta? Compre um curso aqui!</a><br>
+    <a href="../index.php" class="card-link" style="margin-top: 20%; font-size: 0.9rem">← Voltar à página inicial</a>
     <p class="mt-5 mb-3 text-muted">&copy; Fábio Morais e Fernando Silva 2020</p>
 </form>
 

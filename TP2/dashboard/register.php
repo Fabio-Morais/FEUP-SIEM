@@ -74,9 +74,9 @@ if ($db->connect()) {
         <div class="col-md-8 order-md-1">
             <?php
             if (isset($_SESSION['usererror']))
-                echo "<div class=\"form-group\"> <span style='color:red;'>* O username já existe</span> </div>";
+                echo "<div class=\"form-group\"> <span style='color:red;'>(*) O username já existe</span> </div>";
             elseif (isset($_SESSION['passerror']))
-                echo "<div class=\"form-group\"> <span style='color:red;'>* As passwords não correspondem</span> </div>";
+                echo "<div class=\"form-group\"> <span style='color:red;'>(*) As passwords não correspondem</span> </div>";
             ?>
             <h4 class="mb-3">Informação Pessoal</h4>
              <form name="registo" method="post" action="action/checkRegister.php?course=<?php echo urlencode($courses['coursename']) ?> "
@@ -90,7 +90,7 @@ if ($db->connect()) {
                 </div>
 
                 <div class="mb-3">
-                    <label for="user">Username</label>
+                    <label for="user">Username <?php if (isset($_SESSION['usererror'])) echo "<span style='color:red;'>(*)</span>";?></label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
@@ -101,13 +101,13 @@ if ($db->connect()) {
                 </div>
 
                 <div class="mb-3">
-                    <label for="password">Password</label>
+                    <label for="password">Password <?php if (isset($_SESSION['passerror'])) echo "<span style='color:red;'>(*)</span>"; ?></label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
 
                 </div>
 
                 <div class="mb-3">
-                    <label for="confirmarpassword">Confirmar Password</label>
+                    <label for="confirmarpassword">Confirmar Password <?php if (isset($_SESSION['passerror'])) echo "<span style='color:red;'>(*)</span>"; ?></label>
                     <input type="password" class="form-control" id="confirmarpassword" name="confirmarpassword" placeholder="Password" required>
 
                 </div>
