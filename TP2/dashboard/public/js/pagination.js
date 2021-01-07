@@ -1,6 +1,6 @@
 
 
-
+var runAgain=true;
 // Returns an array of maxLength (or less) page numbers
 // where a 0 in the returned array denotes a gap in the series.
 // Parameters:
@@ -39,9 +39,12 @@ function getPageList(totalPages, page, maxLength) {
 
 
 // Below is an example use of the above function.
-$(function() {
+function aaa(aux) {
     // Number of items and limits the number of items per page
     var numberOfItems = $("#jar .content").length;
+    if(aux==1){
+        numberOfItems = $(".contentShown").length;
+    }
     var limitPerPage = 8;
     if (window.innerWidth >= 2037) {
         limitPerPage = 12;
@@ -64,12 +67,16 @@ $(function() {
     var paginationSize = 7;
     var currentPage;
 
-    function showPage(whichPage) {
+    function showPage(whichPage, run) {
+
         if (whichPage < 1 || whichPage > totalPages) return false;
         currentPage = whichPage;
-        $("#jar .content").hide()
-            .slice((currentPage - 1) * limitPerPage,
-                currentPage * limitPerPage).show();
+        if(run==1){
+            $("#jar .content").hide()
+                .slice((currentPage - 1) * limitPerPage,
+                    currentPage * limitPerPage).show();
+        }
+
         // Replace the navigation items (not prev/next):
         $(".pagination li").slice(1, -1).remove();
         getPageList(totalPages, currentPage, paginationSize).forEach(item => {
@@ -86,27 +93,32 @@ $(function() {
         $("#next-page").toggleClass("disabled", currentPage === totalPages);
         return true;
     }
-
     // Include the prev/next buttons:
-    $(".pagination").append(
-        $("<li>").addClass("page-item").attr({
-            id: "previous-page"
-        }).append(
-            $("<a>").addClass("page-link").attr({
-                href: "javascript:void(0)"
-            }).text("Prev")
-        ),
-        $("<li>").addClass("page-item").attr({
-            id: "next-page"
-        }).append(
-            $("<a>").addClass("page-link").attr({
-                href: "javascript:void(0)"
-            }).text("Next")
-        )
-    );
+    if(runAgain){
+        $(".pagination").append(
+            $("<li>").addClass("page-item").attr({
+                id: "previous-page"
+            }).append(
+                $("<a>").addClass("page-link").attr({
+                    href: "javascript:void(0)"
+                }).text("Prev")
+            ),
+            $("<li>").addClass("page-item").attr({
+                id: "next-page"
+            }).append(
+                $("<a>").addClass("page-link").attr({
+                    href: "javascript:void(0)"
+                }).text("Next")
+            )
+        );
+        runAgain=false;
+    }
     // Show the page links
     $("#jar").show();
-    showPage(1);
+    if(aux==1)
+        showPage(1, 0);
+    else
+        showPage(1, 1);
 
     // Use event delegation, as these items are recreated later
     $(document).on("click", ".pagination li.current-page:not(.active)", function() {
@@ -154,7 +166,7 @@ $(function() {
         );
         // Show the page links
         $("#jar").show();
-        showPage(1);
+        showPage(1,1);
     });
-});
+};
    

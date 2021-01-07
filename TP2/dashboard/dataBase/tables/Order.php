@@ -28,6 +28,15 @@ class Order{
         $result = pg_exec($conn, $query);
         return $result;
     }
+    public function getTotalCustomYearProfit($conn, $year){
+        $query = "SELECT  SUM(CAST(price as INT)) as price,to_char(to_date(purchasedate, 'DD/MM/YYYY'),'DD/MM/YYYY') as date
+                    FROM explicafeup.Orderr
+                    WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = '".$year."'
+                    GROUP BY to_date(purchasedate, 'DD/MM/YYYY')
+                    ORDER BY to_date(purchasedate, 'DD/MM/YYYY');";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
     public function getTotalMonthProfit($conn){
         $query = "SELECT SUM(CAST(price AS int)) FROM Orderr WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'MM/YYYY') = to_char(now()::date,  'MM/YYYY');";
         $result = pg_exec($conn, $query);
@@ -52,12 +61,33 @@ class Order{
         $result = pg_exec($conn, $query);
         return $result;
     }
+    /**
+     * Return total sells by courses (number)
+     */
+    public function getSellsCoursesByYear($conn, $year){
+        $query = "SELECT Count(*), productname FROM orderr 
+                    WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = '".$year."'
+                    GROUP BY productname";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
 
     /**
      * Return total sells by courses (€)
      */
     public function getSellsCoursesMoney($conn){
         $query = "SELECT sum(CAST(price AS int)), productname FROM orderr GROUP BY productname";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+    /**
+     * Return total sells by courses (€)
+     */
+    public function getSellsCoursesMoneyYear($conn, $year){
+        $query = "SELECT sum(CAST(price AS int)), productname FROM orderr 
+                WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = '".$year."'
+                GROUP BY productname;";
         $result = pg_exec($conn, $query);
         return $result;
     }

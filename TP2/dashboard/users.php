@@ -1,13 +1,8 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
-
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php");
-?>
-
-<?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
+<?php require_once(dirname(__FILE__) . "/includes/common/functions.php"); ?>
+<?php
 $db = DataBase::Instance();
 $users = "";
 $connected = false;
@@ -17,23 +12,12 @@ if ($db->connect()) {
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
+/*Pop up of successful*/
 if(isset($_SESSION['add']))
     echo $_SESSION['add'];
     $_SESSION['add']=NULL;
 ?>
 
-<?php
-function role($var)
-{
-    if ($var == 0) {
-        return "Aluno";
-    } else if ($var == 1) {
-        return "Professor";
-    } else if ($var == 2) {
-        return "Admin";
-    }
-}
-?>
 
 <div class="container-fluid">
     <div class="justify-content-center m-4">
@@ -61,7 +45,7 @@ function role($var)
                                 if (isset($row2["count"]))
                                     $courses = strval($row2["count"]);
                             }
-                             if($row["role"]==1) {
+                            else if($row["role"]==1) {
                                  $totalQuery = $db->getTotalCoursesTeacher($row["username"]);
                                  $total = pg_fetch_assoc($totalQuery);
                                  if(isset($total['count']))
@@ -72,10 +56,6 @@ function role($var)
                             $row3 = pg_fetch_assoc($grade);
                             $grade = "--";
 
-                            /*if the user is a girl, show a default girl avatar*/
-                            $avatar="avatar.png";
-                            if($row['gender']=='f')
-                                $avatar="avatarGirl.png";
 
                             if (isset($row3["avg"]) && $row3["avg"] > 0.0)
                                 $grade = sprintf("%.1f", $row3["avg"]);
@@ -87,7 +67,7 @@ function role($var)
                             echo                "<h3 class=\"widget-user-username text-center textAdapt\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"public/img/users/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/$avatar'\">";/*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/".getImage($row) ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">";/*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . role($row['role']) . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
@@ -110,13 +90,11 @@ function role($var)
                             echo     "</div>";
                             echo     "<div class=\"overlay\">";
                             echo         "<h2>" . $row['username'] . "</h2>";/*USERNAME*/
-                            echo         "<button class=\"info btn btn-success btn-circle btn-md\" onclick=\"location.href='formEdit.php?username=".$row['username']."'\"><i class=\"fas fa-pencil-alt\"></i></button>";
+                            echo         "<button class=\"info btn btn-success btn-circle btn-md\" onclick=\"location.href='editUser.php?username=".$row['username']."'\"><i class=\"fas fa-pencil-alt\"></i></button>";
                             echo         "<button class=\"info btn btn-danger btn-circle btn-xl\" onclick=\"location.href='action/actionDeleteUser.php?username=".$row['username']."'\"><i class=\"far fa-trash-alt\"></i></button>";
 
                             echo     "</div>";
                             echo "</div>";
-
-
                             echo "</div>";
                             $row = pg_fetch_assoc($users);
                         }
@@ -132,32 +110,22 @@ function role($var)
 </div>
 
 <!--Modal de registar novo user-->
-<?php include_once(dirname(__FILE__) . "/formCreateUser.php"); ?>
+<?php include_once(dirname(__FILE__) . "/templates/forms/formCreateUser.php"); ?>
 
 
 <!--Botao de registar novo user-->
 <button type="button" class="btn btn-success btn-circle btn-xl" id="addUser" data-toggle="modal" data-target="#modalRegisterForm"><i class="fas fa-plus"></i></button>
-
-<?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
 <?php
-if($_SESSION['errorForm']==1){
+/*Se tiver dados incorretos, abre o modal de novo*/
+if(isset($_SESSION['errorForm']) && $_SESSION['errorForm']==1){
     echo "<script type=\"text/javascript\">$(document).ready(function() {\$('#modalRegisterForm').modal('show'); });</script>" ;
     $_SESSION['errorForm']=0;
 }
 ?>
-<script>
-    const rgb = [255, 0, 0];
-    for(i=0; i<$(".widget-user-header").length; i++){
-       aux = $(".widget-user-header")[i].style['backgroundColor'].replace(/[^\d,]/g, '').split(',');
-        rgb[0] = Math.round(aux[0]);
-        rgb[1] = Math.round(aux[1]);
-        rgb[2] = Math.round(aux[2]);
-        // http://www.w3.org/TR/AERT#color-contrast
-        const brightness = Math.round(((parseInt(rgb[0]) * 299) +
-            (parseInt(rgb[1]) * 587) +
-            (parseInt(rgb[2]) * 114)) / 1000);
-        const textColour = (brightness > 200) ? 'black' : 'white';
-        $('.textAdapt').eq(i).css({'color': textColour});
-    }
 
+<?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+
+<script>
+    autoTextColor()// change text color depending on the background color
+    aaa(0)//initialize paginations
 </script>

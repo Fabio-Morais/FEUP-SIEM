@@ -1,12 +1,12 @@
 <?php session_start(); ?>
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="public/img/icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="public/img/icon.png"/>
 
     <title>Login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,7 +28,10 @@
         echo "<div class=\"form-group\"> <span style='color:red;'>* O utilizador não existe</span> </div>";
     ?>
     <label for="user" class="sr-only">Username</label>
-    <input id="user" type="user" name="user" class="form-control" placeholder="Username" value="<?php if(isset($_COOKIE["user"])) { echo $_COOKIE["user"]; } ?>" required autofocus>
+    <input id="user" type="user" name="user" class="form-control" placeholder="Username"
+           value="<?php if (isset($_COOKIE["user"])) {
+               echo $_COOKIE["user"];
+           } ?>" required autofocus>
 
     <label for="inputPassword" class="sr-only">Password</label>
     <input id="password" type="password" name="password" class="form-control" placeholder="Password" value="" required>
@@ -38,15 +41,17 @@
             <input type="checkbox" name="remember" checked> Lembrar-me
         </label>
     </div>
+
     <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" style="margin-bottom: 5%">Entrar</button>
     <a href="../courses.php" class="card-link" style="margin-top: 20%; font-size: 0.9rem">Ainda não tem conta? Compre um curso aqui!</a><br>
     <a href="../index.php" class="card-link" style="margin-top: 20%; font-size: 0.9rem">← Voltar à página inicial</a>
+
     <p class="mt-5 mb-3 text-muted">&copy; Fábio Morais e Fernando Silva 2020</p>
 </form>
 
-<div class="container-fluid fixed-bottom" style="width: 25%">
+<div class="container-fluid fixed-bottom">
     <div id="accordion">
-        <div class="card">
+        <div class="card loginCard">
             <div class="card-header">
                 <a class="card-link" data-toggle="collapse" href="#collapseOne">
                     Logins Exemplo (login/password)

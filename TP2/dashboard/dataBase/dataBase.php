@@ -54,8 +54,8 @@ final class DataBase
     public function connect()
     {   try{
 
-           //$this->conn = pg_connect("host=localhost  dbname=postgres user=postgres password=siem");
-           $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
+           $this->conn = pg_connect("host=localhost  dbname=postgres user=postgres password=siem");
+           //$this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
 
         }catch(Exception $e){
             return false;
@@ -68,10 +68,7 @@ final class DataBase
         return true;
     }
 
-    public function getAllStudent()
-    {
-        return $this->student->getAllStudent($this->conn);
-    }
+
     public function getAllUsers()
     {
         return $this->user->getAllUsers($this->conn);
@@ -84,14 +81,7 @@ final class DataBase
     {
         return $this->student->getAllStudentsTeacher($this->conn, $teacherUserName);
     }
-    public function getStudentCourseGrade($userName)
-    {
-        return $this->student->getStudentCourseGrade($this->conn, $userName);
-    }
-    public function getPurchaseHistoric($userName)
-    {
-        return $this->student->getPurchaseHistoric($this->conn, $userName);
-    }
+
     public function getTotalCoursesStudent($userName)
     {
         return $this->student->getTotalCoursesStudent($this->conn, $userName);
@@ -105,10 +95,7 @@ final class DataBase
         return $this->teacher->getSalary($this->conn, $teacherUserName);
     }
 
-    public function insert($data)
-    {
-        return $this->user->ins($this->conn, $data);
-    }
+
 
     public function editUserInfo($userName, $user)
     {
@@ -140,10 +127,7 @@ final class DataBase
         return $this->user->changePassword($this->conn,$username, $passwordHash);
     }
 
-    public function getCoursesPrices()
-    {
-        return $this->course->getCoursesPrices($this->conn);
-    }
+
 
     public function getAllCoursesExceptStudentOwn($username)
     {
@@ -178,6 +162,11 @@ final class DataBase
     {
         return $this->order->getTotalYearProfit($this->conn);
     }
+
+    public function getTotalCustomYearProfit($year)
+    {
+        return $this->order->getTotalCustomYearProfit($this->conn, $year);
+    }
     public function getTotalMonthProfit()
     {
         return $this->order->getTotalMonthProfit($this->conn);
@@ -207,9 +196,18 @@ final class DataBase
     {
         return $this->order->getSellsCourses($this->conn);
     }
+
+    public function getSellsCoursesByYear($year)
+    {
+        return $this->order->getSellsCoursesByYear($this->conn, $year);
+    }
     public function getSellsCoursesMoney()
     {
         return $this->order->getSellsCoursesMoney($this->conn);
+    }
+    public function getSellsCoursesMoneyYear($year)
+    {
+        return $this->order->getSellsCoursesMoneyYear($this->conn, $year);
     }
     public function getTotalCourses()
     {
@@ -257,5 +255,23 @@ final class DataBase
     public function insertMessage($message, $from, $to)
     {
         return $this->chat->insertMessage($this->conn, $message, $from, $to);
+    }
+
+    public function getAllMessagesFromUser($username, $recipient)
+    {
+        return $this->chat->getAllMessagesFromUser($this->conn, $username, $recipient);
+    }
+
+    public function getAllMessagesFromUserStartId($username, $recipient, $id)
+    {
+        return $this->chat->getAllMessagesFromUserStartId($this->conn, $username, $recipient, $id);
+    }
+    public function setMessageToAlreadyRead($username, $recipient)
+    {
+        return $this->chat->setMessageToAlreadyRead($this->conn, $username, $recipient);
+    }
+    public function getCountOfUnreadMessages($username)
+    {
+        return $this->chat->getCountOfUnreadMessages($this->conn, $username);
     }
 }

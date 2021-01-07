@@ -27,5 +27,11 @@ if ($title == "users.php" || $title == "estatisticas.php" || $title == "vendas.p
         exit();
     }
 }
+if($title == "chat.php"){
+    if ( $_SESSION['role'] == 2) {
+        header("Location: templates/common/401.html");
+        exit();
+    }
+}
 
 ?>

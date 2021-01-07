@@ -110,25 +110,30 @@
 <script src="public/js/cookie.js"></script>
 <script src="public/js/forms/validateForms.js"></script>
 <script src="includes/libs/nif-pt.js"></script>
+<script src="public/js/ajax.js"></script>
+<script src="public/js/chart.js"></script>
+<script src="public/js/chartDraw.js"></script>
 
 <!--Get the title of the page-->
 <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
 <?php if ($title == "users.php" || $title == "alunos.php" || $title == "comprar_curso.php") :?>
     <script src="public/js/pagination.js"></script>
-    <script src="public/js/ajax.js"></script>
     <script src="public/js/filters.js"></script>
 <?php endif;?>
 
 <?php if ($title == "perfil.php" ) :?>
     <script src="public/js/forms/validatePassword.js"></script>
+    <script src="includes/libs/jscolor.js"></script>
+
 <?php endif;?>
 
 
 <?php if ($title == "comprar_curso.php" ) :?>
     <script src="public/js/cart/util.js"></script>
     <script src="public/js/cart/main.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script><!-- effect-->
+    <script src="public/js/cart/flyto.js"></script><!-- effect-->
 <?php endif;?>
 
 <?php if ($title == "index.php" ) :?>
@@ -139,6 +144,7 @@
 <?php if ($title == "chat.php" ) :?>
     <script src="public/js/chat.js"></script>
     <script src="public/js/ajax.js"></script>
+    <script src="public/js/filters.js"></script>
 <?php endif;?>
 
 </body>

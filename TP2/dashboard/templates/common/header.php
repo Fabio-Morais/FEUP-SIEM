@@ -1,5 +1,10 @@
-<?php require_once(dirname(__FILE__) . "/../../includes/common/access.php"); ?>
+<?php require_once(dirname(__FILE__) . "/../../includes/common/access.php");
+include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
+require_once(dirname(__FILE__) . "../../../includes/common/alerts.php");
+include_once(dirname(__FILE__) . "/../../includes/common/functions.php");
+?>
 
+<?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -10,26 +15,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>ExplicaFeup - Dashboard</title>
+    <title>ExplicaFeup - <?php echo ucfirst(chooseTitle($title))?></title>
+    <link rel="icon" href="public/img/icon.png">
+
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto|Roboto:700|Open+Sans:600|Open+Sans:700|Noto+Sans+JP:700|Bree+Serif">
     <link href="public/css/styles.css" rel="stylesheet" />
     <link href="public/css/main.css" rel="stylesheet" />
     <link href="public/css/profile.css" rel="stylesheet" />
     <link href="public/css/chat.css" rel="stylesheet" />
-
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+
     <!--Get the title of the page-->
-    <?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
     <?php if ($title == "comprar_curso.php" || $title == "carrinho.php") : ?>
         <!-- custom style -->
         <link href="public/css/ui.css" rel="stylesheet" type="text/css" />
         <link href="public/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
         <link href="public/css/cart/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <?php endif; ?>
 
 

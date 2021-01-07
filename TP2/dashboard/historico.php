@@ -1,25 +1,16 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
-
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
 
 <?php
-
-include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
 $db = DataBase::Instance();
-$ordersQuery = "";
 $connected = false;
 if ($db->connect()) {
-
     $ordersQuery = $db->getOrdersByUser($_SESSION['user']);
     $connected = true;
     $orders = pg_fetch_assoc($ordersQuery);
-
 } else
     Alerts::showError(Alerts::DATABASEOFF);
-
 ?>
 
 <div class="container-fluid">
@@ -61,7 +52,6 @@ if ($db->connect()) {
                     </tbody>
                 </table>
             </div>
-        </div>
         </div>
     </div>
 </div>

@@ -13,7 +13,7 @@ class Student{
      * Return all the students for all the courses that the $username teacher teaches
      */
     public function getAllStudentsTeacher($conn, $teacherUsername){
-        $query = "SELECT image,pp.username, color,gender FROM (SELECT aux.username FROM (SELECT distinct username FROM course INNER JOIN enrolled e on course.coursename = e.coursename WHERE teacher = '".$teacherUsername."') AS aux LEFT JOIN student on student.username = aux.username) AS pp inner join userr ee on pp.username = ee.username;";
+        $query = "SELECT image,pp.username, color,gender, name FROM (SELECT aux.username FROM (SELECT distinct username FROM course INNER JOIN enrolled e on course.coursename = e.coursename WHERE teacher = '".$teacherUsername."') AS aux LEFT JOIN student on student.username = aux.username) AS pp inner join userr ee on pp.username = ee.username;";
         return pg_exec($conn, $query);
     }
     /**
@@ -96,9 +96,11 @@ class Student{
      * Get all the teachers that the student have
      */
     public function getTeachersStudent($conn, $username){
-        $query = "SELECT DISTINCT teacher from explicafeup.course as e
-    INNER JOIN (SELECT * from explicafeup.enrolled WHERE username='".$username."') AS a
-        ON a.coursename = e.coursename";
+        $query = "SELECT * FROM explicafeup.userr as us
+       INNER JOIN (SELECT DISTINCT teacher from explicafeup.course as e
+       INNER JOIN (SELECT * from explicafeup.enrolled WHERE username='".$username."') AS a
+       ON a.coursename = e.coursename) AS tea
+       ON us.username = teacher";
         $result = pg_exec($conn, $query);
         return $result;
     }

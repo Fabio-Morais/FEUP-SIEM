@@ -1,12 +1,7 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
-
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
-
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
-<?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
+<?php
 $db = DataBase::Instance();
 $ordersQuery="";
 $connected = false;

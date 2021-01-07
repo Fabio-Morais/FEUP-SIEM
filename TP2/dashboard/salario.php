@@ -2,14 +2,12 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
 
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
-<?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
+<?php
 $db = DataBase::Instance();
 $salaryQuery = "";
-$connected = false;
 
+$connected = false;
+$salary="";
 if ($db->connect()) {
     $salaryQuery = $db->getSalary($_SESSION['user']);
     $salaryQuery2 = $db->getSalary($_SESSION['user']);
@@ -27,6 +25,7 @@ if ($connected) :
         array_push($label, $row['salarydate']);
         array_push($data, $row['salary']);
         $row = pg_fetch_assoc($salaryQuery2);
+
     }
 endif;
 ?>
