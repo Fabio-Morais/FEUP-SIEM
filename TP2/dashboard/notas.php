@@ -31,6 +31,12 @@ if ($db->connect()) {
                 $info = pg_fetch_assoc($infoQuery);
                 if($connected) :
                     while(isset($courses["coursename"])){
+                    if ($courses['coursegrade'] == -1) {
+                        $courses = pg_fetch_assoc($coursesQuery);
+                        $infoQuery = $db->getCourseInfo($courses['coursename']);
+                        $info = pg_fetch_assoc($infoQuery);
+                        continue;
+                    }
                         echo "<div id=\"course\" class=\"all ". $courses['coursename'] ." box\" data-aos=\"fade-up\" data-aos-delay=\"100\" data-aos-once=\"true\">";
                         echo    "<div id=\"imgBorder\"><img src=\"../img/courses/". $info['image'] ." \" id=\"imgCourse\"></div>";
                         echo    "<h3 style='z-index: 100'>" . ucwords($courses['coursename']) . "</h3>";  // Primeira letra maiuscula
