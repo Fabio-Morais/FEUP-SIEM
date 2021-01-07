@@ -1,12 +1,7 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
-
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
-
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
-<?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
+<?php
 $db = DataBase::Instance();
 $ordersQuery="";
 $connected = false;
@@ -42,8 +37,10 @@ if ($db->connect()) {
                     if($connected) :
                         $orders = pg_fetch_assoc($ordersQuery);
                         while(isset($orders["number"])) {
+                            $newDate = date("d-m-Y H:i:s", strtotime($orders['purchasedate']));
+                            $mydate = strtotime($orders['purchasedate']);
                             echo "<tr>";
-                            echo "<td scope=\"row\">". $orders['purchasedate'] ."</td>";
+                            echo "<td scope=\"row\" data-sort=".$mydate." >". $newDate."</td>";
                             echo "<td scope=\"row\">". $orders['deliverydate'] ."</td>";
                             echo "<td>". ucwords($orders['productname']) ."</td>";
                             echo "<td>". $orders['price'] ."€</td>";

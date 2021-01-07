@@ -8,26 +8,21 @@ $data = $weather->get_data();
 $currentTime = $weather->get_time();
 ?>
 
-<?php include_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 <?php
-
 include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
+
 $db = DataBase::Instance();
 $dailyEarning['sum']="0";
 $monthEarning['sum']="0";
 $totalCourses['count']="0";
-$connected = false;
 if ($db->connect()) {
 
     $monthEarningQuery = $db->getTotalMonthProfit();
     $dailyEarningQuery = $db->getTotalDailyProfit();
     $totalCoursesQuery = $db->getTotalCourses();
 
-    $connected = true;
     $monthEarning = pg_fetch_assoc($monthEarningQuery);
     $dailyEarning = pg_fetch_assoc($dailyEarningQuery);
     $totalCourses = pg_fetch_assoc($totalCoursesQuery);
@@ -46,7 +41,6 @@ if ($db->connect()) {
 ?>
 
 <div class="container-fluid" >
-
     <h1 class="m-4 p-4 text-center ">BEM VINDO <?php echo strtoupper($_SESSION['user']) ?></h1>
     <div class="justify-content-center m-4 p-4 animate__animated animate__fadeIn animate__delay-1s " >
         <div class="card border-left-primary shadow" id="weatherCard" >
@@ -66,15 +60,17 @@ if ($db->connect()) {
             </div>
         </div>
     </div>
+
 <?php if ($_SESSION['role'] != 2) : ?>
     <div style="margin:auto; width:10%; height:200px" >
         <div class="idAddDemoPostit" ></div>
     </div>
 <?php endif; ?>
+    <!--********Only Admins********-->
     <?php if ($_SESSION['role'] == 2) : ?>
         <!-- Content Row -->
         <div class="row justify-content-center">
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Earnings (Daily) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4 animate__animated animate__fadeInDown animate__delay-1s">
                 <div class="card border-left-primary shadow h-100 py-2">
                     <div class="card-body">
@@ -111,8 +107,7 @@ if ($db->connect()) {
             </div>
 
 
-
-            <!-- Pending Requests Card Example -->
+            <!-- Courses sells Card Example -->
             <div class="col-xl-3 col-md-6 mb-4 animate__animated animate__fadeInDown animate__delay-1s">
                 <div class="card border-left-warning shadow h-100 py-2">
                     <div class="card-body">

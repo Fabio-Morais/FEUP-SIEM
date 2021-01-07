@@ -1,6 +1,7 @@
 <?php
 /**
- * Template usado para as paginas perfil.php e formEdit.php (quando se edita um user na pagina user.php)
+ * Template usado para as paginas perfil.php e editUser.php (quando se edita um user na pagina user.php)
+ * @param- $username, $title, $queryInfo
  */
 
 
@@ -49,12 +50,13 @@ echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
     <div class="form-group row">
         <label class="col-lg-3 col-form-label form-control-label">Sexo</label>
         <div class="col-lg-9">
-            <label class="radio-inline">
-                <input type="radio" class="form-check-label" name="gender" style="transform:scale(1.6);" value="f"
-                       checked> Mulher
+            <label class="radio-inline m-1">
+                <input type="radio" class="form-check-label m-1" name="gender" style="transform:scale(1.6);" value="f"
+                    <?php echo ($queryInfo['gender']=="f") ? "checked" : ""; ?>> Mulher
             </label>
-            <label class="radio-inline ml-4">
-                <input type="radio" class="form-check-label" name="gender" style="transform:scale(1.6);" value="m">
+            <label class="radio-inline ml-4 m-1">
+                <input type="radio" class="form-check-label m-1" name="gender" style="transform:scale(1.6);" value="m"
+                    <?php echo ($queryInfo['gender']=="m") ? "checked" : ""; ?>>
                 Homem
             </label>
         </div>
@@ -106,7 +108,7 @@ echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
         <div class="col-lg-9">
             <?php
             $string = "perfil.php";
-            if ($title == "formEdit.php")
+            if ($title == "editUser.php")
                 $string = "users.php";
             ?>
 

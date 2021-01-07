@@ -200,27 +200,34 @@ $( document ).ready(function() {
  * ALUNOS.PHP and USERS.PHP
  ****************************************************/
 
-jQuery.expr[':'].ContainsStudent = function (a, i, m) {
+jQuery.expr[':'].ContainsStudentUser = function (a, i, m) {
     input = m[3].toUpperCase();
     return jQuery(a).find(".widget-user-username").text().toUpperCase().indexOf(input) >= 0 ;
 };
 $(document).on('input', '#myInput', function (event) {
+    if($(".contentShown").length>0)
+        $(".content").removeClass("contentShown")
     var text = $(this).val();
     $('.content').hide();
-    $('.content:ContainsStudent(' + text + ')').show();
+    $('.content:ContainsStudentUser(' + text + ')').addClass("contentShown").show();
+    if(text.length == 0){
+        aaa(0)
+    }else
+        aaa(1)
+
+
 
 });
 /****************************************************
  * CHAT.PHP
  ****************************************************/
 
-jQuery.expr[':'].ContainsStudent = function (a, i, m) {
+jQuery.expr[':'].ContainsChat = function (a, i, m) {
     input = m[3].toUpperCase();
     return jQuery(a).find("#nameLeftSide").text().toUpperCase().indexOf(input) >= 0 ;
 };
 $(document).on('input', '#searchUsers', function (event) {
     var text = $(this).val();
     $('.content').hide();
-    $('.content:ContainsStudent(' + text + ')').show();
-
+    $('.content:ContainsChat(' + text + ')').show();
 });

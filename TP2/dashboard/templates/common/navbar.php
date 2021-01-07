@@ -1,5 +1,4 @@
 <?php
-include_once(dirname(__FILE__) . "../../../dataBase/dataBase.php");
 ?>
 
 <body class="sb-nav-fixed customScrollBar" >

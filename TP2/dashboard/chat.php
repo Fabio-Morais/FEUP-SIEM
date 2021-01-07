@@ -2,6 +2,7 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
+<?php require_once(dirname(__FILE__) . "/includes/common/functions.php"); ?>
 
 <?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
 $db = DataBase::Instance();
@@ -19,19 +20,9 @@ if ($db->connect()) {
     if (isset($chatPeople)) {
         $firstElement = $chatPeople;
     }
-}
+} else
+    Alerts::showError(Alerts::DATABASEOFF);
 
-function getImage($queryInfo)
-{
-    $image = (!empty($queryInfo['image']) == true) ? "users/" . $queryInfo['image'] : "";
-    if (empty($image)) {
-        if ($queryInfo['gender'] == 'f')
-            $image = "avatarGirl.png";
-        else
-            $image = "avatar.png";
-    }
-    return $image;
-}
 
 ?>
 
@@ -89,12 +80,13 @@ function getImage($queryInfo)
                             <hr class="d-block d-lg-none mt-1 mb-0">
                         </div>
                         <!-- CONVERSATION START HERE-->
-                        <div class="col-12 col-lg-7 col-xl-9">
-                            <div class="py-2 px-4 border-bottom d-none d-lg-block">
+                        <div class="col-12 col-lg-7 col-xl-9 ">
+                            <div class="py-2 px-4 border-bottom d-none d-lg-block ">
                                 <div class="d-flex align-items-center py-1">
                                     <div class="position-relative">
                                         <img id="topImageUser" src="public/img/<?php echo getImage($firstElement) ?>"
-                                             class="rounded-circle mr-1 userImageChat" alt="Sharon Lessman" width="40" height="40">
+                                             class="rounded-circle mr-1 userImageChat" alt="Sharon Lessman" width="40"
+                                             height="40">
                                     </div>
                                     <div class="flex-grow-1 pl-3">
                                         <strong><?php echo $firstElement['name'] ?></strong>
@@ -104,7 +96,8 @@ function getImage($queryInfo)
                                 </div>
                             </div>
                             <div class="position-relative">
-                                <div class="chat-messages p-4 customScrollBar" id="nameTo" data-from="<?php echo $_SESSION['user'] ?>"
+                                <div class="chat-messages p-4 customScrollBar " id="nameTo"
+                                     data-from="<?php echo $_SESSION['user'] ?>"
                                      data-to="<?php echo $firstElement['username'] ?>"
                                      data-image="<?php echo getImage($queryInfo) ?>">
                                     <?php
@@ -129,7 +122,8 @@ function getImage($queryInfo)
                                         <div class="<?php echo $leftRitght; ?> pb-4 chatMessage"
                                              id="<?php echo $messages['id'] ?>">
                                             <div>
-                                                <img src="public/img/<?php echo $image ?>" class="rounded-circle mr-1 userImageChat"
+                                                <img src="public/img/<?php echo $image ?>"
+                                                     class="rounded-circle mr-1 userImageChat"
                                                      width="40" height="40">
                                             </div>
                                             <div>
@@ -167,13 +161,10 @@ function getImage($queryInfo)
     </div>
 </div>
 
-
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
 
 <script>
     scrollDown()
     selectChat($('#<?php echo $firstElement['username']?>'))
     $("#<?php echo $firstElement['username']?>").find('.unseenMessages').hide()//remove the unseen message FOR THE FIRST ELEMENT
-
-
 </script>
