@@ -616,42 +616,6 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     margin-bottom: 1px;
 }
 
-#initModalCont {
-    font-size: 18px;
-    color: #457B9D;
-    font-family: "Roboto";
-    height: 78%;
-}
-
-#initModalCont>h2 {
-    font-size: 48px;
-    margin-top: 0em;
-    margin-bottom: 0.11em;
-    color: #457B9D;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.445);
-}
-
-#photoName {
-    width: 13em;
-    border: 2px solid rgb(0, 0, 0);
-    padding: 0.3em;
-    box-shadow: 0px 0px 4px 2px black;
-    margin: 0;
-    margin: 5px
-}
-
-#photoBorder {
-    width: 100%;
-    height: 12em;
-    margin: 0;
-}
-
-#photoName>h4 {
-    font-size: 30px;
-    margin-top: 0.3em;
-    text-align: center;
-}
-
 #photoInit {
     width: 100%;
     height: 100%;
@@ -743,38 +707,6 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
 .buttonRed>div>svg {
     font-size: 30px;
 }
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-#modalBtnContainer {
-    width: 95%;
-    text-align: center;
-}
-
-.cancelbtn {
-    color: #1D3557;
-    text-transform: uppercase;
-    font-family: "Roboto";
-    font-weight: bold;
-    font-size: 20px;
-    background: #F1FAEE;
-    padding: 15px;
-    border: 4px solid #457B9D;
-    border-radius: 6px;
-    display: inline-block;
-    transition: all 0.5s;
-    margin-top: 15px;
-}
-
-.cancelbtn:hover {
-    color: #494949;
-    border-radius: 50px;
-    border-color: #E63946;
-    transition: all 0.3s ease 0s;
-}
 
 .butnDownloads {
     background-color: #f8f9fa;
@@ -794,45 +726,6 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     color: white;
 }
 
-#modalContainer {
-    font-size: 18px;
-    color: #457B9D;
-    font-family: "Roboto";
-    height: 78%;
-}
-
-#modalContainer>h2 {
-    font-size: 60px;
-    margin-top: 0em;
-    margin-bottom: 0.11em;
-    color: #457B9D;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.445);
-}
-
-/* Add Zoom Animation */
-
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {
-        -webkit-transform: scale(0)
-    }
-    to {
-        -webkit-transform: scale(1)
-    }
-}
-
-@keyframes animatezoom {
-    from {
-        transform: scale(0)
-    }
-    to {
-        transform: scale(1)
-    }
-}
 .flex-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -843,15 +736,6 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
 }
 
 @media only screen and (max-width:1400px) {
-    #initialContent {
-        width: 95%;
-
-    }
-
-    #initModalCont {
-        width: 98%;
-    }
-
     .buttonRed {
         margin: auto;
     }

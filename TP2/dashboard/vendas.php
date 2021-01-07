@@ -42,9 +42,13 @@ if ($db->connect()) {
                     if($connected) :
                         $orders = pg_fetch_assoc($ordersQuery);
                         while(isset($orders["number"])) {
+                            $newdate_purchase = date("d-M-Y H:i:s", strtotime($orders['purchasedate']));
+                            $mydate_purchase = strtotime($orders['purchasedate']);
+                            $newdate_delivery = date("d-M-Y H:i:s", strtotime($orders['deliverydate']));
+                            $mydate_delivery = strtotime($orders['deliverydate']);
                             echo "<tr>";
-                            echo "<td scope=\"row\">". $orders['purchasedate'] ."</td>";
-                            echo "<td scope=\"row\">". $orders['deliverydate'] ."</td>";
+                            echo "<td scope=\"row\" data-sort=".$mydate_purchase." >".$newdate_purchase."</td>";
+                            echo "<td scope=\"row\" data-sort=".$mydate_delivery." >".$newdate_delivery."</td>";
                             echo "<td>". ucwords($orders['productname']) ."</td>";
                             echo "<td>". $orders['price'] ."€</td>";
                             echo "<td>". $orders['idstudent'] ."</td>";
