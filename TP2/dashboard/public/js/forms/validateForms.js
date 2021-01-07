@@ -197,6 +197,8 @@ function validateFormAddUser() {
 function validateFormRegister() {
     var email = document.forms["registo"]["email"].value;
     var user = document.forms["registo"]["user"].value;
+    var nif = document.forms["registo"]["nif"].value;
+    var phone = document.forms["registo"]["phone"].value;
     var isOk = true;
     $('.feedbackJs').remove();
     $('.valid-feedback').remove();
@@ -224,6 +226,36 @@ function validateFormRegister() {
         isOk &= true;
     }
 
+    /*NIF*/
+    if (!isEmpty(nif)) {
+        if (!valideNif(nif)) {
+            document.getElementsByName("nif")[0].setAttribute("class", "form-control is-invalid");
+            $("[name='nif']").after('<div class="invalid-feedback feedbackJs">É necessário colocar um nif válido</div>');
+            isOk &= false;
+        } else {
+            document.getElementsByName("nif")[0].setAttribute("class", "form-control is-valid");
+            $("[name='nif']").after('<div class="valid-feedback ">Correto</div>');
+            isOk &= true;
+        }
+    } else {
+        isOk &= true;
+    }
+
+    /*TELEFONE*/
+    if (!isEmpty(phone)) {
+        if (!validePhone(phone)) {
+            document.getElementsByName("phone")[0].setAttribute("class", "form-control is-invalid");
+            $("[name='phone']").after('<div class="invalid-feedback feedbackJs">É necessário colocar um telemóvel válido</div>');
+            isOk &= false;
+        } else {
+            document.getElementsByName("phone")[0].setAttribute("class", "form-control is-valid");
+            $("[name='phone']").after('<div class="valid-feedback ">Correto</div>');
+            isOk &= true;
+        }
+    } else {
+        isOk &= true;
+    }
+
     console.log();
-    return false;
+    return (isOk==1);
 }

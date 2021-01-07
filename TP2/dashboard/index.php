@@ -62,7 +62,7 @@ if ($db->connect()) {
     </div>
 
 <?php if ($_SESSION['role'] != 2) : ?>
-    <div style="margin:auto; width:10%; height:200px" >
+    <div style="margin:auto; width:10%; height:150px" >
         <div class="idAddDemoPostit" ></div>
     </div>
 <?php endif; ?>

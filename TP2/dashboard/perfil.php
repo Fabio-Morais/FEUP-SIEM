@@ -105,7 +105,7 @@ $title = basename($_SERVER['SCRIPT_NAME']);
                                                        $date = new DateTime($orders['purchasedate']);
                                                        echo "<tr>";
                                                            echo "<td>";
-                                                           echo "<strong>Curso:</strong> ".$orders['productname'];
+                                                           echo "<strong>Curso:</strong> ".ucwords($orders['productname']);
                                                            echo "</td>";
                                                            echo "<td>";
                                                            echo "<strong>Data de compra: </strong>".$date->format('d-m-Y');;
