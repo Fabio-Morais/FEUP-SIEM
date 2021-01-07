@@ -1,14 +1,9 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
-
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php");
+<?php require_once(dirname(__FILE__) . "/includes/common/functions.php");
 ?>
-
-<?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
-
+<?php
 $db = DataBase::Instance();
 $users = "";
 $courses = "";
@@ -16,14 +11,16 @@ $connected = false;
 if ($db->connect()) {
     $users = $db->getAllStudentsTeacher($_SESSION['user']);
     $connected = true;
-
 } else
     Alerts::showError(Alerts::DATABASEOFF);
 
 ?>
 
 
+<?php
 
+
+?>
 <!--Lista de alunos-->
 <div class="container-fluid">
     <div class="justify-content-center m-4">
@@ -34,7 +31,7 @@ if ($db->connect()) {
                     <i class="fas fa-search" aria-hidden="true"></i>
                     <input class="form-control form-control-sm ml-2 w-75" type="text" placeholder="Search" aria-label="Search" id="myInput">
                 </form>
-                <div class="d-flex flex-wrap no-gutters justify-content-around" id="jar" style="display:none">
+                <div class="d-flex flex-wrap no-gutters justify-content-start " id="jar" style="display:none">
                     <?php
                     if ($connected) :
                         $row = pg_fetch_assoc($users);
@@ -55,25 +52,15 @@ if ($db->connect()) {
                             if (isset($row3["avg"]) && $row3["avg"] > 0.0)
                                 $grade = sprintf("%.1f", $row3["avg"]);
 
-                            /*Se user nao tiver imagem mete uma padrao*/
-                            if(!isset($row['image'])){
-                                $image="avatar.png";
-                            }else{
-                                $image="users/".$row['image'];
-                            }
-                            /*if the user is a girl, show a default girl avatar*/
-                            $avatar="avatar.png";
-                            if($row['gender']=='f')
-                                $avatar="avatarGirl.png";
 
-                            echo "<div class=\"p-2 m-3 content\">";
+                            echo "<div class=\"p-2 m-3 content \">";
                             echo "   <div class=\"hovereffect\">";
                             echo       "<div class=\"contentSearch box box-widget widget-user\">";
                             echo            "<div class=\"widget-user-header\" style=\"background-color:". ((empty($row["color"])) ? "#8585d3" : $row["color"])."\">";
                             echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
-                            echo                "<img class=\"rounded-circle\" src=\"public/img/".$row['image'] ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/$avatar'\">"; /*AVATAR*/
+                            echo                "<img class=\"rounded-circle\" src=\"public/img/".getImage($row) ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">"; /*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
                             echo               "<h5 class=\"widget-user-desc text-center \">" . "Aluno" . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
@@ -99,7 +86,7 @@ if ($db->connect()) {
                             echo         "<h2>" . $row['username'] . "</h2>";/*USERNAME*/
                             echo         "<span data-toggle='modal' data-target='#exampleModalLong'><button data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Ver Perfil\" class=\"info btn btn-success btn-circle btn-md\" onclick=\"showStudentInfo('". $row['username'] ."')\"><i class=\"fas fa-user-circle\" ></i></button></span>";
                             echo        "<span data-toggle='modal' data-target='#modalGradeForm'>
-                            <button  data-toggle='tooltip' data-placement='bottom' title='Atribuir Nota' onclick='myFunction(\"" . $row['username'] . "\")' type='button' class='info btn btn-success btn-circle btn-md'  >
+                            <button  data-toggle='tooltip' data-placement='bottom' title='Atribuir Nota' onclick='getStudent(\"".$_SESSION['user']."\",\"" . $row['username'] . "\")' type='button' class='info btn btn-success btn-circle btn-md'  >
                             <i class='far fa-edit'></i>
                             </button></span>";
                             echo     "</div>";
@@ -182,16 +169,19 @@ if ($db->connect()) {
                                             <h6 class="text-light">Aluno</h6>
                                         </div>
                                         <div class="card-body">
-                                            <div class="list-group-item d-flex flex-row justify-content-center">
+                                            <div class="list-group-item d-flex flex-wrap flex-row justify-content-center" >
 
-                                                <div class="list-details m-2 text-center">
-                                                    <i class="fas fa-phone  fa-lg text-gray-300"></i> <span class="modalPhone"><!-- PHONE HERE --></span>
+                                                <div class="list-details m-2 text-center d-flex flex-row flex-wrap justify-content-center" >
+                                                    <div class="mr-2"><i class="fas fa-phone fa-lg"></i></div>
+                                                    <div class="mr-2 mt-2"><span class="modalPhone"><!-- PHONE HERE --></span></div>
                                                 </div>
 
-                                                <div class="list-details m-2 text-center" >
-                                                    <i class="fa fa-envelope  fa-lg text-gray-300"></i><span  class="modalEmail"> <!-- EMAIL HERE --></span>
+                                                <div class="list-details m-2 text-center d-flex flex-row flex-wrap justify-content-center" >
+                                                    <div class="ml-2"><i class="fa fa-envelope fa-lg"></i></div>
+                                                    <div class="ml-2 mt-2"><span  class="modalEmail"> <!-- EMAIL HERE --></span></div>
                                                 </div>
                                             </div>
+
                                             <div class="row text-center mt-4">
                                                 <div class="col p-2">
                                                     <h4 class="mb-1 line-height-5" id="countCourse"> <!-- COUNT COURSE HERE --></h4>
@@ -270,35 +260,7 @@ if ($db->connect()) {
 </div>
 
 
-<script>
-
-    /*Update the value of #usernam for the modal #modalGradeForm*/
-    function myFunction(username) {
-        document.getElementById('usernam').value = username;
-
-        var xhttp;
-        xhttp = new XMLHttpRequest();
-        console.log("webservices/getEnrolledStudentCourse.php?teacher=<?php echo $_SESSION['user']?>&student="+username)
-        xhttp.open("GET", "webservices/getEnrolledStudentCourse.php?teacher=<?php echo $_SESSION['user']?>&student="+username, true);
-        xhttp.send();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log("alive")
-                var response = JSON.parse(this.responseText);//json encode to array
-                $("#courseOptions > option").remove()//options reset
-                for(i=0; i<response.length; i++){
-                    if(response[i]['coursegrade']<0){//courses that was not graded
-                            string = " <option selected >"+response[i]['coursename']+"</option>"
-                        $("#courseOptions").append(string)
-                    }else{
-                            string = " <option disabled >'"+response[i]['coursename']+"' já avaliado</option>"
-                        $("#courseOptions").append(string)
-                    }
-                }
-                console.log(response)
-            }
-        };
-    }
-</script>
-
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
+<script>
+    aaa();
+</script>

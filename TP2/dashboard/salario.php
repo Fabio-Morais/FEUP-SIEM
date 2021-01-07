@@ -2,34 +2,23 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
 
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
-<?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
+<?php
 $db = DataBase::Instance();
-$salary = "";
 $connected = false;
-
+$salary="";
 if ($db->connect()) {
     $salary = $db->getSalary($_SESSION['user']);/*Mudar o username para o que vem da session*/
     $connected = true;
 } else
     Alerts::showError(Alerts::DATABASEOFF);
-
-?>
-<?php
+/*insert into arrays*/
 $data = array();
 $label = array();
 if ($connected) :
-
     $row = pg_fetch_assoc($salary);
     while (isset($row["username"])) {
         array_push($label, $row['salarydate']);
         array_push($data, $row['salary']);
-        /*echo "<tr>";
-        echo "<td>" . $row['salarydate'] . "</td>";
-        echo "<td>" . $row['salary'] . "</td>";
-        echo "</tr>";*/
         $row = pg_fetch_assoc($salary);
     }
 

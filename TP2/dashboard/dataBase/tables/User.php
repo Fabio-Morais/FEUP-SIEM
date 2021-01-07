@@ -24,7 +24,7 @@ class User{
          /**
      * Return user info
      */
-    public function ins($conn, $data){
+    public function insert($conn, $data){
         $query = "UPDATE userr set image = '".$data."' where username = 'fabio123'";
         $result = pg_exec($conn, $query);
         return $result;

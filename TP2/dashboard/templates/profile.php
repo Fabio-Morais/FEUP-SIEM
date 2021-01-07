@@ -1,6 +1,7 @@
 <?php
 /**
- * Template usado para as paginas perfil.php e formEdit.php (quando se edita um user na pagina user.php)
+ * Template usado para as paginas perfil.php e editUser.php (quando se edita um user na pagina user.php)
+ * @param- $username, $title, $queryInfo
  */
 
 
@@ -14,7 +15,7 @@ if ($title == "perfil.php") {
 echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
 <form name="editUserProfile" method="POST"
       action="<?php echo "action/actionUpdateUser.php?originalUser=$username&page=$title" ?>"
-      enctype="multipart/form-data" onsubmit="return validateFormProfile('<?php echo $title?>')">
+      enctype="multipart/form-data" onsubmit="return validateFormProfile('<?php echo $title ?>')">
     <div class="form-group row">
         <label class="col-lg-3 col-form-label form-control-label">Username</label>
         <div class="col-lg-9">
@@ -49,12 +50,15 @@ echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
     <div class="form-group row">
         <label class="col-lg-3 col-form-label form-control-label">Sexo</label>
         <div class="col-lg-9">
-            <label class="radio-inline" >
-                <input type="radio" class="form-check-label" name="gender" style="transform:scale(1.6);" value="f" checked> Mulher
+            <label class="radio-inline m-1">
+                <input type="radio" class="form-check-label m-1" name="gender" style="transform:scale(1.6);" value="f"
+                    <?php echo ($queryInfo['gender']=="f") ? "checked" : ""; ?>> Mulher
             </label>
-        <label class="radio-inline ml-4">
-            <input type="radio" class="form-check-label" name="gender" style="transform:scale(1.6);" value="m"> Homem
-        </label>
+            <label class="radio-inline ml-4 m-1">
+                <input type="radio" class="form-check-label m-1" name="gender" style="transform:scale(1.6);" value="m"
+                    <?php echo ($queryInfo['gender']=="m") ? "checked" : ""; ?>>
+                Homem
+            </label>
         </div>
     </div>
 
@@ -103,23 +107,32 @@ echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
         <label class="col-lg-3 col-form-label form-control-label"></label>
         <div class="col-lg-9">
             <?php
-                $string="perfil.php";
-                if($title == "formEdit.php")
-                    $string ="users.php";
+            $string = "perfil.php";
+            if ($title == "editUser.php")
+                $string = "users.php";
             ?>
 
-            <button type="reset" class="btn btn-secondary" value="Cancelar" onclick="location.href='<?php echo $string?>'"><i
-                        class="far fa-times-circle mr-2"></i> Cancelar
-            </button>
-            <?php if($title == "perfil.php"):?>
-            <button type="button" data-toggle="modal" onclick="validatePass()" data-target="#passModal"
-                    class="btn btn-primary"><i class="fas fa-lock mr-2"></i> Mudar Password
-            </button>
-            <?php endif; ?>
-            <button type="submit" class="btn btn-primary" value="Guardar" name="Guardar"><i
-                        class="fas fa-file-download mr-2"></i> Guardar
-            </button>
 
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-center" style="width:100%;">
+            <div>
+                <button type="reset" class="btn btn-secondary m-1" value="Cancelar"
+                        onclick="location.href='<?php echo $string ?>'"><i
+                            class="far fa-times-circle mr-2"></i> Cancelar
+                </button>
+            </div>
+            <?php if ($title == "perfil.php"): ?>
+                <div>
+                    <button type="button" data-toggle="modal" onclick="validatePass()" data-target="#passModal"
+                            class="btn btn-primary m-1"><i class="fas fa-lock mr-2"></i> Mudar Password
+                    </button>
+                </div>
+            <?php endif; ?>
+            <div>
+                <button type="submit" class="btn btn-primary m-1" value="Guardar" name="Guardar"><i
+                            class="fas fa-file-download mr-2"></i> Guardar
+                </button>
+            </div>
         </div>
     </div>
 </form>
@@ -151,11 +164,12 @@ echo "<div class=\"tab-pane $show\" id=\"edit\">" ?>
                             <label for="inputPasswordOldLabel">Password Atual</label>
                             <input type="password" class="form-control is-invalid" id="inputPasswordOld123" required=""
                                    name="passwordOld">
-                            <?php if(!empty($_SESSION['errorText'])): ?>
-                            <span class="form-text small text-danger" id="wrongPass">
-                                     <?php echo $_SESSION['errorText']; $_SESSION['errorText']=NULL?>
+                            <?php if (!empty($_SESSION['errorText'])): ?>
+                                <span class="form-text small text-danger" id="wrongPass">
+                                     <?php echo $_SESSION['errorText'];
+                                     $_SESSION['errorText'] = NULL ?>
                             </span>
-                            <?php endif;?>
+                            <?php endif; ?>
                         </div>
                         <div class="form-group">
                             <label for="inputPasswordNew">Nova Password</label>

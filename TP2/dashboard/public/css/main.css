@@ -334,6 +334,11 @@ Paginas
     text-align-last: center;
 }
 
+#outer2 {
+    width: 100px;
+    float: right;
+    text-align-last: center;
+}
 .dataTables_filter input[type="search"]:focus {
     width: 350px;
     transition: all 1s;
@@ -581,6 +586,24 @@ Paginas
 .textClock{
     color:#CED4DA!important;
 }
+
+.btn-primary{
+    background-color: #457B9D
+}
+
+.btn-primary:hover{
+    background-color: rgba(69, 123, 157,0.8);
+}
+.btn-primary:visited{
+    background-color: rgba(69, 123, 157,0.9)!important;
+}
+.btn-primary:active{
+    background-color: rgba(69, 123, 157,0.9)!important;
+}
+.btn-primary:focus{
+    background-color: rgba(69, 123, 157,0.9)!important;
+}
+
 
 div.outer { position: relative; height: 5px; }
 div.outer .imgl{ position: absolute; left: 0; bottom: 0; opacity: 0.7; margin-left: 3%}

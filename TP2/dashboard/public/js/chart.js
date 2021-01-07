@@ -2,7 +2,7 @@
  * Chart Class
  * @author- Fábio and Fernando
  * */
-export default class ChartBuild{
+class ChartBuild{
     /**
      * @param- graph-> 0:line chart; 1: pie chart; 2:bar chart
      * @param- id-> id of the graph
