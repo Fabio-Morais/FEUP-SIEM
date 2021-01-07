@@ -11,6 +11,10 @@ if($connected){
         $query = $db->getSellsCoursesByYear($_GET['year']);
     else if($_GET['option'] == 3)
         $query = $db->getSellsCoursesMoneyYear($_GET['year']);
+    else if($_GET['option'] == 4)
+        $query = $db->getGender();
+    else if($_GET['option'] == 5)
+        $query = $db->getAverageByCourse();
 }
 $i=0;
 while($data[$i++] = pg_fetch_assoc($query));

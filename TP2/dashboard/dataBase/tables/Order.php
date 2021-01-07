@@ -4,21 +4,7 @@ class Order{
     public function __construct()
     {
     }
-    public function getCourseCount($conn){
-        $query = "select productname, count(*) from Orderr GROUP BY productname;";
-        $result = pg_exec($conn, $query);
-        return $result;
-    }
-    public function getProfitByCourse($conn){
-        $query = "select productname, sum(CAST(price AS DECIMAL(10,2))) from Orderr GROUP BY productname;";
-        $result = pg_exec($conn, $query);
-        return $result;
-    }
-    public function getTotalProfit($conn){
-        $query = "select sum(CAST(price AS DECIMAL(10,2))) from Orderr;";
-        $result = pg_exec($conn, $query);
-        return $result;
-    }
+
     public function getTotalYearProfit($conn){
         $query = "SELECT  SUM(CAST(price as INT)) as price,to_char(to_date(purchasedate, 'DD/MM/YYYY'),'DD/MM/YYYY') as date
                     FROM explicafeup.Orderr
@@ -82,7 +68,7 @@ class Order{
         return $result;
     }
     /**
-     * Return total sells by courses (€)
+     * Return sum of total sells by courses (€)
      */
     public function getSellsCoursesMoneyYear($conn, $year){
         $query = "SELECT sum(CAST(price AS int)), productname FROM orderr 
@@ -126,6 +112,15 @@ class Order{
      */
     public function getAllOrders($conn){
         $query = "SELECT * FROM orderr";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
+
+    /**
+     * Get All years
+     */
+    public function getYears($conn){
+        $query = "SELECT distinct to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') as year FROM explicafeup.orderr";
         $result = pg_exec($conn, $query);
         return $result;
     }

@@ -11,6 +11,10 @@ function namesOfJson(type){
         return ['count','productname']
     }else if(type === 2){
         return ['sum','productname']
+    }else if(type === 3){
+        return ['count','gender']
+    }else if(type === 4){
+        return ['round','coursename']
     }
 }
 
@@ -36,6 +40,19 @@ function changeGraphKPI(json, type){
     }else if(type === 2){
         let chart = new ChartBuild(2, "myBarChart", data, "Lucro", label);
         chart.labelTextAxis("Curso", "Lucro (€)")
+        chart.setSpecialSymbol(0)
+        chart.execute();
+    }else if(type === 3){
+        let chart = new ChartBuild(1, "myPieChart", data, "Genero", label);
+        chart.colorsPieGenders()
+        chart.execute();
+    }else if(type === 4){
+        let chart = new ChartBuild(2, "myBarChart", data, "Nota", label);
+        console.log(data)
+        console.log(label)
+        chart.labelTextAxis("Curso", "Nota")
+        chart.setSpecialSymbol(1)
+        chart.setLimitXGrade()
         chart.execute();
     }
 
@@ -73,6 +90,14 @@ function selectRightGrpah(){
         $(".card-header")[0].innerHTML="<i class=\"fas fa-chart-bar mr-1\"></i>Lucro de vendas por curso"
         $('.canvasClass').append('<canvas id="myBarChart" width="100%" height="30"></canvas>');
         getSellsCoursesMoneyCustomYearDb(year)
+    }else if(graphType==="option4"){
+        $(".card-header")[0].innerHTML="<i class=\"fas fa-chart-pie mr-1\"></i>Comparação entre gêneros"
+        $('.canvasClass').append('<canvas id="myPieChart" width="100%" height="30"></canvas>');
+        getGendersDb()
+    }else if(graphType==="option5"){
+        $(".card-header")[0].innerHTML="<i class=\"fas fa-chart-bar mr-1\"></i>Media por curso"
+        $('.canvasClass').append('<canvas id="myBarChart" width="100%" height="30"></canvas>');
+        getAverageByCourse()
     }
 }
 
@@ -84,6 +109,14 @@ $(document).ready(function () {
         graphType=$(this).val()
         selectRightGrpah()
         $(".card-header")[0].innerText
+        if(graphType==="option4" || graphType==="option5" ){
+            $('#outer2').hide()
+            $('.outer2Text').hide()
+        }else{
+            $('#outer2').show()
+            $('.outer2Text').show()
+
+        }
     })
     /*graph type selection*/
     $('#outer2').change(function () {

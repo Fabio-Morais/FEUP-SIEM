@@ -126,6 +126,10 @@ final class DataBase
     {
         return $this->user->changePassword($this->conn,$username, $passwordHash);
     }
+    public function getGender()
+    {
+        return $this->user->getGender($this->conn);
+    }
 
 
 
@@ -136,6 +140,10 @@ final class DataBase
     public function getCourseInfo($coursename)
     {
         return $this->course->getCourseInfo($this->conn, $coursename);
+    }
+        public function getAverageByCourse()
+    {
+        return $this->course->getAverageByCourse($this->conn);
     }
         
     public function getCoursesTeacher($username)
@@ -273,5 +281,9 @@ final class DataBase
     public function getCountOfUnreadMessages($username)
     {
         return $this->chat->getCountOfUnreadMessages($this->conn, $username);
+    }
+    public function getYears()
+    {
+        return $this->order->getYears($this->conn);
     }
 }

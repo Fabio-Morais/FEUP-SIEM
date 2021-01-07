@@ -39,12 +39,13 @@ function getPageList(totalPages, page, maxLength) {
 
 
 // Below is an example use of the above function.
-function aaa(aux) {
+function pagFunc(aux) {
     // Number of items and limits the number of items per page
     var numberOfItems = $("#jar .content").length;
-    if(aux==1){
+    if(aux===1){
         numberOfItems = $(".contentShown").length;
     }
+    console.log(numberOfItems)
     var limitPerPage = 8;
     if (window.innerWidth >= 2037) {
         limitPerPage = 12;
@@ -71,8 +72,12 @@ function aaa(aux) {
 
         if (whichPage < 1 || whichPage > totalPages) return false;
         currentPage = whichPage;
-        if(run==1){
+        if(run===1){
             $("#jar .content").hide()
+                .slice((currentPage - 1) * limitPerPage,
+                    currentPage * limitPerPage).show();
+        }else{
+            $("#jar .contentShown").hide()
                 .slice((currentPage - 1) * limitPerPage,
                     currentPage * limitPerPage).show();
         }
@@ -115,21 +120,21 @@ function aaa(aux) {
     }
     // Show the page links
     $("#jar").show();
-    if(aux==1)
+    if(aux===1)
         showPage(1, 0);
     else
         showPage(1, 1);
 
     // Use event delegation, as these items are recreated later
     $(document).on("click", ".pagination li.current-page:not(.active)", function() {
-        return showPage(+$(this).text());
+        return showPage(+$(this).text(), 1);
     });
     $("#next-page").on("click", function() {
-        return showPage(currentPage + 1);
+        return showPage(currentPage + 1, 1);
     });
 
     $("#previous-page").on("click", function() {
-        return showPage(currentPage - 1);
+        return showPage(currentPage - 1, 1);
     });
     $(window).on('resize', function() {
         if (window.innerWidth >= 2037) {

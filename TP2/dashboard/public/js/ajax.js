@@ -251,7 +251,6 @@ function getTotalCustomYearDb(year){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
-            console.log(this.responseText)
             changeGraphKPI(response,0)
         }
     };
@@ -266,7 +265,6 @@ function getSellsCoursesCustomYearDb(year){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
-            console.log(response)
             changeGraphKPI(response,1)
         }
     };
@@ -276,13 +274,38 @@ function getSellsCoursesMoneyCustomYearDb(year){
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+3, true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);//json encode to array
+            changeGraphKPI(response,2)
+        }
+    };
+}
 
+function getGendersDb(){
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+0+"&option="+4, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
             console.log(response)
-            changeGraphKPI(response,2)
+            changeGraphKPI(response,3)
+        }
+    };
+}
+
+function getAverageByCourse(){
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+0+"&option="+5, true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);//json encode to array
+            changeGraphKPI(response,4)
         }
     };
 }

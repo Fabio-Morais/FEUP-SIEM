@@ -55,13 +55,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\templates\forms" />
-      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\public\js\forms" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\webservices" />
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\templates\forms" />
+      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\public\js\forms" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -80,7 +80,7 @@
       <workItem from="1609579501582" duration="21851000" />
       <workItem from="1609875180272" duration="11140000" />
       <workItem from="1609969853753" duration="10404000" />
-      <workItem from="1610013436642" duration="6462000" />
+      <workItem from="1610013436642" duration="16788000" />
     </task>
     <servers />
   </component>
@@ -100,30 +100,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="506" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609272278869">
+    <state x="506" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610062442413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="506" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1609272278869" />
-    <state width="1293" height="211" key="GridCell.Tab.0.bottom" timestamp="1610019374291">
+    <state x="506" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610062442413" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1610062859240">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610062859240" />
+    <state width="1293" height="226" key="GridCell.Tab.0.bottom" timestamp="1610063314402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="905" height="176" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609606082236" />
-    <state width="1293" height="211" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610019374291" />
-    <state width="1293" height="211" key="GridCell.Tab.0.center" timestamp="1610019374291">
+    <state width="1293" height="226" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610063314402" />
+    <state width="1293" height="226" key="GridCell.Tab.0.center" timestamp="1610063314402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="905" height="176" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609606082236" />
-    <state width="1293" height="211" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610019374291" />
-    <state width="1293" height="211" key="GridCell.Tab.0.left" timestamp="1610019374291">
+    <state width="1293" height="226" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610063314402" />
+    <state width="1293" height="226" key="GridCell.Tab.0.left" timestamp="1610063314402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="905" height="176" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609606082236" />
-    <state width="1293" height="211" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610019374291" />
-    <state width="1293" height="211" key="GridCell.Tab.0.right" timestamp="1610019374291">
+    <state width="1293" height="226" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610063314402" />
+    <state width="1293" height="226" key="GridCell.Tab.0.right" timestamp="1610063314402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="905" height="176" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609606082236" />
-    <state width="1293" height="211" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610019374291" />
+    <state width="1293" height="226" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610063314402" />
     <state x="658" y="242" key="NewPhpClassDialog" timestamp="1609364096145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -157,5 +161,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1609411943736" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/js/pagination.js</url>
+          <line>9</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

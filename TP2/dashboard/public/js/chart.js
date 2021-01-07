@@ -2,6 +2,8 @@
  * Chart Class
  * @author- Fábio and Fernando
  * */
+var special=""
+
 class ChartBuild{
     /**
      * @param- graph-> 0:line chart; 1: pie chart; 2:bar chart
@@ -44,11 +46,35 @@ class ChartBuild{
     labelTextAxis(xAxis, yAxis){
         this.xAxis = xAxis;
         this.yAxis = yAxis;
-
+    }
+    setSpecialSymbol(aux){
+        if(aux===0){
+            special="€"
+        }else{
+            special=""
+        }
+    }
+    setLimitXGrade(){
+        this.yMin=0
+        this.yMax=25
     }
     /*Create an array of colors*/
     colorsPie() {
         this.colorArray=["#CA6A63", "#A4C2C5", "#CE808E", "#C8D3A8", "#200E62", "#469343", "#6C1EE1", "#5de35e", "#ec9576", "#fa173a", "#6c7160", "#bc0d79", "#8fbab4", "#1d61d6", "#656234", "#2d04df", "#d16881", "#f9b799", "#595875", "#35644e"];
+    }
+    /*Create an array of colors*/
+    colorsPieGenders() {
+        if(this.label[0]==="m"){
+            this.colorArray=["rgb(2,117,216)", "rgb(129,4,120)"];
+            this.label[0]="Homem"
+            this.label[1]="Mulher"
+        }
+        else{
+            this.colorArray=["rgb(129,4,120)", "rgb(2,117,216)"];
+            this.label[1]="Homem"
+            this.label[0]="Mulher"
+        }
+
     }
 
     execute(){
@@ -125,7 +151,7 @@ class ChartBuild{
                         label: function(tooltipItem, data) {
                             var label = data.datasets[tooltipItem.datasetIndex].label;
                             var val = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                            return label + ' : ' + val + '€';
+                            return label + ' : ' + val + this.special;
                         }
                     }
                 }
@@ -196,7 +222,7 @@ class ChartBuild{
                             label: function(tooltipItem, data) {
                                 var label = data.datasets[tooltipItem.datasetIndex].label;
                                 var val = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                                return label + ' : ' + val + '€';
+                                return label + ' : ' + val + special;
                             }
                         }
                     }

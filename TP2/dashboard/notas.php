@@ -26,8 +26,10 @@ if ($db->connect()) {
 
                     if ($courses['coursegrade'] == -1) {
                         $courses = pg_fetch_assoc($coursesQuery);
-                        $infoQuery = $db->getCourseInfo($courses['coursename']);
-                        $info = pg_fetch_assoc($infoQuery);
+                        if(isset($courses['coursename'])){
+                            $infoQuery = $db->getCourseInfo($courses['coursename']);
+                            $info = pg_fetch_assoc($infoQuery);
+                        }
                         continue;
                     }
                         echo "<div id=\"course\" class=\"all animate__animated  animate__fadeIn ". $courses['coursename'] ." box\">";

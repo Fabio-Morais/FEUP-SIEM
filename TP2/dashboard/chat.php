@@ -4,7 +4,7 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/title.php"); ?>
 <?php require_once(dirname(__FILE__) . "/includes/common/functions.php"); ?>
 
-<?php include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
+<?php
 $db = DataBase::Instance();
 $user = "";
 $connected = false;
