@@ -141,9 +141,9 @@ final class DataBase
     {
         return $this->course->getCourseInfo($this->conn, $coursename);
     }
-        public function getAverageByCourse()
+        public function getAverageByCourse($max)
     {
-        return $this->course->getAverageByCourse($this->conn);
+        return $this->course->getAverageByCourse($this->conn, $max);
     }
         
     public function getCoursesTeacher($username)
@@ -205,17 +205,17 @@ final class DataBase
         return $this->order->getSellsCourses($this->conn);
     }
 
-    public function getSellsCoursesByYear($year)
+    public function getSellsCoursesByYear($year, $max)
     {
-        return $this->order->getSellsCoursesByYear($this->conn, $year);
+        return $this->order->getSellsCoursesByYear($this->conn, $year, $max);
     }
     public function getSellsCoursesMoney()
     {
         return $this->order->getSellsCoursesMoney($this->conn);
     }
-    public function getSellsCoursesMoneyYear($year)
+    public function getSellsCoursesMoneyYear($year, $max)
     {
-        return $this->order->getSellsCoursesMoneyYear($this->conn, $year);
+        return $this->order->getSellsCoursesMoneyYear($this->conn, $year, $max);
     }
     public function getTotalCourses()
     {

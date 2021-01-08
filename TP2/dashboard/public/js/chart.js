@@ -74,15 +74,11 @@ class ChartBuild{
             this.label[1]="Homem"
             this.label[0]="Mulher"
         }
-
     }
 
     execute(){
-        // Set new default font family and font color to mimic Bootstrap's default styling
-        Chart.defaults.global.defaultFontFamily = 'Roboto,"Helvetica Neue",Arial,sans-serif';
-        Chart.defaults.global.defaultFontColor = '#292b2c';
-        // Area Chart Example
 
+        // Area Chart Example
 
         var ctx = document.getElementById(this.id);
 
@@ -107,6 +103,8 @@ class ChartBuild{
                 }],
             },
             options: {
+                responsive:true,
+                responsiveAnimationDuration:1000,
                 animation: {
                     easing: 'linear',
                     duration: 1500
@@ -151,7 +149,7 @@ class ChartBuild{
                         label: function(tooltipItem, data) {
                             var label = data.datasets[tooltipItem.datasetIndex].label;
                             var val = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                            return label + ' : ' + val + this.special;
+                            return label + ' : ' + val + "€";
                         }
                     }
                 }
@@ -168,6 +166,10 @@ class ChartBuild{
                     backgroundColor: this.colorArray,
                   }],
                 },
+                options: {
+                    responsive:true,
+                    responsiveAnimationDuration:1000
+                }
               });
         }
         else if(this.graph==2){
@@ -177,12 +179,15 @@ class ChartBuild{
                     labels: this.label,
                     datasets: [{
                         label: this.name,
-                        backgroundColor: "rgba(69,123,157,0.8)",
+                        backgroundColor: "rgba(69,123,157,0.2)",
                         borderColor: "rgba(69,123,157,0.8)",
+                        borderWidth: 2,
                         data: this.data,
                     }],
                 },
                 options: {
+                    responsive:true,
+                    responsiveAnimationDuration:1000,
                     scaleShowValues: true,
                     scales: {
                         xAxes: [{

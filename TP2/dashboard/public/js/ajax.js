@@ -256,10 +256,10 @@ function getTotalCustomYearDb(year){
     };
 }
 
-function getSellsCoursesCustomYearDb(year){
+function getSellsCoursesCustomYearDb(year, max){
     var xhttp;
     xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+2, true);
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+2+"&max="+max, true);
 
     xhttp.send();
     xhttp.onreadystatechange = function() {
@@ -270,10 +270,10 @@ function getSellsCoursesCustomYearDb(year){
     };
 }
 
-function getSellsCoursesMoneyCustomYearDb(year){
+function getSellsCoursesMoneyCustomYearDb(year, max){
     var xhttp;
     xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+3, true);
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+3+"&max="+max, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -297,10 +297,10 @@ function getGendersDb(){
     };
 }
 
-function getAverageByCourse(){
+function getAverageByCourse(max){
     var xhttp;
     xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+0+"&option="+5, true);
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+0+"&option="+5+"&max="+max, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {

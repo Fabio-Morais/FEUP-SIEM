@@ -18,8 +18,14 @@ if ($db->connect()) {
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="d-flex flex-wrap" style="float:right;height:100%">
-                    <h6 style="margin:auto" class="outer2Text">Ano</h6>
-                    <select id="outer2" class="custom-select2 m-2">
+                    <h6 style="margin:auto" class="outer3Text">Mostrar</h6>
+                    <select id="outer3" class="custom-select m-2">
+                        <option value="-1">todos</option>
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                    </select>
+                    <h6 style="margin:auto" class="outer2Text ml-3">Ano</h6>
+                    <select id="outer2" class="custom-select m-2">
                         <?php
                         while (isset($queryInfo['year'])){
                             echo "<option value='".$queryInfo['year']."'>".$queryInfo['year']."</option>";

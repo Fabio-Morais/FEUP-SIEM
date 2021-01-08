@@ -72,6 +72,7 @@ function updateTimeGraph(){
 
 var graphType = $("#outer").val()
 var year = $("#outer2").val()
+var max = $("#outer3").val()
 /*When the user change the selection option this will run to get a new graph*/
 function selectRightGrpah(){
     updateTimeGraph()
@@ -85,11 +86,11 @@ function selectRightGrpah(){
     }else if(graphType==="option2"){
         $(".card-header")[0].innerHTML="<i class=\"fas fa-chart-pie mr-1\"></i>Número de vendas por curso"
         $('.canvasClass').append('<canvas id="myPieChart" width="100%" height="30"></canvas>');
-        getSellsCoursesCustomYearDb(year)
+        getSellsCoursesCustomYearDb(year, max)
     }else if(graphType==="option3"){
         $(".card-header")[0].innerHTML="<i class=\"fas fa-chart-bar mr-1\"></i>Lucro de vendas por curso"
         $('.canvasClass').append('<canvas id="myBarChart" width="100%" height="30"></canvas>');
-        getSellsCoursesMoneyCustomYearDb(year)
+        getSellsCoursesMoneyCustomYearDb(year, max)
     }else if(graphType==="option4"){
         $(".card-header")[0].innerHTML="<i class=\"fas fa-chart-pie mr-1\"></i>Comparação entre gêneros"
         $('.canvasClass').append('<canvas id="myPieChart" width="100%" height="30"></canvas>');
@@ -97,13 +98,15 @@ function selectRightGrpah(){
     }else if(graphType==="option5"){
         $(".card-header")[0].innerHTML="<i class=\"fas fa-chart-bar mr-1\"></i>Media por curso"
         $('.canvasClass').append('<canvas id="myBarChart" width="100%" height="30"></canvas>');
-        getAverageByCourse()
+        getAverageByCourse(max)
     }
 }
 
 
 $(document).ready(function () {
     getTotalCustomYearDb(year)//get the first element
+    $("#outer3").hide()
+    $(".outer3Text").hide()
     /*year selection*/
     $('#outer').change(function () {
         graphType=$(this).val()
@@ -115,12 +118,24 @@ $(document).ready(function () {
         }else{
             $('#outer2').show()
             $('.outer2Text').show()
-
         }
+        if(graphType==="option2" || graphType==="option3" || graphType==="option5" ){
+            $("#outer3").show()
+            $(".outer3Text").show()
+        }else{
+            $("#outer3").hide()
+            $(".outer3Text").hide()
+        }
+
     })
     /*graph type selection*/
     $('#outer2').change(function () {
         year=$(this).val()
+        selectRightGrpah()
+    })
+    /*graph max selection*/
+    $('#outer3').change(function () {
+        max=$(this).val()
         selectRightGrpah()
     })
 });

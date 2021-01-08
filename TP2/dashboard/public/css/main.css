@@ -334,7 +334,13 @@ Paginas
     text-align-last: center;
 }
 
+
 #outer2 {
+    width: 100px;
+    float: right;
+    text-align-last: center;
+}
+#outer3 {
     width: 100px;
     float: right;
     text-align-last: center;

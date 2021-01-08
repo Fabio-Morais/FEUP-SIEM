@@ -34,8 +34,11 @@ where username='" . $username . "') e on course.coursename = e.coursename;";
         return $result;
     }
 
-    public function getAverageByCourse($conn){
-        $query = "SELECT ROUND(cast(avg(coursegrade) as decimal),2),coursename FROM explicafeup.enrolled WHERE coursegrade > -1 GROUP BY coursename";
+    public function getAverageByCourse($conn, $max){
+        if($max > 0)
+            $query = "SELECT ROUND(cast(avg(coursegrade) as decimal),2),coursename FROM explicafeup.enrolled WHERE coursegrade > -1 GROUP BY coursename ORDER BY ROUND(cast(avg(coursegrade) as decimal),2) DESC LIMIT ".$max." ";
+        else
+            $query = "SELECT ROUND(cast(avg(coursegrade) as decimal),2),coursename FROM explicafeup.enrolled WHERE coursegrade > -1 GROUP BY coursename";
         $result = pg_exec($conn, $query);
         return $result;
     }

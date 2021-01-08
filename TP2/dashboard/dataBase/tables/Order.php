@@ -50,10 +50,17 @@ class Order{
     /**
      * Return total sells by courses (number)
      */
-    public function getSellsCoursesByYear($conn, $year){
-        $query = "SELECT Count(*), productname FROM orderr 
+    public function getSellsCoursesByYear($conn, $year, $max){
+        if($max > 0)
+            $query = "SELECT Count(*), productname FROM orderr 
                     WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = '".$year."'
-                    GROUP BY productname";
+                    GROUP BY productname
+                    ORDER BY Count(*) DESC
+                    LIMIT ".$max." ;";
+        else
+            $query = "SELECT Count(*), productname FROM orderr 
+                        WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = '".$year."'
+                        GROUP BY productname";
         $result = pg_exec($conn, $query);
         return $result;
     }
@@ -70,10 +77,17 @@ class Order{
     /**
      * Return sum of total sells by courses (€)
      */
-    public function getSellsCoursesMoneyYear($conn, $year){
-        $query = "SELECT sum(CAST(price AS int)), productname FROM orderr 
-                WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = '".$year."'
-                GROUP BY productname;";
+    public function getSellsCoursesMoneyYear($conn, $year, $max){
+        if($max > 0)
+            $query = "SELECT sum(CAST(price AS int)), productname FROM orderr 
+                    WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = '".$year."'
+                    GROUP BY productname
+                    ORDER BY sum(CAST(price AS int)) DESC
+                    LIMIT ".$max." ;";
+        else
+            $query = "SELECT sum(CAST(price AS int)), productname FROM orderr 
+                    WHERE to_char(to_date(purchasedate, 'DD/MM/YYYY'),'YYYY') = '".$year."'
+                    GROUP BY productname;";
         $result = pg_exec($conn, $query);
         return $result;
     }
