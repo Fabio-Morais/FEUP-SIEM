@@ -54,8 +54,8 @@ final class DataBase
     public function connect()
     {   try{
 
-           $this->conn = pg_connect("host=localhost  dbname=postgres user=postgres password=siem");
-           //$this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
+           //$this->conn = pg_connect("host=localhost  dbname=postgres user=postgres password=siem");
+           $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
 
         }catch(Exception $e){
             return false;
@@ -133,6 +133,12 @@ final class DataBase
     {
         return $this->course->getAllCoursesExceptStudentOwn($this->conn,$username);
     }
+
+    public function getCoursesPrices()
+    {
+        return $this->course->getCoursesPrices($this->conn);
+    }
+
     public function getCourseInfo($coursename)
     {
         return $this->course->getCourseInfo($this->conn, $coursename);

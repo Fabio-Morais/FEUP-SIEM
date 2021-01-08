@@ -36,8 +36,8 @@
                                     <p id="initialText"><b>Nome: </b>Fábio Morais</p>
                                     <p id="initialText"><b>Email: </b>up201504257@fe.up.pt</p>
                                     <div class="ml my-auto" style="width:280px; text-align: center;">
-                                        <a href="https://www.linkedin.com/in/fabi0morais/" target="_blank" id="social2" class="fab fa-linkedin"></a>
-                                        <a href="https://github.com/Fabio-Morais" target="_blank" id="social2" class="fab fa-github"></a>
+                                        <a type="button" href="https://www.linkedin.com/in/fabi0morais/" target="_blank" id="social2" class="fab fa-linkedin"></a>
+                                        <a type="button" href="https://github.com/Fabio-Morais" target="_blank" id="social2" class="fab fa-github"></a>
                                     </div>
                                 </div>
                             </div>
@@ -51,8 +51,8 @@
                                     <p id="initialText"><b>Nome: </b>Fernando Silva</p>
                                     <p id="initialText"><b>Email: </b>up201604125@fe.up.pt</p>
                                     <div class="ml my-auto" style="width:280px; text-align: center;">
-                                        <a href="https://www.linkedin.com/in/fernando-silva-778628161/" id="social2" class="fab fa-linkedin"></a>
-                                        <a href="https://github.com/fernandojpsilva" id="social2" class="fab fa-github"></a>
+                                        <a type="button" href="https://www.linkedin.com/in/fernando-silva-778628161/" id="social2" class="fab fa-linkedin"></a>
+                                        <a type="button" href="https://github.com/fernandojpsilva" id="social2" class="fab fa-github"></a>
                                     </div>
                                 </div>
                             </div>

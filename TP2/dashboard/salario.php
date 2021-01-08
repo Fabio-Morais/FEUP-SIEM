@@ -25,19 +25,17 @@ if ($connected) :
         array_push($label, $row['salarydate']);
         array_push($data, $row['salary']);
         $row = pg_fetch_assoc($salaryQuery2);
-
     }
 endif;
 ?>
 
-endif;
 <div class="container-fluid">
     <div class="justify-content-center m-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <select id="outer" class="custom-select m-2">
-                    <option value="option1" >Gráfico</option>
-                    <option value="option2" >Tabela</option>
+                    <option value="option1">Gráfico</option>
+                    <option value="option2">Tabela</option>
                 </select>
 
                 <div class="card-header option1">
@@ -51,7 +49,7 @@ endif;
                     <i class="fas fa-table"></i>
                     Tabela Salário recebido
                 </div>
-                <div class=" card-body table-responsive option2 ">
+                <div class=" card-body table-responsive option2">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
@@ -83,9 +81,6 @@ endif;
     </div>
 
 </div>
-
-
-
 
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
