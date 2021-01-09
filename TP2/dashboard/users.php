@@ -127,5 +127,5 @@ if(isset($_SESSION['errorForm']) && $_SESSION['errorForm']==1){
 
 <script>
     autoTextColor()// change text color depending on the background color
-    aaa(0)//initialize paginations
+    pagFunc(0)//initialize paginations
 </script>

@@ -80,7 +80,10 @@
       <workItem from="1609579501582" duration="21851000" />
       <workItem from="1609875180272" duration="11140000" />
       <workItem from="1609969853753" duration="10404000" />
-      <workItem from="1610013436642" duration="6462000" />
+      <workItem from="1610013436642" duration="20863000" />
+      <workItem from="1610068047360" duration="765000" />
+      <workItem from="1610101065686" duration="3065000" />
+      <workItem from="1610136333199" duration="10142000" />
     </task>
     <servers />
   </component>
@@ -100,30 +103,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="506" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609272278869">
+    <state x="506" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610062442413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="506" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1609272278869" />
-    <state width="1293" height="211" key="GridCell.Tab.0.bottom" timestamp="1610019374291">
+    <state x="506" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610062442413" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1610062859240">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610062859240" />
+    <state width="1293" height="294" key="GridCell.Tab.0.bottom" timestamp="1610067379046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="905" height="176" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609606082236" />
-    <state width="1293" height="211" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610019374291" />
-    <state width="1293" height="211" key="GridCell.Tab.0.center" timestamp="1610019374291">
+    <state width="1293" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610067379046" />
+    <state width="1293" height="294" key="GridCell.Tab.0.center" timestamp="1610067379046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="905" height="176" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609606082236" />
-    <state width="1293" height="211" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610019374291" />
-    <state width="1293" height="211" key="GridCell.Tab.0.left" timestamp="1610019374291">
+    <state width="1293" height="294" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610067379046" />
+    <state width="1293" height="294" key="GridCell.Tab.0.left" timestamp="1610067379046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="905" height="176" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609606082236" />
-    <state width="1293" height="211" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610019374291" />
-    <state width="1293" height="211" key="GridCell.Tab.0.right" timestamp="1610019374291">
+    <state width="1293" height="294" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610067379046" />
+    <state width="1293" height="294" key="GridCell.Tab.0.right" timestamp="1610067379046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="905" height="176" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609606082236" />
-    <state width="1293" height="211" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610019374291" />
+    <state width="1293" height="294" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610067379046" />
     <state x="658" y="242" key="NewPhpClassDialog" timestamp="1609364096145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -144,6 +151,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="303" y="261" width="1540" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1609586837651" />
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610063979921">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610063979921" />
     <state x="-1366" y="148" width="1356" height="809" key="dock-window-1" timestamp="1609542718076">
       <screen x="-1366" y="148" width="1366" height="728" />
     </state>

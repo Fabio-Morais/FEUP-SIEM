@@ -1,3 +1,7 @@
+/**
+ * Funçoes usadas em CHAT.PHP
+ * @author- Fábio e Fernando
+ * */
 $('#textMessage').keypress(function (e) {
     var key = e.which;
     if (key == 13)  // the enter key code

@@ -10,27 +10,17 @@ $connected = false;
 $salary="";
 if ($db->connect()) {
     $salaryQuery = $db->getSalary($_SESSION['user']);
-    $salaryQuery2 = $db->getSalary($_SESSION['user']);
     $connected = true;
     $salary = pg_fetch_assoc($salaryQuery);
-    $row = pg_fetch_assoc($salaryQuery2);
 } else
     Alerts::showError(Alerts::DATABASEOFF);
 
 
 $data = array();
 $label = array();
-if ($connected) :
-    while (isset($row["username"])) {
-        array_push($label, $row['salarydate']);
-        array_push($data, $row['salary']);
-        $row = pg_fetch_assoc($salaryQuery2);
 
-    }
-endif;
 ?>
 
-endif;
 <div class="container-fluid">
     <div class="justify-content-center m-4">
         <div class="card border-left-primary shadow h-100 py-2">
@@ -65,6 +55,8 @@ endif;
                             while(isset($salary["salary"])) {
                                 $newdate = date("d-M-Y", strtotime($salary['salarydate']));
                                 $mydate = strtotime($salary['salarydate']);
+                                array_push($label, $salary['salarydate']);
+                                array_push($data, $salary['salary']);
                                 echo "<tr>";
                                 echo "<td scope=\"row\" data-sort=".$mydate." >".$newdate."</td>";
                                 echo "<td>" . $salary["salary"] . "</td>";
@@ -90,9 +82,8 @@ endif;
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
 
-<script type="module">
+<script >
 
-    import ChartBuild from './public/js/chart.js';
     function aaa() {
         var option = $("option:selected").val();
         if ( option=== "option1") {

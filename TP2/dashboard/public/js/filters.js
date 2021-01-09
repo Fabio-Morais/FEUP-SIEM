@@ -211,9 +211,9 @@ $(document).on('input', '#myInput', function (event) {
     $('.content').hide();
     $('.content:ContainsStudentUser(' + text + ')').addClass("contentShown").show();
     if(text.length == 0){
-        aaa(0)
+        pagFunc(0)
     }else
-        aaa(1)
+        pagFunc(1)
 
 
 

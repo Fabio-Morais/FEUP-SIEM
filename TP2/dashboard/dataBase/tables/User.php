@@ -95,6 +95,15 @@ class User{
         $result = pg_exec($conn, $query);
         return $result;
     }
+
+    /**
+     * GET sum group by gender
+     */
+    public function getGender($conn){
+        $query = "SELECT count(*), gender FROM explicafeup.userr GROUP BY gender";
+        $result = pg_exec($conn, $query);
+        return $result;
+    }
 }
 
 ?>
