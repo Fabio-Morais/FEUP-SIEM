@@ -61,7 +61,7 @@
             <div id="collapseOne" class="collapse" data-parent="#accordion" ">
                 <div class="card-body " style="padding: 5px">
                     <p style="margin-bottom: 0.5rem"><b>Admin-</b> admin/admin15</p>
-                    <p style="margin-bottom: 0.5rem"><b>Professor-</b> prof/prof15</p>
+                    <p style="margin-bottom: 0.5rem"><b>Professor-</b> fabiouds/teste15</p>
                     <p style="margin-bottom: 0.5rem"><b>Aluno-</b> aluno/aluno15</p>
                 </div>
             </div>
