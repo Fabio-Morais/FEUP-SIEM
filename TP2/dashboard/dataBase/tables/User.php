@@ -13,7 +13,7 @@ class User{
         return $result;
     }
      /**
-     * Return user info
+     * Get user
      */
     public function getUser($conn, $username){
         $query = "select * from Userr WHERE username='".$username."';";
@@ -21,14 +21,6 @@ class User{
         return $result;
     }
 
-         /**
-     * Return user info
-     */
-    public function insert($conn, $data){
-        $query = "UPDATE userr set image = '".$data."' where username = 'fabio123'";
-        $result = pg_exec($conn, $query);
-        return $result;
-    }
     
     /**
      * Edit user info
@@ -91,7 +83,8 @@ class User{
      * Add user as student
      */
     public function addUserStudent($conn, $name, $email, $username, $passhash, $phone, $nif){
-        $query = "INSERT INTO userr (name, email, role, username, passhash, phone, nif) VALUES('".$name."', '".$email."', 0, '".$username."', '".$passhash."', '".$phone."', '".$nif."') ";
+        $query = "INSERT INTO userr (name, email, role, username, passhash, phone, nif) 
+                    VALUES('".$name."', '".$email."', 0, '".$username."', '".$passhash."', '".$phone."', '".$nif."') ";
         $result = pg_exec($conn, $query);
         return $result;
     }

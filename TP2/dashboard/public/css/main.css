@@ -677,16 +677,11 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     border-radius: 50%;
 }
 
-
-
-#downloadButtons {
-    width: 65%;
-    align-self: flex-end;
-    margin: 5px
-}
-
 #downloadButton {
     margin: 14px;
+    height: 80px;
+    max-height: 100px;
+    width: 150px;
 }
 
 .buttonRed {
@@ -700,9 +695,13 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     transition: all 0.4s ease 0s;
     width: 95%;
     height: 100%;
-    padding: 5px;
-    margin: 15px 15px;
+
 }
+
+#myModal{
+    z-index: 2147483647 ;
+}
+
 
 .buttonRed:hover {
     background: #434343;
@@ -745,6 +744,7 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     background-color: #495057;
     color: white;
 }
+
 
 .flex-wrap {
     display: flex;

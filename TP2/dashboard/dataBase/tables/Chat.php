@@ -17,29 +17,25 @@ class Chat
         return $result;
     }
     /**
-     * Add a message
+     * Get al messagew from Id
      */
     public function getAllMessagesFromUser($conn, $username, $recipient)
     {
-        $query = "SELECT * FROM explicafeup.chat WHERE (userfrom='".$username."' and userTo ='".$recipient."') or (userto='".$username."' and userfrom='".$recipient."') ORDER BY id";
+        $query = "SELECT * FROM explicafeup.chat 
+                    WHERE (userfrom='".$username."' and userTo ='".$recipient."') or (userto='".$username."' and userfrom='".$recipient."') 
+                    ORDER BY id";
         $result = pg_exec($conn, $query);
         return $result;
     }
-    /**
-     * Add a message
-     */
-    public function getLengthAllMessagesFromUser($conn, $username, $recipient)
-    {
-        $query = "SELECT count(*) FROM explicafeup.chat WHERE (userfrom='".$username."' and userTo ='".$recipient."') or (userto='".$username."' and userfrom='".$recipient."')";
-        $result = pg_exec($conn, $query);
-        return $result;
-    }
+
     /**
      * Add a message
      */
     public function getAllMessagesFromUserStartId($conn, $username, $recipient, $id)
     {
-        $query = "SELECT * FROM explicafeup.chat WHERE ((userfrom='".$username."' and userTo ='".$recipient."') or (userto='".$username."' and userfrom='".$recipient."')) and id > $id ORDER BY id";
+        $query = "SELECT * FROM explicafeup.chat 
+                    WHERE ((userfrom='".$username."' and userTo ='".$recipient."') or (userto='".$username."' and userfrom='".$recipient."')) and id > $id 
+                    ORDER BY id";
         $result = pg_exec($conn, $query);
         return $result;
     }
@@ -48,7 +44,8 @@ class Chat
      */
     public function setMessageToAlreadyRead($conn, $username, $recipient)
     {
-        $query = "UPDATE explicafeup.chat SET itwasread=true WHERE ((userfrom='".$username."' and userTo ='".$recipient."') or (userto='".$username."' and userfrom='".$recipient."'))";
+        $query = "UPDATE explicafeup.chat SET itwasread=true 
+                    WHERE ((userfrom='".$username."' and userTo ='".$recipient."') or (userto='".$username."' and userfrom='".$recipient."'))";
         $result = pg_exec($conn, $query);
         return $result;
     }

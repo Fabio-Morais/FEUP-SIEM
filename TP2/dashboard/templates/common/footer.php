@@ -1,12 +1,16 @@
+<!--Get the title of the page-->
+<?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 </main>
 
-<footer class="py-4 bg-light mt-auto">
-    <div class="container-fluid">
+<footer class="pb-2 pt-4    bg-light mt-auto" >
+    <div class="container-fluid" >
         <div class="align-items-center justify-content-between small" style="justify-content: center">
             <div class="text-muted text-center">Copyright &copy; Fábio Morais e Fernando Silva 2020</div>
-            <div class="text-center" style="margin-top: 5px"><button type="button" class="butnDownloads" data-toggle="modal" data-target="#myModal">
+            <?php if($title!="register.php"):?>
+            <div class="text-center mt-2 mb-0" ><button type="button" class="butnDownloads" data-toggle="modal" data-target="#myModal">
                     Downloads
             </button></div>
+            <?php endif;?>
         </div>
     </div>
 </footer>
@@ -113,8 +117,6 @@
 <script src="public/js/ajax.js"></script>
 <script src="public/js/chart.js"></script>
 
-<!--Get the title of the page-->
-<?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
 <?php if ($title == "users.php" || $title == "alunos.php" || $title == "comprar_curso.php") :?>
     <script src="public/js/pagination.js"></script>
