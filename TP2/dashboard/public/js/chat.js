@@ -94,7 +94,7 @@ function initializeAutoUpdate(userSession, userTo){
             idOfLastMessage = $('.chatMessage')[messagesLength-1].id;
         }
         getNewMessagesDb(userSession, userTo, idOfLastMessage);
-    }, 1000);
+    }, 700);
     myTime2 = setInterval(function(){
         getUnseenMessagesDb(userSession)//ajax function
     }, 2000);

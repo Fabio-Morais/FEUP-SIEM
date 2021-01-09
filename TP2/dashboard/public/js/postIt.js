@@ -27,7 +27,7 @@ $(document).ready(function() {
         $.PostItAll.changeConfig('global', {
             randomColor : false,
             addArrow : 'all',
-            resizable : true,
+            resizable : true
         });
 
         $.PostItAll.changeConfig('note', {
