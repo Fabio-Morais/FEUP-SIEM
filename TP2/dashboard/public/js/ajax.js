@@ -8,6 +8,7 @@ function updateModalStudent(response){
     numCourses = response[1]['count']
     grade = response[2]['avg']
     courses = response[3]
+    console.log(user['name'])
     /*BACK COLOR*/
     if(user['color']!=null){
         $("#modalColor").css("background-color",user['color'])
@@ -25,9 +26,9 @@ function updateModalStudent(response){
     }
     /*NAME*/
     if(user['name'] != null){
-        $("h5.text-white")[0].innerHTML = user['name']
+        $("h5.textAdapt")[0].innerHTML = user['name']
     }else{
-        $("h5.text-white")[0].innerHTML = ""
+        $("h5.textAdapt")[0].innerHTML = ""
     }
     /*PHONE*/
     if(user['phone'] != null){
@@ -93,6 +94,7 @@ function updateModalStudent(response){
         console.log(string)
         $(string).insertAfter("#modalCoursesBadge")
     }
+    autoTextColor()
 
 }
 
@@ -251,38 +253,61 @@ function getTotalCustomYearDb(year){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
-            console.log(this.responseText)
             changeGraphKPI(response,0)
         }
     };
 }
 
-function getSellsCoursesCustomYearDb(year){
+function getSellsCoursesCustomYearDb(year, max){
     var xhttp;
     xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+2, true);
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+2+"&max="+max, true);
 
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
-            console.log(response)
             changeGraphKPI(response,1)
         }
     };
 }
 
-function getSellsCoursesMoneyCustomYearDb(year){
+function getSellsCoursesMoneyCustomYearDb(year, max){
     var xhttp;
     xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+3, true);
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+year+"&option="+3+"&max="+max, true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);//json encode to array
+            changeGraphKPI(response,2)
+        }
+    };
+}
 
+function getGendersDb(){
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+0+"&option="+4, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);//json encode to array
             console.log(response)
-            changeGraphKPI(response,2)
+            changeGraphKPI(response,3)
+        }
+    };
+}
+
+function getAverageByCourse(max){
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "webservices/getGraphInfoByYear.php?year="+0+"&option="+5+"&max="+max, true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);//json encode to array
+            changeGraphKPI(response,4)
         }
     };
 }

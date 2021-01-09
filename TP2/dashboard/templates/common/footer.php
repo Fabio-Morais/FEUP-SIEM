@@ -1,12 +1,16 @@
+<!--Get the title of the page-->
+<?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 </main>
 
-<footer class="py-4 bg-light mt-auto">
-    <div class="container-fluid">
+<footer class="pb-2 pt-4    bg-light mt-auto" >
+    <div class="container-fluid" >
         <div class="align-items-center justify-content-between small" style="justify-content: center">
             <div class="text-muted text-center">Copyright &copy; Fábio Morais e Fernando Silva 2020</div>
-            <div class="text-center" style="margin-top: 5px"><button type="button" class="butnDownloads" data-toggle="modal" data-target="#myModal">
+            <?php if($title!="register.php"):?>
+            <div class="text-center mt-2 mb-0" ><button type="button" class="butnDownloads" data-toggle="modal" data-target="#myModal">
                     Downloads
             </button></div>
+            <?php endif;?>
         </div>
     </div>
 </footer>
@@ -35,9 +39,9 @@
                                 <div class="ml-4 my-auto" style="width:280px">
                                     <p id="initialText"><b>Nome: </b>Fábio Morais</p>
                                     <p id="initialText"><b>Email: </b>up201504257@fe.up.pt</p>
-                                    <div class="ml my-auto" style="width:280px; text-align: center;">
-                                        <a href="https://www.linkedin.com/in/fabi0morais/" target="_blank" id="social2" class="fab fa-linkedin"></a>
-                                        <a href="https://github.com/Fabio-Morais" target="_blank" id="social2" class="fab fa-github"></a>
+                                    <div class="my-auto social p-2" style="text-align: center;">
+                                        <a href="https://www.linkedin.com/in/fabi0morais/" target="_blank"  class="linkedin"><i class="fab fa-linkedin"></i></a>
+                                        <a href="https://github.com/Fabio-Morais" target="_blank" class="github ml-2"><i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -50,9 +54,9 @@
                                 <div class="ml-4 my-auto" style="width:280px">
                                     <p id="initialText"><b>Nome: </b>Fernando Silva</p>
                                     <p id="initialText"><b>Email: </b>up201604125@fe.up.pt</p>
-                                    <div class="ml my-auto" style="width:280px; text-align: center;">
-                                        <a href="https://www.linkedin.com/in/fernando-silva-778628161/" id="social2" class="fab fa-linkedin"></a>
-                                        <a href="https://github.com/fernandojpsilva" id="social2" class="fab fa-github"></a>
+                                    <div class="ml my-auto social p-2" style="width:280px; text-align: center;">
+                                        <a href="https://www.linkedin.com/in/fernando-silva-778628161/" target="_blank"  class="linkedin"><i class="fab fa-linkedin"></i></a>
+                                        <a href="https://github.com/fernandojpsilva" target="_blank" class="github ml-2"><i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +69,7 @@
                         <p><b>Professor José Faria</b></p>
                         <p><b>Professor Armindo Carvalho</b></p>
                         <br>
-                        <p>Website otimizado e testado para resoluções até 1920 x 1080. Testado para mobile.</p>
+                        <p>Website otimizado e testado para resoluções até 1920 x 1080. </p>
                         <p><b>Browser preferencial: </b> Chrome</p>
                     </div>
                 </div>
@@ -112,10 +116,7 @@
 <script src="includes/libs/nif-pt.js"></script>
 <script src="public/js/ajax.js"></script>
 <script src="public/js/chart.js"></script>
-<script src="public/js/chartDraw.js"></script>
 
-<!--Get the title of the page-->
-<?php $title = basename($_SERVER['SCRIPT_NAME']);  ?>
 
 <?php if ($title == "users.php" || $title == "alunos.php" || $title == "comprar_curso.php") :?>
     <script src="public/js/pagination.js"></script>
@@ -125,20 +126,23 @@
 <?php if ($title == "perfil.php" ) :?>
     <script src="public/js/forms/validatePassword.js"></script>
     <script src="includes/libs/jscolor.js"></script>
-
 <?php endif;?>
-
+<?php if ($title == "estatisticas.php" ) :?>
+    <script src="public/js/chartDraw.js"></script>
+<?php endif;?>
 
 <?php if ($title == "comprar_curso.php" ) :?>
     <script src="public/js/cart/util.js"></script>
     <script src="public/js/cart/main.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script><!-- effect-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="public/js/cart/flyto.js"></script><!-- effect-->
 <?php endif;?>
 
 <?php if ($title == "index.php" ) :?>
     <script src="includes/libs/postIt/jquery.postitall.js"></script>
     <script src="public/js/postIt.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <?php endif;?>
 
 <?php if ($title == "chat.php" ) :?>

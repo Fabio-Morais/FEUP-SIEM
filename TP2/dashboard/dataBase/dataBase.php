@@ -126,8 +126,15 @@ final class DataBase
     {
         return $this->user->changePassword($this->conn,$username, $passwordHash);
     }
+    public function getGender()
+    {
+        return $this->user->getGender($this->conn);
+    }
 
-
+    public function getCoursesPrices()
+    {
+        return $this->course->getCoursesPrices($this->conn);
+    }
 
     public function getAllCoursesExceptStudentOwn($username)
     {
@@ -136,6 +143,10 @@ final class DataBase
     public function getCourseInfo($coursename)
     {
         return $this->course->getCourseInfo($this->conn, $coursename);
+    }
+        public function getAverageByCourse($max)
+    {
+        return $this->course->getAverageByCourse($this->conn, $max);
     }
         
     public function getCoursesTeacher($username)
@@ -158,10 +169,7 @@ final class DataBase
         return $this->student->setGradeStudent($this->conn, $username,  $grade, $course);
     }
 
-    public function getTotalYearProfit()
-    {
-        return $this->order->getTotalYearProfit($this->conn);
-    }
+
 
     public function getTotalCustomYearProfit($year)
     {
@@ -192,22 +200,15 @@ final class DataBase
         return $this->video->getVideoLinks($this->conn, $coursename);
     }
 
-    public function getSellsCourses()
+
+    public function getSellsCoursesByYear($year, $max)
     {
-        return $this->order->getSellsCourses($this->conn);
+        return $this->order->getSellsCoursesByYear($this->conn, $year, $max);
     }
 
-    public function getSellsCoursesByYear($year)
+    public function getSellsCoursesMoneyYear($year, $max)
     {
-        return $this->order->getSellsCoursesByYear($this->conn, $year);
-    }
-    public function getSellsCoursesMoney()
-    {
-        return $this->order->getSellsCoursesMoney($this->conn);
-    }
-    public function getSellsCoursesMoneyYear($year)
-    {
-        return $this->order->getSellsCoursesMoneyYear($this->conn, $year);
+        return $this->order->getSellsCoursesMoneyYear($this->conn, $year, $max);
     }
     public function getTotalCourses()
     {
@@ -273,5 +274,9 @@ final class DataBase
     public function getCountOfUnreadMessages($username)
     {
         return $this->chat->getCountOfUnreadMessages($this->conn, $username);
+    }
+    public function getYears()
+    {
+        return $this->order->getYears($this->conn);
     }
 }

@@ -334,7 +334,13 @@ Paginas
     text-align-last: center;
 }
 
+
 #outer2 {
+    width: 100px;
+    float: right;
+    text-align-last: center;
+}
+#outer3 {
     width: 100px;
     float: right;
     text-align-last: center;
@@ -654,42 +660,28 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     margin-bottom: 1px;
 }
 
-#social2 {
-    color: white;
-    padding: 7px;
-    font-size: 34px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    margin: 0px 5px;
-}
-
-.fa {
-    padding: 20px;
-    font-size: 20px;
-    width: 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-}
-
-.fa-linkedin {
-    background-color: #2867B2;
+.linkedin {
+    background: #007bb5;
     color: white;
 }
-
-.fa-github {
+.github {
     background-color: #211F1F;
+    color: white;
 }
-
-#downloadButtons {
-    width: 65%;
-    align-self: flex-end;
-    margin: 5px
+.social a{
+    text-align: center;
+    padding: 7px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
 }
 
 #downloadButton {
     margin: 14px;
+    height: 80px;
+    max-height: 100px;
+    width: 150px;
 }
 
 .buttonRed {
@@ -703,9 +695,13 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     transition: all 0.4s ease 0s;
     width: 95%;
     height: 100%;
-    padding: 5px;
-    margin: 15px 15px;
+
 }
+
+#myModal{
+    z-index: 2147483647 ;
+}
+
 
 .buttonRed:hover {
     background: #434343;
@@ -748,6 +744,7 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     background-color: #495057;
     color: white;
 }
+
 
 .flex-wrap {
     display: flex;
