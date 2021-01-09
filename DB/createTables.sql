@@ -26,15 +26,6 @@ CREATE TABLE IF NOT EXISTS Teacher(
 	salary FLOAT default 0
 );
 
-CREATE TABLE IF NOT EXISTS Orderr(
-    number SERIAL PRIMARY KEY,
-    deliveryDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH24:MI:SS'::text),
-    purchaseDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH24:MI:SS'::text),
-    price VARCHAR(100),
-    productName VARCHAR(100),
-    description VARCHAR(100),
-    idStudent VARCHAR(100) REFERENCES Student(username) ON UPDATE CASCADE ON DELETE CASCADE 
-);
 
 CREATE TABLE IF NOT EXISTS Salary(
     id SERIAL PRIMARY KEY,
@@ -50,6 +41,16 @@ CREATE TABLE IF NOT EXISTS Course(
     image VARCHAR(30),
     type VARCHAR(30),
     details text
+);
+
+CREATE TABLE IF NOT EXISTS Orderr(
+    number SERIAL PRIMARY KEY,
+    deliveryDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH24:MI:SS'::text),
+    purchaseDate VARCHAR(30) DEFAULT to_char(now(), 'DD-MM-YYYY HH24:MI:SS'::text),
+    price VARCHAR(100),
+    productName VARCHAR(100) REFERENCES Course(courseName),
+    description VARCHAR(100),
+    idStudent VARCHAR(100) REFERENCES Student(username) ON UPDATE CASCADE ON DELETE CASCADE 
 );
 
 CREATE TABLE IF NOT EXISTS Enrolled(

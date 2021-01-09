@@ -18,7 +18,7 @@ a .icon {
 #weatherCard {
     width: 380px;
     margin: auto;
-    height: 260px;
+    min-height: 260px;
     border-radius: 10px;
     padding: 1px;
 }
@@ -618,11 +618,10 @@ div.outer .imgr{ position: absolute; right: 0; bottom: 0; opacity: 0.7; margin-r
 div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 0.25; }
 
 #modalDownloads>h4 {
-    font-size: 48px;
+    font-size: 38px;
     margin-top: 0em;
     margin-bottom: 0.11em;
     color: #457B9D;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.445);
     text-transform: uppercase;
     text-align: center;
 }
@@ -643,13 +642,16 @@ div.outer .imgc{ position: absolute; z-index: 0; right:35%; bottom: 0; opacity: 
     text-align: center;
     margin-top: 0;
     margin-bottom: 1px;
+
 }
 
-#photoInit {
+.photoInit {
     width: 100%;
     height: 100%;
     border: solid 1px grey;
-    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.17);
+    border-radius: 8%;
+
 }
 
 #initialText {

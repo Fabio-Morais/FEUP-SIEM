@@ -153,20 +153,21 @@ function updateModalStudent(response){
         $("#name")[0].innerHTML = ""
     }
     /*PHONE*/
-    if(user['phone'] != null){
+    console.log(user['phone'])
+    if(user['phone'] != null || user['phone'] != ""){
         $(".modalPhone")[0].innerHTML = user['phone']
         $(".modalPhone")[1].innerHTML = user['phone']
     }else{
-        $(".modalPhone")[0].innerHTML = ""
-        $(".modalPhone")[1].innerHTML = ""
+        $(".modalPhone")[0].innerHTML = "- - - - -"
+        $(".modalPhone")[1].innerHTML = "Não existe telemovel associado"
     }
     /*EMAIL*/
-    if(user['email'] != null){
+    if(user['email'] != null || user['email'] != ""){
         $(".modalEmail")[0].innerHTML = user['email']
         $(".modalEmail")[1].innerHTML = user['email']
     }else{
-        $(".modalEmail")[0].innerHTML = ""
-        $(".modalEmail")[1].innerHTML = ""
+        $(".modalEmail")[0].innerHTML = "- - - - -"
+        $(".modalEmail")[1].innerHTML = "Não existe email associado"
     }
     /*COUNT COURSES*/
     if(numCourses != 0){

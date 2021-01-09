@@ -70,12 +70,12 @@ $title = basename($_SERVER['SCRIPT_NAME']);
 
                                 <div class="list-details m-2 text-center d-flex flex-row flex-wrap justify-content-center" >
                                     <div class="mr-2"><i class="fas fa-phone fa-lg"></i></div>
-                                    <div class="mr-2 mt-2"><span><?php echo $queryInfo['phone'] ?></span></div>
+                                    <div class="mr-2 mt-2"><span><?php echo ($queryInfo['phone']!=null || $queryInfo['phone']!="") ? $queryInfo['phone'] : "- - - - - -" ?></span></div>
                                 </div>
 
                                 <div class="list-details m-2 text-center d-flex flex-row flex-wrap justify-content-center" >
                                     <div class="ml-2"><i class="fa fa-envelope fa-lg"></i></div>
-                                    <div class="ml-2 mt-2"><span> <?php echo $queryInfo['email'] ?></span></div>
+                                    <div class="ml-2 mt-2"><span> <?php echo ($queryInfo['email']!=null || $queryInfo['email']!="") ? $queryInfo['email'] : "- - - - - -" ?></span></div>
                                 </div>
                             </div>
                            

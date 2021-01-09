@@ -62,6 +62,16 @@ function validatePass(){
             space.classList.add("invalid");
             isOk[2] = false;
         }
+        if (myInput.value === myInput2.value) {
+            myInput2.classList.remove("is-invalid");
+            myInput2.classList.add("is-valid");
+            isOk[3] = true;
+        } else {
+            myInput2.classList.remove("is-valid");
+            myInput2.classList.add("is-invalid");
+            isOk[3] = false;
+        }
+
         if(isOk[0] && isOk[1] && isOk[2]){
             myInput.classList.remove("is-invalid");
             myInput.classList.add("is-valid");
@@ -74,12 +84,10 @@ function validatePass(){
 
 // When the user starts to type something inside the password field
     myInput2.onkeyup = function () {
-
         if (myInput.value === myInput2.value) {
             myInput2.classList.remove("is-invalid");
             myInput2.classList.add("is-valid");
             isOk[3] = true;
-
         } else {
             myInput2.classList.remove("is-valid");
             myInput2.classList.add("is-invalid");
