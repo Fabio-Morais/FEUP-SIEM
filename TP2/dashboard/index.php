@@ -42,18 +42,18 @@ if ($db->connect()) {
 
 <div class="container-fluid" >
     <h1 class="m-4 p-4 text-center ">BEM VINDO <?php echo strtoupper($_SESSION['user']) ?></h1>
-    <div class="justify-content-center m-4 p-4 animate__animated animate__fadeIn animate__delay-1s " >
+    <div class="justify-content-center m-4 p-4 animate__animated animate__fadeIn animate__delay-1s "  >
         <div class="card border-left-primary shadow" id="weatherCard" >
             <div class="report-container ">
                 <h2><?php echo $data->name; ?></h2>
-                <div class="time">
+                <div class="time my-2">
                     <div><?php echo utf8_encode ($currentTime); ?></div>
                     <div class="font-weight-bold"><?php echo ucwords($data->weather[0]->description); ?></div>
                 </div>
                 <div class="weather-forecast">
                     <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" class="weather-icon" /> <?php echo $data->main->temp; ?>&deg;C
                 </div>
-                <div class="d-flex justify-content-around mb-4 ">
+                <div class="d-flex justify-content-around mt-4 ">
                     <div><i class="fas fa-tint fa-lg pr-2 customIconWeather" ></i>Humidade: <?php echo $data->main->humidity; ?> %</div>
                     <div><i class="fas fa-wind fa-lg pr-2 customIconWeather" ></i>Vento: <?php echo $data->wind->speed; ?> km/h</div>
                 </div>

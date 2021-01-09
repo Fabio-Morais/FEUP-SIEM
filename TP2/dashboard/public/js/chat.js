@@ -36,7 +36,7 @@ function selectChat(e){
     var userSession = $('#nameTo').data('from');
 
     selectedUserTo=userTo;//select the user that want to send a message
-    $(e).find(".unseenMessages").remove()//remove the unseen message
+    $(e).find(".unseenMessages").hide()//remove the unseen message
     changeChatConversation(image, userTo, name)
     getMessagesDb(userSession, userTo)//ajax function
     initializeAutoUpdate(userSession, userTo)
@@ -94,7 +94,7 @@ function initializeAutoUpdate(userSession, userTo){
             idOfLastMessage = $('.chatMessage')[messagesLength-1].id;
         }
         getNewMessagesDb(userSession, userTo, idOfLastMessage);
-    }, 1000);
+    }, 700);
     myTime2 = setInterval(function(){
         getUnseenMessagesDb(userSession)//ajax function
     }, 2000);
@@ -131,8 +131,12 @@ function unSeenMessagesWatch(jsonResponse){
        var count = searchJson(users[i].id,jsonResponse)
         if(count > 0){
             if(selectedUserTo.localeCompare(users[i].id)!=0){
+                console.log($("#"+users[i].id))
+                console.log(count)
+                console.log($("#"+users[i].id).find('.unseenMessages'))
                 $("#"+users[i].id).find('.unseenMessages')[0].innerText=count
                 $("#"+users[i].id).find('.unseenMessages').show()
+
             }
        }else{
            $("#"+users[i].id).find('.unseenMessages').hide()

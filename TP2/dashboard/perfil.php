@@ -1,27 +1,18 @@
 <?php require_once(dirname(__FILE__) . "/templates/common/header.php"); ?>
 <?php require_once(dirname(__FILE__) . "/templates/common/navbar.php"); ?>
-<?php require_once(dirname(__FILE__) . "/includes/common/alerts.php"); ?>
 <?php require_once(dirname(__FILE__) . "/includes/common/functions.php"); ?>
 
 
 <?php
-
 $username = $_SESSION['user'];
-
-include_once(dirname(__FILE__) . "/dataBase/dataBase.php");
-/*Para retirar a visibilidade do erro*/
-/*error_reporting(E_ERROR | E_PARSE);*/
 $db = DataBase::Instance();
 $user = "";
 $connected = false;
 
-
 $total['count'] = "--";
 $grade['avg'] = "--";
 if ($db->connect()) {
-    /*$image = 'public/img/avatar1.png';
-  $imageData = base64_encode(file_get_contents($image));
-  $db->insert($imageData);*/
+
     $user = $db->getUser($username);
     $connected = true;
     $queryInfo = pg_fetch_assoc($user);

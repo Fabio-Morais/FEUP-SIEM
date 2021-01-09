@@ -38,7 +38,7 @@ $label = array();
                 <div class="card-footer small text-muted option1">Atualizado a <?php echo date("d-m-Y - H:i:s")?></div>
 
                 <div class="card-header option2">
-                    <i class="fas fa-table"></i>
+                    <i class="fas fa-table mr-1"></i>
                     Tabela Salário recebido
                 </div>
                 <div class=" card-body table-responsive option2 ">

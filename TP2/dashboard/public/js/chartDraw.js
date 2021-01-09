@@ -48,8 +48,6 @@ function changeGraphKPI(json, type){
         chart.execute();
     }else if(type === 4){
         let chart = new ChartBuild(2, "myBarChart", data, "Nota", label);
-        console.log(data)
-        console.log(label)
         chart.labelTextAxis("Curso", "Nota")
         chart.setSpecialSymbol(1)
         chart.setLimitXGrade()

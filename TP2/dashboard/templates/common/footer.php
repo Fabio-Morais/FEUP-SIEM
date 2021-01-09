@@ -5,7 +5,7 @@
 <footer class="pb-2 pt-4    bg-light mt-auto" >
     <div class="container-fluid" >
         <div class="align-items-center justify-content-between small" style="justify-content: center">
-            <div class="text-muted text-center">Copyright &copy; Fábio Morais e Fernando Silva 2020</div>
+            <div class="text-muted text-center">Copyright &copy; Fábio Morais e Fernando Silva <?php echo date("Y"); ?></div>
             <?php if($title!="register.php"):?>
             <div class="text-center mt-2 mb-0" ><button type="button" class="butnDownloads" data-toggle="modal" data-target="#myModal">
                     Downloads
@@ -18,7 +18,7 @@
 </div>
 
 <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
 
             <!-- Modal Header -->
@@ -34,7 +34,7 @@
                             <!-- 1 imagem-->
                             <div class="d-flex m-2 flex-wrap justify-content-start">
                                 <div style="width:180px">
-                                    <img src="../img/fabio.jpeg" id="photoInit">
+                                    <img src="../img/fabio.jpeg" class="photoInit">
                                 </div>
                                 <div class="ml-4 my-auto" style="width:280px">
                                     <p id="initialText"><b>Nome: </b>Fábio Morais</p>
@@ -49,7 +49,7 @@
                             <!-- 2 imagem-->
                             <div class="d-flex m-2 flex-wrap justify-content-start">
                                 <div style="width:180px">
-                                    <img src="../img/fernando.jpg" id="photoInit">
+                                    <img src="../img/fernando.jpg" class="photoInit">
                                 </div>
                                 <div class="ml-4 my-auto" style="width:280px">
                                     <p id="initialText"><b>Nome: </b>Fernando Silva</p>
@@ -142,7 +142,6 @@
     <script src="includes/libs/postIt/jquery.postitall.js"></script>
     <script src="public/js/postIt.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 <?php endif;?>
 
 <?php if ($title == "chat.php" ) :?>

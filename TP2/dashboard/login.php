@@ -43,25 +43,26 @@
     </div>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" style="margin-bottom: 5%">Entrar</button>
-    <a href="../courses.php" class="card-link" style="margin-top: 20%; font-size: 0.9rem">Ainda não tem conta? Compre um curso aqui!</a><br>
-    <a href="../index.php" class="card-link" style="margin-top: 20%; font-size: 0.9rem">← Voltar à página inicial</a>
-
-    <p class="mt-5 mb-3 text-muted">&copy; Fábio Morais e Fernando Silva 2020</p>
+    <div  class="d-flex flex-column bd-highlight mb-3">
+    <a href="../courses.php" class="card-link " style=" font-size: 0.9rem">Ainda não tem conta? Compre um curso aqui!</a>
+    <a href="../index.php" class="card-link mt-3" style=" font-size: 0.9rem">← Voltar à página inicial</a>
+    </div>
+    <p class="mt-5 mb-3 text-muted">&copy; Fábio Morais e Fernando Silva <?php echo date("Y"); ?></p>
 </form>
 
 <div class="container-fluid fixed-bottom">
-    <div id="accordion">
-        <div class="card loginCard">
+    <div id="accordion"
+        <div class="card loginCard" style="width:350px">
             <div class="card-header">
                 <a class="card-link" data-toggle="collapse" href="#collapseOne">
                     Logins Exemplo (login/password)
                 </a>
             </div>
-            <div id="collapseOne" class="collapse" data-parent="#accordion">
-                <div class="card-body" style="padding: 5px">
-                    <p style="margin-bottom: 0.5rem">admin/admin15</p>
-                    <p style="margin-bottom: 0.5rem">prof/prof15</p>
-                    <p style="margin-bottom: 0.5rem">aluno/aluno15</p>
+            <div id="collapseOne" class="collapse" data-parent="#accordion" ">
+                <div class="card-body " style="padding: 5px">
+                    <p style="margin-bottom: 0.5rem"><b>Admin-</b> admin/admin15</p>
+                    <p style="margin-bottom: 0.5rem"><b>Professor-</b> fabiouds/teste15</p>
+                    <p style="margin-bottom: 0.5rem"><b>Aluno-</b> aluno/aluno15</p>
                 </div>
             </div>
         </div>

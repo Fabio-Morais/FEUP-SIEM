@@ -55,13 +55,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\templates\forms" />
-      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\public\js\forms" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\webservices" />
       <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\templates\forms" />
+      <recent name="C:\Users\fabio\Documents\GitHub\FEUP-SIEM\TP2\dashboard\public\js\forms" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -84,6 +84,8 @@
       <workItem from="1610068047360" duration="765000" />
       <workItem from="1610101065686" duration="3065000" />
       <workItem from="1610136333199" duration="10142000" />
+      <workItem from="1610185674564" duration="9520000" />
+      <workItem from="1610221072674" duration="5227000" />
     </task>
     <servers />
   </component>
@@ -147,10 +149,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="859" y="461" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1609543986740" />
-    <state x="303" y="261" width="1540" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609586837651">
+    <state x="130" y="281" width="1540" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1610196725249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="303" y="261" width="1540" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1609586837651" />
+    <state x="130" y="281" width="1540" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610196725249" />
+    <state x="566" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610232787567">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="566" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610232787567" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610063979921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -164,9 +170,9 @@
     </state>
     <state x="-1027" y="236" key="run.anything.popup/0.0.1920.1040/-1366.148.1366.728@-1366.148.1366.728" timestamp="1609358219590" />
     <state x="476" y="126" key="run.anything.popup/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610153486687" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609411943736">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610188896294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1609411943736" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1366.148.1366.728@0.0.1920.1040" timestamp="1610188896294" />
   </component>
 </project>
