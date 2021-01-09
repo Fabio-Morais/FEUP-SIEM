@@ -132,13 +132,15 @@
 <?php if ($title == "comprar_curso.php" ) :?>
     <script src="public/js/cart/util.js"></script>
     <script src="public/js/cart/main.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script><!-- effect-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="public/js/cart/flyto.js"></script><!-- effect-->
 <?php endif;?>
 
 <?php if ($title == "index.php" ) :?>
     <script src="includes/libs/postIt/jquery.postitall.js"></script>
     <script src="public/js/postIt.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <?php endif;?>
 
 <?php if ($title == "chat.php" ) :?>

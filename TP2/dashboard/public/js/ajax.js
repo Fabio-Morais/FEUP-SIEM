@@ -8,6 +8,7 @@ function updateModalStudent(response){
     numCourses = response[1]['count']
     grade = response[2]['avg']
     courses = response[3]
+    console.log(user['name'])
     /*BACK COLOR*/
     if(user['color']!=null){
         $("#modalColor").css("background-color",user['color'])
@@ -25,9 +26,9 @@ function updateModalStudent(response){
     }
     /*NAME*/
     if(user['name'] != null){
-        $("h5.text-white")[0].innerHTML = user['name']
+        $("h5.textAdapt")[0].innerHTML = user['name']
     }else{
-        $("h5.text-white")[0].innerHTML = ""
+        $("h5.textAdapt")[0].innerHTML = ""
     }
     /*PHONE*/
     if(user['phone'] != null){
@@ -93,6 +94,7 @@ function updateModalStudent(response){
         console.log(string)
         $(string).insertAfter("#modalCoursesBadge")
     }
+    autoTextColor()
 
 }
 

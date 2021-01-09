@@ -85,8 +85,8 @@ if ($db->connect()) {
                                 <div class="d-flex align-items-center py-1">
                                     <div class="position-relative">
                                         <img id="topImageUser" src="public/img/<?php echo getImage($firstElement) ?>"
-                                             class="rounded-circle mr-1 userImageChat" alt="Sharon Lessman" width="40"
-                                             height="40">
+                                             class="rounded-circle mr-1 userImageChat"  width="40"
+                                             height="40" onerror="javascript:this.src='public/img/avatar.png'">
                                     </div>
                                     <div class="flex-grow-1 pl-3">
                                         <strong><?php echo $firstElement['name'] ?></strong>
@@ -124,7 +124,7 @@ if ($db->connect()) {
                                             <div>
                                                 <img src="public/img/<?php echo $image ?>"
                                                      class="rounded-circle mr-1 userImageChat"
-                                                     width="40" height="40">
+                                                     width="40" height="40" onerror="javascript:this.src='public/img/avatar.png'">
                                             </div>
                                             <div>
                                                 <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">

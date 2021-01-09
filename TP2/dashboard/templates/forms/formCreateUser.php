@@ -1,4 +1,8 @@
 <?php
+/**
+* Form usado em USERS.PHP, modal que cria um user novo
+ * @param- $name, $email, $role, $username
+ */
 $name="";
 $email="";
 $role=["selected=\"\"","",""];

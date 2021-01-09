@@ -254,6 +254,12 @@ if ($db->connect()) {
         target: '.cd-cart__header',
         button: '.my-btn'
     });
+    document.getElementById("submitButton").onclick = function () {
+        /*just submit when the checkout is > than 0*/
+        if($("#submitButton > em > span")[0].innerHTML > 0.0){
+            document.getElementById("carrinho").submit();
+        }
+    }
     function updateModal(response) {
         var course = response['coursename'];
         var price = response['price'];

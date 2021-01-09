@@ -131,7 +131,10 @@ final class DataBase
         return $this->user->getGender($this->conn);
     }
 
-
+    public function getCoursesPrices()
+    {
+        return $this->course->getCoursesPrices($this->conn);
+    }
 
     public function getAllCoursesExceptStudentOwn($username)
     {
@@ -166,10 +169,7 @@ final class DataBase
         return $this->student->setGradeStudent($this->conn, $username,  $grade, $course);
     }
 
-    public function getTotalYearProfit()
-    {
-        return $this->order->getTotalYearProfit($this->conn);
-    }
+
 
     public function getTotalCustomYearProfit($year)
     {
@@ -200,19 +200,12 @@ final class DataBase
         return $this->video->getVideoLinks($this->conn, $coursename);
     }
 
-    public function getSellsCourses()
-    {
-        return $this->order->getSellsCourses($this->conn);
-    }
 
     public function getSellsCoursesByYear($year, $max)
     {
         return $this->order->getSellsCoursesByYear($this->conn, $year, $max);
     }
-    public function getSellsCoursesMoney()
-    {
-        return $this->order->getSellsCoursesMoney($this->conn);
-    }
+
     public function getSellsCoursesMoneyYear($year, $max)
     {
         return $this->order->getSellsCoursesMoneyYear($this->conn, $year, $max);

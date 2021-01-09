@@ -57,13 +57,13 @@ if ($db->connect()) {
                             echo "   <div class=\"hovereffect\">";
                             echo       "<div class=\"contentSearch box box-widget widget-user\">";
                             echo            "<div class=\"widget-user-header\" style=\"background-color:". ((empty($row["color"])) ? "#8585d3" : $row["color"])."\">";
-                            echo                "<h3 class=\"widget-user-username text-center\">" . $row['username'] . "</h3>";/*USERNAME*/
+                            echo                "<h3 class=\"widget-user-username text-center textAdapt \">" . $row['username'] . "</h3>";/*USERNAME*/
                             echo            "</div>";
                             echo            "<div class=\"widget-user-image\">";
                             echo                "<img class=\"rounded-circle\" src=\"public/img/".getImage($row) ."\" alt=\"User Avatar\" onerror=\"javascript:this.src='public/img/avatar.png'\">"; /*AVATAR*/
                             echo            "</div>";
                             echo            "<div class=\"box-footer \">";
-                            echo               "<h5 class=\"widget-user-desc text-center \">" . "Aluno" . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
+                            echo               "<h5 class=\"widget-user-desc text-center  \">" . "Aluno" . "</h5>";/*ALUNO/PROFESSOR/ADMIN*/
                             echo                "<div class=\"row\">";
                             echo                    "<div class=\"col-sm\">";
                             echo                        "<div class=\"description-block text-center\">";
@@ -165,8 +165,8 @@ if ($db->connect()) {
                                             <div class="user-box">
                                                 <img  src="public/img/users/" alt="user avatar" onerror="javascript:this.src='public/img/avatar.png'">
                                             </div>
-                                            <h5 class="mb-1 text-white"><!-- USERNAME HERE --></h5>
-                                            <h6 class="text-light">Aluno</h6>
+                                            <h5 class="mb-1 textAdapt "><!-- USERNAME HERE --></h5>
+                                            <h6 class="textAdapt">Aluno</h6>
                                         </div>
                                         <div class="card-body">
                                             <div class="list-group-item d-flex flex-wrap flex-row justify-content-center" >
@@ -262,5 +262,6 @@ if ($db->connect()) {
 
 <?php require_once(dirname(__FILE__) . "/templates/common/footer.php"); ?>
 <script>
-    aaa();
+    autoTextColor();
+    pagFunc(0)
 </script>
