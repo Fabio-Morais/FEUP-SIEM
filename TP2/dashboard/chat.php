@@ -81,15 +81,16 @@ if ($db->connect()) {
                             <div class="py-2 px-4 border-bottom d-none d-lg-block ">
                                 <div class="d-flex align-items-center py-1">
                                     <div class="position-relative">
+                                        <?php if(!isset($firstElement)):?>
                                         <img id="topImageUser" src="public/img/<?php echo getImage($firstElement) ?>"
                                              class="rounded-circle mr-1 userImageChat" width="40"
                                              height="40" onerror="javascript:this.src='public/img/avatar.png'">
+                                        <?php endif;?>
                                     </div>
                                     <div class="flex-grow-1 pl-3">
-                                        <strong><?php echo $firstElement['name'] ?></strong>
+                                        <strong><?php echo isset($firstElement['name']) ? $firstElement['name'] : "" ?></strong>
                                         <div class="text-muted small"><em></em></div>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="position-relative">
@@ -98,8 +99,10 @@ if ($db->connect()) {
                                      data-to="<?php echo $firstElement['username'] ?>"
                                      data-image="<?php echo getImage($queryInfo) ?>">
                                     <?php
-                                    $messagesQuery = $db->getAllMessagesFromUser($_SESSION['user'], $firstElement['username']);
-                                    $messages = pg_fetch_assoc($messagesQuery);
+                                    if(isset($firstElement['username'])){
+                                        $messagesQuery = $db->getAllMessagesFromUser($_SESSION['user'], $firstElement['username']);
+                                        $messages = pg_fetch_assoc($messagesQuery);
+                                    }
                                     $id = 0;
                                     while (isset($messages['message'])):
                                         ?>

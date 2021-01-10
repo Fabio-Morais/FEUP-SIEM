@@ -220,3 +220,16 @@ function updateModalStudent(response){
     autoTextColorProfile()
 
 }
+
+$(document).ready(function () {
+    var Modal = document.getElementById('myModal');
+    console.log(Modal)
+    var key = 'check',
+        hadModal = localStorage.getItem(key);
+    if (!hadModal) {
+        setTimeout(function(){
+            $('#myModal').modal()
+            localStorage.setItem(key, true);
+        }, 2000);
+    }
+});

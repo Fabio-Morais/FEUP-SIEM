@@ -19,12 +19,17 @@ if ($db->connect()) {
                 <div class="row" style="justify-content: center">
                 <?php
                 $courses = pg_fetch_assoc($coursesQuery);
-                $infoQuery = $db->getCourseInfo($courses['coursename']);
-                $info = pg_fetch_assoc($infoQuery);
+                if(isset($courses['coursename'])){
+                    $infoQuery = $db->getCourseInfo($courses['coursename']);
+                    $info = pg_fetch_assoc($infoQuery);
+                }
+                $countCourses = pg_num_rows($coursesQuery);
+                $aux=0;
                 if($connected) :
                     while(isset($courses["coursename"])){
 
                     if ($courses['coursegrade'] == -1) {
+                        $aux++;
                         $courses = pg_fetch_assoc($coursesQuery);
                         if(isset($courses['coursename'])){
                             $infoQuery = $db->getCourseInfo($courses['coursename']);
@@ -56,6 +61,12 @@ if ($db->connect()) {
                     }
                 endif;
                 ?>
+                    <?php if($countCourses == $aux):?>
+                    <div class="d-flex flex-column py-4">
+                        <img src="public/img/teste.png" width="300" heigh="300" style="margin:auto">
+                        <h2 >Nao existe notas disponiveis</h2>
+                    </div>
+                    <?php endif;?>
                 </div>
             </div>
         </div>

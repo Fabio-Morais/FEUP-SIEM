@@ -10,8 +10,10 @@ if ($db->connect()) {
     $coursesQuery = $db->getStudentCourses($_SESSION['user']);
     $connected = true;
     $courses = pg_fetch_assoc($coursesQuery);
-    $videosQuery = $db->getVideoLinks($courses['coursename']);
-    $videos = pg_fetch_assoc($videosQuery);
+    if(isset($courses['coursename'])){
+        $videosQuery = $db->getVideoLinks($courses['coursename']);
+        $videos = pg_fetch_assoc($videosQuery);
+    }
     $coursesQuery2 = $db->getStudentCourses($_SESSION['user']);
     $courses2 = pg_fetch_assoc($coursesQuery2);
 } else
@@ -38,6 +40,7 @@ if ($db->connect()) {
 
                 <div class="row" style="padding-top: 10px">
                     <?php
+                    $countCourses = pg_num_rows($coursesQuery);
                     if ($connected) :
                         while (isset($courses["coursename"])) {
                             $videosQuery = $db->getVideoLinks($courses['coursename']);
@@ -61,7 +64,14 @@ if ($db->connect()) {
                         }
                     endif;
                     ?>
+
                 </div>
+                <?php if($countCourses <= 0):?>
+                    <div class="d-flex flex-column py-4 ">
+                        <img src="public/img/teste.png" width="300" heigh="300" class="m-auto">
+                        <h2 class="m-auto">É necessário comprar um curso!</h2>
+                    </div>
+                <?php endif;?>
             </div>
         </div>
     </div>

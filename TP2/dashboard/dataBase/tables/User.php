@@ -39,8 +39,8 @@ class User{
     /**
      * Add user
      */
-    public function addUser($conn, $name, $email, $role, $username){
-        $query = "INSERT INTO userr (name, email, role, username) VALUES('".$name."', '".$email."', ".$role.", '".$username."') ";
+    public function addUser($conn, $name, $email, $role, $username, $pass){
+        $query = "INSERT INTO userr (name, email, role, username, passhash) VALUES('".$name."', '".$email."', ".$role.", '".$username."', '".$pass."') ";
         $result = pg_exec($conn, $query);
         return $result;
     }

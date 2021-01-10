@@ -75,15 +75,15 @@
                 </div>
                 <div>
                     <div class="flex-wrap flex-center justify-content-center">
-                        <div id="downloadButton"><a href="Mockup_TP2.ppt" download><button class="button buttonRed"
+                        <div id="downloadButton"><a href="../downloads/report.zip" download><button class="button buttonRed"
                                                                                               href="add-website-here" target="_blank">
                                     <div class="flex-column"><i class="far fa-file-powerpoint"></i> <br>Download ppt</div>
                                 </button></a></div>
-                        <div id="downloadButton"><a href="ExplicaFeup_TP2.zip" download><button class="button buttonRed"
+                        <div id="downloadButton"><a href="../downloads/code.zip" download><button class="button buttonRed"
                                                                                         href="add-website-here" target="_blank">
                                     <div class="flex-column"><i class="far fa-file-code"></i> <br>Download Website</div>
                                 </button></a></div>
-                        <div id="downloadButton"><a href="ExplicaFeup_css.zip" download><button class="button buttonRed"
+                        <div id="downloadButton"><a href="../downloads/css.zip" download><button class="button buttonRed"
                                                                                     href="add-website-here" target="_blank">
                                     <div class="flex-column"><i class="fab fa-css3-alt"></i> <br>Download CSS</div>
                                 </button></a></div>

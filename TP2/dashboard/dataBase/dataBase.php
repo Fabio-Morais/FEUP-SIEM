@@ -54,8 +54,8 @@ final class DataBase
     public function connect()
     {   try{
 
-           $this->conn = pg_connect("host=localhost  dbname=postgres user=postgres password=siem");
-           //$this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
+           //$this->conn = pg_connect("host=localhost  dbname=postgres user=postgres password=siem");
+           $this->conn = pg_connect("host=db dbname=siem2013 user=siem2013 password=fabiofernando");
 
         }catch(Exception $e){
             return false;
@@ -102,9 +102,9 @@ final class DataBase
         return $this->user->editUserInfo($this->conn,$userName, $user);
     }
 
-    public function addUser($name, $email, $role, $username)
+    public function addUser($name, $email, $role, $username, $pass)
     {
-        return $this->user->addUser($this->conn,$name, $email, $role, $username);
+        return $this->user->addUser($this->conn,$name, $email, $role, $username, $pass);
     }
 
     public function usernameExists($username)
